@@ -1,0 +1,16 @@
+version: '3.5'
+services: 
+    pressa-django:
+        build: .
+        working_dir: /app
+        container_name: pressa-django
+        ports:
+            - 8000:8000
+        volumes:
+            - ./app:/app
+        networks: 
+            - webrtc_network
+
+networks:
+    webrtc_network:
+        driver: bridge
