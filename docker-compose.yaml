@@ -4,11 +4,39 @@ services:
         build: .
         working_dir: /app
         container_name: pressa-django
-        # command: ./manage.py runserver
+        command: ./manage.py runserver 0.0.0.0:8000
         ports:
             - 8000:8000
         volumes:
             - ./app:/app
+        networks: 
+            - webrtc_network
+
+    pressa-socket-server:
+        build: .
+        working_dir: /app
+        container_name: pressa-socket-server
+        command: ./manage.py socket_server
+        ports:
+            - 5001:5001
+        volumes:
+            - ./app:/app
+        networks: 
+            - webrtc_network
+
+    pressa-celery-worker:
+        build: .
+        working_dir: /app
+        container_name: pressa-celery-worker
+        command: celery -A app worker -l info
+        volumes:
+            - ./app:/app
+        networks: 
+            - webrtc_network
+
+    pressa-redis-server:
+        image: "redis:alpine"
+        container_name: pressa-redis-server
         networks: 
             - webrtc_network
 

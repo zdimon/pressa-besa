@@ -2,3 +2,8 @@ Django
 requests
 bs4
 redis
+python-socketio
+eventlet
+redis
+celery
+python-dotenv
