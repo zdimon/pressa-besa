@@ -4,6 +4,7 @@ services:
         build: .
         working_dir: /app
         container_name: pressa-django
+        # command: ./manage.py runserver
         ports:
             - 8000:8000
         volumes:
