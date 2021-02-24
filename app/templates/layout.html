@@ -37,6 +37,7 @@
     <script src="/static/js/jquery-1.11.0.min.js"></script>
     <script src="/static/js/plugins.js"></script>
     <script src="/static/js/init.js"></script>
+    <script src="/static/node_modules/socket.io/client-dist/socket.io.min.js"></script>
     <!-- /JavaScript -->
 
 	<!-- Fonts -->
@@ -59,7 +60,7 @@
 					</div>
 					<div class="col-md-6">
 						<ul class="main-menu">
-							<li><a href="#">Журналы</a></li>
+							<li><a id="journals" href="#">Журналы</a></li>
 							<li><a href="#">ГАЗЕТЫ</a></li>
 							<li><a href="#">КНИГИ</a></li>
 							<li><a href="#">СТАТЬИ</a></li>
@@ -670,6 +671,11 @@
 		</div>
 	</div>
 	<!-- /Mobile menu -->
+   <script>
+    $('#journals').on('click', (e) => {
+        const socket = io('http://localhost:5001', {transports:['websocket']}); 
+    })
+   </script>
 
 </body>
 </html>
