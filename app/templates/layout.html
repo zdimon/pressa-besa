@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ru-ru" dir="ltr">
+<head>	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Markup - Pressa</title>
+	<meta name="description" lang="ru-ru" content="">
+	<meta name="keywords" lang="ru-ru" content="">
+	<meta name="keywords" lang="en-us" content="">
+	<meta name="author" lang="ru-ru" content="">
+
+    <!-- Responsiveness -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- /Responsiveness -->
+
+    <!-- Browser themes settings -->
+	<meta http-equiv="imagetoolbar" content="no">
+	<!-- saved from url=(0014)about:internet -->
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="address=no">
+    <!-- /Browser themes settings -->
+
+    <!-- CSS -->
+	<link rel="stylesheet" href="/static/css/plugin.css">
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" href="/static/css/responsive.css">
+	<link rel="stylesheet" href="/static/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <!-- /CSS -->
+
+    <!-- JavaScript -->
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script src="/static/js/modernizr.js"></script>
+    <script src="/static/js/jquery-1.11.0.min.js"></script>
+    <script src="/static/js/plugins.js"></script>
+    <script src="/static/js/init.js"></script>
+    <!-- /JavaScript -->
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<!-- /Fonts -->
+
+</head>
+
+<body>
+	<div class="site-wrapper">
+		<header class="site-header" id="siteHeader">
+			<div class="site-size">
+				<div class="row header-top">
+					<div class="col-md-3">
+						<a href="#" class="logo" title="НИВА ПЛЮС">
+							<img src="/static/i/logo.svg" alt="" title="НИВА ПЛЮС">
+						</a>
+					</div>
+					<div class="col-md-6">
+						<ul class="main-menu">
+							<li><a href="#">Журналы</a></li>
+							<li><a href="#">ГАЗЕТЫ</a></li>
+							<li><a href="#">КНИГИ</a></li>
+							<li><a href="#">СТАТЬИ</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 top-controls-wrapper">
+						<a href="#" class="user-link">Пользователь</a>
+						<a href="#" class="bag-link"></a>
+						<div class="lang-control">
+							RU<i class="fa fa-chevron-down" aria-hidden="true"></i>
+							<ul class="lang-menu">
+								<li><a href="#">RU</a></li>
+								<li><a href="#">EN</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row header-bottom">
+					<form class="search-wrapper" action="">
+						<div class="search-category-menu">
+							Новости <i class="fa fa-caret-down" aria-hidden="true"></i>
+							<ul class="search-category-menu-items">
+								<li><a href="#">Категория 2</a></li>
+								<li><a href="#">Категория 3</a></li>
+								<li><a href="#">Категория 4</a></li>
+							</ul>
+						</div>
+						<input type="text" name="searchQuery" id="searchQuery" required placeholder="Поиск по книгам, сериям, авторам, жанрам, тегам, издательством">
+					</form>
+					<a href="#" class="subscribe">Подписка 8 руб/сутки</a>
+					<div class="col-md-3 top-controls-wrapper-mobile">
+						<a href="#" class="burger-menu-link" id="burgerMenuLink">
+							<span></span>
+							<span></span>
+							<span></span>
+						</a>
+						<form class="mob-search-wrapper" action="">
+							<input type="text" name="searchQuery" id="mobSearchQuery" required placeholder="Поиск по книгам, сериям, авторам, жанрам, тегам, издательством">
+						</form>
+						<div class="lang-control">
+							RU<i class="fa fa-chevron-down" aria-hidden="true"></i>
+							<ul class="lang-menu">
+								<li><a href="#">RU</a></li>
+								<li><a href="#">EN</a></li>
+							</ul>
+						</div>
+						<a href="#" class="bag-link"></a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="site-container" id="siteContainer">
+			<div class="site-size">
+				<h1 class="title-newest">НОВИНКИ</h1>
+				<div class="row">
+					<div class="col-md-10">
+						<ul class="categories-menu">
+							<li><a href="#">ЖЕНСКИЕ</a></li>
+							<li><a href="#">МУЖСКИЕ</a></li>
+							<li><a href="#">ДЕТСКИЕ</a></li>
+							<li><a href="#">ДОМ И СЕМЬЯ</a></li>
+							<li><a href="#">АВТО СПОРТ</a></li>
+							<li><a href="#">РЕЛИГИЯ</a></li>
+							<li><a href="#">ОБЩЕСТВО И ПОЛИТИКА</a></li>
+							<li><a href="#">БИЗНЕС И ФИНАНСЫ</a></li>
+							<li><a href="#">НАУЧНО-ПОПУЛЯРНЫЕ</a></li>
+						</ul>
+					</div>
+					<div class="col-md-2 slider-control-wrapper">
+						<a href="#" class="slider-control newest-slider-prev"><i class="fa fa-chevron-left"></i></a>
+						<a href="#" class="slider-control newest-slider-next"><i class="fa fa-chevron-right"></i></a>
+					</div>
+				</div>
+				<div class="newest-slider" id="newestSlider">
+					<div class="newest-slider-slide">
+						<a href="#" class="newest-slider-slide-image" title="НИВА ПЛЮС">
+							<img src="/static/i/newest-1.jpg" alt="" title="НИВА ПЛЮС">
+						</a>
+						<div class="newest-slider-slide-content">
+							<a href="#" class="newest-slider-slide-title">НИВА ПЛЮС</a>
+							<div class="newest-slider-slide-num">№10 12/10/20</div>
+							<div class="newest-slider-slide-bottom">
+								<div class="newest-slider-slide-price">250.00₽</div>
+								<div class="newest-slider-slide-links">
+									<a href="#">TXT</a>
+									<a href="#">PDF</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="newest-slider-slide">
+						<a href="#" class="newest-slider-slide-image" title="ТЕЛЕК PRESSA.RU">
+							<img src="/static/i/newest-2.jpg" alt="" title="ТЕЛЕК PRESSA.RU">
+						</a>
+						<div class="newest-slider-slide-content">
+							<a href="#" class="newest-slider-slide-title">ТЕЛЕК PRESSA.RU</a>
+							<div class="newest-slider-slide-num">№05 03/02/21</div>
+							<div class="newest-slider-slide-bottom">
+								<div class="newest-slider-slide-price">10.00₽</div>
+								<div class="newest-slider-slide-links">
+									<a href="#">PDF</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="newest-slider-slide">
+						<a href="#" class="newest-slider-slide-image" title="РБК">
+							<img src="/static/i/newest-3.jpg" alt="" title="РБК">
+						</a>
+						<div class="newest-slider-slide-content">
+							<a href="#" class="newest-slider-slide-title">РБК</a>
+							<div class="newest-slider-slide-num">№01 22/12/20</div>
+							<div class="newest-slider-slide-bottom">
+								<div class="newest-slider-slide-price">236.00₽</div>
+								<div class="newest-slider-slide-links">
+									<a href="#">TXT</a>
+									<a href="#">PDF</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="newest-slider-slide">
+						<a href="#" class="newest-slider-slide-image" title="ИЗВЕСТИЯ">
+							<img src="/static/i/newest-4.jpg" alt="" title="ИЗВЕСТИЯ">
+						</a>
+						<div class="newest-slider-slide-content">
+							<a href="#" class="newest-slider-slide-title">ИЗВЕСТИЯ</a>
+							<div class="newest-slider-slide-num">№20-2021 05/02/21</div>
+							<div class="newest-slider-slide-bottom">
+								<div class="newest-slider-slide-price">25.00₽</div>
+								<div class="newest-slider-slide-links">
+									<a href="#">PDF</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="newest-slider-slide">
+						<a href="#" class="newest-slider-slide-image" title="FORBES WOMAN">
+							<img src="/static/i/newest-5.jpg" alt="" title="FORBES WOMAN">
+						</a>
+						<div class="newest-slider-slide-content">
+							<a href="#" class="newest-slider-slide-title">FORBES WOMAN</a>
+							<div class="newest-slider-slide-num">№03 01/10/20</div>
+							<div class="newest-slider-slide-bottom">
+								<div class="newest-slider-slide-price">175.00₽</div>
+								<div class="newest-slider-slide-links">
+									<a href="#">TXT</a>
+									<a href="#">PDF</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="newest-slider-slide">
+						<a href="#" class="newest-slider-slide-image" title="НИВА ПЛЮС">
+							<img src="/static/i/newest-1.jpg" alt="" title="НИВА ПЛЮС">
+						</a>
+						<div class="newest-slider-slide-content">
+							<a href="#" class="newest-slider-slide-title">НИВА ПЛЮС</a>
+							<div class="newest-slider-slide-num">№10 12/10/20</div>
+							<div class="newest-slider-slide-bottom">
+								<div class="newest-slider-slide-price">250.00₽</div>
+								<div class="newest-slider-slide-links">
+									<a href="#">TXT</a>
+									<a href="#">PDF</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="newest-slider-slide">
+						<a href="#" class="newest-slider-slide-image" title="ТЕЛЕК PRESSA.RU">
+							<img src="/static/i/newest-2.jpg" alt="" title="ТЕЛЕК PRESSA.RU">
+						</a>
+						<div class="newest-slider-slide-content">
+							<a href="#" class="newest-slider-slide-title">ТЕЛЕК PRESSA.RU</a>
+							<div class="newest-slider-slide-num">№05 03/02/21</div>
+							<div class="newest-slider-slide-bottom">
+								<div class="newest-slider-slide-price">10.00₽</div>
+								<div class="newest-slider-slide-links">
+									<a href="#">PDF</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="newest-slider-slide">
+						<a href="#" class="newest-slider-slide-image" title="РБК">
+							<img src="/static/i/newest-3.jpg" alt="" title="РБК">
+						</a>
+						<div class="newest-slider-slide-content">
+							<a href="#" class="newest-slider-slide-title">РБК</a>
+							<div class="newest-slider-slide-num">№01 22/12/20</div>
+							<div class="newest-slider-slide-bottom">
+								<div class="newest-slider-slide-price">236.00₽</div>
+								<div class="newest-slider-slide-links">
+									<a href="#">TXT</a>
+									<a href="#">PDF</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+                <div class="mob-slider-control-wrapper slider-control-wrapper">
+                    <a href="#" class="slider-control newest-slider-prev"><i class="fa fa-chevron-left"></i></a>
+                    <a href="#" class="slider-control newest-slider-next"><i class="fa fa-chevron-right"></i></a>
+                </div>
+				<h2 class="title-twice">АКТУАЛЬНЫЕ <span>СТАТЬИ</span></h2>
+				<div class="row">
+					<div class="col-md-10">
+						<ul class="tags">
+							<li><a href="#">#Борис Акунин</a></li>
+							<li><a href="#">#Только у нас</a></li>
+							<li><a href="#">#Бесплатно</a></li>
+							<li><a href="#">#Originals</a></li>
+							<li><a href="#">#Саморазвитие</a></li>
+							<li><a href="#">#Фантастика и фэнтези</a></li>
+							<li><a href="#">#Бизнес</a></li>
+							<li><a href="#">#Windows</a></li>
+							<li><a href="#">#Linux</a></li>
+							<li><a href="#">#Коронавирус</a></li>
+							<li><a href="#">#Дети</a></li>
+						</ul>
+					</div>
+					<div class="col-md-2 slider-control-wrapper">
+						<a href="#" class="slider-control actual-articles-slider-prev"><i class="fa fa-chevron-left"></i></a>
+						<a href="#" class="slider-control actual-articles-slider-next"><i class="fa fa-chevron-right"></i></a>
+					</div>
+				</div>
+				<div class="actual-articles-slider" id="actualArticlesSlider">
+					<div class="actual-articles-slider-slide">
+						<a href="#" class="actual-articles-slider-slide-image" title="Обманули более 500 человек: в Киеве разоблачили мошенническую схему онлайн-инвестиций">
+							<img src="/static/i/actual-1.jpg" alt="" title="Обманули более 500 человек: в Киеве разоблачили мошенническую схему онлайн-инвестиций">
+							<span class="actual-articles-slider-slide-image-category">ежемесячные</span>
+						</a>
+						<div class="actual-slider-slide-content">
+							<a href="#" class="actual-slider-slide-title" title="Обманули более 500 человек: в Киеве разоблачили мошенническую схему онлайн-инвестиций">
+								Обманули более 500 человек: в Киеве разоблачили мошенническую схему онлайн-инвестиций
+							</a>
+							<div class="row actual-slider-slide-bottom">
+								<div class="col-md-8">Ежедневная деловая газета РБК</div>
+								<div class="col-md-4 actual-slider-slide-date">26.01.2021</div>
+							</div>
+						</div>
+					</div>
+					<div class="actual-articles-slider-slide">
+						<a href="#" class="actual-articles-slider-slide-image" title="Даже под обстрелами ВСУ поддерживали веру в Победу: Донецкой филармонии – 90 лет">
+							<img src="/static/i/actual-2.jpg" alt="" title="Даже под обстрелами ВСУ поддерживали веру в Победу: Донецкой филармонии – 90 лет">
+							<span class="actual-articles-slider-slide-image-category">ближнего зарубежья</span>
+						</a>
+						<div class="actual-slider-slide-content">
+							<a href="#" class="actual-slider-slide-title" title="Даже под обстрелами ВСУ поддерживали веру в Победу: Донецкой филармонии – 90 лет">
+								Даже под обстрелами ВСУ поддерживали веру в Победу: Донецкой филармонии – 90 лет
+							</a>
+							<div class="row actual-slider-slide-bottom">
+								<div class="col-md-8">Комсомольская правда. Москва</div>
+								<div class="col-md-4 actual-slider-slide-date">26.01.2021</div>
+							</div>
+						</div>
+					</div>
+					<div class="actual-articles-slider-slide">
+						<a href="#" class="actual-articles-slider-slide-image" title="40 сантиметров снега: украинцев предупредили, где на улицу лучше не выходить">
+							<img src="/static/i/actual-3.jpg" alt="" title="40 сантиметров снега: украинцев предупредили, где на улицу лучше не выходить">
+							<span class="actual-articles-slider-slide-image-category">Ежедневные</span>
+						</a>
+						<div class="actual-slider-slide-content">
+							<a href="#" class="actual-slider-slide-title" title="40 сантиметров снега: украинцев предупредили, где на улицу лучше не выходить">
+								40 сантиметров снега: украинцев предупредили, где на улицу лучше не выходить
+							</a>
+							<div class="row actual-slider-slide-bottom">
+								<div class="col-md-8">Аргументы и факты Москва</div>
+								<div class="col-md-4 actual-slider-slide-date">26.01.2021</div>
+							</div>
+						</div>
+					</div>
+					<div class="actual-articles-slider-slide">
+						<a href="#" class="actual-articles-slider-slide-image" title="«США и ЕС проигрывают России!» – Яценюк призвал Зеленского возглавить западную русофобию и сп...">
+							<img src="/static/i/actual-4.jpg" alt="" title="«США и ЕС проигрывают России!» – Яценюк призвал Зеленского возглавить западную русофобию и сп...">
+							<span class="actual-articles-slider-slide-image-category">ПОЛИТИКА</span>
+						</a>
+						<div class="actual-slider-slide-content">
+							<a href="#" class="actual-slider-slide-title" title="«США и ЕС проигрывают России!» – Яценюк призвал Зеленского возглавить западную русофобию и сп...">
+								«США и ЕС проигрывают России!» – Яценюк призвал Зеленского возглавить западную русофобию и сп...
+							</a>
+							<div class="row actual-slider-slide-bottom">
+								<div class="col-md-8">Советский спорт (федеральный выпуск)</div>
+								<div class="col-md-4 actual-slider-slide-date">26.01.2021</div>
+							</div>
+						</div>
+					</div>
+					<div class="actual-articles-slider-slide">
+						<a href="#" class="actual-articles-slider-slide-image" title="Даже под обстрелами ВСУ поддерживали веру в Победу: Донецкой филармонии – 90 лет">
+							<img src="/static/i/actual-2.jpg" alt="" title="Даже под обстрелами ВСУ поддерживали веру в Победу: Донецкой филармонии – 90 лет">
+							<span class="actual-articles-slider-slide-image-category">ближнего зарубежья</span>
+						</a>
+						<div class="actual-slider-slide-content">
+							<a href="#" class="actual-slider-slide-title" title="Даже под обстрелами ВСУ поддерживали веру в Победу: Донецкой филармонии – 90 лет">
+								Даже под обстрелами ВСУ поддерживали веру в Победу: Донецкой филармонии – 90 лет
+							</a>
+							<div class="row actual-slider-slide-bottom">
+								<div class="col-md-8">Комсомольская правда. Москва</div>
+								<div class="col-md-4 actual-slider-slide-date">26.01.2021</div>
+							</div>
+						</div>
+					</div>
+					<div class="actual-articles-slider-slide">
+						<a href="#" class="actual-articles-slider-slide-image" title="40 сантиметров снега: украинцев предупредили, где на улицу лучше не выходить">
+							<img src="/static/i/actual-3.jpg" alt="" title="40 сантиметров снега: украинцев предупредили, где на улицу лучше не выходить">
+							<span class="actual-articles-slider-slide-image-category">Ежедневные</span>
+						</a>
+						<div class="actual-slider-slide-content">
+							<a href="#" class="actual-slider-slide-title" title="40 сантиметров снега: украинцев предупредили, где на улицу лучше не выходить">
+								40 сантиметров снега: украинцев предупредили, где на улицу лучше не выходить
+							</a>
+							<div class="row actual-slider-slide-bottom">
+								<div class="col-md-8">Аргументы и факты Москва</div>
+								<div class="col-md-4 actual-slider-slide-date">26.01.2021</div>
+							</div>
+						</div>
+					</div>
+					<div class="actual-articles-slider-slide">
+						<a href="#" class="actual-articles-slider-slide-image" title="«США и ЕС проигрывают России!» – Яценюк призвал Зеленского возглавить западную русофобию и сп...">
+							<img src="/static/i/actual-4.jpg" alt="" title="«США и ЕС проигрывают России!» – Яценюк призвал Зеленского возглавить западную русофобию и сп...">
+							<span class="actual-articles-slider-slide-image-category">ПОЛИТИКА</span>
+						</a>
+						<div class="actual-slider-slide-content">
+							<a href="#" class="actual-slider-slide-title" title="«США и ЕС проигрывают России!» – Яценюк призвал Зеленского возглавить западную русофобию и сп...">
+								«США и ЕС проигрывают России!» – Яценюк призвал Зеленского возглавить западную русофобию и сп...
+							</a>
+							<div class="row actual-slider-slide-bottom">
+								<div class="col-md-8">Советский спорт (федеральный выпуск)</div>
+								<div class="col-md-4 actual-slider-slide-date">26.01.2021</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mob-slider-control-wrapper slider-control-wrapper">
+					<a href="#" class="slider-control actual-articles-slider-prev"><i class="fa fa-chevron-left"></i></a>
+					<a href="#" class="slider-control actual-articles-slider-next"><i class="fa fa-chevron-right"></i></a>
+				</div>
+				<h2 class="title-twice">КНИГИ <span>НОВИНКИ</span></h2>
+				<div class="row">
+					<div class="col-md-10">
+						<ul class="tags">
+							<li><a href="#">#Борис Акунин</a></li>
+							<li><a href="#">#Только у нас</a></li>
+							<li><a href="#">#Бесплатно</a></li>
+							<li><a href="#">#Originals</a></li>
+							<li><a href="#">#Саморазвитие</a></li>
+							<li><a href="#">#Фантастика и фэнтези</a></li>
+							<li><a href="#">#Бизнес</a></li>
+							<li><a href="#">#Windows</a></li>
+							<li><a href="#">#Linux</a></li>
+							<li><a href="#">#Коронавирус</a></li>
+							<li><a href="#">#Дети</a></li>
+						</ul>
+					</div>
+					<div class="col-md-2 slider-control-wrapper">
+						<a href="#" class="slider-control books-slider-prev"><i class="fa fa-chevron-left"></i></a>
+						<a href="#" class="slider-control books-slider-next"><i class="fa fa-chevron-right"></i></a>
+					</div>
+				</div>
+				<div class="newest-slider" id="booksSlider">
+					<div class="newest-slider-slide">
+						<a href="#" class="newest-slider-slide-image" title="ДЖИНКС. КНИГА ПЕРВАЯ">
+							<img src="/static/i/books-1.jpg" alt="" title="ДЖИНКС. КНИГА ПЕРВАЯ">
+						</a>
+						<div class="newest-slider-slide-content">
+							<a href="#" class="newest-slider-slide-title">ДЖИНКС. КНИГА ПЕРВАЯ</a>
+							<div class="newest-slider-slide-num">19/03/15</div>
+							<div class="newest-slider-slide-bottom">
+								<div class="newest-slider-slide-price">149.00₽</div>
+								<div class="newest-slider-slide-links">
+									<a href="#">PDF</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="newest-slider-slide">
+						<a href="#" class="newest-slider-slide-image" title="СБОРНИК СТИХОВ 'СОН'">
+							<img src="/static/i/books-2.jpg" alt="" title="СБОРНИК СТИХОВ 'СОН'">
+						</a>
+						<div class="newest-slider-slide-content">
+							<a href="#" class="newest-slider-slide-title">СБОРНИК СТИХОВ 'СОН' </a>
+							<div class="newest-slider-slide-num">01/03/11</div>
+							<div class="newest-slider-slide-bottom">
+								<div class="newest-slider-slide-price">100.00₽</div>
+								<div class="newest-slider-slide-links">
+									<a href="#">TXT</a>
+									<a href="#">PDF</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="newest-slider-slide">
+						<a href="#" class="newest-slider-slide-image" title="ALEKSANDER PONOMAREV">
+							<img src="/static/i/books-3.jpg" alt="" title="ALEKSANDER PONOMAREV">
+						</a>
+						<div class="newest-slider-slide-content">
+							<a href="#" class="newest-slider-slide-title">ALEKSANDER PONOMAREV</a>
+							<div class="newest-slider-slide-num">15/02/13</div>
+							<div class="newest-slider-slide-bottom">
+								<div class="newest-slider-slide-price">470.00₽</div>
+								<div class="newest-slider-slide-links">
+									<a href="#">TXT</a>
+									<a href="#">PDF</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="newest-slider-slide">
+						<a href="#" class="newest-slider-slide-image" title="КУХНЯ ПРАЗДНИКОВ И ПОСТОВ">
+							<img src="/static/i/books-4.jpg" alt="" title="КУХНЯ ПРАЗДНИКОВ И ПОСТОВ">
+						</a>
+						<div class="newest-slider-slide-content">
+							<a href="#" class="newest-slider-slide-title">КУХНЯ ПРАЗДНИКОВ И ПОСТОВ</a>
+							<div class="newest-slider-slide-num">25/12/14</div>
+							<div class="newest-slider-slide-bottom">
+								<div class="newest-slider-slide-price">БЕСПЛАТНО</div>
+								<div class="newest-slider-slide-links">
+									<a href="#">TXT</a>
+									<a href="#">PDF</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="newest-slider-slide">
+						<a href="#" class="newest-slider-slide-image" title="КОРОЛЕВСКИЕ ЗАМКИ И ДВОРЦЫ ШВЕЦИИ">
+							<img src="/static/i/books-5.jpg" alt="" title="КОРОЛЕВСКИЕ ЗАМКИ И ДВОРЦЫ ШВЕЦИИ">
+						</a>
+						<div class="newest-slider-slide-content">
+							<a href="#" class="newest-slider-slide-title">КОРОЛЕВСКИЕ ЗАМКИ И ДВОРЦЫ ШВЕЦИИ</a>
+							<div class="newest-slider-slide-num">25/03/13</div>
+							<div class="newest-slider-slide-bottom">
+								<div class="newest-slider-slide-price">210.00₽</div>
+								<div class="newest-slider-slide-links">
+									<a href="#">TXT</a>
+									<a href="#">PDF</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="newest-slider-slide">
+						<a href="#" class="newest-slider-slide-image" title="ALEKSANDER PONOMAREV">
+							<img src="/static/i/books-3.jpg" alt="" title="ALEKSANDER PONOMAREV">
+						</a>
+						<div class="newest-slider-slide-content">
+							<a href="#" class="newest-slider-slide-title">ALEKSANDER PONOMAREV</a>
+							<div class="newest-slider-slide-num">15/02/13</div>
+							<div class="newest-slider-slide-bottom">
+								<div class="newest-slider-slide-price">470.00₽</div>
+								<div class="newest-slider-slide-links">
+									<a href="#">TXT</a>
+									<a href="#">PDF</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="newest-slider-slide">
+						<a href="#" class="newest-slider-slide-image" title="КУХНЯ ПРАЗДНИКОВ И ПОСТОВ">
+							<img src="/static/i/books-4.jpg" alt="" title="КУХНЯ ПРАЗДНИКОВ И ПОСТОВ">
+						</a>
+						<div class="newest-slider-slide-content">
+							<a href="#" class="newest-slider-slide-title">КУХНЯ ПРАЗДНИКОВ И ПОСТОВ</a>
+							<div class="newest-slider-slide-num">25/12/14</div>
+							<div class="newest-slider-slide-bottom">
+								<div class="newest-slider-slide-price">БЕСПЛАТНО</div>
+								<div class="newest-slider-slide-links">
+									<a href="#">TXT</a>
+									<a href="#">PDF</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="newest-slider-slide">
+						<a href="#" class="newest-slider-slide-image" title="КОРОЛЕВСКИЕ ЗАМКИ И ДВОРЦЫ ШВЕЦИИ">
+							<img src="/static/i/books-5.jpg" alt="" title="КОРОЛЕВСКИЕ ЗАМКИ И ДВОРЦЫ ШВЕЦИИ">
+						</a>
+						<div class="newest-slider-slide-content">
+							<a href="#" class="newest-slider-slide-title">КОРОЛЕВСКИЕ ЗАМКИ И ДВОРЦЫ ШВЕЦИИ</a>
+							<div class="newest-slider-slide-num">25/03/13</div>
+							<div class="newest-slider-slide-bottom">
+								<div class="newest-slider-slide-price">210.00₽</div>
+								<div class="newest-slider-slide-links">
+									<a href="#">TXT</a>
+									<a href="#">PDF</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mob-slider-control-wrapper slider-control-wrapper">
+					<a href="#" class="slider-control books-slider-prev"><i class="fa fa-chevron-left"></i></a>
+					<a href="#" class="slider-control books-slider-next"><i class="fa fa-chevron-right"></i></a>
+				</div>
+				<div class="subscribe-section">
+					<h1>ПОДПИШИТЕСЬ НА НОВОСТНУЮ РАССЫЛКУ</h1>
+					<h2>ВАЖНЫЕ СОБЫТИЯ И СКИДКА НА ПОДПИСКУ</h2>
+					<form action="" class="subscribe-form">
+						<input type="email" required name="subscriptionEmail" id="subscriptionEmail" placeholder="Введите ваш e-mail">
+						<button type="submit">ПОДПИСАТЬСЯ <i class="fa fa-chevron-right"></i></button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="site-footer">
+		<div class="site-size">
+			<div class="footer-top">
+				<a href="#" class="footer-logo"></a>
+				<div class="socials-wrapper">
+					<a href="#" class="vk"></a>
+					<a href="#" class="twitter"></a>
+					<a href="#" class="telegram"></a>
+					<a href="#" class="facebook"></a>
+				</div>
+				<div class="footer-menu">
+					<ul>
+						<li><a href="#">О проекте</a></li>
+						<li><a href="#">Контакты</a></li>
+						<li><a href="#">Служба поддержки</a></li>
+						<li><a href="#">Правовая информация</a></li>
+						<li><a href="#">Библиотека</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">Подписка</a></li>
+						<li><a href="#">Вакансии</a></li>
+						<li><a href="#">Карта сайта</a></li>
+						<li><a href="#">Помощь</a></li>
+						<li><a href="#">Издательствам</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">Активировать купон</a></li>
+						<li><a href="#">Публичная оферта</a></li>
+						<li><a href="#">Правовая информация</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="copyright">
+					<p>© Все права защищены</p>
+					Частичное или полное использование материалов
+					интернет-издания "ПРЕССА" разрешается только при условии
+					соблюдения "Правил использования материалов"
+				</div>
+				<a href="#" class="btn-footer-subscribe">Подписка 8 руб/день</a>
+			</div>
+		</div>
+	</footer>
+
+    <!-- Popup windows -->
+    <div class="popup-overlay"></div>
+
+    <div class="popup-wrapper">
+        <div class="popup-header">
+            <div class="popup-title">Обратная связь</div>
+            <a href="#" class="popup-close" title="Закрыть"></a>
+        </div>
+        <div class="popup-content">
+
+        </div>
+    </div>
+    <!-- /Popup windows -->
+
+	<!-- Mobile menu -->
+	<div class="mob-menu-overflow" id="mobMenuOverflow"></div>
+	<div class="mob-menu" id="mobMenu">
+		<a href="#" class="mob-menu-logo">
+			<img src="/static/i/logo.svg" alt="">
+			<img src="/static/i/title.svg" alt="">
+		</a>
+		<ul>
+			<li>
+				<a href="#">
+					<span class="mob-menu-item-icon-wrapper">
+						<img src="/static/i/mob-icon-journals.svg" alt="">
+					</span>
+					Журналы
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="mob-menu-item-icon-wrapper">
+						<img src="/static/i/mob-icon-papers.svg" alt="">
+					</span>
+					Газеты
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="mob-menu-item-icon-wrapper">
+						<img src="/static/i/mob-icon-books.svg" alt="">
+					</span>
+					Книги
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="mob-menu-item-icon-wrapper">
+						<img src="/static/i/mob-icon-articles.svg" alt="">
+					</span>
+					Статьи
+				</a>
+			</li>
+		</ul>
+		<div class="socials-wrapper">
+			<a href="#" class="vk"></a>
+			<a href="#" class="twitter"></a>
+			<a href="#" class="telegram"></a>
+			<a href="#" class="facebook"></a>
+		</div>
+	</div>
+	<!-- /Mobile menu -->
+
+</body>
+</html>

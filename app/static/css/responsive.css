@@ -1,0 +1,215 @@
+@media screen and (max-width: 1250px) {
+    .site-size {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .newest-slider-slide-price {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 910px) {
+    .site-header {
+        height: auto;
+        padding-bottom: 10px;
+    }
+    .main-menu > li + li {
+        margin-left: 10px;
+    }
+    .main-menu > li > a {
+        font: 400 14px/18px 'Roboto', sans-serif;
+    }
+    .top-controls-wrapper {
+        display: block;
+        float: none;
+        width: 100% !important;
+    }
+    .bag-link {
+        float: right;
+    }
+    .footer-logo {
+        float: none;
+        width: 100%;
+    }
+    .socials-wrapper {
+        float: none;
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        padding-top: 28px;
+    }
+    .site-footer {
+        height: auto;
+    }
+    .footer-top {
+        height: auto;
+        border-bottom: none;
+        margin-top: 0;
+    }
+    .footer-menu {
+        float: none;
+        margin: 0 -16px;
+        padding: 30px 0;
+        border-bottom: solid 1px #aaa;
+    }
+    .footer-menu > ul {
+        float: none;
+    }
+    .footer-menu > ul + ul {
+        margin-left: 0;
+    }
+    .footer-menu > ul > li {
+        text-align: center;
+    }
+    .copyright {
+        float: none;
+        text-align: center;
+        margin: 20px 0;
+        width: auto;
+        font-size: 12px;
+    }
+    .footer-bottom {
+        padding-bottom: 30px;
+    }
+    .btn-footer-subscribe {
+        float: none;
+        text-align: center;
+        margin: 0 44px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .logo {
+        margin: 14px auto 0;
+        float: none;
+    }
+    .title-newest {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .categories-menu > li > a {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .title-twice {
+        font-size: 18px;
+        line-height: 20px;
+        padding: 22px 0;
+    }
+    .tags > li > a {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .mob-slider-control-wrapper.slider-control-wrapper {
+        display: block;
+    }
+    .slider-control-wrapper {
+        display: none;
+    }
+    .row.actual-slider-slide-bottom,
+    .col-md-4.actual-slider-slide-date {
+        text-align: center;
+    }
+    .col-md-4.actual-slider-slide-date {
+        padding-top: 5px;
+    }
+    .subscribe-section h1,
+    .subscribe-section h2 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .search-category-menu {
+        display: none;
+    }
+    .search-wrapper input[type='text'] {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 619px) {
+    .newest-slider-slide-price {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .subscribe {
+        display: none;
+    }
+    .search-wrapper {
+        display: none;
+    }
+    .top-controls-wrapper {
+        display: none;
+    }
+    .row.header-top {
+        display: none;
+    }
+    .mob-search-wrapper {
+        display: block;
+    }
+    .lang-control, .bag-link {
+        margin-top: 12px;
+    }
+    .site-header .site-size {
+        padding: 0 30px;
+    }
+    .top-controls-wrapper-mobile {
+        display: block;
+        padding-top: 10px;
+    }
+    .top-controls-wrapper-mobile .bag-link,
+    .top-controls-wrapper-mobile .lang-control {
+        float: right;
+        margin-right: -10px;
+        position: relative;
+        z-index: 50;
+    }
+    .top-controls-wrapper-mobile .bag-link {
+        margin-right: 14px;
+        margin-left: 0;
+    }
+    .burger-menu-link {
+        display: block;
+        float: left;
+        text-decoration: none;
+        margin-left: -10px;
+        margin-top: 12px;
+        position: relative;
+        z-index: 50;
+    }
+    .burger-menu-link > span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background-color: #000;
+    }
+    .burger-menu-link > span + span {
+        margin-top: 3px;
+    }
+    .subscribe-form {
+        border: none;
+        height: auto;
+        margin: 0 24px;
+        width: auto;
+        padding: 20px 0 37px;
+    }
+    .subscribe-form input[type='text'], .subscribe-form input[type='email'] {
+        width: 100%;
+        border: 1px solid #DDDDDD;
+        border-radius: 5px;
+        float: none;
+        margin: 0;
+        text-align: center;
+        height: 36px;
+    }
+    .subscribe-form button[type='submit'] {
+        float: none;
+        margin: 20px auto 0;
+    }
+}
