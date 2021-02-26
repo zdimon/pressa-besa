@@ -7,3 +7,4 @@ eventlet
 redis
 celery
 python-dotenv
+Pillow

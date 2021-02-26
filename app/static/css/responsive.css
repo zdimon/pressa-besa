@@ -1,0 +1,103 @@
+@media screen and (max-width: 1250px) {
+    .site-size {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+
+}
+
+@media screen and (max-width: 910px) {
+    .site-header {
+        height: auto;
+        padding-bottom: 10px;
+    }
+    .main-menu > li + li {
+        margin-left: 10px;
+    }
+    .main-menu > li > a {
+        font: 400 14px/18px 'Roboto', sans-serif;
+    }
+    .top-controls-wrapper {
+        display: block;
+        float: none;
+        width: 100% !important;
+    }
+    .bag-link {
+        float: right;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .logo {
+        margin: 14px auto 0;
+        float: none;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .search-category-menu {
+        display: none;
+    }
+    .search-wrapper input[type='text'] {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .subscribe {
+        display: none;
+    }
+    .search-wrapper {
+        display: none;
+    }
+    .top-controls-wrapper {
+        display: none;
+    }
+    .row.header-top {
+        display: none;
+    }
+    .mob-search-wrapper {
+        display: block;
+    }
+    .lang-control, .bag-link {
+        margin-top: 12px;
+    }
+    .site-header .site-size {
+        padding: 0 30px;
+    }
+    .top-controls-wrapper-mobile {
+        display: block;
+        padding-top: 10px;
+    }
+    .top-controls-wrapper-mobile .bag-link,
+    .top-controls-wrapper-mobile .lang-control {
+        float: right;
+        margin-right: -10px;
+        position: relative;
+        z-index: 50;
+    }
+    .top-controls-wrapper-mobile .bag-link {
+        margin-right: 14px;
+        margin-left: 0;
+    }
+    .burger-menu-link {
+        display: block;
+        float: left;
+        text-decoration: none;
+        margin-left: -10px;
+        margin-top: 12px;
+        position: relative;
+        z-index: 50;
+    }
+    .burger-menu-link > span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background-color: #000;
+    }
+    .burger-menu-link > span + span {
+        margin-top: 3px;
+    }
+}

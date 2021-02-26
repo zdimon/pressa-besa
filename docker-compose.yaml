@@ -40,6 +40,21 @@ services:
         networks: 
             - webrtc_network
 
+    pressa-nginx-server:
+        build: 
+            context: .
+            dockerfile: Dockerfile.nginx
+            args:
+                - NGINX_PORT=80
+        container_name: pressa-nginx-server
+        # restart: always
+        ports:
+            - 80:80
+        depends_on:
+            - pressa-django
+        networks: 
+            - webrtc_network
+
 networks:
     webrtc_network:
         driver: bridge
