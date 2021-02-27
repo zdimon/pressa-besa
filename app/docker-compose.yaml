@@ -1,9 +1,9 @@
 version: '3.5'
 services: 
-    pressa-django:
+    pressa-djangoo:
         build: .
         working_dir: /app
-        container_name: pressa-django
+        container_name: pressa-djangoo
         command: ./manage.py runserver 0.0.0.0:8000
         ports:
             - 8000:8000
@@ -53,7 +53,7 @@ services:
         volumes:
             - .:/app
         depends_on:
-            - pressa-django
+            - pressa-djangoo
         networks: 
             - webrtc_network
 

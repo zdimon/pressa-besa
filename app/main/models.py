@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from django.utils.timezone import now
+from django.utils.safestring import mark_safe
 
 class Category(models.Model):
     JOURNAL_TYPE_CHOICES = (
@@ -30,9 +31,22 @@ class Journal(models.Model):
         upload_to='default_journal_cover/%Y/%m/%d/',
         blank=True, null=True)
 
+    def __str__(self):
+        return self.name
+
     @property
     def cover(self):
         return self.default_cover
+
+    def image_url(self):
+        try:
+            return self.default_cover.url
+        except:
+            return 'noimage.png'
+
+    @property
+    def image_tag(self):
+        return mark_safe(f'<img src="{self.image_url()}"  />')
 
 
 class Issue(models.Model):
@@ -45,6 +59,9 @@ class Issue(models.Model):
 
     release_date = models.DateField(verbose_name=_(u'дата выхода выпуска'),
                                     default=now, db_index=True)
+
+    def __str__(self):
+        return self.name
 
 
 class IssuePage(models.Model):
@@ -64,3 +81,13 @@ class IssuePage(models.Model):
         verbose_name=_('файл страницы увеличенный'),
         upload_to='high',
         blank=True, null=True)
+
+    def image_url(self):
+        try:
+            return self.file_low.url
+        except:
+            return 'noimage.png'
+
+    @property
+    def image_tag(self):
+        return mark_safe(f'<img src="{self.image_url()}"  />')
