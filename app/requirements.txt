@@ -8,3 +8,5 @@ redis
 celery
 python-dotenv
 Pillow
+djangorestframework
+drf-yasg
