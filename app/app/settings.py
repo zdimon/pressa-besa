@@ -115,15 +115,16 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
 
 from dotenv import load_dotenv
 load_dotenv()
 
-REDIS_HOST = os.getenv('REDIS_HOST', 'localhost')
+REDIS_HOST = os.getenv('REDIS_HOST', 'pressa-redis-server')
 REDIS_PORT = os.getenv('REDIS_PORT', '6379')
+MEDIA_ROOT = os.getenv('MEDIA_ROOT', "/home/zdimon/Desktop/pressa-besa/media")
 
 CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + str(REDIS_PORT)
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
