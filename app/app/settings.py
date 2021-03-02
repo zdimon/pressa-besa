@@ -31,6 +31,9 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'account',
     'social_django',
+    'article',
+    'journal',
+    'catalog'
 ]
 
 MIDDLEWARE = [
@@ -130,8 +133,8 @@ CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + str(REDIS_PORT)
 MEDIA_URL = '/media/'
 
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'login/redirect'
-LOGOUT_REDIRECT_URL = 'logout/redirect'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
 AUTHENTICATION_BACKENDS = (

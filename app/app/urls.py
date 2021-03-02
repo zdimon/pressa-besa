@@ -6,7 +6,7 @@ from main.views import index
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
-from account.views import LoginView, RegistrationView
+from account.views import LoginView, RegistrationView, logout_view
 
 schema_view = get_schema_view(
    openapi.Info(title="Pressa API",
@@ -37,7 +37,7 @@ urlpatterns = [
     path('doc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
     path('', include('social_django.urls', namespace='social')),
-    # path('logout/', logout, {'next_page': settings.LOGOUT_REDIRECT_URL},name='logout'),
+    path('logout/', logout_view, name="logout"),
 
     path('admin/', admin.site.urls),
 ]

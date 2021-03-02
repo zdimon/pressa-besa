@@ -69,7 +69,7 @@
 					<div class="col-md-3 top-controls-wrapper">
 					{% if user.is_authenticated %}
 						<p>Привет {{ user.username }}!</p>
-						<a class="btn btn-primary" href="">Выход</a>
+						<a class="btn btn-primary" href="{% url 'logout' %}">Выход</a>
 						{% else %}
 						<a class="btn btn-primary" href="{% url 'social:begin' 'google-oauth2' %}">
 							Вход

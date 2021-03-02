@@ -9,11 +9,13 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 
 
-# Create your views here.
-
-
+def logout_view(request):
+    logout(request)
+    return redirect('/')
 
 class LoginView(APIView):
     '''
