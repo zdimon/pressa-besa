@@ -2,4 +2,6 @@ python3 -m venv venv
 . ./venv/bin/activate
 pip3 install -r requirements.txt
 ./manage.py migrate
+./manage.py load_users
 ./manage.py load_journals
+./manage.py load_articles

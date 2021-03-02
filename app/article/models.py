@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-
+from django.utils.safestring import mark_safe
 
 class ArticleCategory(models.Model):
     name = models.CharField(verbose_name=_(u'название'), max_length=150)
@@ -17,6 +17,10 @@ class Article(models.Model):
     tags = models.TextField(verbose_name=_(u'теги'))
     etags = models.ManyToManyField('catalog.Tag',verbose_name=_(u'Теги статьи'))
     author = models.CharField(verbose_name=_(u'автор'), max_length=250, blank=True, null=True)
+    cover = models.ImageField(
+        verbose_name=_('обложка cтатьи'),
+        upload_to='article_cover/%Y/%m/%d/',
+        blank=True, null=True)
     issue = models.ForeignKey('journal.Issue',
                               verbose_name=_(u'выпуск издания'),
                               on_delete=models.CASCADE)
@@ -35,3 +39,30 @@ class Article(models.Model):
 
     created_at = models.DateField(auto_now_add=True, blank=True, null=True)
 
+    def cover_url(self):
+        try:
+            return self.cover.url
+        except:
+            return 'noimage.png'
+
+    @property
+    def cover_tag(self):
+        return mark_safe(f'<img width="200" src="{self.cover_url()}"  />')
+
+class ArticleCoverSetting(models.Model):
+    journal = models.ForeignKey('journal.Journal',
+                              verbose_name=_(u'издание'),
+                              on_delete=models.CASCADE)
+    title_x = models.SmallIntegerField(verbose_name=_(u'Заголовок x'),
+                                   default=0)
+    title_y = models.SmallIntegerField(verbose_name=_(u'Заголовок y'),
+                                   default=0)
+    number_x = models.SmallIntegerField(verbose_name=_(u'Выпуск x'),
+                                   default=0)
+    number_y = models.SmallIntegerField(verbose_name=_(u'Выпуск y'),
+                                   default=0)
+    category_x = models.SmallIntegerField(verbose_name=_(u'Категория x'),
+                                   default=0)
+    category_y = models.SmallIntegerField(verbose_name=_(u'Категория y'),
+                                   default=0)
+            
