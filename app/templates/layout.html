@@ -67,6 +67,14 @@
 						</ul>
 					</div>
 					<div class="col-md-3 top-controls-wrapper">
+					{% if user.is_authenticated %}
+						<p>Привет {{ user.username }}!</p>
+						<a class="btn btn-primary" href="">Выход</a>
+						{% else %}
+						<a class="btn btn-primary" href="{% url 'social:begin' 'google-oauth2' %}">
+							Вход
+						</a>
+					{% endif %}
 						<a href="#" class="user-link">Пользователь</a>
 						<a href="#" class="bag-link"></a>
 						<div class="lang-control">

@@ -35,6 +35,10 @@ urlpatterns = [
     path('api', schema_view.with_ui('swagger', cache_timeout=0), 
     name='schema-swagger-ui'),
     path('doc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+
+    path('', include('social_django.urls', namespace='social')),
+    # path('logout/', logout, {'next_page': settings.LOGOUT_REDIRECT_URL},name='logout'),
+
     path('admin/', admin.site.urls),
 ]
 
