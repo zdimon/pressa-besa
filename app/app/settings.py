@@ -29,7 +29,8 @@ INSTALLED_APPS = [
     'drf_yasg',
     'rest_framework',
     'rest_framework.authtoken',
-    'account'
+    'account',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -123,8 +124,14 @@ load_dotenv()
 REDIS_HOST = os.getenv('REDIS_HOST', 'pressa-redis-server')
 REDIS_PORT = os.getenv('REDIS_PORT', '6379')
 MEDIA_ROOT = os.getenv('MEDIA_ROOT', "/home/zdimon/Desktop/pressa-besa/media")
-
+GOOGLE_AUTH_ID = os.getenv('GOOGLE_AUTH_ID', "...")
+GOOGLE_AUTH_SECRET = os.getenv('GOOGLE_AUTH_SECRET', "...")
 CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + str(REDIS_PORT)
 
 MEDIA_URL = '/media/'
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
 

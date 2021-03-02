@@ -12,9 +12,11 @@ class JournalAdmin(admin.ModelAdmin):
     search_fields = ['name']
     list_filter = ['category']
 
+
 @admin.register(Issue)
 class IssueAdmin(admin.ModelAdmin):
     list_display = ['name', 'journal', 'release_date']
+
 
 @admin.register(IssuePage)
 class IssuePageAdmin(admin.ModelAdmin):
