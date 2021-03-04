@@ -67,6 +67,7 @@
 						</ul>
 					</div>
 					<div class="col-md-3 top-controls-wrapper">
+						<div id="loginForm"></div>
 					{% if user.is_authenticated %}
 						<p>Привет {{ user.username }}!</p>
 						<a class="btn btn-primary" href="{% url 'logout' %}">Выход</a>
@@ -684,6 +685,7 @@
         const socket = io('http://localhost:5001', {transports:['websocket']}); 
     })
    </script>
-
+   <div id="root">--------------------------------</div>
+   <script src="/static/js/app/bundle.js"></script>
 </body>
 </html>
