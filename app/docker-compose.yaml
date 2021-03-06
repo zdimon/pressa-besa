@@ -63,6 +63,8 @@ services:
             dockerfile: Dockerfile
         container_name: pressa-frontend
         command: nodemon
+        volumes:
+            - .:/app
         networks: 
             - pressa_network
 networks:
