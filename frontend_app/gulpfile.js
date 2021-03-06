@@ -22,6 +22,6 @@ gulp.task('default', (done) => {
     .pipe(source('bundle.js'))
     // .pipe(buffer())
     // .pipe(uglify())
-    .pipe(gulp.dest("../app/static/js/app"));
+    .pipe(gulp.dest("/static/js/app"));
 
 })

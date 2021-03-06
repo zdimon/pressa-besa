@@ -11,7 +11,7 @@ function LoginForm() {
     <div className="App">
         <input type="text" name="username" />
         <input type="text" name="password" />
-        <button onClick={ () => login() }> Login!!</button>
+        <button onClick={ () => login() }>Login</button>
     </div>
   );
 }
