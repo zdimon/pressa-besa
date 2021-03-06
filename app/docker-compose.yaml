@@ -10,7 +10,7 @@ services:
         volumes:
             - .:/app
         networks: 
-            - webrtc_network
+            - pressa_network
 
     pressa-socket-server:
         build: .
@@ -22,7 +22,7 @@ services:
         volumes:
             - .:/app
         networks: 
-            - webrtc_network
+            - pressa_network
 
     pressa-celery-worker:
         build: .
@@ -32,13 +32,13 @@ services:
         volumes:
             - .:/app
         networks: 
-            - webrtc_network
+            - pressa_network
 
     pressa-redis-server:
         image: "redis:alpine"
         container_name: pressa-redis-server
         networks: 
-            - webrtc_network
+            - pressa_network
 
     pressa-nginx-server:
         build: 
@@ -55,8 +55,16 @@ services:
         depends_on:
             - pressa-django
         networks: 
-            - webrtc_network
+            - pressa_network
 
+    pressa-frontend:
+        build: 
+            context: ../frontend_app
+            dockerfile: Dockerfile
+        container_name: pressa-frontend
+        command: nodemon
+        networks: 
+            - pressa_network
 networks:
-    webrtc_network:
+    pressa_network:
         driver: bridge
