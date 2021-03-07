@@ -2,7 +2,7 @@
 
 ## Установка
 
-    git cone git@github.com:zdimon/pressa-besa.git
+    git clone git@github.com:zdimon/pressa-besa.git
     cd pressa-besa/app
     ./bin/install
 
