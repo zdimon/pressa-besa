@@ -59,12 +59,12 @@ services:
 
     pressa-frontend:
         build: 
-            context: ../front
+            context: ../front_app
             dockerfile: Dockerfile
         container_name: pressa-frontend
         user: ${CURRENT_UID}
         volumes:
-            - ../front:/app
+            - ../front_app:/app
             - ./static:/static
             - /app/node_modules
         command: npm run build
