@@ -59,14 +59,15 @@ services:
 
     pressa-frontend:
         build: 
-            context: ../frontend_app
+            context: ../front
             dockerfile: Dockerfile
         container_name: pressa-frontend
         user: ${CURRENT_UID}
         volumes:
-            - ../frontend_app:/app
+            - ../front:/app
             - ./static:/static
-        command: ./node_modules/nodemon/bin/nodemon.js ./node_modules/gulp/bin/gulp.js -e tsx
+            - /app/node_modules
+        command: npm run build
         #command: ls static
         networks: 
             - pressa_network

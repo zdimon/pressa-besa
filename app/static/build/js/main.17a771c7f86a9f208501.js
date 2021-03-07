@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{12:function(e,o,r){"use strict";r.r(o);var n=r(0),t=r.n(n),l=r(1),s=r(3),d=r.n(s),a=(r(9),r(4)),c=r.n(a),i=e=>{var{title:o}=e;return t()("div",{className:c.a["hello-world"]},void 0,o)},p=t()(i,{title:"444"});class w extends l.Component{constructor(e){super(e),this.state={}}render(){return p}}var u=w;d.a.render(t()(u,{}),document.getElementById("app"))},4:function(e,o,r){e.exports={"hello-world":"hello-world___3N-OU",helloWorld:"hello-world___3N-OU"}}},[[12,1,2]]]);
+//# sourceMappingURL=main.17a771c7f86a9f208501.js.map

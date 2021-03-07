@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { PrimaryButton } from 'office-ui-fabric-react';
+import { SharedColors } from '@fluentui/theme';
 
 function LoginForm() {
 
@@ -11,7 +12,7 @@ function LoginForm() {
     <div className="App">
         <input type="text" name="username" />
         <input type="text" name="password" />
-        <button onClick={ () => login() }>Login</button>
+        <PrimaryButton style={{ backgroundColor: '#FE0000' }} onClick={ () => login() } text="Primary" />
     </div>
   );
 }
