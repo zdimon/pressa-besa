@@ -1,0 +1,76 @@
+version: '3.5'
+services: 
+    pressa-django:
+        build: .
+        working_dir: /app
+        container_name: pressa-django
+        command: ./manage.py runserver 0.0.0.0:8000
+        # ports:
+        #     - 8000:8000
+        volumes:
+            - .:/app
+        networks: 
+            - pressa_network
+
+    pressa-socket-server:
+        build: .
+        working_dir: /app
+        container_name: pressa-socket-server
+        command: ./manage.py socket_server
+        ports:
+            - 5001:5001
+        volumes:
+            - .:/app
+        networks: 
+            - pressa_network
+
+    pressa-celery-worker:
+        build: .
+        working_dir: /app
+        container_name: pressa-celery-worker
+        command: celery -A app worker -l info
+        volumes:
+            - .:/app
+        networks: 
+            - pressa_network
+
+    pressa-redis-server:
+        image: "redis:alpine"
+        container_name: pressa-redis-server
+        networks: 
+            - pressa_network
+
+    pressa-nginx-server:
+        build: 
+            context: .
+            dockerfile: Dockerfile.nginx
+            args:
+                - NGINX_PORT=80
+        container_name: pressa-nginx-server
+        # restart: always
+        ports:
+            - 80:80
+        volumes:
+            - ../media:/media
+        depends_on:
+            - pressa-django
+        networks: 
+            - pressa_network
+
+    pressa-frontend:
+        build: 
+            context: ../frontend
+            dockerfile: Dockerfile
+        container_name: pressa-frontend
+        user: ${CURRENT_UID}
+        volumes:
+            - ../frontend:/app
+            - ./static:/app/static
+            - /app/node_modules
+        command: npm run build
+        #command: ls static
+        networks: 
+            - pressa_network
+networks:
+    pressa_network:
+        driver: bridge
