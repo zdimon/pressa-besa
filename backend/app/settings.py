@@ -126,7 +126,7 @@ load_dotenv()
 
 REDIS_HOST = os.getenv('REDIS_HOST', 'pressa-redis-server')
 REDIS_PORT = os.getenv('REDIS_PORT', '6379')
-MEDIA_ROOT = os.getenv('MEDIA_ROOT', "/home/zdimon/Desktop/pressa-besa/media")
+MEDIA_ROOT = os.getenv('MEDIA_ROOT', os.path.join(BASE_DIR,'..','media'))
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY', "...")
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET', "...")
 CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + str(REDIS_PORT)

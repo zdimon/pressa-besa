@@ -2,8 +2,11 @@
 
 ## Установка
 
-    cd app
+    git clone git@github.com:zdimon/pressa-besa.git
+    cd pressa-besa/app
     ./bin/install
+
+Пройдет немало времени и займет около 6 ГБ в папке media!
 
 ## Переименовываем app/.env_template в .env и настраиваем переменные окружения
 
@@ -11,8 +14,3 @@
 
     ./bin/up
 
-## Запуск вручную
-
-    ./bin/run_django
-    ./bin/run_celery
-    ./bin/run_socket
