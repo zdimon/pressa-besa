@@ -1,9 +1,12 @@
 import * as React from "react";
 import { render } from "react-dom";
-import App from "./components/App";
-import LoginForm from "./components/LoginForm";
-import { loadTheme } from '@fluentui/react';
+import UserMenu from './components/account/UserMenu';
 
+// theme
+import { loadTheme } from '@fluentui/react';
+import { initializeIcons } from '@uifabric/icons';
+import 'office-ui-fabric-react/dist/css/fabric.css';
+initializeIcons();
 loadTheme({
     semanticColors: {
         primaryButtonBackgroundHovered: 'silver',
@@ -13,11 +16,8 @@ loadTheme({
     palette: {
       themePrimary: '#FE0000'
     }});
+//////////////////
 
-const rootEl = document.getElementById("root");
+const loginEl = document.getElementById("userMenu");
 
-render(<App />, rootEl);
-
-const loginEl = document.getElementById("loginForm");
-
-render(<LoginForm />, loginEl);
+render(<UserMenu />, loginEl);
