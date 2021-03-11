@@ -12,6 +12,11 @@
 
 ## Переименовываем app/.env_template в .env и настраиваем переменные окружения
 
+## Настройка окружения фронтенда
+
+    cp frontend/src/config.tsx.template frontend/src/config.tsx
+
+
 ## Запускаем через докер
 
     ./bin/up
