@@ -1,0 +1,4 @@
+# ssh pl@78.46.160.16 'cd course-resourse; git pull; cd ../pl;git pull; . ./venv/bin/activate; cd pl;./manage.py clear_course; ./manage.py load_course'
+ssh pressa@95.163.104.122 'cd pressa-besa; git pull'
+ssh pressa@95.163.104.122 'docker exec -it  pressa-frontend npm install'
+
