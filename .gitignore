@@ -4,3 +4,4 @@ __pycache__
 media
 backend/static/js/app
 backend/.env
+backend/static/build
