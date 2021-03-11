@@ -67,7 +67,7 @@ services:
             - ../frontend:/app
             - ./static:/app/static
             - /app/node_modules
-        command: 'npm install; npm run build'
+        command: bash entrypoint.sh
         #command: ls static
         networks: 
             - pressa_network
