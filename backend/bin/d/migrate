@@ -1,0 +1,3 @@
+docker exec -it  pressa-django ./manage.py makemigrations
+docker exec -it  pressa-django ./manage.py migrate
+

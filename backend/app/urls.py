@@ -7,6 +7,8 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
 from account.views import LoginView, RegistrationView, logout_view
+from rest_framework.authtoken.views import ObtainAuthToken
+
 
 schema_view = get_schema_view(
    openapi.Info(title="Pressa API",
@@ -40,10 +42,12 @@ urlpatterns = [
     path('logout/', logout_view, name="logout"),
 
     path('admin/', admin.site.urls),
+    path("api-token-auth/", ObtainAuthToken.as_view()),
 ]
 
 
 from django.conf import settings
 from django.conf.urls.static import static
 
-urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns = urlpatterns + static(settings.MEDIA_URL, 
+                                   document_root=settings.MEDIA_ROOT)

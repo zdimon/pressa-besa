@@ -5,8 +5,8 @@ services:
         working_dir: /app
         container_name: pressa-django
         command: ./manage.py runserver 0.0.0.0:8000
-        # ports:
-        #     - 8000:8000
+        ports:
+            - 8000:8000
         volumes:
             - .:/app
         networks: 
@@ -52,8 +52,10 @@ services:
             - 80:80
         volumes:
             - ../media:/media
+            - ../admin/build:/admin
         depends_on:
             - pressa-django
+            - pressa-admin
         networks: 
             - pressa_network
 
@@ -71,6 +73,24 @@ services:
         command: npm run build
         networks: 
             - pressa_network
+
+    pressa-admin:
+        build: 
+            context: ../admin
+            dockerfile: Dockerfile
+        container_name: pressa-admin
+        volumes:
+            - ../admin:/app
+            - ../admin/provider:/provider
+            - /app/node_modules
+        #command: npm run build
+        command: npm run start
+        ports:
+            - 3000:3000
+        networks: 
+            - pressa_network
+
+
 networks:
     pressa_network:
         driver: bridge
