@@ -5,7 +5,7 @@ import UserMenu from './components/account/UserMenu';
 // theme
 import { loadTheme } from '@fluentui/react';
 import { initializeIcons } from '@uifabric/icons';
-import 'office-ui-fabric-react/dist/css/fabric.css';
+
 initializeIcons();
 loadTheme({
     semanticColors: {

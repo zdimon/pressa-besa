@@ -62,13 +62,13 @@ services:
             context: ../frontend
             dockerfile: Dockerfile
         container_name: pressa-frontend
-        # user: ${CURRENT_UID}
+        user: ${CURRENT_UID}
         volumes:
             - ../frontend:/app
             - ./static:/app/static
             - /app/node_modules
-        command: bash entrypoint.sh
-        #command: ls static
+        #command: bash entrypoint.sh
+        command: npm run build
         networks: 
             - pressa_network
 networks:
