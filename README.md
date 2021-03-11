@@ -2,6 +2,8 @@
 
 ## Установка
 
+    sudo apt-get install python3-venv
+
     git clone git@github.com:zdimon/pressa-besa.git
     cd pressa-besa/app
     ./bin/install
@@ -13,4 +15,6 @@
 ## Запускаем через докер
 
     ./bin/up
+
+Откроет 80 порт с nginx.
 
