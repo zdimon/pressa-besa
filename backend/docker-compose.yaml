@@ -62,7 +62,7 @@ services:
             context: ../frontend
             dockerfile: Dockerfile
         container_name: pressa-frontend
-        user: ${CURRENT_UID}
+        # user: ${CURRENT_UID}
         volumes:
             - ../frontend:/app
             - ./static:/app/static

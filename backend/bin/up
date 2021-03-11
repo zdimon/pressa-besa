@@ -1,2 +1,4 @@
 docker-compose down
+export UID=$(id -u)
+export GID=$(id -g)
 CURRENT_UID=$(id -u):$(id -g) docker-compose up --build --remove-orphans

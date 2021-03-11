@@ -31,7 +31,7 @@ export default function UserMenu() {
           <img src="/static/images/google.png" />
         </a>
         <Panel
-          headerText="Вход на сайт!"
+          headerText="Вход на сайт!!!"
           isOpen={isOpen}
           onDismiss={dismissPanel}
           closeButtonAriaLabel="Close"
