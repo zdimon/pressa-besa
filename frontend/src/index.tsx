@@ -4,9 +4,9 @@ import UserMenu from './components/account/UserMenu';
 
 // theme
 import { loadTheme } from '@fluentui/react';
-import { initializeIcons } from '@uifabric/icons';
+// import { initializeIcons } from '@uifabric/icons';
 
-initializeIcons();
+// initializeIcons();
 loadTheme({
     semanticColors: {
         primaryButtonBackgroundHovered: 'silver',
