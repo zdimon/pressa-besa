@@ -84,7 +84,7 @@ services:
             - ../admin/provider:/provider
             - /app/node_modules
         #command: npm run build
-        command: npm run start
+        command: yarn start
         ports:
             - 3000:3000
         networks: 

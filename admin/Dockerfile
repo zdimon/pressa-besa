@@ -6,5 +6,4 @@ RUN mkdir /app
 COPY ./provider /app/provider
 WORKDIR /app
 COPY package.json /app/package.json
-RUN npm install --no-package-lock
-RUN npm cache clean --force
+RUN yarn install
