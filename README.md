@@ -2,8 +2,6 @@
 
 ## Установка
 
-    sudo apt-get install python3-venv
-
     git clone git@github.com:zdimon/pressa-besa.git
     cd pressa-besa/app
     ./bin/install
@@ -12,14 +10,7 @@
 
 ## Переименовываем app/.env_template в .env и настраиваем переменные окружения
 
-## Настройка окружения фронтенда
-
-    cp frontend/src/config.tsx.template frontend/src/config.tsx
-
-
 ## Запускаем через докер
 
     ./bin/up
-
-Откроет 80 порт с nginx.
 

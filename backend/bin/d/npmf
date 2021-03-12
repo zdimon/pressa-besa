@@ -1,2 +1,0 @@
-docker exec -it  pressa-frontend npm install
-

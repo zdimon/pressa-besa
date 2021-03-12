@@ -1,6 +1,0 @@
-docker exec -it  pressa-django ./manage.py load_users
-docker exec -it  pressa-django ./manage.py load_journals
-docker exec -it  pressa-django ./manage.py load_articles
-
-
-
