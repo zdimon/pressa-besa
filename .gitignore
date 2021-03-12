@@ -3,3 +3,4 @@ venv
 __pycache__
 media
 app/static/js/app
+backend/static/build
