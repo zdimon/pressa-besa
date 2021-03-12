@@ -1,3 +1,4 @@
+sudo service nginx stop
 docker-compose down
 export UID=$(id -u)
 export GID=$(id -g)

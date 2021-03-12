@@ -1,61 +1,78 @@
 import * as React from 'react';
-import { PrimaryButton } from 'office-ui-fabric-react';
-import { Panel } from 'office-ui-fabric-react/lib/Panel';
-import { useBoolean } from '@uifabric/react-hooks';
-import { TextField } from 'office-ui-fabric-react/lib/TextField';
-import { Request } from '../../Request';
+import Button from '@material-ui/core/Button';
+import Drawer from '@material-ui/core/Drawer';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import RegForm from './RegForm';
+import LoginForm from './LoginForm';
 
 
 export default function UserMenu() {
-  const [isOpen, { setTrue: openPanel, setFalse: dismissPanel }] = useBoolean(false);
-  const req = new Request();
-  const login = () => {
-    req.post('account/login',{email: 'fdsfs', password: 'dsfsd'})
-    .then((payload) => {
-      console.log(payload);
-    });
-    
+
+  const [token, setToken] = React.useState(window.localStorage.getItem('token'));
+  const [value, setValue] = React.useState(0);
+  const [showPanel, setShowPanel] = React.useState(false);
+
+  const logout = () => {
+    window.localStorage.removeItem('token');
+    setToken(null);
+  }
+
+  const doLogin = (token) => {
+    setShowPanel(false);
+    setToken(token);
+    window.localStorage.setItem('token',token);
   }
     
-  if (window.localStorage.getItem('token')) {
+  if (token) {
     return (
-      <div className="loginForm">
-        <PrimaryButton onClick={ () => login() } text="Выход" />
-      </div>
+      <>
+        <a 
+        href="#" 
+        onClick={ () => {logout()}}
+        className="user-link">
+          Выход
+        </a>
+      </>
     );
   } else {
+    const handleChange = (event, newValue) => {
+      setValue(newValue);
+      console.log(newValue);
+    };
     return (
-      <div className="loginForm">
-        <PrimaryButton onClick={openPanel} text="Вход" />
-        <a className="btn btn-primary" href="/login/google-oauth2/">
-          <img src="/static/images/google.png" />
+      <>
+        <a 
+        href="#" 
+        onClick={ () => {setShowPanel(true)}}  
+        className="user-link">
+          Вход
         </a>
-        <Panel
-          headerText="Вход на сайт."
-          isOpen={isOpen}
-          onDismiss={dismissPanel}
-          closeButtonAriaLabel="Close"
-        >
 
+        
+       
+        <Drawer anchor="right" open={showPanel} onClose={() => {
+            setShowPanel(false)
+        }}>
 
-          <div className="ms-Grid" dir="ltr">
-            <div className="ms-Grid-row">
-              <TextField label="Логин" required />
-            </div>
-            <div className="ms-Grid-row">
-              <TextField label="Пароль" required />
-            </div>
-            <div className="ms-Grid-row">
-              <PrimaryButton onClick={ () => login() } text="Вход" />
-              <a className="btn btn-primary" href="/login/google-oauth2/">
-                Вход через гугл
-              </a>
+          <Tabs 
+          value={value}
+          onChange={handleChange} 
+          >
+            <Tab label="Вход"  />
+            <Tab label="Регистрация" />
+          </Tabs>
 
-            </div>
+          <div hidden={value !== 1} >
+            <RegForm  />
           </div>
-      </Panel>
 
-      </div>
+          <div hidden={value !== 0} >
+            <LoginForm clickCallback={doLogin} />
+          </div>
+
+        </Drawer>
+      </>
     )
   }
 
