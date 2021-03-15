@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.safestring import mark_safe
+from django.conf import settings
+
 
 class ArticleCategory(models.Model):
     name = models.CharField(verbose_name=_(u'название'), max_length=150)
@@ -39,9 +41,10 @@ class Article(models.Model):
 
     created_at = models.DateField(auto_now_add=True, blank=True, null=True)
 
+    
     def cover_url(self):
         try:
-            return self.cover.url
+            return f'{settings.BACKEND_URL}{self.cover.url}'
         except:
             return 'noimage.png'
 

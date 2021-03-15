@@ -31,9 +31,14 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('', index),
-    path('v1/', include([
+    
+    path("v1/api-token-auth/", ObtainAuthToken.as_view()),
+    
+    path('v1/api/', include([
         path('account/', include('account.urls')),
-        path('journal/', include('journal.urls'))
+        path('', include('journal.urls')),
+        path('', include('article.urls'))
+       
     ])),
     path('api', schema_view.with_ui('swagger', cache_timeout=0), 
     name='schema-swagger-ui'),
@@ -43,7 +48,7 @@ urlpatterns = [
     path('logout/', logout_view, name="logout"),
 
     path('admin/', admin.site.urls),
-    path("api-token-auth/", ObtainAuthToken.as_view()),
+   
 ]
 
 

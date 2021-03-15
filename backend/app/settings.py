@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'rest_framework',
     'rest_framework.authtoken',
-    #'django_filters',
+    'django_filters',
     'account',
     'social_django',
     'article',
@@ -125,6 +125,7 @@ MEDIA_URL = '/media/'
 from dotenv import load_dotenv
 load_dotenv()
 
+BACKEND_URL = os.getenv('BACKEND_URL', 'http://localhost')
 REDIS_HOST = os.getenv('REDIS_HOST', 'pressa-redis-server')
 REDIS_PORT = os.getenv('REDIS_PORT', '6379')
 MEDIA_ROOT = os.getenv('MEDIA_ROOT', os.path.join(BASE_DIR,'..','media'))
@@ -149,6 +150,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         # SessionAuthentication is intentionally removed, see:
         # https://github.com/encode/django-rest-framework/issues/6104'
+        # 'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ],
     'DEFAULT_FILTER_BACKENDS': [
@@ -158,5 +160,7 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    ]
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'app.pagination.PageNumberWithPageSizePagination',
+    'PAGE_SIZE': 10
 }

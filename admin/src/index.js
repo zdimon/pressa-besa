@@ -10,9 +10,10 @@ import CustomRouteNoLayout from './customRouteNoLayout';
 import drfProvider, { tokenAuthProvider, fetchJsonWithAuthToken } from 'ra-data-django-rest-framework';
 import i18nProvider from './i18nProvider';
 import Layout from './Layout';
-import posts from './posts';
+import article from './article';
 import users from './users';
 import tags from './tags';
+import journal from './journal';
 
 const authProvider = tokenAuthProvider()
 
@@ -25,23 +26,11 @@ render(
         i18nProvider={i18nProvider}
         title="Example Admin"
         layout={Layout}
-        customRoutes={[
-            <Route
-                exact
-                path="/custom"
-                component={props => <CustomRouteNoLayout {...props} />}
-                noLayout
-            />,
-            <Route
-                exact
-                path="/custom2"
-                component={props => <CustomRouteLayout {...props} />}
-            />,
-        ]}
+        
     >
         {permissions => [
-            <Resource name="posts" {...posts} />,
-            <Resource name="comments" {...comments} />,
+            <Resource name="journal" {...journal} />,
+            <Resource name="article" {...article} />,
             permissions ? <Resource name="users" {...users} /> : null,
             <Resource name="tags" {...tags} />,
         ]}

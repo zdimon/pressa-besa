@@ -3,6 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from django.utils.timezone import now
 from django.utils.safestring import mark_safe
+from django.conf import settings
 
 class Journal(models.Model):
 
@@ -24,7 +25,7 @@ class Journal(models.Model):
 
     def image_url(self):
         try:
-            return self.default_cover.url
+            return f'{settings.BACKEND_URL}{self.default_cover.url}'
         except:
             return 'noimage.png'
 

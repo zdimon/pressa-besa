@@ -1,7 +1,7 @@
-from .viewsets.journal import JournalViewSet
+from .viewsets.article import ArticleViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'journal', JournalViewSet)
+router.register(r'article', ArticleViewSet)
 
 urlpatterns = router.urls

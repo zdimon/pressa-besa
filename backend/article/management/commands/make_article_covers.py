@@ -6,6 +6,6 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         print('Making article covers')
-        for i in Article.objects.all().order_by('-id'):
+        for i in Article.objects.all().order_by('id'):
             make_article_cover_task(i.id)
             # return

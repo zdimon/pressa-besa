@@ -27,7 +27,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "http://pressa-django:8000",
+  "proxy": "http://pressa-django:8000/v1",
   "browserslist": {
     "production": [
       ">0.2%",

@@ -12,4 +12,5 @@ djangorestframework
 drf-yasg
 flake8
 social-auth-app-django
-django-filter==2.1.0
+django-extensions
+django-filter==2.4.0

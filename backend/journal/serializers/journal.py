@@ -2,12 +2,12 @@ from rest_framework import serializers
 from journal.models import Journal
 
 
-
 class JournalSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Journal
         fields = [
             'id',
-            'name'
+            'name',
+            'image_url'
         ]
