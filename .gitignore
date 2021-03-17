@@ -5,3 +5,4 @@ media
 backend/static/js/app
 backend/.env
 backend/static/build
+node_modules
