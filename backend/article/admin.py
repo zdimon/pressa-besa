@@ -9,4 +9,5 @@ class ArticleAdmin(admin.ModelAdmin):
 @admin.register(ArticleCoverSetting)
 class ArticleCoverSettingAdmin(admin.ModelAdmin):
     list_display = ['journal', 'title_x', 'title_y']
+    search_fields = ['journal__name']
 
