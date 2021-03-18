@@ -6,3 +6,4 @@ rm db.sqlite3
 ./manage.py load_users
 ./manage.py load_journals
 ./manage.py load_articles
+./manage.py load_fonts

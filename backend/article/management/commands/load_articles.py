@@ -12,9 +12,14 @@ class Command(BaseCommand):
         print('Loading articles')
         Article.objects.all().delete()
         ArticleCoverSetting.objects.all().delete()
-        titles = ['Как прожить и не работать',
-                  'Горе от ума и кошелька.',
-                  'Служу советскому союзу.']
+        titles = ['Как прожить и не работать Как прожить и не работать',
+                  'Горе от ума и кошелька. Горе от ума и кошелька.',
+                  'Служу советскому союзу. Служу советскому союзу.']
+
+        subtitles = ['В мире животных В мире животных',
+                     'Исскуство жить В мире животных',
+                     'Как приколоться В мире животных']
+
         for i in Issue.objects.all():
             cnt = 0
             for title in titles:
@@ -22,6 +27,7 @@ class Command(BaseCommand):
                 cnt += 1
                 a = Article()
                 a.title = title
+                a.subtitle = subtitles[cnt-1]
                 a.issue = i
                 a.text = text
                 a.author = 'Митрофан'

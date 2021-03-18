@@ -52,20 +52,78 @@ class Article(models.Model):
     def cover_tag(self):
         return mark_safe(f'<img width="200" src="{self.cover_url()}"  />')
 
+class ArticleFontSetting(models.Model):
+    name = models.CharField(verbose_name=_(u'Имя шрифта'), max_length=150)
+    file = models.FileField(verbose_name=_(u'Файл'), upload_to='fonts')
+
+    def __str__(self):
+        return self.name
+
+
 class ArticleCoverSetting(models.Model):
+
+    COLORS = (
+        ('white', _('Белый')),
+        ('black', _('Черный'))
+    )
+
     journal = models.ForeignKey('journal.Journal',
-                              verbose_name=_(u'издание'),
-                              on_delete=models.CASCADE)
+                                verbose_name=_(u'издание'),
+                                on_delete=models.CASCADE)
     title_x = models.SmallIntegerField(verbose_name=_(u'Заголовок x'),
-                                   default=0)
+                                       default=0)
     title_y = models.SmallIntegerField(verbose_name=_(u'Заголовок y'),
-                                   default=0)
+                                       default=0)
+
+    title_size = models.SmallIntegerField(verbose_name=_(u'Размер заголовка'),
+                                       default=80)
+
+    title_color = models.CharField(verbose_name=_('Цвет заголовка'),
+                                   choices=COLORS,
+                                   default='black',
+                                   max_length=20)
+
     number_x = models.SmallIntegerField(verbose_name=_(u'Выпуск x'),
-                                   default=0)
+                                        default=0)
     number_y = models.SmallIntegerField(verbose_name=_(u'Выпуск y'),
-                                   default=0)
+                                        default=0)
+
+    number_size = models.SmallIntegerField(verbose_name=_(u'Размер номера'),
+                                           default=80)
+    number_color = models.CharField(verbose_name=_('Цвет номера'),
+                                   choices=COLORS,
+                                   default='black',
+                                   max_length=20)
+
     category_x = models.SmallIntegerField(verbose_name=_(u'Категория x'),
-                                   default=0)
+                                          default=0)
     category_y = models.SmallIntegerField(verbose_name=_(u'Категория y'),
-                                   default=0)
-            
+                                          default=0)
+                                   
+    category_size = models.SmallIntegerField(verbose_name=_(u'Размер категории'),
+                                             default=80)
+    category_color = models.CharField(verbose_name=_('Цвет категории'),
+                                   choices=COLORS,
+                                   default='black',
+                                   max_length=20)
+
+    font = models.ForeignKey(ArticleFontSetting,
+                             verbose_name=_(u'шрифт'),
+                             null=True,
+                             blank=True,
+                             on_delete=models.SET_NULL)
+
+    cover = models.ImageField(
+        verbose_name=_('обложка'),
+        upload_to='article_template_cover/%Y/%m/%d/',
+        blank=True, null=True)
+
+    def cover_url(self):
+        try:
+            return f'{settings.BACKEND_URL}{self.cover.url}'
+        except:
+            return 'noimage.png'
+
+    @property
+    def cover_tag(self):
+        return mark_safe(f'<img width="200" src="{self.cover_url()}"  />')
