@@ -2,6 +2,5 @@ cd ../frontend
 #sudo rm -f -r node_modules
 #npm install
 npm run builddev
-#./node_modules/nodemon/bin/nodemon.js run builddev -e tsx
 
 

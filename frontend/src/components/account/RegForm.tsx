@@ -3,8 +3,6 @@ import { Request } from '../../Request';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Drawer from '@material-ui/core/Drawer';
 import TextField from '@material-ui/core/TextField';
 
 
@@ -49,13 +47,7 @@ export default function RegForm() {
 
           <ListItem
           style={error ? {} : { display: 'none' }}
-          >
-            <TextField
-              error
-              id="filled-error"
-              label="Ошибка входа!"
-              variant="filled"
-            />
+          > Ошибка входа!
           </ListItem>
 
           <ListItem>
