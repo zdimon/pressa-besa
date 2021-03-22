@@ -1,0 +1,13 @@
+cd ../admin/provider
+sudo rm -f -r node_modules
+npm install
+cd ..
+sudo rm -f -r node_modules
+sudo rm -f -r ../backend/static/build
+npm install
+npm run build
+npm run start
+
+
+
+

@@ -1,0 +1,2 @@
+. ./venv/bin/activate
+celery -A app worker -l info

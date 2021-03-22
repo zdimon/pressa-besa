@@ -1,0 +1,6 @@
+kill $(lsof -t -i:5001)
+. ./venv/bin/activate
+python3 manage.py socket_server
+
+
+

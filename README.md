@@ -21,5 +21,43 @@
 
     ./bin/up
 
-Откроет 80 порт с nginx.
+Откроет 80 порт с nginx по адресу http://localhost.
+
+## Запуск НЕ через докер.
+
+    cd backend
+
+Джанго сервер
+
+    ./bin/c/django
+
+Сокет-сервер
+
+    ./bin/c/socket
+
+Celery
+
+    ./bin/c/celery
+
+Фронтенд (сборка с отслеживанием)
+
+    ./bin/c/frontend
+
+Админ интерфейс (сервер с сборкой и отслеживанием)
+
+    ./bin/c/admin
+
+Для успешного проксирования админки на сервер джаного необходимо добавить сторку в /etc/hosts
+
+    127.0.0.1 pressa-django
+
+Так же в файле backend/.env прописать  
+
+    REDIS_HOST=localhost
+    BACKEND_URL='http://localhost:8000'
+
+
+
+
+
 
