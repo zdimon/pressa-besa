@@ -15,8 +15,9 @@ $(document).ready(function() {
         speed: 300,
         slidesToShow: 5,
         slidesToScroll: 1,
-        prevArrow: $('.newest-slider-prev'),
-        nextArrow: $('.newest-slider-next'),
+        cssEase: 'none',
+        prevArrow: $('.nsp'),
+        nextArrow: $('.nsn'),
         responsive: [
             {
                 breakpoint: 1000,
@@ -56,8 +57,9 @@ $(document).ready(function() {
         speed: 300,
         slidesToShow: 4,
         slidesToScroll: 1,
-        prevArrow: $('.actual-articles-slider-prev'),
-        nextArrow: $('.actual-articles-slider-next'),
+        cssEase: 'none',
+        prevArrow: $('.asp'),
+        nextArrow: $('.asn'),
         responsive: [
             {
                 breakpoint: 767,
@@ -97,8 +99,9 @@ $(document).ready(function() {
         speed: 300,
         slidesToShow: 5,
         slidesToScroll: 1,
-        prevArrow: $('.books-slider-prev'),
-        nextArrow: $('.books-slider-next'),
+        cssEase: 'none',
+        prevArrow: $('.bs-prev'),
+        nextArrow: $('.bs-next'),
         responsive: [
             {
                 breakpoint: 1000,
