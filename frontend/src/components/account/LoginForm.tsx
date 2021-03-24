@@ -7,6 +7,11 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Drawer from '@material-ui/core/Drawer';
 import TextField from '@material-ui/core/TextField';
 
+const AuthLink = {
+  paddingLeft: "10px",
+  paddingTop: "5px"
+}
+
 
 export default function LoginForm({clickCallback}) {
 
@@ -24,6 +29,7 @@ export default function LoginForm({clickCallback}) {
         setError(true);
       } else {
         clickCallback(payload.token);
+        document.location.reload();
       }
     });
   }
@@ -67,7 +73,7 @@ export default function LoginForm({clickCallback}) {
               color="secondary">
                 Войти
             </Button>
-            <a className="btn btn-primary" href="/login/google-oauth2/">
+            <a style={AuthLink} href="/login/google-oauth2/">
               <img src="/static/images/google.png" />
             </a>
           </ListItem>

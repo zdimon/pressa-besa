@@ -4,7 +4,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import RegForm from './RegForm';
 import LoginForm from './LoginForm';
-
+import { config } from '../../config';
 
 export default function UserMenu() {
 
@@ -15,6 +15,7 @@ export default function UserMenu() {
   const logout = () => {
     window.localStorage.removeItem('token');
     setToken(null);
+    window.location.href = `${config.serverDomain}logout/`;
   }
 
   const doLogin = (token) => {
