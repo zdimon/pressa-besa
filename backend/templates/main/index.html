@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if not user.is_authenticated %}
+        {% include 'blocks/landing/main_banner.html' %}
+        {% include 'blocks/landing/market_text.html' %}
+        {% include 'blocks/landing/popular_journals.html' %}
+        {% include 'blocks/landing/market_text_sec.html' %}
+        {% include 'blocks/landing/actual_articles.html' %}
+        {% include 'blocks/landing/udobstvo.html' %}
+        {% include 'blocks/landing/new_issues.html' %}
+        {% include 'blocks/landing/market_text_buttom.html' %}
+    {% endif %}
+
+    {% if user.is_authenticated %}
+       {% include 'blocks/main/new_journals.html' %}
+       {% include 'blocks/main/actual_articles.html' %}
+       {% include 'blocks/main/new_books.html' %}
+       {% include 'blocks/main/subscription.html' %}
+    {% endif %}
+
+{% endblock %}

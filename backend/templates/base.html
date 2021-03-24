@@ -1,0 +1,71 @@
+{% load react %}
+<!DOCTYPE html>
+<html lang="ru-ru" dir="ltr">
+<head>	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Markup - Pressa</title>
+	<meta name="description" lang="ru-ru" content="">
+	<meta name="keywords" lang="ru-ru" content="">
+	<meta name="keywords" lang="en-us" content="">
+	<meta name="author" lang="ru-ru" content="">
+
+    <!-- Responsiveness -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- /Responsiveness -->
+
+    <!-- Browser themes settings -->
+	<meta http-equiv="imagetoolbar" content="no">
+	<!-- saved from url=(0014)about:internet -->
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="address=no">
+    <!-- /Browser themes settings -->
+
+    <!-- CSS -->
+	<link rel="stylesheet" href="/static/css/plugin.css">
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" href="/static/css/responsive.css">
+	<link rel="stylesheet" href="/static/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <!-- /CSS -->
+
+    <!-- JavaScript -->
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script src="/static/js/modernizr.js"></script>
+    <script src="/static/js/jquery-1.11.0.min.js"></script>
+    <script src="/static/js/plugins.js"></script>
+    <script src="/static/js/init.js"></script>
+    <script src="/static/node_modules/socket.io/client-dist/socket.io.min.js"></script>
+    <!-- /JavaScript -->
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<!-- /Fonts -->
+
+</head>
+
+<body>
+
+    <div class="site-wrapper">
+		{% include 'blocks/header.html' %} 
+
+		<div class="site-container" id="siteContainer">
+			<div class="site-size">
+				{% block content %}
+				{% endblock %}
+			</div>
+		</div>
+
+	</div>
+
+	{% include 'blocks/footer.html' %}    
+	{% include 'blocks/mobile_menu.html' %}
+
+	{% react_app %}
+</body>
+</html>

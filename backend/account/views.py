@@ -11,6 +11,7 @@ from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import logout
 from django.shortcuts import redirect
+from django.contrib.auth import login as l
 
 
 def logout_view(request):
@@ -38,6 +39,7 @@ class LoginView(APIView):
             return Response({"status": 1,  "message": "User does not exist!"})
         else:
             token, created = Token.objects.get_or_create(user=user)
+            l(request, user)
             return Response({"status": 0,  "message": "Ok", "token": token.key})
         # try:
         #     user = User.objects.get(username=payload['email'])
