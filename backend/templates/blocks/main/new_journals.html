@@ -26,9 +26,9 @@
         </a>
         <div class="newest-slider-slide-content">
             <a href="#" class="newest-slider-slide-title">{{ journal.name }}</a>
-            <div class="newest-slider-slide-num">№10 12/10/20</div>
+            <div class="newest-slider-slide-num">№{{ journal.last_issue.name }}</div>
             <div class="newest-slider-slide-bottom">
-                <div class="newest-slider-slide-price">250.00₽</div>
+                <div class="newest-slider-slide-price">{{ journal.amount }}₽</div>
             </div>
         </div>
     </div>

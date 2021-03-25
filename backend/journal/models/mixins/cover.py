@@ -10,7 +10,6 @@ opt = ['170-220', '260-340', '520-680', '306-433', '205-282']
 
 def create_dirs(issue):
     path = os.path.join(settings.MEDIA_ROOT, 'covers')
-    print(path)
     path_journal = os.path.join(path, issue.journal.name_slug)
     if not os.path.exists(path_journal):
         os.makedirs(path_journal)

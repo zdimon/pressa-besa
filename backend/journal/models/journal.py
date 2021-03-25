@@ -21,7 +21,9 @@ class Journal(NameSlugMixin, models.Model):
         verbose_name=_(u'отображать в новом?'), default=False)
 
     cover_size = models.CharField(verbose_name=_(u'Размеры обложки'), default='', max_length=10, blank=True, null=True)
-    
+
+    amount = models.DecimalField(_("цена"), max_digits=10, decimal_places=2, default=0.00)
+
     def __str__(self):
         return self.name
 
