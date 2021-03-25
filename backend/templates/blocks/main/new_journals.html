@@ -19,131 +19,20 @@
     </div>
 </div>
 <div class="newest-slider" id="newestSlider">
+    {% for journal in popular_journal %}
     <div class="newest-slider-slide">
-        <a href="#" class="newest-slider-slide-image" title="НИВА ПЛЮС">
-            <img src="/static/i/newest-1.jpg" alt="" title="НИВА ПЛЮС">
+        <a href="#" class="newest-slider-slide-image" title="{{ journal.name }}">
+            <img src="{{ journal.common_cover }}" alt="" title="{{ journal.name }}">
         </a>
         <div class="newest-slider-slide-content">
-            <a href="#" class="newest-slider-slide-title">НИВА ПЛЮС</a>
+            <a href="#" class="newest-slider-slide-title">{{ journal.name }}</a>
             <div class="newest-slider-slide-num">№10 12/10/20</div>
             <div class="newest-slider-slide-bottom">
                 <div class="newest-slider-slide-price">250.00₽</div>
-                <div class="newest-slider-slide-links">
-                    <a href="#">TXT</a>
-                    <a href="#">PDF</a>
-                </div>
             </div>
         </div>
     </div>
-    <div class="newest-slider-slide">
-        <a href="#" class="newest-slider-slide-image" title="ТЕЛЕК PRESSA.RU">
-            <img src="/static/i/newest-2.jpg" alt="" title="ТЕЛЕК PRESSA.RU">
-        </a>
-        <div class="newest-slider-slide-content">
-            <a href="#" class="newest-slider-slide-title">ТЕЛЕК PRESSA.RU</a>
-            <div class="newest-slider-slide-num">№05 03/02/21</div>
-            <div class="newest-slider-slide-bottom">
-                <div class="newest-slider-slide-price">10.00₽</div>
-                <div class="newest-slider-slide-links">
-                    <a href="#">PDF</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="newest-slider-slide">
-        <a href="#" class="newest-slider-slide-image" title="РБК">
-            <img src="/static/i/newest-3.jpg" alt="" title="РБК">
-        </a>
-        <div class="newest-slider-slide-content">
-            <a href="#" class="newest-slider-slide-title">РБК</a>
-            <div class="newest-slider-slide-num">№01 22/12/20</div>
-            <div class="newest-slider-slide-bottom">
-                <div class="newest-slider-slide-price">236.00₽</div>
-                <div class="newest-slider-slide-links">
-                    <a href="#">TXT</a>
-                    <a href="#">PDF</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="newest-slider-slide">
-        <a href="#" class="newest-slider-slide-image" title="ИЗВЕСТИЯ">
-            <img src="/static/i/newest-4.jpg" alt="" title="ИЗВЕСТИЯ">
-        </a>
-        <div class="newest-slider-slide-content">
-            <a href="#" class="newest-slider-slide-title">ИЗВЕСТИЯ</a>
-            <div class="newest-slider-slide-num">№20-2021 05/02/21</div>
-            <div class="newest-slider-slide-bottom">
-                <div class="newest-slider-slide-price">25.00₽</div>
-                <div class="newest-slider-slide-links">
-                    <a href="#">PDF</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="newest-slider-slide">
-        <a href="#" class="newest-slider-slide-image" title="FORBES WOMAN">
-            <img src="/static/i/newest-5.jpg" alt="" title="FORBES WOMAN">
-        </a>
-        <div class="newest-slider-slide-content">
-            <a href="#" class="newest-slider-slide-title">FORBES WOMAN</a>
-            <div class="newest-slider-slide-num">№03 01/10/20</div>
-            <div class="newest-slider-slide-bottom">
-                <div class="newest-slider-slide-price">175.00₽</div>
-                <div class="newest-slider-slide-links">
-                    <a href="#">TXT</a>
-                    <a href="#">PDF</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="newest-slider-slide">
-        <a href="#" class="newest-slider-slide-image" title="НИВА ПЛЮС">
-            <img src="/static/i/newest-1.jpg" alt="" title="НИВА ПЛЮС">
-        </a>
-        <div class="newest-slider-slide-content">
-            <a href="#" class="newest-slider-slide-title">НИВА ПЛЮС</a>
-            <div class="newest-slider-slide-num">№10 12/10/20</div>
-            <div class="newest-slider-slide-bottom">
-                <div class="newest-slider-slide-price">250.00₽</div>
-                <div class="newest-slider-slide-links">
-                    <a href="#">TXT</a>
-                    <a href="#">PDF</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="newest-slider-slide">
-        <a href="#" class="newest-slider-slide-image" title="ТЕЛЕК PRESSA.RU">
-            <img src="/static/i/newest-2.jpg" alt="" title="ТЕЛЕК PRESSA.RU">
-        </a>
-        <div class="newest-slider-slide-content">
-            <a href="#" class="newest-slider-slide-title">ТЕЛЕК PRESSA.RU</a>
-            <div class="newest-slider-slide-num">№05 03/02/21</div>
-            <div class="newest-slider-slide-bottom">
-                <div class="newest-slider-slide-price">10.00₽</div>
-                <div class="newest-slider-slide-links">
-                    <a href="#">PDF</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="newest-slider-slide">
-        <a href="#" class="newest-slider-slide-image" title="РБК">
-            <img src="/static/i/newest-3.jpg" alt="" title="РБК">
-        </a>
-        <div class="newest-slider-slide-content">
-            <a href="#" class="newest-slider-slide-title">РБК</a>
-            <div class="newest-slider-slide-num">№01 22/12/20</div>
-            <div class="newest-slider-slide-bottom">
-                <div class="newest-slider-slide-price">236.00₽</div>
-                <div class="newest-slider-slide-links">
-                    <a href="#">TXT</a>
-                    <a href="#">PDF</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
 </div>
 <div class="mob-slider-control-wrapper slider-control-wrapper">
     <a href="#" class="slider-control newest-slider-prev"><i class="fa fa-chevron-left"></i></a>
