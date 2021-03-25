@@ -16,12 +16,32 @@ class Journal(models.Model):
         upload_to='default_journal_cover/%Y/%m/%d/',
         blank=True, null=True)
 
+    is_new = models.BooleanField(
+        verbose_name=_(u'отображать в новом?'), default=False)
+
+
     def __str__(self):
         return self.name
 
     @property
     def cover(self):
         return self.default_cover
+
+    @property
+    def last_issue(self):
+        try:
+            return self.issue_set.filter(is_public=True)[0]
+        except IndexError:
+            return None
+
+    @property
+    def common_cover(self):
+        if self.last_issue:
+            return self.last_issue.common_cover
+        elif self.default_cover:
+            return self.default_cover.url
+        else:
+            return None
 
     def image_url(self):
         try:
@@ -44,6 +64,18 @@ class Issue(models.Model):
 
     release_date = models.DateField(verbose_name=_(u'дата выхода выпуска'),
                                     default=now, db_index=True)
+
+    is_public = models.BooleanField(
+        verbose_name=_(u'отображать ли на сайте?'),
+        default=False)
+
+    @property
+    def common_cover(self):
+        return 'sadasdsda.png'
+        # if (self.is_covers_created):
+        #     return self.cover_url_mask.replace('{size}', '205-282')
+        # else:
+        #     return reverse('mts_get_cover', args=['issue','203-280',self.pk])
 
     def __str__(self):
         return self.name
