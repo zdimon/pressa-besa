@@ -31,6 +31,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('', index),
+    path('cover', include('cover.urls')),
     
     path("v1/api-token-auth/", ObtainAuthToken.as_view()),
     

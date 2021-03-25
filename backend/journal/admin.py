@@ -4,7 +4,7 @@ from .models import Journal, Issue, IssuePage
 
 @admin.register(Journal)
 class JournalAdmin(admin.ModelAdmin):
-    list_display = ['name', 'image_tag']
+    list_display = ['name', 'name_slug', 'image_tag']
     search_fields = ['name']
     list_filter = ['category']
 

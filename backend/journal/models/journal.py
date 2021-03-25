@@ -4,8 +4,9 @@ from django.utils import timezone
 from django.utils.timezone import now
 from django.utils.safestring import mark_safe
 from django.conf import settings
+from .mixins.name_slug import NameSlugMixin
 
-class Journal(models.Model):
+class Journal(NameSlugMixin, models.Model):
 
     name = models.CharField(verbose_name=_('наименование издания'),
                             max_length=250)
@@ -19,7 +20,8 @@ class Journal(models.Model):
     is_new = models.BooleanField(
         verbose_name=_(u'отображать в новом?'), default=False)
 
-
+    cover_size = models.CharField(verbose_name=_(u'Размеры обложки'), default='', max_length=10, blank=True, null=True)
+    
     def __str__(self):
         return self.name
 

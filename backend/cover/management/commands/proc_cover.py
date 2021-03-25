@@ -4,16 +4,10 @@ from journal.models import Issue, Journal, IssuePage
 from django.core.files import File
 from django.conf import settings
 import os
+from cover.tasks import make_covers
 
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
-        print('Process')
-      
-        # for i in Issue.objects.all():
-        #     i.is_public = True
-        #     i.save()
-        #     print(i.id)
-
-        for j in Journal.objects.all():
-            j.save()
+        print('Process covers')
+        make_covers()
