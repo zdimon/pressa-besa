@@ -161,5 +161,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'app.pagination.PageNumberWithPageSizePagination',
     'PAGE_SIZE': 10
 }
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 
 from .local import *
