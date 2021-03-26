@@ -10,10 +10,11 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         print('Process')
       
-        # for i in Issue.objects.all():
-        #     i.is_public = True
-        #     i.save()
+        for i in Issue.objects.all():
+            i.is_public = True
+            i.save()
         #     print(i.id)
 
         for j in Journal.objects.all():
+            j.is_popular = True
             j.save()

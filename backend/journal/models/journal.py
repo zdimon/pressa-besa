@@ -20,6 +20,9 @@ class Journal(NameSlugMixin, models.Model):
     is_new = models.BooleanField(
         verbose_name=_(u'отображать в новом?'), default=False)
 
+    is_popular = models.BooleanField(
+        verbose_name=_(u'отображать в популярном?'), default=False)
+
     cover_size = models.CharField(verbose_name=_(u'Размеры обложки'), default='', max_length=10, blank=True, null=True)
 
     amount = models.DecimalField(_("цена"), max_digits=10, decimal_places=2, default=0.00)
