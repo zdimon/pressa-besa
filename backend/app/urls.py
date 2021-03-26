@@ -33,6 +33,7 @@ urlpatterns = [
     path('', index),
     path('preauth', preauth),
     path('cover', include('cover.urls')),
+    path('top10/', include('announce.urls')),
     
     path("v1/api-token-auth/", ObtainAuthToken.as_view()),
     
