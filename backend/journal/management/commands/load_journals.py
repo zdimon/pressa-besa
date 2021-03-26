@@ -26,6 +26,8 @@ class Command(BaseCommand):
                 j = Journal()
                 j.name = jname
                 j.is_public = True
+                j.show_in_books = True
+                j.is_popular = True
                 j.save()
                 j.category.add(c)
                 path = os.path.join(settings.BASE_DIR,'init_data','journal',f'{cnt}.jpg')

@@ -19,19 +19,8 @@
     </div>
 </div>
 <div class="newest-slider" id="newestSlider">
-    {% for journal in popular_journal %}
-    <div class="newest-slider-slide">
-        <a href="#" class="newest-slider-slide-image" title="{{ journal.name }}">
-            <img src="{{ journal.common_cover }}" alt="" title="{{ journal.name }}">
-        </a>
-        <div class="newest-slider-slide-content">
-            <a href="#" class="newest-slider-slide-title">{{ journal.name }}</a>
-            <div class="newest-slider-slide-num">№{{ journal.last_issue.name }}</div>
-            <div class="newest-slider-slide-bottom">
-                <div class="newest-slider-slide-price">{{ journal.amount }}₽</div>
-            </div>
-        </div>
-    </div>
+    {% for item in popular_journal %}
+        {% include 'items/journal.html' %}
     {% endfor %}
 </div>
 <div class="mob-slider-control-wrapper slider-control-wrapper">

@@ -13,18 +13,7 @@
     <div class="newest-slider" id="newestSlider">
 
         {% for journal in popular_journal %}
-        <div class="newest-slider-slide">
-            <a href="#" class="newest-slider-slide-image" title="{{ journal.name }}">
-                <img src="{{ journal.common_cover }}" alt="" title="{{ journal.name }}">
-            </a>
-            <div class="newest-slider-slide-content">
-                <a href="#" class="newest-slider-slide-title">{{ journal.name }}</a>
-                <div class="newest-slider-slide-num">№10 12/10/20</div>
-                <div class="newest-slider-slide-bottom">
-                    <div class="newest-slider-slide-price">250.00₽</div>
-                </div>
-            </div>
-        </div>
+            {% include 'items/journal.html' %}
         {% endfor %}
     </div>
 </div>
