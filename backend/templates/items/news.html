@@ -1,0 +1,15 @@
+    <div class="actual-articles-slider-slide">
+        <a href="#" class="actual-articles-slider-slide-image" title="{{item.name}}">
+            <img src="{{ item.thumbnailmiddle_url }}" alt="" title="{{item.name}}">
+            <span class="actual-articles-slider-slide-image-category">ежемесячные</span>
+        </a>
+        <div class="actual-slider-slide-content">
+            <a href="#" class="actual-slider-slide-title" title="{{item.name}}">
+                {{ item.name }}
+            </a>
+            <div class="row actual-slider-slide-bottom">
+        <div class="col-md-8">{{ item.issue.journal.name }} Выпуск {{ item.issue.name }}</div>
+                <div class="col-md-4 actual-slider-slide-date">{{ item.created }}</div>
+            </div>
+        </div>
+    </div>
