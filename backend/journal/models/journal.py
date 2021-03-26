@@ -22,6 +22,9 @@ class Journal(NameSlugMixin, models.Model):
 
     is_popular = models.BooleanField(
         verbose_name=_(u'отображать в популярном?'), default=False)
+        
+    position_popular = models.IntegerField(
+        verbose_name=_(u'позиция в популярном'), default=1)
 
     cover_size = models.CharField(verbose_name=_(u'Размеры обложки'), default='', max_length=10, blank=True, null=True)
 
