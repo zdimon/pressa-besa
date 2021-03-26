@@ -4,24 +4,24 @@ from django.utils.translation import ugettext as __
 from image_cropping import ImageRatioField
 from easy_thumbnails.files import get_thumbnailer
 from django.utils.html import mark_safe
-from main.models.mixins import  SlugTraits
 from journal.models.mixins.name_slug import NameSlugMixin
-from journal.models.models import Issue
-from redactor.fields import RedactorField
+from main.models.mixins import SEOTagsMixin
+from journal.models import Issue
 from accounts.models import Customer
-from ratings.models import Ratings
+# from ratings.models import Ratings
 from taggit.managers import TaggableManager
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 import datetime
-from announce.tasks import send_top as st
+# from announce.tasks import send_top as st
 from django.core.mail import EmailMultiAlternatives
 
 class Announce(models.Model):
     title = models.CharField(verbose_name=_(u'заголовок'), max_length=150)
     text = models.TextField(verbose_name=_(u'текст анонса выпуска'))
     issue = models.ForeignKey('journal.Issue',
-                              verbose_name=_(u'выпуск издания'))
+                              verbose_name=_(u'выпуск издания'),
+                              on_delete=models.CASCADE)
     create = models.DateTimeField(verbose_name=u'дата создания')
 
     class Meta:
@@ -33,7 +33,8 @@ class Featured(models.Model):
     title = models.CharField(verbose_name=_(u'заголовок'), max_length=150)
     text = models.TextField(verbose_name=_(u'текст анонса'))
     page = models.ForeignKey('journal.IssuePage',
-                             verbose_name=_(u'страница печатного издания'))
+                             verbose_name=_(u'страница печатного издания'),
+                             on_delete=models.CASCADE)
     cover = models.ImageField(verbose_name=_(u'обложка'),
                               upload_to='featured/cover/%Y/%m/%d/')
     create = models.DateTimeField(verbose_name=u'дата создания')
@@ -44,13 +45,13 @@ class Featured(models.Model):
 
 
 class News(NameSlugMixin,  SEOTagsMixin, models.Model):
-    create = models.DateField(verbose_name=u'дата создания')
+    create = models.DateField(verbose_name=u'дата создания',auto_now_add=True)
     name = models.CharField(verbose_name=_(u'заголовок'), max_length=150)
     publication = models.CharField(verbose_name=_(u'Название журнала'), max_length=150, default = False)
-    issue = models.ForeignKey(Issue, verbose_name=_(u'печатное издание'), blank = True, default = False, null=True)
+    issue = models.ForeignKey(Issue, verbose_name=_(u'печатное издание'), blank = True, default = False, null=True, on_delete=models.CASCADE)
     short_text = models.TextField(verbose_name=_(u'короткое описание'), blank = True,  null=True)
-    text = RedactorField(verbose_name=_(u'начало статьи'))
-    text_continue = RedactorField(verbose_name=_(u'продолжение'), blank = True, null=True)
+    text = models.TextField(verbose_name=_(u'начало статьи'))
+    text_continue = models.TextField(verbose_name=_(u'продолжение'), blank = True, null=True)
     image = models.ImageField(verbose_name=_(u'изображение ландшафт'), upload_to='news/cover/%Y/%m/%d/')
     image_portret = models.ImageField(verbose_name=_(u'изображение портрет'), upload_to='news/cover/%Y/%m/%d/')
     url = models.URLField(verbose_name=u'ссылка на ридер')
@@ -59,7 +60,7 @@ class News(NameSlugMixin,  SEOTagsMixin, models.Model):
     cropping_square = ImageRatioField('image_portret', '80x80')
     is_publish = models.BooleanField(verbose_name=_(u'Опубликован?'), default=False)
     author = models.CharField(verbose_name=_(u'Автор'), max_length=250, blank = True, null=True)
-    rating = Ratings()
+    # rating = Ratings()
     tags = TaggableManager(blank=True)
     sorting = models.IntegerField(verbose_name=_(u'Сортировка'), default=0)
     @property

@@ -21,111 +21,25 @@
     </div>
 </div>
 <div class="actual-articles-slider" id="actualArticlesSlider">
+
+    {% for item in news %}
     <div class="actual-articles-slider-slide">
-        <a href="#" class="actual-articles-slider-slide-image" title="Обманули более 500 человек: в Киеве разоблачили мошенническую схему онлайн-инвестиций">
-            <img src="/static/i/actual-1.jpg" alt="" title="Обманули более 500 человек: в Киеве разоблачили мошенническую схему онлайн-инвестиций">
+        <a href="#" class="actual-articles-slider-slide-image" title="{{item.name}}">
+            <img src="/static/i/actual-1.jpg" alt="" title="{{item.name}}">
             <span class="actual-articles-slider-slide-image-category">ежемесячные</span>
         </a>
         <div class="actual-slider-slide-content">
-            <a href="#" class="actual-slider-slide-title" title="Обманули более 500 человек: в Киеве разоблачили мошенническую схему онлайн-инвестиций">
-                Обманули более 500 человек: в Киеве разоблачили мошенническую схему онлайн-инвестиций
+            <a href="#" class="actual-slider-slide-title" title="{{item.name}}">
+                {{ item.name }}
             </a>
             <div class="row actual-slider-slide-bottom">
-                <div class="col-md-8">Ежедневная деловая газета РБК</div>
-                <div class="col-md-4 actual-slider-slide-date">26.01.2021</div>
+        <div class="col-md-8">{{ item.issue.journal.name }} Выпуск {{ item.issue.name }}</div>
+                <div class="col-md-4 actual-slider-slide-date">{{ item.created }}</div>
             </div>
         </div>
     </div>
-    <div class="actual-articles-slider-slide">
-        <a href="#" class="actual-articles-slider-slide-image" title="Даже под обстрелами ВСУ поддерживали веру в Победу: Донецкой филармонии – 90 лет">
-            <img src="/static/i/actual-2.jpg" alt="" title="Даже под обстрелами ВСУ поддерживали веру в Победу: Донецкой филармонии – 90 лет">
-            <span class="actual-articles-slider-slide-image-category">ближнего зарубежья</span>
-        </a>
-        <div class="actual-slider-slide-content">
-            <a href="#" class="actual-slider-slide-title" title="Даже под обстрелами ВСУ поддерживали веру в Победу: Донецкой филармонии – 90 лет">
-                Даже под обстрелами ВСУ поддерживали веру в Победу: Донецкой филармонии – 90 лет
-            </a>
-            <div class="row actual-slider-slide-bottom">
-                <div class="col-md-8">Комсомольская правда. Москва</div>
-                <div class="col-md-4 actual-slider-slide-date">26.01.2021</div>
-            </div>
-        </div>
-    </div>
-    <div class="actual-articles-slider-slide">
-        <a href="#" class="actual-articles-slider-slide-image" title="40 сантиметров снега: украинцев предупредили, где на улицу лучше не выходить">
-            <img src="/static/i/actual-3.jpg" alt="" title="40 сантиметров снега: украинцев предупредили, где на улицу лучше не выходить">
-            <span class="actual-articles-slider-slide-image-category">Ежедневные</span>
-        </a>
-        <div class="actual-slider-slide-content">
-            <a href="#" class="actual-slider-slide-title" title="40 сантиметров снега: украинцев предупредили, где на улицу лучше не выходить">
-                40 сантиметров снега: украинцев предупредили, где на улицу лучше не выходить
-            </a>
-            <div class="row actual-slider-slide-bottom">
-                <div class="col-md-8">Аргументы и факты Москва</div>
-                <div class="col-md-4 actual-slider-slide-date">26.01.2021</div>
-            </div>
-        </div>
-    </div>
-    <div class="actual-articles-slider-slide">
-        <a href="#" class="actual-articles-slider-slide-image" title="«США и ЕС проигрывают России!» – Яценюк призвал Зеленского возглавить западную русофобию и сп...">
-            <img src="/static/i/actual-4.jpg" alt="" title="«США и ЕС проигрывают России!» – Яценюк призвал Зеленского возглавить западную русофобию и сп...">
-            <span class="actual-articles-slider-slide-image-category">ПОЛИТИКА</span>
-        </a>
-        <div class="actual-slider-slide-content">
-            <a href="#" class="actual-slider-slide-title" title="«США и ЕС проигрывают России!» – Яценюк призвал Зеленского возглавить западную русофобию и сп...">
-                «США и ЕС проигрывают России!» – Яценюк призвал Зеленского возглавить западную русофобию и сп...
-            </a>
-            <div class="row actual-slider-slide-bottom">
-                <div class="col-md-8">Советский спорт (федеральный выпуск)</div>
-                <div class="col-md-4 actual-slider-slide-date">26.01.2021</div>
-            </div>
-        </div>
-    </div>
-    <div class="actual-articles-slider-slide">
-        <a href="#" class="actual-articles-slider-slide-image" title="Даже под обстрелами ВСУ поддерживали веру в Победу: Донецкой филармонии – 90 лет">
-            <img src="/static/i/actual-2.jpg" alt="" title="Даже под обстрелами ВСУ поддерживали веру в Победу: Донецкой филармонии – 90 лет">
-            <span class="actual-articles-slider-slide-image-category">ближнего зарубежья</span>
-        </a>
-        <div class="actual-slider-slide-content">
-            <a href="#" class="actual-slider-slide-title" title="Даже под обстрелами ВСУ поддерживали веру в Победу: Донецкой филармонии – 90 лет">
-                Даже под обстрелами ВСУ поддерживали веру в Победу: Донецкой филармонии – 90 лет
-            </a>
-            <div class="row actual-slider-slide-bottom">
-                <div class="col-md-8">Комсомольская правда. Москва</div>
-                <div class="col-md-4 actual-slider-slide-date">26.01.2021</div>
-            </div>
-        </div>
-    </div>
-    <div class="actual-articles-slider-slide">
-        <a href="#" class="actual-articles-slider-slide-image" title="40 сантиметров снега: украинцев предупредили, где на улицу лучше не выходить">
-            <img src="/static/i/actual-3.jpg" alt="" title="40 сантиметров снега: украинцев предупредили, где на улицу лучше не выходить">
-            <span class="actual-articles-slider-slide-image-category">Ежедневные</span>
-        </a>
-        <div class="actual-slider-slide-content">
-            <a href="#" class="actual-slider-slide-title" title="40 сантиметров снега: украинцев предупредили, где на улицу лучше не выходить">
-                40 сантиметров снега: украинцев предупредили, где на улицу лучше не выходить
-            </a>
-            <div class="row actual-slider-slide-bottom">
-                <div class="col-md-8">Аргументы и факты Москва</div>
-                <div class="col-md-4 actual-slider-slide-date">26.01.2021</div>
-            </div>
-        </div>
-    </div>
-    <div class="actual-articles-slider-slide">
-        <a href="#" class="actual-articles-slider-slide-image" title="«США и ЕС проигрывают России!» – Яценюк призвал Зеленского возглавить западную русофобию и сп...">
-            <img src="/static/i/actual-4.jpg" alt="" title="«США и ЕС проигрывают России!» – Яценюк призвал Зеленского возглавить западную русофобию и сп...">
-            <span class="actual-articles-slider-slide-image-category">ПОЛИТИКА</span>
-        </a>
-        <div class="actual-slider-slide-content">
-            <a href="#" class="actual-slider-slide-title" title="«США и ЕС проигрывают России!» – Яценюк призвал Зеленского возглавить западную русофобию и сп...">
-                «США и ЕС проигрывают России!» – Яценюк призвал Зеленского возглавить западную русофобию и сп...
-            </a>
-            <div class="row actual-slider-slide-bottom">
-                <div class="col-md-8">Советский спорт (федеральный выпуск)</div>
-                <div class="col-md-4 actual-slider-slide-date">26.01.2021</div>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
+
 </div>
 <div class="mob-slider-control-wrapper slider-control-wrapper">
     <a href="#" class="slider-control actual-articles-slider-prev asp"><i class="fa fa-chevron-left"></i></a>

@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
     'announce',
     'image_cropping',
-    'easy_thumbnails'
+    'easy_thumbnails',
+    'taggit'
 ]
 
 MIDDLEWARE = [

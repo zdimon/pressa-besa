@@ -20,3 +20,4 @@ sorl-thumbnail
 pytils
 django-image-cropping
 easy-thumbnails
+django-taggit
