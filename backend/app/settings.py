@@ -122,6 +122,8 @@ STATICFILES_DIRS = [
 ]
 MEDIA_URL = '/media/'
 
+# грузим переменные окружения
+#################################################
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -132,6 +134,10 @@ REDIS_PORT = os.getenv('REDIS_PORT', '6379')
 MEDIA_ROOT = os.getenv('MEDIA_ROOT', os.path.join(BASE_DIR,'..','media'))
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY', "...")
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET', "...")
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = os.getenv('SOCIAL_AUTH_REDIRECT_IS_HTTPS', False)
+
+#################################################
+
 CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + str(REDIS_PORT)
 MEDIA_URL = '/media/'
 
