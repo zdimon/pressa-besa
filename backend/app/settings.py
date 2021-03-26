@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'django_filters',
-    'account',
+    'accounts',
     'social_django',
     'article',
     'journal',
@@ -141,7 +141,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-SOCIAL_AUTH_USER_MODEL = 'account.Customer'
+SOCIAL_AUTH_USER_MODEL = 'accounts.Customer'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [

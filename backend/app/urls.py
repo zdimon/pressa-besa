@@ -6,7 +6,7 @@ from main.views import index
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
-from account.views import LoginView, RegistrationView, logout_view
+from accounts.views import LoginView, RegistrationView, logout_view
 from rest_framework.authtoken.views import ObtainAuthToken
 
 
@@ -36,7 +36,7 @@ urlpatterns = [
     path("v1/api-token-auth/", ObtainAuthToken.as_view()),
     
     path('v1/api/', include([
-        path('account/', include('account.urls')),
+        path('account/', include('accounts.urls')),
         path('', include('journal.urls')),
         path('', include('article.urls'))
        
