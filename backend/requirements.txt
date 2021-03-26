@@ -18,3 +18,5 @@ django-filter==2.4.0
 psycopg2-binary
 sorl-thumbnail
 pytils
+django-image-cropping
+easy-thumbnails
