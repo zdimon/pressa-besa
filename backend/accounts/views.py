@@ -12,6 +12,13 @@ from rest_framework.authtoken.models import Token
 from django.contrib.auth import logout
 from django.shortcuts import redirect
 from django.contrib.auth import login as l
+from rest_framework.authtoken.models import Token
+
+
+def preauth(request):
+    token, created = Token.objects.get_or_create(user=request.user)
+    return render(request, 'accounts/preauth.html', {'token': token})
+    #return redirect('/')
 
 
 def logout_view(request):

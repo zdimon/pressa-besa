@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'catalog',
     'cover',
     'sorl.thumbnail',
+    'announce'
 ]
 
 MIDDLEWARE = [
@@ -132,7 +133,7 @@ CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + str(REDIS_PORT)
 MEDIA_URL = '/media/'
 
 LOGIN_URL = '/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/preauth'
 LOGOUT_REDIRECT_URL = '/'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
@@ -161,6 +162,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'app.pagination.PageNumberWithPageSizePagination',
     'PAGE_SIZE': 10
 }
-SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
+
 
 from .local import *

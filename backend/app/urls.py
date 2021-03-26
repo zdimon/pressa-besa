@@ -8,7 +8,7 @@ from drf_yasg import openapi
 from rest_framework import permissions
 from accounts.views import LoginView, RegistrationView, logout_view
 from rest_framework.authtoken.views import ObtainAuthToken
-
+from accounts.views import preauth
 
 schema_view = get_schema_view(
    openapi.Info(title="Pressa API",
@@ -31,6 +31,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('', index),
+    path('preauth', preauth),
     path('cover', include('cover.urls')),
     
     path("v1/api-token-auth/", ObtainAuthToken.as_view()),
