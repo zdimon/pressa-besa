@@ -1,0 +1,3 @@
+. ./venv/bin/activate
+cd ci
+celery -A ci worker -l info

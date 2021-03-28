@@ -1,0 +1,7 @@
+wheel
+Django
+python-dotenv
+GitPython
+redis
+celery
+django-supervisor

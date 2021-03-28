@@ -1,0 +1,19 @@
+<html lang="en">
+<!-- Basic -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> CI </title>
+</head>
+
+<body>
+ 
+    <h1> Создать рабочую область </h1>
+    <form method="POST" action="" >
+        {% csrf_token %}
+        {{ form }}
+        <button>Создать</button>
+    </form>
+</body>
+</html>

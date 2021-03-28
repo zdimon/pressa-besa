@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 
-{% block content %}
-    
+{% block css %} 
+    <link rel="stylesheet" href="/static/css/announce.css">
+{% endbock %}
 
-    <div>
+
+{% block content %}
+
+    <div id="announce-wrapper">
         <img src="{{ item.image.url }}" alt="{{ item.name }}">
         <div>
             {{ item.text | safe }}
