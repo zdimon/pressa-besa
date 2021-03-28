@@ -119,7 +119,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-CELERY_BROKER_URL = 'redis://localhost:6379'
 
 STATIC_URL = '/static/'
 load_dotenv()
@@ -133,3 +132,6 @@ ENV_PATH = os.getenv('ENV_PATH')
 PROJECT_PATH = os.getenv('PROJECT_PATH')
 DB_PATH = os.getenv('DB_PATH')
 FRONTEND_PATH = os.getenv('FRONTEND_PATH')
+REDIS_DB = os.getenv('REDIS_DB', '5')
+
+CELERY_BROKER_URL = 'redis://localhost:6379/%s' % REDIS_DB
