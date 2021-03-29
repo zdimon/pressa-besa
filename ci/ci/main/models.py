@@ -1,9 +1,9 @@
+from django.db.models.signals import pre_delete
 from .tasks import normalize_email
 from django.db import models
 from django.db.models.signals import post_save
 from django.db.models import Max
-from .tasks import create_dir, git_clone, nginx_conf, supervisor_conf, restart, clear_env
-from django.db.models.signals import pre_delete
+from .tasks import create_dir, git_clone, nginx_conf, supervisor_conf, clear_env
 
 
 class Env(models.Model):

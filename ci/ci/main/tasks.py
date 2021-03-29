@@ -11,11 +11,9 @@ def normalize_email(email):
 @task()
 def clear_env(email):
     import subprocess
-    from .models import Env
-    env = Env.objects.get(pk=env_id)
     # remove env path
     env_path = os.path.join(settings.WORK_DIR, email)
-    bashCommand = "rm -r %s" % env_path
+    bashCommand = "sudo rm -r %s" % env_path
     process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
     output, error = process.communicate()
     print(error)
