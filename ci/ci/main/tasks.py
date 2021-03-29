@@ -61,17 +61,20 @@ def copy_frontend(env_id):
 def django_conf(env_id):
     from .models import Env
     env = Env.objects.get(pk=env_id)
-    path = os.path.join(settings.BASE_DIR, 'tpl', 'local.py')
+    path = os.path.join(settings.BASE_DIR, 'tpl', '.env')
     os.mkdir(os.path.join(settings.WORK_DIR, normalize_email(
         env.email), settings.PROJECT_PATH, 'logs'))
     with open(path, 'r') as f:
         tpl = f.read()
 
-    tpl = tpl.replace('% db_path %', settings.DB_PATH)
+    tpl = tpl.replace('%db_path%', settings.DB_PATH)
+    sname = '%s.%s' % (normalize_email(
+        env.email), settings.DOMAIN)
+    tpl = tpl.replace('%domain%', sname)
 
     conf_path = os.path.join(
         settings.WORK_DIR, normalize_email(
-            env.email), settings.PROJECT_PATH, 'app', 'local.py')
+            env.email), settings.PROJECT_PATH, '.env')
     with open(conf_path, 'w+') as f:
         f.write(tpl)
 

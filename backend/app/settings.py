@@ -132,6 +132,8 @@ DB_NAME = os.getenv('DB_NAME', '')
 DB_USER = os.getenv('DB_USER', '')
 DB_PASSWORD = os.getenv('DB_PASSWORD', '')
 DB_HOST = os.getenv('DB_HOST', '')
+DB_PATH = os.getenv('DB_PATH', BASE_DIR / 'db.sqlite3')
+
 
 DATABASE = os.getenv('DATABASE', 'http://localhost')
 BACKEND_URL = os.getenv('BACKEND_URL', 'http://localhost')
@@ -182,7 +184,7 @@ if DATABASE == 'sqlite':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'NAME': DB_PATH,
         }
     }
 
