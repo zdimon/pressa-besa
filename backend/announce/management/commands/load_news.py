@@ -15,7 +15,10 @@ class Command(BaseCommand):
             issue = Issue.objects.all().order_by('?')[0]
             n = News()
             n.name = f'Новость {i}'
-            n.text = f'Текст новости {i}'
+            txt = ''
+            for num in range(1,200):
+                txt = txt +' текст новости %s ' % num
+            n.text = txt
             n.issue = issue
             n.save()
             path = os.path.join(settings.BASE_DIR,'init_data','news',f'{i}.jpg')
