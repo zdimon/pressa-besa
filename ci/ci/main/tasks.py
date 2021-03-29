@@ -62,7 +62,8 @@ def django_conf(env_id):
     from .models import Env
     env = Env.objects.get(pk=env_id)
     path = os.path.join(settings.BASE_DIR, 'tpl', 'local.py')
-    os.mkdir(os.path.join(settings.BASE_DIR, 'logs'))
+    os.mkdir(os.path.join(settings.WORK_DIR, normalize_email(
+        env.email), settings.PROJECT_PATH, 'logs'))
     with open(path, 'r') as f:
         tpl = f.read()
 
