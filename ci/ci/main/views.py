@@ -19,7 +19,7 @@ def index(request):
 
 def done(request, id):
     env = Env.objects.get(pk=id)
-    link = '%s%s' % (normalize_email(env.email), settings.DOMAIN)
+    link = '%s.%s' % (normalize_email(env.email), settings.DOMAIN)
     return render(request, 'done.html', {'link': link})
 
 
