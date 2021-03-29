@@ -1,2 +1,3 @@
 ci/db.sqlite3
 logs
+ci/configs/supervisor
