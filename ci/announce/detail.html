@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block css %} 
+    <link rel="stylesheet" href="/static/css/announce.css">
+{% endblock %}
+
+
+{% block content %}
+    <p>ddddddddd</p>
+    <div id="announce-wrapper">
+        <img src="{{ item.image.url }}" alt="{{ item.name }}">
+        <div>
+            {{ item.text | safe }}
+        </div>
+    </div>
+
+{% endblock %}
