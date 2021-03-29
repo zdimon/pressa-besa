@@ -1,7 +1,9 @@
+from .tasks import normalize_email
 from django.db import models
 from django.db.models.signals import post_save
 from django.db.models import Max
-from .tasks import create_dir, git_clone, nginx_conf, supervisor_conf, restart
+from .tasks import create_dir, git_clone, nginx_conf, supervisor_conf, restart, clear_env
+from django.db.models.signals import pre_delete
 
 
 class Env(models.Model):
@@ -22,4 +24,9 @@ class Env(models.Model):
             # restart()
 
 
+def pre_delete_handler(sender, instance, using, **kwargs):
+    clear_env.delay(normalize_email(instance.email))
+
+
 post_save.connect(Env.post_create, sender=Env)
+pre_delete.connect(pre_delete_handler, sender=Env)

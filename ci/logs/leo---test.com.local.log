@@ -41,3 +41,4 @@ Not Found: /i/logo.svg
 [28/Mar/2021 13:58:42] "GET /static/images/google.png HTTP/1.0" 200 7495
 [28/Mar/2021 13:59:20] "GET /static/build/js/bundle.ebe358c05368807e6af1.min.js.map HTTP/1.0" 200 932991
 [28/Mar/2021 13:59:20] "GET /static/css/bootstrap-grid.min.css.map HTTP/1.0" 200 115661
+Watching for file changes with StatReloader
