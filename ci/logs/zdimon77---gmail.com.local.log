@@ -2,3 +2,7 @@ Watching for file changes with StatReloader
 /home/zdimon/tmp/zdimon77---gmail.com/pressa-besa/backend/journal/__init__.py changed, reloading.
 Watching for file changes with StatReloader
 Watching for file changes with StatReloader
+/home/zdimon/tmp/zdimon77---gmail.com/pressa-besa/backend/article/migrations/0007_articlecoversetting_cover.py changed, reloading.
+/home/zdimon/Desktop/work/pressa-besa/backend/venv/bin/python3: can't open file 'manage.py': [Errno 2] No such file or directory
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
