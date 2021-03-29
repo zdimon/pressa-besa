@@ -71,6 +71,7 @@ def django_conf(env_id):
     sname = '%s.%s' % (normalize_email(
         env.email), settings.DOMAIN)
     tpl = tpl.replace('%domain%', sname)
+    tpl = tpl.replace('%media_root%', settings.MEDIA_PATH)
 
     conf_path = os.path.join(
         settings.WORK_DIR, normalize_email(
