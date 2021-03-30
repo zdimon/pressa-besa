@@ -2,6 +2,7 @@ from django.conf import settings
 import os
 import git
 from celery.decorators import task
+import subprocess
 
 
 def normalize_email(email):
@@ -80,7 +81,7 @@ def django_conf(env_id):
         f.write(tpl)
 
 
-@ task()
+@task()
 def create_dir(env_id):
     from .models import Env
     env = Env.objects.get(pk=env_id)
@@ -91,7 +92,6 @@ def create_dir(env_id):
 
 
 def restart():
-    import subprocess
     bashCommand = "sudo service supervisor restart"
     process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
     output, error = process.communicate()
@@ -106,10 +106,19 @@ def restart():
 @ task()
 def git_clone(env_id):
     from .models import Env
+
     env = Env.objects.get(pk=env_id)
-    path = os.path.join(settings.WORK_DIR, normalize_email(
+
+    path_to = os.path.join(settings.WORK_DIR, normalize_email(
         env.email))
-    git.Git(path).clone(settings.GIT_URL)
+    path_from = os.path.join(settings.WORK_DIR, 'origin')
+    bashCommand = "cp %s %s" % (path_from, path_to)
+    # git.Git(path).clone(settings.GIT_URL)
+    g = git.cmd.Git(path_from)
+    g.pull()
+    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    output, error = process.communicate()
+    print(error)
     copy_frontend(env_id)
     django_conf(env_id)
     restart()
