@@ -49,7 +49,6 @@ class Journal(NameSlugMixin, models.Model):
 
     @property
     def common_cover(self):
-        return self.last_issue.common_cover
         if self.last_issue:
             return self.last_issue.common_cover
         elif self.default_cover:
