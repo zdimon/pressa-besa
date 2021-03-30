@@ -17,4 +17,5 @@ class Command(BaseCommand):
 
         for j in Journal.objects.all():
             j.is_popular = True
+            j.is_new = True
             j.save()
