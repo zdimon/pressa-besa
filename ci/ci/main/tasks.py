@@ -39,7 +39,7 @@ def create_conf(env_id):
         env.email), settings.PROJECT_PATH, 'app', 'local.py.template')
     localpd = os.path.join(settings.WORK_DIR, normalize_email(
         env.email), settings.PROJECT_PATH, 'app', 'local.py')
-    bashCommand = "cp %s %s" % (localps, localpd)
+    bashCommand = "cp -r %s %s" % (localps, localpd)
     process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
     output, error = process.communicate()
     print(error)
