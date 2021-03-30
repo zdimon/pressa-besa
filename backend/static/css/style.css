@@ -1111,7 +1111,7 @@ body {
     text-decoration: none;
     color: #222;
     font: 400 16px/18px Roboto, sans-serif;
-    height: 54px;
+    height: 20px;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-transition: color 0.3s ease;
