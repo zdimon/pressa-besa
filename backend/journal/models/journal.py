@@ -43,7 +43,7 @@ class Journal(NameSlugMixin, models.Model):
     @property
     def last_issue(self):
         try:
-            return self.issue_set.filter(is_public=True)[0]
+            return self.issue_set.filter(is_public=True).order_by('-id')[0]
         except IndexError:
             return None
 
