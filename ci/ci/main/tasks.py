@@ -39,7 +39,7 @@ def create_conf(env_id):
         env.email), settings.PROJECT_PATH, 'app', 'local.py.template')
     localpd = os.path.join(settings.WORK_DIR, normalize_email(
         env.email), settings.PROJECT_PATH, 'app', 'local.py')
-    bashCommand = "cp -r %s %s" % (localps, localpd)
+    bashCommand = "cp %s %s" % (localps, localpd)
     process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
     output, error = process.communicate()
     print(error)
@@ -112,7 +112,7 @@ def git_clone(env_id):
     path_to = os.path.join(settings.WORK_DIR, normalize_email(
         env.email))
     path_from = os.path.join(settings.WORK_DIR, 'origin')
-    bashCommand = "cp %s %s" % (path_from, path_to)
+    bashCommand = "cp -r %s %s" % (path_from, path_to)
     # git.Git(path).clone(settings.GIT_URL)
     g = git.cmd.Git(path_from)
     g.pull()
