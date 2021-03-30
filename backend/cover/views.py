@@ -23,11 +23,11 @@ def make_cover(request, obj, size, id):
             i = Issue.objects.get(pk=id)
         except Exception as e:
             return HttpResponsePermanentRedirect(def_cover)
-        try:
-            if size == '260x340' and i.journal.cover_size != '':
-                size = i.journal.cover_size.replace('-', 'x')
-            im = get_thumbnail(i.cover, size, crop='top')
-        except Exception as e:
-            return HttpResponse(str(e)+size)
+        #try:
+        if size == '260x340' and i.journal.cover_size != '':
+            size = i.journal.cover_size.replace('-', 'x')
+        im = get_thumbnail(i.cover, size, crop='top')
+        #except Exception as e:
+        #    return HttpResponse(str(e)+size)
     u = '%s%s' % (settings.BACKEND_URL, im.url)
     return HttpResponsePermanentRedirect(u)
