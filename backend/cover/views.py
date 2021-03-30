@@ -21,6 +21,7 @@ def make_cover(request, obj, size, id):
     elif(obj == 'issue'):
         try:
             issue = Issue.objects.get(pk=id)
+            print(issue)
         except Exception as e:
             return HttpResponsePermanentRedirect(def_cover)
         try:
@@ -29,7 +30,7 @@ def make_cover(request, obj, size, id):
             im = get_thumbnail(issue.cover, size, crop='top')
         except Exception as e:
             
-            print(issue)
+            
             return HttpResponse(str(e)+size)
     u = '%s%s' % (settings.BACKEND_URL, im.url)
     return HttpResponsePermanentRedirect(u)
