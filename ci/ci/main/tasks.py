@@ -112,7 +112,7 @@ def git_clone(env_id):
     path_to = os.path.join(settings.WORK_DIR, normalize_email(
         env.email))
     path_from = os.path.join(settings.WORK_DIR, 'origin')
-    bashCommand = "cp -r %s %s" % (path_from, path_to)
+    bashCommand = "cp -r %s/. %s" % (path_from, path_to)
     # git.Git(path).clone(settings.GIT_URL)
     g = git.cmd.Git(path_from)
     g.pull()
