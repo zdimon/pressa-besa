@@ -28,6 +28,6 @@ def make_cover(request, obj, size, id):
                 size = i.journal.cover_size.replace('-', 'x')
             im = get_thumbnail(i.cover, size, crop='top')
         except Exception as e:
-            return HttpResponse(str(e))
+            return HttpResponse(str(e)+size)
     u = '%s%s' % (settings.BACKEND_URL, im.url)
     return HttpResponsePermanentRedirect(u)
