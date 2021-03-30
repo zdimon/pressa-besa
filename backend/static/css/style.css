@@ -1373,36 +1373,8 @@ html body .slick-list {
     font: 400 14px/20px 'Roboto', sans-serif;
     color: #222;
 }
-.btn-read-free {
-    display: block;
-    margin: 20px 0 0;
-    text-decoration: none;
-    color: #fff;
-    background: #f00;
-    padding: 20px 40px;
-    float: left;
-    border-radius: 5px;
-    font: 400 18px/20px 'Roboto', sans-serif;
-    -webkit-transition: background-color 0.3s ease;
-    -moz-transition: background-color 0.3s ease;
-    transition: background-color 0.3s ease;
-}
-.btn-read-free:hover {
-    text-decoration: none;
-    background: #900;
-    color: #fff;
-}
-.main-banner-pic {
-    position: absolute;
-    width: 465px !important;
-    height: 465px;
-    right: 20%;
-    top: 14px;
-    padding: 0 !important;
-}
-.col-md-5.main-banner-content {
-    padding-left: 50px !important;
-}
+
+
 .market-prices {
     width: 140px !important;
     height: 272px !important;
@@ -1437,39 +1409,8 @@ html body .slick-list {
     font: 500 16px/20px 'Roboto', sans-serif;
     color: #222;
 }
-.market-prices-top p:nth-child(2) {
-    font: 500 67px/70px 'Roboto', sans-serif;
-}
-.market-prices-bottom {
-    position: relative;
-    background: #f2f2f2;
-    width: 130px;
-    height: 136px;
-}
-.market-prices-bottom p {
-    color: rgba(34,34,34,0.5);
-    font: normal 20px/24px 'Roboto', sans-serif;
-    position: absolute;
-    display: block;
-    margin: 0;
-    width: auto;
-    height: auto;
-}
-.market-prices-bottom p:nth-child(1) {
-    top: 20px;
-    left: 20px;
-}
-.market-prices-bottom p:nth-child(2) {
-    font: 500 40px/50px 'Roboto', sans-serif;
-    right: 20px;
-    top: 38px;
-}
-.market-prices-bottom p:nth-child(3) {
-    bottom: 30px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-}
+
+
 .slider-wrapper {
     display: block;
     position: relative;

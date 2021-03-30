@@ -1,0 +1,88 @@
+.main-banner-content h1 {
+    font: 35px 'Roboto', sans-serif;
+}
+
+.banner-top-text {
+    color: #AC890D;
+    font: 18px 'Roboto', sans-serif;
+}
+
+.main-banner-pic {
+    position: absolute;
+    width: 370px !important;
+    height: 370px;
+    right: 20%;
+    top: 14px;
+    padding: 0 !important;
+}
+.col-md-5.main-banner-content {
+    padding-left: 50px !important;
+}
+
+#costJ {
+    font-size: 60px;
+}
+
+#costR {
+    font-size: 30px;
+}
+
+.market-prices-bottom p {
+    color: rgba(34,34,34,0.5);
+    font: normal 20px/24px 'Roboto', sans-serif;
+    position: absolute;
+    display: block;
+    margin: 0;
+    width: auto;
+    height: auto;
+}
+.market-prices-bottom p:nth-child(1) {
+    top: 20px;
+    left: 20px;
+}
+.market-prices-bottom p:nth-child(2) {
+    font: 500 40px/50px 'Roboto', sans-serif;
+    right: 20px;
+    top: 38px;
+}
+.market-prices-bottom p:nth-child(3) {
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.market-prices-top p:nth-child(2) {
+    font: 400 67px/70px 'Roboto', sans-serif;
+}
+.market-prices-bottom {
+    position: relative;
+    background: #f2f2f2;
+    width: 130px;
+    height: 136px;
+}
+
+.btn-read-free {
+    display: block;
+    margin: 20px 0 0;
+    text-decoration: none;
+    color: #fff;
+    background: #f00;
+    padding: 20px 55px;
+    float: left;
+    border-radius: 5px;
+    font: 400 18px/20px 'Roboto', sans-serif;
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
+}
+.btn-read-free:hover {
+    text-decoration: none;
+    background: #900;
+    color: #fff;
+}
+
+.banner-top-text p:nth-child(1) {
+    font: 400 12px/12px 'Roboto', sans-serif;
+    font-weight: bold;
+}
