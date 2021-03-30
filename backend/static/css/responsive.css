@@ -244,6 +244,15 @@
         margin-left: -8px !important;
         margin-right: -8px !important;
     }
+    #costJ {
+        font-size: 80px !important;
+    }
+    .market-prices-bottom p:nth-child(3) {
+        bottom: 15px !important;
+    }
+    .main-banner-pic {
+        position: relative !important;
+    }
 
 }
 
