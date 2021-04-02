@@ -6,3 +6,4 @@ redis
 celery
 django-supervisor
 Pillow
+psycopg2
