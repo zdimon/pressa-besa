@@ -3,6 +3,7 @@ import os
 import git
 from celery.decorators import task
 import subprocess
+from django.contrib.auth.models import User
 
 
 def normalize_email(email):
@@ -29,6 +30,20 @@ def clear_env(email):
     supervisor_conf_path = os.path.join(
         settings.BASE_DIR, 'configs', 'supervisor', filename)
     os.remove(supervisor_conf_path)
+
+
+def register_user(env_id):
+    from .models import Env
+    env = Env.objects.get(pk=env_id)
+    user = User()
+    user.username = env.email
+    user.is_active = True
+    user.is_staff = True
+    user.is_superuser = True
+    user.set_password(env.email+'123')
+    user.save()
+    env.user = user
+    env.save()
 
 
 def create_conf(env_id):
@@ -121,6 +136,7 @@ def git_clone(env_id):
     print(error)
     copy_frontend(env_id)
     django_conf(env_id)
+    register_user(env_id)
     restart()
 
 
