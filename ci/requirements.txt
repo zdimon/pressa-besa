@@ -7,3 +7,7 @@ celery
 django-supervisor
 Pillow
 psycopg2-binary
+social-auth-app-django
+django-crispy-forms
+easy-thumbnails
+django-image-cropping==1.4.0

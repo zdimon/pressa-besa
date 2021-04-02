@@ -1,0 +1,38 @@
+ 
+ {% extends 'base.html' %}
+ {% block content %}
+ <h4>Задачи на выполнение</h4>
+
+
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Заголовок</th>
+      <th scope="col">Описание</th>
+      <th scope="col">Изображения</th>
+      <th scope="col">Действия</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for task in tasks %}
+    <tr>
+      <th scope="row">{{ task.id }}</th>
+      <td>{{ task.title }}</td>
+      <td>{{ task.desc }}</td>
+      <td>
+        {% for im in task.file_set.all %}
+            {{ im.title }}
+            <a target=_blank href="{{im.image.url}}">
+                <img title="{{ im.title }}" src="{{im.small_image_url}}" />
+            </a>
+        {% endfor %}
+      </td>
+      <td>
+        <a class="btn btn-lg btn-outline-primary btn-block" href="">Взять в работу</a>
+      </td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+ {% endblock %}

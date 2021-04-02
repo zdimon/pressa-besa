@@ -1,31 +1,14 @@
-<html lang="en">
-<!-- Basic -->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title> CI </title>
-</head>
-
-<body>
  
-    <h1> Создать рабочую область </h1>
+ {% extends 'base.html' %}
+ {% block content %}
+ <h1> Система контроля проектирования веб-проекта  </h1>
     <p>
-        Это форма для того, чтобы вы смогли создать клон вот этого сайта  <a href="https://newpressa.pressa.ru/">https://newpressa.pressa.ru/</a>
+        Эта система позволяет любому желающему принять участие в проектировани сайта  <a href="https://newpressa.pressa.ru/">https://newpressa.pressa.ru/</a>
     </p>
     <p>
-        Этот сайт находится на этапе разработки и вы можете принять в этом участие.
+        Для начала работы вам необходимо войти в систему, используя аккаунт Google.
     </p>
-    <p>
-       Но для этого необходимо cоздать его копию и предоставить вам к ней доступ.
+    <p class="container">
+            <a class="btn btn-lg btn-outline-primary btn-block" href="{% url 'social:begin' 'google-oauth2' %}">Вход</a>
     </p>
-    <p>
-       Поэтому введите в поле ваш логин (это может быть email) и давите на кнопку "Создать рабочую область"!
-    </p>
-    <form method="POST" action="" >
-        {% csrf_token %}
-        {{ form }}
-        <button>Создать рабочую область</button>
-    </form>
-</body>
-</html>
+    {% endblock %}

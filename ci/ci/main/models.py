@@ -7,6 +7,8 @@ from .tasks import create_dir, git_clone, nginx_conf, supervisor_conf, clear_env
 from django.contrib.auth.models import User
 from django.conf import settings
 from django.utils.safestring import mark_safe
+from easy_thumbnails.files import get_thumbnailer
+from image_cropping.fields import ImageRatioField, ImageCropField
 
 
 class Env(models.Model):
@@ -16,10 +18,14 @@ class Env(models.Model):
         User, null=True, blank=True, on_delete=models.CASCADE)
 
     @property
+    def link_url(self):
+        return "http://%s.%s" % (normalize_email(self.email), settings.DOMAIN)
+
+    @ property
     def link(self):
         return mark_safe('<a target=_blank href="http://%s.%s">Ссылка на рабочую область</a>' % (normalize_email(self.email), settings.DOMAIN))
 
-    @classmethod
+    @ classmethod
     def post_create(cls, sender, instance, created, *args, **kwargs):
         if created:
             maxp = Env.objects.aggregate(Max('port'))
@@ -54,6 +60,19 @@ class Maket(models.Model):
 
 class File(models.Model):
     title = models.CharField(verbose_name='Заголовок', max_length=250)
-    image = models.ImageField(upload_to='file')
+    image = ImageCropField(upload_to='files')
     task = models.ForeignKey(
         Task, verbose_name="Задача", on_delete=models.CASCADE)
+    cropping = ImageRatioField('image', '80x80')
+
+    @property
+    def small_image_url(self):
+        try:
+            return get_thumbnailer(self.image).get_thumbnail({
+                'size': (80, 80),
+                'box': self.cropping,
+                'crop': 'smart',
+            }).url
+        except Exception as e:
+            print(e)
+            return SERVER_NAME + 'static/noimage.png'

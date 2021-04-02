@@ -38,8 +38,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main'
+    'main',
+    'account',
+    'social_django',
+    'crispy_forms',
+    'easy_thumbnails',
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -141,15 +151,25 @@ DB_NAME = os.getenv('DB_NAME', '')
 DB_USER = os.getenv('DB_USER', '')
 DB_PASSWORD = os.getenv('DB_PASSWORD', '')
 DB_HOST = os.getenv('DB_HOST', '')
-DB_PATH = os.getenv('DB_PATH', BASE_DIR / 'db.sqlite3')
 DATABASE = os.getenv('DATABASE', 'sqlite')
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv(
+    'SOCIAL_AUTH_GOOGLE_OAUTH2_KEY', "...")
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv(
+    'SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET', "...")
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = os.getenv(
+    'SOCIAL_AUTH_REDIRECT_IS_HTTPS', False)
 
+LOGIN_URL = '/login'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/logout'
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+SOCIAL_AUTH_USER_MODEL = 'account.Customer'
 
 if DATABASE == 'sqlite':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': DB_PATH,
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
 

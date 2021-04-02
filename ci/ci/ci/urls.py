@@ -16,13 +16,17 @@ Including another URLconf
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
-from django.urls import path
-from main.views import index, done
+from django.urls import path, include
+from main.views import index, done, logout_view, env, tasks
 
 urlpatterns = [
     path('', index),
     path('done/<int:id>', done),
     path('admin/', admin.site.urls),
+    path('', include('social_django.urls', namespace='social')),
+    path('logout', logout_view),
+    path('env', env),
+    path('tasks', tasks),
 ]
 
 
