@@ -229,4 +229,5 @@ def git_push(env_id, task_id):
     repo = Repo(path_from)
     repo.git.add(update=True)
     repo.index.commit('commit from '+env.email+' ci-task: #'+str(task.task.id))
-    repo.git.push('origin', env.email)
+    bname = 'devel-%s' % env.email
+    repo.git.push('origin', bname)
