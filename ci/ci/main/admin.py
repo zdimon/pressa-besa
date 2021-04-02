@@ -1,6 +1,11 @@
 from django.contrib import admin
 
-from .models import Env, Task
+from .models import Env, Task, File, Maket
+
+
+class FileInline(admin.TabularInline):
+    model = File
+    list_display = ['title', 'image', 'thumb']
 
 
 @admin.register(Env)
@@ -11,3 +16,4 @@ class EnvAdmin(admin.ModelAdmin):
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
     list_display = ['title', 'desc', 'is_done']
+    inlines = [FileInline, ]

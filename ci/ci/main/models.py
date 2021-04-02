@@ -45,3 +45,15 @@ class Task(models.Model):
     title = models.CharField(max_length=250)
     desc = models.TextField()
     is_done = models.BooleanField(default=False)
+
+
+class Maket(models.Model):
+    title = models.CharField(verbose_name='Заголовок', max_length=250)
+    image = models.ImageField(upload_to='maket')
+
+
+class File(models.Model):
+    title = models.CharField(verbose_name='Заголовок', max_length=250)
+    image = models.ImageField(upload_to='file')
+    task = models.ForeignKey(
+        Task, verbose_name="Задача", on_delete=models.CASCADE)

@@ -5,3 +5,4 @@ GitPython
 redis
 celery
 django-supervisor
+Pillow
