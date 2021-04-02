@@ -171,7 +171,7 @@ def git_clone(env_id):
     process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
     output, error = process.communicate()
     print(error)
-    # git_create_branch(env_id)
+    git_create_branch(env_id)
     copy_frontend(env_id)
     django_conf(env_id)
     # register_user(env_id)
