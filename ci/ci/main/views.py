@@ -1,3 +1,4 @@
+import json
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
@@ -59,7 +60,9 @@ def instr(request):
 
 @csrf_exempt
 def hook(request):
-    print(request.body)
+    data = json.loads(request.body)
+    if data["action"] == 'closed':
+        print(data["pull_request"])
     return HttpResponse('Ok')
 
 
