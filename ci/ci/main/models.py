@@ -96,3 +96,12 @@ class Task2User(models.Model):
             return 'Выполнено'
         else:
             return 'В работе'
+
+
+class Commit(models.Model):
+    user = models.ForeignKey("account.Customer", verbose_name=_(
+        "Пользователь"), on_delete=models.CASCADE)
+    task = models.ForeignKey(Task, verbose_name=_(
+        "Задача"), on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    title = models.CharField(verbose_name='Заголовок', max_length=250)

@@ -4,7 +4,7 @@ from django.shortcuts import redirect
 from django.conf import settings
 from .models import Env
 from .tasks import normalize_email, git_push
-from .models import Env, Task, Task2User
+from .models import Env, Task, Task2User, Commit
 from git import Repo
 from django.shortcuts import redirect
 from django.contrib.auth import logout
@@ -27,6 +27,7 @@ def env(request):
         error = 'Ваша Рабочая область пока не создана.'
 
     tasks = Task2User.objects.filter(user=request.user)
+    commits = Commit.objects.filter(user=request.user)
 
     if request.method == 'POST':
         form = EnvForm(request.POST)
@@ -41,13 +42,17 @@ def env(request):
     else:
         form = EnvForm(initial={'email': request.user.username})
 
-    return render(request, 'env.html', {"error": error, "env": env, "form": form, "message": message, "tasks": tasks})
+    return render(request, 'env.html', {"error": error, "env": env, "form": form, "message": message, "tasks": tasks, "commits": commits})
 
 
 def index(request):
     if request.user.is_authenticated:
         return redirect('/env')
     return render(request, 'index.html')
+
+
+def instr(request):
+    return render(request, 'instr.html')
 
 
 def tasks(request):
@@ -99,14 +104,20 @@ def done_task(request, id):
 
 
 def end_task(request, id):
-    task = Task2User.objects.get(pk=id)
-    env = Env.objects.get(user=request.user)
-    git_push.delay(env.id, id)
+
     #origin = repo.remote(name='origin')
     # origin.push()
+    task = Task2User.objects.get(pk=id)
     if task.user == request.user:
+        env = Env.objects.get(user=request.user)
+        git_push.delay(env.id, id)
         task.is_done = True
         task.save()
+        c = Commit()
+        c.user = request.user
+        c.task = task.task
+        c.title = task.task.title
+        c.save()
         messages.success(
-            request, 'Задача выполнена и отправлена на проверку.')
+            request, 'Спасибо! Ваши изменения зафиксированы и отправлены на проверку.')
     return redirect('/env')

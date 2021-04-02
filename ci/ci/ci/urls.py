@@ -17,7 +17,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
-from main.views import index, done, logout_view, env, tasks, take_task, del_task, done_task, end_task
+from main.views import index, done, logout_view, env, tasks, take_task, del_task, done_task, end_task, instr
 
 urlpatterns = [
     path('', index),
@@ -27,6 +27,7 @@ urlpatterns = [
     path('logout', logout_view),
     path('env', env),
     path('tasks', tasks),
+    path('instr', instr),
     path('task/take/<int:id>', take_task),
     path('task/del/<int:id>', del_task),
     path('task/done/<int:id>', done_task),
