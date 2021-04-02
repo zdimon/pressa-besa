@@ -13,6 +13,11 @@ class EnvAdmin(admin.ModelAdmin):
     list_display = ['email', 'link']
 
 
+@admin.register(Maket)
+class MaketAdmin(admin.ModelAdmin):
+    list_display = ['title', 'image']
+
+
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
     list_display = ['title', 'desc', 'is_done']
