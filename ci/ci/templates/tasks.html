@@ -19,7 +19,10 @@
       <th scope="row">{{ task.id }}</th>
       <td>
             <p slyle="font-weight: strong"><strong>{{ task.title }}</strong></p>
-            {{ task.desc }}
+            <p>{{ task.desc }}</p>
+            <p>
+              Бюджет: <strong>{{ task.budget }}</strong>
+            </p>
       </td>
       <td>
         {% for im in task.file_set.all %}
