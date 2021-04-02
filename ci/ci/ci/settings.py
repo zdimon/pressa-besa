@@ -137,5 +137,32 @@ PROJECT_PATH = os.getenv('PROJECT_PATH')
 DB_PATH = os.getenv('DB_PATH')
 FRONTEND_PATH = os.getenv('FRONTEND_PATH')
 REDIS_DB = os.getenv('REDIS_DB', '5')
+DB_NAME = os.getenv('DB_NAME', '')
+DB_USER = os.getenv('DB_USER', '')
+DB_PASSWORD = os.getenv('DB_PASSWORD', '')
+DB_HOST = os.getenv('DB_HOST', '')
+DB_PATH = os.getenv('DB_PATH', BASE_DIR / 'db.sqlite3')
+
+
+if DATABASE == 'sqlite':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': DB_PATH,
+        }
+    }
+
+if DATABASE == 'pg':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': DB_NAME,
+            'USER': DB_USER,
+            'PASSWORD': DB_PASSWORD,
+            'HOST': DB_HOST,
+            'PORT': '5432',
+        },
+    }
+
 
 CELERY_BROKER_URL = 'redis://localhost:6379/%s' % REDIS_DB
