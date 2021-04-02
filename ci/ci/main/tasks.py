@@ -5,6 +5,7 @@ from celery.decorators import task
 import subprocess
 from django.contrib.auth.models import User
 from account.models import Customer
+from git import Repo
 
 
 def normalize_email(email):
@@ -45,6 +46,21 @@ def register_user(env_id):
     user.save()
     env.user = user
     env.save()
+
+
+def git_create_branch(env_id):
+    from .models import Env
+    env = Env.objects.get(pk=env_id)
+    path_from = os.path.join(settings.WORK_DIR, normalize_email(
+        env.email), 'pressa-besa')
+    repo = Repo(path_from)
+    current = repo.create_head(normalize_email(
+        env.email))
+    current.checkout()
+    origin = repo.remote(name='origin')
+    repo.head.reference.set_tracking_branch(origin.refs.master).checkout()
+    origin.push(normalize_email(
+        env.email))
 
 
 def create_conf(env_id):
@@ -119,7 +135,7 @@ def restart():
     print(error)
 
 
-@ task()
+@task()
 def git_clone(env_id):
     from .models import Env
 
@@ -135,6 +151,7 @@ def git_clone(env_id):
     process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
     output, error = process.communicate()
     print(error)
+    git_create_branch(env_id)
     copy_frontend(env_id)
     django_conf(env_id)
     # register_user(env_id)
@@ -180,3 +197,16 @@ def supervisor_conf(env_id):
         settings.BASE_DIR, 'configs', 'supervisor', filename)
     with open(conf_path, 'w+') as f:
         f.write(tpl)
+
+
+@task()
+def git_push(env_id, task_id):
+    from .models import Env, Task2User
+    task = Task2User.objects.get(pk=task_id)
+    env = Env.objects.get(id=env_id)
+    path_from = os.path.join(settings.WORK_DIR, normalize_email(
+        env.email), 'pressa-besa')
+    repo = Repo(path_from)
+    repo.git.add(update=True)
+    repo.index.commit('commit from '+env.email+' task #'+str(task.task.id))
+    repo.git.push('origin', env.email)

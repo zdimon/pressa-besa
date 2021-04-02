@@ -3,12 +3,13 @@ from .forms import EnvForm
 from django.shortcuts import redirect
 from django.conf import settings
 from .models import Env
-from .tasks import normalize_email
+from .tasks import normalize_email, git_push
 from .models import Env, Task, Task2User
-
+from git import Repo
 from django.shortcuts import redirect
 from django.contrib.auth import logout
 from django.contrib import messages
+import os
 
 
 def logout_view(request):
@@ -23,7 +24,7 @@ def env(request):
     try:
         env = Env.objects.get(user=request.user)
     except:
-        error = 'Пока не создана!'
+        error = 'Ваша Рабочая область пока не создана.'
 
     tasks = Task2User.objects.filter(user=request.user)
 
@@ -89,4 +90,23 @@ def del_task(request, id):
         task.delete()
         messages.success(
             request, 'Задача удалена')
+    return redirect('/env')
+
+
+def done_task(request, id):
+    task = Task2User.objects.get(pk=id)
+    return render(request, 'done_task.html', {"task": task})
+
+
+def end_task(request, id):
+    task = Task2User.objects.get(pk=id)
+    env = Env.objects.get(user=request.user)
+    git_push.delay(env.id, id)
+    #origin = repo.remote(name='origin')
+    # origin.push()
+    if task.user == request.user:
+        task.is_done = True
+        task.save()
+        messages.success(
+            request, 'Задача выполнена и отправлена на проверку.')
     return redirect('/env')

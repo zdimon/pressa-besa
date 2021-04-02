@@ -88,3 +88,11 @@ class Task2User(models.Model):
         "Пользователь"), on_delete=models.CASCADE)
     task = models.ForeignKey(Task, verbose_name=_(
         "Задача"), on_delete=models.CASCADE)
+    is_done = models.BooleanField(default=False)
+
+    @property
+    def get_status(self):
+        if self.is_done:
+            return 'Выполнено'
+        else:
+            return 'В работе'
