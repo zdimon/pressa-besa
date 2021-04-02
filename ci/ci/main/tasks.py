@@ -51,6 +51,25 @@ def register_user(env_id):
 def git_create_branch(env_id):
     from .models import Env
     env = Env.objects.get(pk=env_id)
+    path = os.path.join(settings.WORK_DIR, normalize_email(
+        env.email), 'pressa-besa')
+    os.chdir(path)
+    bname = 'devel-%s' % normalize_email(
+        env.email)
+    bashCommand = "git branch %s" % bname
+    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    output, error = process.communicate()
+    print(error)
+    bashCommand = "git checkout %s" % bname
+    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    output, error = process.communicate()
+    print(error)
+
+    bashCommand = "git push --set-upstream origin %s" % bname
+    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    output, error = process.communicate()
+    print(error)
+    '''
     path_from = os.path.join(settings.WORK_DIR, normalize_email(
         env.email), 'pressa-besa')
     repo = Repo(path_from)
@@ -61,6 +80,7 @@ def git_create_branch(env_id):
     repo.head.reference.set_tracking_branch(origin.refs.master).checkout()
     origin.push(normalize_email(
         env.email))
+    '''
 
 
 def create_conf(env_id):
