@@ -1,3 +1,5 @@
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
 from .forms import EnvForm
 from django.shortcuts import redirect
@@ -53,6 +55,12 @@ def index(request):
 
 def instr(request):
     return render(request, 'instr.html')
+
+
+@csrf_exempt
+def hook(request):
+    print(request.body)
+    return HttpResponse('Ok')
 
 
 def tasks(request):
