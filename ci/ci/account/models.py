@@ -16,10 +16,14 @@ class Customer(User):
                               upload_to='user_photo/%Y/%m/%d/',
                               blank=True, null=True)
 
-    phone_number = models.CharField(blank=True, null=True, max_length=25)
+    phone_number = models.CharField(
+        blank=True, null=True, max_length=25, verbose_name=_(u'телефон'))
     telegram = models.CharField(verbose_name=_(
         u'логин в телеграм'), blank=True, null=True, max_length=25)
     card = models.CharField(verbose_name=_(
         u'номер карты для приема платежей'), blank=True, null=True, max_length=35)
     desc = models.TextField(verbose_name=_(
         u'Стек технологий которыми владеете'), blank=True, null=True, max_length=25)
+
+    def __str__(self):
+        return self.name

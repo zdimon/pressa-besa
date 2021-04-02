@@ -4,10 +4,11 @@ from django.shortcuts import redirect
 from django.conf import settings
 from .models import Env
 from .tasks import normalize_email
-from .models import Env, Task
+from .models import Env, Task, Task2User
 
 from django.shortcuts import redirect
 from django.contrib.auth import logout
+from django.contrib import messages
 
 
 def logout_view(request):
@@ -24,6 +25,8 @@ def env(request):
     except:
         error = 'Пока не создана!'
 
+    tasks = Task2User.objects.filter(user=request.user)
+
     if request.method == 'POST':
         form = EnvForm(request.POST)
         if form.is_valid():
@@ -37,7 +40,7 @@ def env(request):
     else:
         form = EnvForm(initial={'email': request.user.username})
 
-    return render(request, 'env.html', {"error": error, "env": env, "form": form, "message": message})
+    return render(request, 'env.html', {"error": error, "env": env, "form": form, "message": message, "tasks": tasks})
 
 
 def index(request):
@@ -61,3 +64,29 @@ def done(request, id):
 
 def info(request):
     return render(request, 'info.html')
+
+
+def take_task(request, id):
+    task = Task.objects.get(pk=id)
+    try:
+        Task2User.objects.get(user=request.user, task=task)
+        messages.success(
+            request, 'Эта задача уже в работе!')
+        return redirect('/tasks')
+    except:
+        t2u = Task2User()
+        t2u.user = request.user
+        t2u.task = task
+        t2u.save()
+        messages.success(
+            request, 'Задача взята в работу и помещена в раздел Рабочая область')
+        return redirect('/tasks')
+
+
+def del_task(request, id):
+    task = Task2User.objects.get(pk=id)
+    if task.user == request.user:
+        task.delete()
+        messages.success(
+            request, 'Задача удалена')
+    return redirect('/env')

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Env, Task, File, Maket
+from .models import Env, Task, File, Maket, Task2User
 
 
 class FileInline(admin.TabularInline):
@@ -20,5 +20,11 @@ class MaketAdmin(admin.ModelAdmin):
 
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ['title', 'desc', 'is_done']
+    list_display = ['title', 'desc', 'is_done', 'budget']
     inlines = [FileInline, ]
+    list_editable = ['budget']
+
+
+@admin.register(Task2User)
+class Task2UserAdmin(admin.ModelAdmin):
+    list_display = ['user', 'task']

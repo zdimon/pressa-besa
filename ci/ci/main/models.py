@@ -9,6 +9,7 @@ from django.conf import settings
 from django.utils.safestring import mark_safe
 from easy_thumbnails.files import get_thumbnailer
 from image_cropping.fields import ImageRatioField, ImageCropField
+from django.utils.translation import ugettext_lazy as _
 
 
 class Env(models.Model):
@@ -51,6 +52,10 @@ class Task(models.Model):
     title = models.CharField(max_length=250)
     desc = models.TextField()
     is_done = models.BooleanField(default=False)
+    budget = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.title
 
 
 class Maket(models.Model):
@@ -76,3 +81,10 @@ class File(models.Model):
         except Exception as e:
             print(e)
             return SERVER_NAME + 'static/noimage.png'
+
+
+class Task2User(models.Model):
+    user = models.ForeignKey("account.Customer", verbose_name=_(
+        "Пользователь"), on_delete=models.CASCADE)
+    task = models.ForeignKey(Task, verbose_name=_(
+        "Задача"), on_delete=models.CASCADE)

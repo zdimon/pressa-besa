@@ -1,0 +1,27 @@
+ 
+ {% extends 'base.html' %}
+ {% load crispy_forms_tags %}
+ {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1> Профиль  </h1>
+                <form method="POST" action="" >
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn btn-success">Сохранить</button>
+                </form>
+            </div>
+            <div class="col-4">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                          Логин: {{ user.username }}
+                        </li>
+                        <li class="list-group-item">
+                          На вашем счету: {{ user.amount }} грн.
+                        </li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
