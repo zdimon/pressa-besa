@@ -8,7 +8,6 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Заголовок</th>
       <th scope="col">Описание</th>
       <th scope="col">Изображения</th>
       <th scope="col">Действия</th>
@@ -18,8 +17,10 @@
   {% for task in tasks %}
     <tr>
       <th scope="row">{{ task.id }}</th>
-      <td>{{ task.title }}</td>
-      <td>{{ task.desc }}</td>
+      <td>
+            <p slyle="font-weight: strong">{{ task.title }}</p>
+            {{ task.desc }}
+      </td>
       <td>
         {% for im in task.file_set.all %}
             <p>
