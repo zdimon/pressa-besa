@@ -142,6 +142,7 @@ DB_USER = os.getenv('DB_USER', '')
 DB_PASSWORD = os.getenv('DB_PASSWORD', '')
 DB_HOST = os.getenv('DB_HOST', '')
 DB_PATH = os.getenv('DB_PATH', BASE_DIR / 'db.sqlite3')
+DATABASE = os.getenv('DATABASE', 'sqlite')
 
 
 if DATABASE == 'sqlite':
