@@ -157,11 +157,12 @@ def create_dir(env_id):
 
 
 def restart():
+    print('Restarting supervisor')
     bashCommand = "sudo service supervisor restart"
     process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
     output, error = process.communicate()
     print(error)
-
+    print('Restarting nginx')
     bashCommand = "sudo service nginx restart"
     process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
     output, error = process.communicate()
