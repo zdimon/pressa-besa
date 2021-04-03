@@ -175,7 +175,7 @@ def copy_origin(env_id):
     path_to = os.path.join(settings.WORK_DIR, normalize_email(
         env.email), 'pressa-besa')
     path_from = os.path.join(settings.WORK_DIR, 'origin')
-    print('Copy origin to % ' % path_to)
+    print('Copy origin to %s ' % path_to)
     bashCommand = "cp -r %s/. %s" % (path_from, path_to)
     process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
     output, error = process.communicate()
