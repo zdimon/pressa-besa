@@ -60,7 +60,20 @@ class Task(models.Model):
 
 class Maket(models.Model):
     title = models.CharField(verbose_name='Заголовок', max_length=250)
-    image = models.ImageField(upload_to='maket')
+    image = ImageCropField(upload_to='files')
+    cropping = ImageRatioField('image', '150x150')
+
+    @property
+    def small_image_url(self):
+        try:
+            return get_thumbnailer(self.image).get_thumbnail({
+                'size': (150, 150),
+                'box': self.cropping,
+                'crop': 'smart',
+            }).url
+        except Exception as e:
+            print(e)
+            return SERVER_NAME + 'static/noimage.png'
 
 
 class File(models.Model):

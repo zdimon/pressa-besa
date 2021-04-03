@@ -140,5 +140,5 @@ def merge_master(request, id):
     return redirect('/env')
 
 def maket(request):
-    items = Task2User.objects.get(pk=id)
+    items = Maket.objects.all()
     return render(request, 'maket.html', {"items": items})

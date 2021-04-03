@@ -6,4 +6,4 @@ class ProfileForm(ModelForm):
 
     class Meta:
         model = Customer
-        fields = ['name', 'telegram', 'phone_number', 'card']
+        fields = ['name', 'telegram', 'phone_number', 'card', 'desc']

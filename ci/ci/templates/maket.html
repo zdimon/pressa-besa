@@ -2,6 +2,21 @@
  {% extends 'base.html' %}
  {% block content %}
  <h1> Макеты страниц сайта </h1>
+    <div class="container">
+        <div class="row">
+            {% for item in items %}
+                <div class="col-4">
+                   <p>{{ item.title }}</p>
+                    <a target=_blank href="{{item.image.url}}">
+                        <img title="{{ item.title }}" src="{{item.small_image_url}}" />
+                    </a>                   
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
  {% endblock %}
  
    
