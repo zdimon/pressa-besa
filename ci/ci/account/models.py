@@ -26,7 +26,4 @@ class Customer(User):
         u'Стек технологий которыми владеете'), blank=True, null=True, max_length=25)
 
     def __str__(self):
-        if self.name:
-            return self.name
-        else:
-            return 'empty'
+        return self.username
