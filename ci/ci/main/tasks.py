@@ -257,7 +257,6 @@ def git_merge_with_master(env_id):
     print(error)
 
     ## merge work repo
-    bashCommand = "git merge origin/master --message 'merging %s'" % env.email
-    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    bashCommand = "git merge origin/master --message 'merging'"    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
     output, error = process.communicate()
     print(error)
