@@ -138,3 +138,7 @@ def merge_master(request, id):
     messages.success(
         request, 'Отлично! Теперь Ваш репозиторий синхронизирован с актуальной версией проекта (веткой master).')
     return redirect('/env')
+
+def maket(request):
+    items = Task2User.objects.get(pk=id)
+    return render(request, 'maket.html', {"items": items})
