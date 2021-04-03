@@ -7,7 +7,7 @@ from django.shortcuts import redirect
 from django.conf import settings
 from .models import Env
 from .tasks import normalize_email, git_push, git_merge_with_master
-from .models import Env, Task, Task2User, Commit
+from .models import Env, Task, Task2User, Commit, Maket
 from git import Repo
 from django.shortcuts import redirect
 from django.contrib.auth import logout
