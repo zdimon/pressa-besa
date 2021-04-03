@@ -124,6 +124,7 @@ def copy_frontend(env_id):
 
 
 def django_conf(env_id):
+    print('Making django conf')
     from .models import Env
     env = Env.objects.get(pk=env_id)
     path = os.path.join(settings.BASE_DIR, 'tpl', '.env')
@@ -181,8 +182,7 @@ def copy_origin(env_id):
     process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
     output, error = process.communicate()
     print(error)
-    os.mkdir(os.path.join(settings.WORK_DIR, normalize_email(
-        env.email), settings.PROJECT_PATH, 'logs'))
+
 
 @task()
 def git_clone(env_id):
@@ -280,6 +280,7 @@ def git_merge_with_master(env_id):
     #git_clone(env_id)
     copy_origin(env_id)
     copy_frontend(env_id)
+    django_conf(env_id)
     restart()
     #git_create_branch(env_id)
 
