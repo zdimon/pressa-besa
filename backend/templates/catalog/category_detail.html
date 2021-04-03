@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <h1>Detail</h1>
+    <div>
+        {% for category in categories %}
+            <div>
+                {{ category.name }}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div>
+        {% for item in journals %}
+            <div>
+               {% include 'items/journal.html' %}
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
