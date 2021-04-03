@@ -1,5 +1,6 @@
 .main-banner-content h1 {
-    font: 35px 'Roboto', sans-serif;
+    font: 24px 'Roboto', sans-serif;
+    text-align: center;
 }
 
 .banner-top-text {
@@ -68,12 +69,14 @@
     color: #fff;
     background: #f00;
     padding: 20px 55px;
-    float: left;
+    
     border-radius: 5px;
     font: 400 18px/20px 'Roboto', sans-serif;
     -webkit-transition: background-color 0.3s ease;
     -moz-transition: background-color 0.3s ease;
     transition: background-color 0.3s ease;
+    width: 179px;
+    
 }
 .btn-read-free:hover {
     text-decoration: none;
