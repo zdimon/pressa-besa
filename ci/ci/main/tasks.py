@@ -233,6 +233,31 @@ def git_push(env_id, task_id):
     repo.git.push('origin', bname)
 
 @task()
-def git_merge_with_master(env_id, task_id):
-    command = 'git pull'
-    command = 'git merge origin/master --message "merging"'
+def git_merge_with_master(env_id):
+    from .models import Env, Task2User
+    env = Env.objects.get(id=env_id)
+    path_origin = os.path.join(settings.WORK_DIR, 'origin')
+    
+    path_work = os.path.join(settings.WORK_DIR, normalize_email(
+        env.email), 'pressa-besa')
+
+    ## pull origin repo
+    os.chdir(path_origin)
+    bashCommand = "git pull"
+    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    output, error = process.communicate()
+    print(error)
+
+    # pull work repo
+
+    os.chdir(path_work)
+    bashCommand = "git pull"
+    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    output, error = process.communicate()
+    print(error)
+
+    ## merge work repo
+    bashCommand = "git merge origin/master --message 'merging %s'" % env.email
+    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    output, error = process.communicate()
+    print(error)
