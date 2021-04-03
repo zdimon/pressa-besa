@@ -231,3 +231,8 @@ def git_push(env_id, task_id):
     repo.index.commit('commit from '+env.email+' ci-task: #'+str(task.task.id))
     bname = 'devel-%s' % env.email
     repo.git.push('origin', bname)
+
+@task()
+def git_merge_with_master(env_id, task_id):
+    command = 'git pull'
+    command = 'git merge origin/master --message "merging"'
