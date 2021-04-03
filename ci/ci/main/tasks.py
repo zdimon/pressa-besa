@@ -12,6 +12,18 @@ def normalize_email(email):
     return email.replace('@', '---')
 
 
+
+def clear_work_dir(email):
+    print('Removing work dir')
+    import subprocess
+    # remove env path
+    env_path = os.path.join(settings.WORK_DIR, email)
+    bashCommand = "sudo rm -r %s" % env_path
+    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    output, error = process.communicate()
+    print(error)
+
+
 @task()
 def clear_env(email):
     import subprocess
@@ -140,6 +152,7 @@ def create_dir(env_id):
     login = normalize_email(
         env.email)
     path = os.path.join(settings.WORK_DIR, login)
+    print('Creating work dir %s' % path)
     os.mkdir(path)
 
 
@@ -155,12 +168,23 @@ def restart():
     print(error)
 
 
+
+def copy_origin(env_id):
+    from .models import Env
+    env = Env.objects.get(pk=env_id)
+    path_to = os.path.join(settings.WORK_DIR, normalize_email(
+        env.email), 'pressa-besa')
+    path_from = os.path.join(settings.WORK_DIR, 'origin')
+    print('Copy origin to % ' % path_to)
+    bashCommand = "cp -r %s/. %s" % (path_from, path_to)
+    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    output, error = process.communicate()
+    print(error)
+
 @task()
 def git_clone(env_id):
     from .models import Env
-
     env = Env.objects.get(pk=env_id)
-
     path_to = os.path.join(settings.WORK_DIR, normalize_email(
         env.email), 'pressa-besa')
     path_from = os.path.join(settings.WORK_DIR, 'origin')
@@ -247,16 +271,21 @@ def git_merge_with_master(env_id):
     process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
     output, error = process.communicate()
     print(error)
+    clear_work_dir(normalize_email(
+        env.email))
+    create_dir(env_id)
+    git_clone(env_id)
+    copy_origin(env_id)
 
-    # pull work repo
+    # # pull work repo
 
-    os.chdir(path_work)
-    bashCommand = "git pull"
-    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-    output, error = process.communicate()
-    print(error)
+    # os.chdir(path_work)
+    # bashCommand = "git pull"
+    # process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    # output, error = process.communicate()
+    # print(error)
 
-    ## merge work repo
-    bashCommand = "git merge origin/master --message 'merging'"    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-    output, error = process.communicate()
-    print(error)
+    # ## merge work repo
+    # bashCommand = "git merge origin/master --message 'merging'"    process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+    # output, error = process.communicate()
+    # print(error)
