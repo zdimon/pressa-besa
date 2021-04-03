@@ -181,6 +181,8 @@ def copy_origin(env_id):
     process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
     output, error = process.communicate()
     print(error)
+    os.mkdir(os.path.join(settings.WORK_DIR, normalize_email(
+        env.email), settings.PROJECT_PATH, 'logs'))
 
 @task()
 def git_clone(env_id):
