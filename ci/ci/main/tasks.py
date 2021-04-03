@@ -275,7 +275,7 @@ def git_merge_with_master(env_id):
         env.email))
     create_dir(env_id)
     git_clone(env_id)
-    copy_origin(env_id)
+    #copy_origin(env_id)
     #git_create_branch(env_id)
 
     # # pull work repo
