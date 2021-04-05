@@ -6,11 +6,11 @@ import subprocess
 from django.contrib.auth.models import User
 from account.models import Customer
 from git import Repo
+from .utils import normalize_email
 
 
 def normalize_email(email):
     return email.replace('@', '---')
-
 
 
 def clear_work_dir(email):
@@ -170,7 +170,6 @@ def restart():
     print(error)
 
 
-
 def copy_origin(env_id):
     from .models import Env
     env = Env.objects.get(pk=env_id)
@@ -259,16 +258,17 @@ def git_push(env_id, task_id):
     bname = 'devel-%s' % env.email
     repo.git.push('origin', bname)
 
+
 @task()
 def git_merge_with_master(env_id):
     from .models import Env, Task2User
     env = Env.objects.get(id=env_id)
     path_origin = os.path.join(settings.WORK_DIR, 'origin')
-    
+
     path_work = os.path.join(settings.WORK_DIR, normalize_email(
         env.email), 'pressa-besa')
 
-    ## pull origin repo
+    # pull origin repo
     os.chdir(path_origin)
     bashCommand = "git pull"
     process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
@@ -277,12 +277,12 @@ def git_merge_with_master(env_id):
     clear_work_dir(normalize_email(
         env.email))
     create_dir(env_id)
-    #git_clone(env_id)
+    # git_clone(env_id)
     copy_origin(env_id)
     copy_frontend(env_id)
     django_conf(env_id)
     restart()
-    #git_create_branch(env_id)
+    # git_create_branch(env_id)
 
     # # pull work repo
 

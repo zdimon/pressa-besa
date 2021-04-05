@@ -36,6 +36,7 @@ urlpatterns = [
     path('task/end/<int:id>', end_task),
     path('env/merge/<int:id>', merge_master),
     path('', include('account.urls')),
+    path('', include('control.urls')),
 ]
 
 

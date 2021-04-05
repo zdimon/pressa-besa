@@ -1,4 +1,5 @@
 wheel
+setuptools
 Django
 python-dotenv
 GitPython
