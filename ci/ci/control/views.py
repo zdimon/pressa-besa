@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from main.models import *
-from .tasks import git_pull, git_status
+from .tasks import git_pull, git_status, git_push
 from django.http import HttpResponse
 from django.http import JsonResponse
 
@@ -13,6 +13,11 @@ def control(request):
 
 def do_pull(request, id):
     rez = git_pull(id)
+    return JsonResponse(rez)
+
+
+def do_push(request, id):
+    rez = git_push(id)
     return JsonResponse(rez)
 
 
