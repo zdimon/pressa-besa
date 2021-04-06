@@ -41,8 +41,8 @@ def git_push(env_id):
         env.email), 'pressa-besa')
     os.chdir(path)
     bname = 'devel-%s' % normalize_email(env.email)
-    # command = 'git push --set-upstream origin %s' % bname
-    command = 'git push'
+    command = 'git push --set-upstream origin %s' % bname
+    # command = 'git push'
     out = run_command(command)
     return out
 
