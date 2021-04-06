@@ -1138,14 +1138,7 @@ body {
 .subscribe-section {
     padding: 70px 0 38px;
 }
-.subscribe-section h1 {
-    text-align: center;
-    text-transform: uppercase;
-    color: #222;
-    width: 50%;
-    margin: 0 auto;
-    font: 700 18px/30px Roboto, sans-serif;
-}
+
 .subscribe-section h2 {
     text-align: center;
     text-transform: uppercase;
@@ -1345,14 +1338,8 @@ html body .slick-list {
     padding: 37px 0 30px;
     text-align: center;
 }
-.electronic-library-section h1 {
-    font: 500 30px/40px 'Roboto', sans-serif;
-    color: #222;
-}
-.electronic-library-section h2 {
-    font: 400 20px/22px 'Roboto', sans-serif;
-    color: #222;
-}
+
+
 .electronic-library-section .btn-find-favorite {
     display: block;
     width: 280px;
