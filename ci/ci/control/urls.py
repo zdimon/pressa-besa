@@ -5,5 +5,5 @@ urlpatterns = [
     path('git/pull/<int:id>', do_pull),
     path('git/push/<int:id>', do_push),
     path('git/status/<int:id>', do_status),
-    path('git/status/<int:id>', do_diff),
+    path('git/diff/<int:id>', do_diff),
 ]
