@@ -1,5 +1,6 @@
 .main-banner-content h1 {
     font: 35px 'Roboto', sans-serif;
+    padding-bottom: 20px;
 }
 
 .banner-top-text {
@@ -19,12 +20,26 @@
 }
 
 #costJ {
-    font-size: 60px;
+    font-size: 90px;
+    position: absolute;
+    top: 34px;
+    left: 20px;
 }
 
 #costR {
     font-size: 30px;
+    position: absolute;
+    top: 64px;
+    left: 39px;
 }
+
+#costD {
+    font-size: 22px;
+    position: absolute;
+    top: 89px;
+    left: 32px;
+}
+
 
 .market-prices-bottom p {
     color: rgba(34,34,34,0.5);
@@ -51,9 +66,21 @@
     text-align: center;
 }
 
-.market-prices-top p:nth-child(2) {
-    font: 400 67px/70px 'Roboto', sans-serif;
+.market-prices-top p:nth-child(1) {
+    padding-top: 10px;
+    font-size: 20px;
 }
+
+.market-prices-top p:nth-child(2) {
+    font: 402 67px/62px 'Roboto', sans-serif;
+}
+
+.market-prices-top p:nth-child(3) {
+    font-size: 20px;
+    width: 109px;
+    padding-left: 10px;
+}
+
 .market-prices-bottom {
     position: relative;
     background: #f2f2f2;
@@ -84,4 +111,89 @@
 .banner-top-text p:nth-child(1) {
     font: 400 12px/12px 'Roboto', sans-serif;
     font-weight: bold;
+    padding-top: 50px;
 }
+
+.market-prices-top:after {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #ffffff;
+    border-width: 10px;
+    margin-top: -10px;
+}
+
+
+
+
+.market-prices {
+    width: 140px !important;
+    height: 272px !important;
+    overflow: hidden;
+    text-align: center;
+    position: absolute !important;
+    right:  50px !important;
+    top: 60px !important;
+}
+.market-prices-top {
+    background: #fff;
+    position: relative;
+    width: 130px;
+    text-align: center;
+    height: 147px;
+}
+
+.market-prices-top p {
+    font: 500 16px/20px 'Roboto', sans-serif;
+    color: #222;
+    
+}
+
+.market-text h1 {
+    font: 600 20px/24px Roboto, sans-serif;
+    text-align: center;
+    color: #000;
+}
+.market-text h2 {
+    font: 400 16px/24px Roboto, sans-serif;
+    text-align: center;
+    color: #000;
+    padding-top: 5px;
+}
+.main-banner {
+    padding: 52px 0 60px;
+    background: #FFC700;
+    position: relative;
+}
+.main-banner:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: -100%;
+    background: #FFC700;
+    height: 100%;
+}
+.main-banner:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: -100%;
+    background: #FFC700;
+    height: 100%;
+}
+.market-text {
+    overflow: hidden;
+    padding-top: 53px;
+    padding-bottom: 20px;
+}
+

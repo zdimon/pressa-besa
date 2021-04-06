@@ -1322,97 +1322,9 @@ html body .slick-list {
 .row.header-top {
     display: block;
 }
-.market-text {
-    overflow: hidden;
-    padding-top: 53px;
-    padding-bottom: 20px;
-}
-.market-text h1 {
-    font: 600 20px/24px Roboto, sans-serif;
-    text-align: center;
-    color: #000;
-}
-.market-text h2 {
-    font: 400 16px/24px Roboto, sans-serif;
-    text-align: center;
-    color: #000;
-    padding-top: 5px;
-}
-.main-banner {
-    padding: 52px 0 60px;
-    background: #FFC700;
-    position: relative;
-}
-.main-banner:before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: -100%;
-    background: #FFC700;
-    height: 100%;
-}
-.main-banner:after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    right: -100%;
-    background: #FFC700;
-    height: 100%;
-}
-.main-banner h1 {
-    color: #222;
-    font: 600 39px/50px 'Roboto', sans-serif;
-}
-.banner-top-text {
-    font: 400 18px/22px 'Roboto', sans-serif;
-    padding-top: 20px;
-    color: #f00;
-}
-.banner-top-text p {
-    padding-top: 50px;
-    font: 400 14px/20px 'Roboto', sans-serif;
-    color: #222;
-}
 
 
-.market-prices {
-    width: 140px !important;
-    height: 272px !important;
-    overflow: hidden;
-    text-align: center;
-    position: absolute !important;
-    right:  50px !important;
-    top: 60px !important;
-}
-.market-prices-top {
-    background: #fff;
-    position: relative;
-    width: 130px;
-    text-align: center;
-    height: 136px;
-}
-.market-prices-top:after {
-    right: 100%;
-    top: 50%;
-    border: solid transparent;
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-color: rgba(255, 255, 255, 0);
-    border-right-color: #ffffff;
-    border-width: 10px;
-    margin-top: -10px;
-}
-.market-prices-top p {
-    font: 500 16px/20px 'Roboto', sans-serif;
-    color: #222;
-}
+
 
 
 .slider-wrapper {
