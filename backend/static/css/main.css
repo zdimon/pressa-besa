@@ -1,11 +1,12 @@
 .main-banner-content h1 {
     font: 35px 'Roboto', sans-serif;
     padding-bottom: 20px;
+    color: #3b3a3a;
 }
 
 .banner-top-text {
-    color: #AC890D;
-    font: 18px 'Roboto', sans-serif;
+    font: 400 20px/22px 'Roboto', sans-serif;
+    color: rgb(102, 102, 102);
 }
 
 .main-banner-pic {
@@ -112,6 +113,7 @@
     font: 400 12px/12px 'Roboto', sans-serif;
     font-weight: bold;
     padding-top: 50px;
+    color: rgb(102, 102, 102);
 }
 
 .market-prices-top:after {
@@ -156,14 +158,14 @@
 }
 
 .market-text h1 {
-    font: 600 20px/24px Roboto, sans-serif;
+    font: 500 27px/40px 'Roboto', sans-serif;
+    color: #3b3a3a;
     text-align: center;
-    color: #000;
 }
 .market-text h2 {
-    font: 400 16px/24px Roboto, sans-serif;
     text-align: center;
-    color: #000;
+    font: 400 20px/22px 'Roboto', sans-serif;
+    color: rgb(102, 102, 102);
     padding-top: 5px;
 }
 .main-banner {
@@ -216,4 +218,22 @@
     color: #222;
     padding: 109px 0 10px;
     font: 500 15px/20px 'Roboto', sans-serif;
+}
+
+.electronic-library-section h1 {
+    font: 500 27px/40px 'Roboto', sans-serif;
+    color: #3b3a3a;
+}
+
+.electronic-library-section h2 {
+    font: 400 20px/22px 'Roboto', sans-serif;
+    color: rgb(102, 102, 102);
+}
+
+.subscribe-section h1 {
+    text-align: center;
+    color: #3b3a3a;
+    width: 50%;
+    margin: 0 auto;
+    font: 500 27px/40px 'Roboto', sans-serif;
 }
