@@ -14,3 +14,12 @@ def git_pull(env_id):
     os.chdir(path)
     out = run_command('git pull origin master')
     return out
+
+
+def git_status(env_id):
+    env = Env.objects.get(pk=env_id)
+    path = os.path.join(settings.WORK_DIR, normalize_email(
+        env.email), 'pressa-besa')
+    os.chdir(path)
+    out = run_command('git status')
+    return out

@@ -43,9 +43,15 @@
                                         <td scope="row"><a target="_blank" href="{{ env.link_url }}">Ссылка</a></td>
                                         <td scope="row">{{ env.user }}</td>
                                         <td scope="row">
-                                            <a 
-                                            data-toggle="modal" data-target="#gitpullModal"
-                                            data-id="{{ env.id }}" class="git-pull btn btn-lg btn-outline-warning btn-block" href="#">git pull</a>
+                                            <div class="btn-group" role="group" >
+                                                <a 
+                                                data-toggle="modal" data-target="#gitpullModal"
+                                                data-id="{{ env.id }}" class="git-pull btn btn-primary" href="#">git pull</a>
+                                                <a 
+                                                data-toggle="modal" data-target="#gitpullModal"
+                                                data-id="{{ env.id }}" class="git-status btn btn-info" href="#">git status</a>
+                                            </div>
+                                            
                                         </td>
                                     </tr>
                                 {% endfor %}
