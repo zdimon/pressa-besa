@@ -3,26 +3,26 @@
  {% block content %}
  <div class="container">
     <h1> Система контроля и проектирования веб-проекта  </h1>
-    <p>
+    <p style="font-size: 20px">
         Система позволяет любому желающему принять участие в проектировани сайта  <a href="https://newpressa.pressa.ru/">https://newpressa.pressa.ru/</a>
 
     </p>
     
-    <p>
+    <p style="font-size: 25px">
         <strong>
             Это позволин начинающим программистам получить тот драгоценный опыт на реальном проекте и даже заработать денег!
         </strong>
 
     </p>
 
-    <p>
+    <p style="font-size: 25px">
         <strong> Работа происходит так:</strong>
     </p>
   
     <p>
         
         
-        <ul>
+        <ul style="font-size: 25px">
             <li>1. Вам создается отдельный сервер с проектом.</li>
             <li>2. Вы берете в работу задачу из предложенных.</li>
             <li>3. После проверки и принятия, получаете деньги на виртуальный счет.</li>
@@ -33,12 +33,16 @@
         
         
     </p>
-    <p>
-        Для начала работы вам необходимо войти в систему, используя аккаунт Google.
-    </p>
-    <p class="container">
-            <a class="btn btn-lg btn-outline-primary btn-block" href="{% url 'social:begin' 'google-oauth2' %}">Вход</a>
-    </p>
+    <div style="border: 2px solid silver; border-radius: 5px">
+
+    
+        <p style="font-size: 20px; text-align: center; font-weight: bold">
+            Для начала работы вам необходимо войти в систему, используя аккаунт Google.
+        </p>
+        <p class="container">
+                <a class="btn btn-lg btn-outline-primary btn-block" href="{% url 'social:begin' 'google-oauth2' %}">Вход</a>
+        </p>
+    </div>
  </div>
  
     {% endblock %}
