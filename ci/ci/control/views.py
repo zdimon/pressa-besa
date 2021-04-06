@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from main.models import *
-from .tasks import git_pull, git_status, git_push, git_diff
+from .tasks import git_pull, git_status, git_push, git_diff, git_commit
 from django.http import HttpResponse
 from django.http import JsonResponse
 
@@ -28,4 +28,9 @@ def do_status(request, id):
 
 def do_diff(request, id):
     rez = git_diff(id)
+    return JsonResponse(rez)
+
+
+def do_commit(request, id):
+    rez = git_commit(id)
     return JsonResponse(rez)
