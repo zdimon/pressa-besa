@@ -197,3 +197,23 @@
     padding-bottom: 20px;
 }
 
+
+
+.btn-read-articles {
+    display: block;
+    float: left;
+    text-decoration: none;
+    color: #fff;
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
+    padding: 20px 106px;
+    border-radius: 5px;
+    background: #FE0000;
+    font: 500 24px/30px 'Roboto', sans-serif;
+}
+.banner-bottom-text p {
+    color: #222;
+    padding: 109px 0 10px;
+    font: 500 15px/20px 'Roboto', sans-serif;
+}

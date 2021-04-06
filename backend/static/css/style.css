@@ -1411,24 +1411,8 @@ html body .slick-list {
     color: rgba(34,34,34,0.5);
     font: 400 16px/22px 'Roboto', sans-serif;
 }
-.banner-bottom-text p {
-    color: #222;
-    padding: 50px 0 10px;
-    font: 500 16px/20px 'Roboto', sans-serif;
-}
-.btn-read-articles {
-    display: block;
-    float: left;
-    text-decoration: none;
-    color: #fff;
-    -webkit-transition: background-color 0.3s ease;
-    -moz-transition: background-color 0.3s ease;
-    transition: background-color 0.3s ease;
-    padding: 20px 100px;
-    border-radius: 5px;
-    background: #FE0000;
-    font: 500 24px/30px 'Roboto', sans-serif;
-}
+
+
 .btn-read-articles:hover {
     background: #900000;
     text-decoration: none;
@@ -1452,3 +1436,4 @@ html body .slick-list {
     box-sizing: border-box;
     padding-top: 18px;
 }
+
