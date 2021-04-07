@@ -282,7 +282,7 @@ def git_merge_with_master(env_id):
     copy_frontend(env_id)
     django_conf(env_id)
     restart()
-    # git_create_branch(env_id)
+    git_create_branch(env_id)
 
     # # pull work repo
 
