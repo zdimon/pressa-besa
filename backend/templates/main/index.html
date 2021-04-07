@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block css %}
     <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css' %}">
 {% endblock %}
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+    <script src="{% static 'js/subscription.js' %}"></script>
+{% endblock %}
+
+
 
 {% block content %}
     {% if not user.is_authenticated %}
@@ -20,6 +29,7 @@
        {% include 'blocks/main/actual_articles.html' %}
        {% include 'blocks/main/new_books.html' %}
        {% include 'blocks/main/subscription.html' %}
+       
     {% endif %}
-
+    {% include 'modal/subscription.html' %}
 {% endblock %}
