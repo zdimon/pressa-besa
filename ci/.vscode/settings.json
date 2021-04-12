@@ -1,7 +1,7 @@
 {
   "python.linting.flake8Enabled": true,
   "python.linting.enabled": true,
-  "python.pythonPath": "${workspaceFolder}/venv/bin/python3",
+  "python.pythonPath": "/home/zdimon/Desktop/pressa-besa/ci/venv/bin/python",
   "editor.formatOnSave": true,
   "python.linting.pylintPath": "pylint",
   "python.linting.pylintArgs": [

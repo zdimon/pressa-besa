@@ -1,0 +1,106 @@
+ 
+ {% extends 'base.html' %}
+ {% load crispy_forms_tags %}
+ {% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1> Контроль  </h1>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a 
+                        aria-controls="task" aria-selected="true"
+                        id="task-tab" data-toggle="tab" href="#env" class="nav-link active" >Рабочие области</a>
+                    </li>
+                    <li class="nav-item">
+                        <a 
+                        aria-controls="commit" aria-selected="false"
+                        id="commit-tab" data-toggle="tab" href="#commit" class="nav-link" href="#">Комиты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a 
+                        aria-controls="commit" aria-selected="false"
+                        id="commit-tab" data-toggle="tab" href="#log" class="nav-link" href="#">Лог</a>
+                    </li>
+                    </ul>
+
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="env" role="tabpanel" aria-labelledby="home-tab">
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Ссылка</th>
+                                    <th scope="col">Пользователь</th>
+                                    <th scope="col">Действия</th>
+                                    </tr>
+                                </thead>
+                                {% for env in envs %}
+                                    <tr>
+                                        <td scope="row">{{ env.id }}</td>
+                                        <td scope="row"><a target="_blank" href="{{ env.link_url }}">Ссылка</a></td>
+                                        <td scope="row">{{ env.user }}</td>
+                                        <td scope="row">
+                                            <div class="btn-group" role="group" >
+                                                <a 
+                                                data-toggle="modal" data-target="#gitpullModal"
+                                                data-id="{{ env.id }}" class="git-push btn btn-warning" href="#">git push</a>
+                                                <a 
+                                                data-toggle="modal" data-target="#gitpullModal"
+                                                data-id="{{ env.id }}" class="git-pull btn btn-primary" href="#">git pull</a>
+                                                <a 
+                                                data-toggle="modal" data-target="#gitpullModal"
+                                                data-id="{{ env.id }}" class="git-status btn btn-info" href="#">git status</a>
+                                                <a 
+                                                data-toggle="modal" data-target="#gitpullModal"
+                                                data-id="{{ env.id }}" class="git-diff btn btn-info" href="#">git diff</a>
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="modal" id="gitpullModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="git-oper"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <p>Результат</p>
+                <p id="git-pull-result"></p>
+                <p>Ошибки</p>
+                <p id="git-pull-error"></p>
+            </div>
+            <div class="modal-footer">
+              
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    {% endblock %}
+
+    {% block js %} 
+    <script src="/static/js/control.js"></script>
+    {% endblock %}

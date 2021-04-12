@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Env, Task, File, Maket, Task2User, Commit
+from .models import Env, Task, File, Maket, Task2User, Commit, Log
 
 
 class FileInline(admin.TabularInline):
@@ -33,3 +33,7 @@ class Task2UserAdmin(admin.ModelAdmin):
 @admin.register(Commit)
 class CommitAdmin(admin.ModelAdmin):
     list_display = ['title', 'user', 'task', 'created_at']
+
+@admin.register(Log)
+class LogAdmin(admin.ModelAdmin):
+    list_display = ['action', 'user', 'created_at']

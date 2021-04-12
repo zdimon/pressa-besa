@@ -118,3 +118,9 @@ class Commit(models.Model):
         "Задача"), on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(verbose_name='Заголовок', max_length=250)
+
+class Log(models.Model):
+    user = models.ForeignKey("account.Customer", verbose_name=_(
+        "Пользователь"), on_delete=models.CASCADE)
+    action = models.CharField(verbose_name='Действие', max_length=250)
+    created_at = models.DateTimeField(auto_now_add=True)

@@ -1,0 +1,55 @@
+<div class="modal" id="subscribeModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="git-oper">Оформление абонемента</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            
+          <form>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="period" id="period1" value="option1" checked>
+              <label class="form-check-label" for="period1">
+                Месяц
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="period" id="period2" value="option1" checked>
+              <label class="form-check-label" for="period2">
+                Неделя
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="period" id="period3" value="option1" checked>
+              <label class="form-check-label" for="period3">
+                Период
+              </label>
+              
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" value="10" id="days"> 
+                <label class="form-check-label" for="days">
+                  дней
+                </label>
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" data-provide="datepicker">
+              </div>
+            </div>
+            
+          </form>
+
+           
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Подписаться</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
