@@ -1,0 +1,71 @@
+/** @section Text styling */
+body{
+	font-size: 18px;
+	line-height: 1.2;
+	font-family: $font-base;
+	color: $body-color;
+	background-color: #E5E5E5;
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+// Text styles
+.text-italic {
+	font-style: italic;
+}
+
+.text-normal {
+	font-style: normal;
+}
+
+// Text decoration
+.text-underline {
+	text-decoration: underline;
+}
+
+//Font Weight
+.font-weight-thin {
+	font-weight: 100;
+}
+
+.font-weight-light {
+	font-weight: 300;
+}
+
+.font-weight-regular {
+	font-weight: 400;
+}
+
+.font-weight-medium {
+	font-weight: 500;
+}
+
+.font-weight-sbold {
+	font-weight: 600;
+}
+
+.font-weight-bold {
+	font-weight: 700;
+}
+
+.font-weight-ubold {
+	font-weight: 900;
+}
+
+// Text colors
+.text-primary {
+	color: $primary !important;
+}
+
+.text-black{
+	color: $black;
+}
+
+.text-black-5{
+	color: rgba($body-color,.5)
+}
+
+//Text size
+.text-xs{
+	font-size: 10px;
+}

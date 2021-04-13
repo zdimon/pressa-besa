@@ -1,0 +1,75 @@
+#{headings()} {
+	margin-bottom: 0;
+	margin-top: 0;
+	font-weight: 400;
+	letter-spacing: normal;
+	color: #222222;
+	a {
+		color: inherit;
+		&:hover {
+			color: $primary;
+		}
+	}
+}
+
+
+h1,
+.h1 {
+	font-size: 24px;
+	@include media-breakpoint-up(md) {
+		font-size: 30px;
+	}
+	@media(min-width: 992px){
+		font-size: 34px;
+	}
+	@include media-breakpoint-up(xl) {
+		font-size: 38px;
+	}
+}
+
+h2,
+.h2 {
+	font-size: 28px;
+	@include media-breakpoint-up(md) {
+		font-size: 30px;
+	}
+	@include media-breakpoint-up(xl) {
+		font-size: 36px;
+	}
+}
+
+h3,
+.h3 {
+	line-height: 1.2;
+	font-weight: 500;
+	font-size: 20px;
+	@media(min-width: 768px){
+		font-size: 22px;
+	}
+	@include media-breakpoint-up(xl) {
+		font-size: 24px;
+	}
+}
+
+h4,
+.h4 {
+	font-weight: 700;
+	font-size: 18px;
+	@include media-breakpoint-up(xl) {
+		font-size: 20px;
+	}
+	span{
+		color: #aaa;
+	}
+}
+
+h5,
+.h5 {
+	font-size: 18px;
+	
+}
+
+h6,
+.h6 {
+
+}

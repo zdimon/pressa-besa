@@ -1,0 +1,157 @@
+$background: #e74c3c;
+$select-color: #fff;
+$select-background: #222;
+$select-width: 220px;
+$select-height: 40px;
+
+.select-hidden {
+	display: none;
+	visibility: hidden;
+	padding-right: 10px;
+}
+.select {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	font-size: 16px;
+	color: $select-color;
+	width: $select-width;
+	height: $select-height;
+}
+.select-styled {
+	text-align: center;
+	color: #222;
+	&:after {
+		
+		//position: absolute;
+		//top: 16px;
+		//right: 10px;
+	}
+
+	&:active, &.active {
+		//background-color: darken($select-background, 5);
+		&:after {
+			//top: 9px;
+			//border-color: transparent transparent $select-color transparent;
+		}
+	}
+}
+
+.select-options {
+	display: none;
+	position: absolute;
+	top: 100%;
+	z-index: 999;
+	left: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background-color: #e5e5e5;
+	margin-top: 3px;
+	li {
+		margin: 0;
+		padding: 3px 0;
+		text-align: center;
+		transition: all 0.15s ease-in;
+		color: #222;
+		
+		&:hover {
+			color: $primary;
+			//background: $select-color;
+		}
+		&[rel="hide"] {
+			display: none;
+		}
+	}
+	li:nth-child(2){
+		padding-top: 5px;
+		border-top: 1px solid #ccc;
+	}
+}
+
+
+.rd-nav-options__lang{
+	.select{
+		width: 31px;
+		height: 16px;
+		.select-styled{
+			display: flex;
+			&:after{
+				content: "\f107";
+				font-family: 'FontAwesome';
+				display: inline-block;
+				margin-left: 2px;
+				color: #222;
+				transition: transform ease .25s;
+			}
+			&.active{
+				&:after{
+					transform: rotate(180deg);
+					transition: transform ease .25s;
+				}
+			}
+		}
+	}
+}
+
+.rd-nav-aside{
+	.form-select{
+		position: absolute;
+		left: 15px;
+		top: 50%;
+		transform: translateY(-50%);
+		padding-right: 15px;
+		&:before{
+			content: '';
+			position: absolute;
+			right: 0;
+			height: 16px;
+			width: 1px;
+			top: 50%;
+			transform: translateY(-50%);
+			background-color: #DDD;
+		}
+		
+		.select{
+			width: 69px;
+			height: 16px;
+			color: $primary;
+			
+			&-styled{
+				color: $primary;
+				font-size: 14px;
+				display: flex;
+				&:after{
+					content: "\f0d7";
+					font-family: 'FontAwesome';
+					display: inline-block;
+					margin-left: 5px;
+					color: $primary;
+					transition: transform ease .25s;
+				}
+				&.active{
+					&:after{
+						transform: rotate(180deg);
+						transition: transform ease .25s;
+					}
+				}
+			}
+			.select-options{
+				left: -10px;
+				right: -10px;
+				padding: 5px;
+				background-color: #F9F9F9;
+				box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+				li{
+					padding: 3px 7px;
+					text-align: left;
+					font-size: 14px;
+				}
+				li:nth-child(2){
+					border-top: none;
+				}
+			}
+		}
+	}
+}

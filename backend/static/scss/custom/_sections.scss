@@ -1,0 +1,27 @@
+.section{
+	position: relative;
+}
+
+
+.section-xs{
+	padding: 40px 0;
+}
+
+
+.section-md{
+	padding: 60px 0;
+	@media(min-width: 1200px){
+		padding: 75px 0;
+	}
+}
+
+
+.section-xl{
+	padding: 60px 0;
+	@media(min-width: 992px){
+		padding: 80px 0;
+	}
+	@media(min-width: 1200px){
+		padding: 110px 0;
+	}
+}

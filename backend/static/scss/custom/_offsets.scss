@@ -1,0 +1,8 @@
+/** Row spacing */
+.row-30 {
+	@include grid-offset(30px);
+}
+
+.row-20{
+	@include grid-offset(20px);
+}

@@ -1,84 +1,28 @@
 {% load react %}
-{% load static %}
 <!DOCTYPE html>
-<html lang="ru-ru" dir="ltr">
-<head>	
+<html lang="ru">
+<head>
 	<meta charset="utf-8">
+	<title>	Pressa.ru </title>
+	<meta name="description" content="">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-	<title>..Пресса.ру</title>
-
-	<meta name="description" lang="ru-ru" content="">
-	<meta name="keywords" lang="ru-ru" content="">
-	<meta name="keywords" lang="en-us" content="">
-	<meta name="author" lang="ru-ru" content="">
-
-    <!-- Responsiveness -->
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- /Responsiveness -->
-
-    <!-- Browser themes settings -->
-	<meta http-equiv="imagetoolbar" content="no">
-	<!-- saved from url=(0014)about:internet -->
-	<meta name="format-detection" content="telephone=no">
-	<meta name="format-detection" content="address=no">
-    <!-- /Browser themes settings -->
-
-    <!-- CSS -->
-	<link rel="stylesheet" href="/static/css/plugin.css">
-	<link rel="stylesheet" href="/static/css/style.css">
-	<link rel="stylesheet" href="/static/css/responsive.css">
-	<!-- <link rel="stylesheet" href="/static/css/bootstrap-grid.min.css"> -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-	<link rel="stylesheet" href="/static/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="/static/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/static/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/static/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/static/assets/img/favicon/apple-touch-icon-114x114.png">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/static/assets/css/style.css">
 	{% block css %} {% endblock %}
-    <!-- /CSS -->
-
-    <!-- JavaScript -->
-    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <script src="/static/js/modernizr.js"></script>
-    <script src="/static/js/jquery-1.11.0.min.js"></script>
-    <script src="/static/js/plugins.js"></script>
-    <script src="/static/js/init.js"></script>
-    <script src="/static/node_modules/socket.io/client-dist/socket.io.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <!-- /JavaScript -->
-
-	<!-- Fonts -->
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-	<!-- /Fonts -->
-
-	{% if debug %}
-		<link href="{% static 'css/dev.css' %}" rel="stylesheet">
-	{% endif %}
-
 </head>
-
 <body>
-
-	
-    <div class="site-wrapper">
-		{% include 'blocks/header.html' %} 
-
-		<div class="site-container" id="siteContainer">
-			<div class="site-size">
-				{% block content %}
-				{% endblock %}
-			</div>
-		</div>
-
-	</div>
-
-	{% include 'blocks/footer.html' %}    
-	{% include 'blocks/mobile_menu.html' %}
-
-	{% react_app %}
-	{% block js %} {% endblock %}
+<div class="page">
+	{% include 'blocks/header.html' %}
+	{% block content %}{% endblock %}
+</div>
+<script src="/static/assets/js/core.js"></script>
+<script src="/static/assets/js/app.js"></script>
+{% react_app %}
+{% block js %} {% endblock %}
 </body>
 </html>

@@ -1,0 +1,54 @@
+<section class="section bg-default section-xs">
+    <div class="container">
+        <div class="row row-20">
+            <div class="col-12 text-center text-md-left">
+                <h4 class="text-uppercase">Актуальные <span>статьи</span></h4>
+            </div>
+            <div class="col-12">
+                <ul class="tag-list">
+                    <li><a href="#" class="tag">#Борис Акунин</a></li>
+                    <li><a href="#" class="tag">#Только у нас</a></li>
+                    <li><a href="#" class="tag">#Бесплатно</a></li>
+                    <li><a href="#" class="tag">#Originals</a></li>
+                    <li><a href="#" class="tag">#Саморазвитие</a></li>
+                    <li><a href="#" class="tag">#Фантастика и фэнтези</a></li>
+                    <li><a href="#" class="tag">#Бизнес</a></li>
+                    <li><a href="#" class="tag">#Windows</a></li>
+                    <li><a href="#" class="tag">#Linux</a></li>
+                    <li><a href="#" class="tag">#Коронавирус</a></li>
+                    <li><a href="#" class="tag">#Дети</a></li>
+                </ul>
+            </div>
+            <div class="col-12">
+                <div class="swiper-wrap swiper-style-1">
+                    <div class="swiper-container swiper-popular-articles">
+                        <div class="swiper-wrapper">
+                            {% for item in news %}
+                                {% include 'items/news.html' %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="slider-nav-wrapper">
+                        <div class="slider-articles-nav-prev">
+                            <span class="fa fa-chevron-left"></span>
+                        </div>
+                        <div class="slider-articles-nav-next">
+                            <span class="fa fa-chevron-right"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container offset-top-md">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-9 col-md-10 col-12">
+                <div class="h3">
+                    В электронной библиотеке вы найдете более 500 популярных журналов и газет
+                </div>
+                <p>Вы можете купить один номер или оформить подписку на удобный вам срок</p>
+                <a href="#" class="button button-primary button-sm">Больше статей</a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+// Standard link style
+a {
+	transition: $transition-base;
+	
+	&,
+	&:focus,
+	&:active,
+	&:hover {
+		text-decoration: $link-decoration;
+	}
+	
+	@include link($link-color, $link-hover-color);
+	
+	&[href*='tel'],
+	&[href*='mailto'] {
+		white-space: nowrap;
+	}
+}
+
+.link-hover {
+	color: $link-hover-color;
+}
+
+.link-press {
+	color: $link-press-color;
+}
+
+.link-underlined{
+	display: inline-block;
+	text-decoration: underline;
+}

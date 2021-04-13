@@ -1,16 +1,36 @@
 {
-  "name": "static",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "startPr0ject",
+  "version": "3.1.0",
+  "description": "Start HTML Template",
+  "main": "Gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp server"
   },
-  "author": "",
+  "author": "k0",
   "license": "ISC",
   "dependencies": {
-    "@types/socket.io": "^2.1.13",
-    "bootstrap-datepicker": "^1.9.0",
-    "socket.io": "^3.1.1"
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "autoprefixer": "^9.6.0",
+    "babelify": "^10.0.0",
+    "browser-sync": "^2.26.5",
+    "browserify": "^16.2.3",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglifyjs": "^0.6.2",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   },
-  "description": ""
+  "devDependencies": {},
+  "browserslist": [
+    "last 3 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ]
 }
