@@ -2,6 +2,11 @@
 	<div class="site-size">
 		<div class="row header-top">
 			<div class="col-menu-1">
+				{% if debug %}
+				<div class="git">
+					git branch: <strong>{{ git_branch }}</strong>
+				</div>
+				{% endif %}
 				<a href="#" class="logo" title="НИВА ПЛЮС">
 					<img src="i/logo.svg" alt="" title="НИВА ПЛЮС">
 				</a>

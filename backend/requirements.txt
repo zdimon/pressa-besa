@@ -21,3 +21,5 @@ pytils
 django-image-cropping
 easy-thumbnails
 django-taggit
+django-debug-toolbar
+GitPython

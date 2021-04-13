@@ -1,12 +1,14 @@
-    <div class="newest-slider-slide">
-        <a href="#" class="newest-slider-slide-image" title="{{ item.name }}">
-            <img src="{{ item.common_cover }}" alt="" title="{{ item.name }}">
-        </a>
-        <div class="newest-slider-slide-content">
-            <a href="#" class="newest-slider-slide-title">{{ item.name }}</a>
-            <div class="newest-slider-slide-num">№{{ item.last_issue.name }}</div>
-            <div class="newest-slider-slide-bottom">
-                <div class="newest-slider-slide-price">{{ item.amount }}₽</div>
-            </div>
+
+
+<div class="newest-slider-slide">
+    <a href="{% url 'journal-detail' name_slug=item.name_slug %}" class="newest-slider-slide-image" title="{{ item.name }}">
+        <img src="{{ item.common_cover }}" alt="" title="{{ item.name }}">
+    </a>
+    <div class="newest-slider-slide-content">
+        <a href="{% url 'journal-detail' name_slug=item.name_slug %}" class="newest-slider-slide-title">{{ item.name }}</a>
+        <div class="newest-slider-slide-num">№{{ item.last_issue.name }}</div>
+        <div class="newest-slider-slide-bottom">
+            <div class="newest-slider-slide-price">{{ item.amount }}₽</div>
         </div>
     </div>
+</div>
