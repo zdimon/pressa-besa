@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block css %} 
+    <link rel="stylesheet" href="/static/css/journal_detail.css">
+{% endblock %}
+
+
+{% block content %}
+    
+    <h1>Detail</h1>
+    <div>
+        <img src="{{ item.image.url }}" alt="{{ item.name }}">
+        <div>
+            {{ item.text }}
+        </div>
+    </div>
+
+{% endblock %}

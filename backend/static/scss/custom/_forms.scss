@@ -1,0 +1,28 @@
+// Form wrap
+.form-wrap {
+	position: relative;
+}
+
+// Form wrap offset
+.form-wrap + * {
+	margin-top: 20px;
+}
+
+// Form input
+.form-input {
+	display: block;
+	width: 100%;
+	min-height: $form-input-height;
+	padding: 5px 20px;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 1;
+	color: $form-input-color;
+	background-color: #F9F9F9;
+	background-image: none;
+	border-radius: 5px;
+	-webkit-appearance: none;
+	transition: .3s ease-in-out;
+	border: 1px solid #DDDDDD;
+	outline: none;
+}

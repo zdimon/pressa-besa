@@ -24,3 +24,16 @@ class Command(BaseCommand):
             path = os.path.join(settings.BASE_DIR,'init_data','news',f'{i}.jpg')
             with open(path, 'rb') as doc_file:
                 n.image.save(f'{i}.jpeg', File(doc_file), save=True)
+        for i in range(1,4):
+            issue = Issue.objects.all().order_by('?')[0]
+            n = News()
+            n.name = f'Новость {i} Новость {i} Новость {i} Новость {i}'
+            txt = ''
+            for num in range(1,200):
+                txt = txt +' текст новости %s ' % num
+            n.text = txt
+            n.issue = issue
+            n.save()
+            path = os.path.join(settings.BASE_DIR,'init_data','news',f'{i}.jpg')
+            with open(path, 'rb') as doc_file:
+                n.image.save(f'{i}.jpeg', File(doc_file), save=True)

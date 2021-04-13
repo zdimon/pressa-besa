@@ -13,7 +13,9 @@ class Command(BaseCommand):
         Journal.objects.all().delete()
 
         names = ['ЖЕНСКИЕ', 'МУЖСКИЕ', 'ДЕТСКИЕ', 'ДОМ И СЕМЬЯ', 'АВТО', 'СПОРТ', 'РЕЛИГИЯ', 'ОБЩЕСТВО', 'ПОЛИТИКА', 'БИЗНЕС', 'ФИНАНСЫ', 'НАУЧНО-ПОПУЛЯРНЫЕ']
+        cntc = 0
         for name in names:
+            cntc += 1
             c = Category()
             c.name = name
             c.save()
@@ -24,7 +26,7 @@ class Command(BaseCommand):
             for jname in journal_list:
                 cnt += 1
                 j = Journal()
-                j.name = jname
+                j.name = jname+" "+str(cnt)+str(cntc)
                 j.is_public = True
                 j.show_in_books = True
                 j.is_popular = True

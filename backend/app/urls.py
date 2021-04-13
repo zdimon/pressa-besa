@@ -9,6 +9,7 @@ from rest_framework import permissions
 from accounts.views import LoginView, RegistrationView, logout_view
 from rest_framework.authtoken.views import ObtainAuthToken
 from accounts.views import preauth
+import debug_toolbar
 
 schema_view = get_schema_view(
    openapi.Info(title="Pressa API",
@@ -52,7 +53,7 @@ urlpatterns = [
     path('logout/', logout_view, name="logout"),
 
     path('admin/', admin.site.urls),
-   
+    path('__debug__/', include(debug_toolbar.urls)),
 ]
 
 

@@ -1,0 +1,72 @@
+
+//Accent Colors
+$gray-light:  #c3c3c3;
+$greay-light:  #c3c3c3;
+$gray-300: #e4e4e4;
+$gray-400: #afb9c6;
+$gray-500: #9c9c9c;
+$gray-600: #696969;
+$gray-700: #3d3d3d;
+$blue: #5c9cc8;
+$green: #53a968;
+$primary: #FE0000;
+$yellow: #FFC700;
+
+$body-color: #222222;
+$white: #fff;
+$black: #000;
+
+//Body
+$body-bg: $white;
+// Grid columns
+// Set the number of columns and specify the width of the gutters.
+$grid-columns:             12;
+$grid-gutter-width:        30px;
+$grid-gutter-width-narrow: 20px;
+$grid-gutter-width-wide:   50px;
+
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1200px,
+	xxl: 1370px
+);
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1380px
+);
+
+// Grid columns
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+//Links
+$link-color: $primary;
+$link-hover-color: darken($link-color, 15%);
+$link-press-color: darken($link-color, 15%);
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+//Transitionsc
+$transition-base: all .3s ease-in-out;
+
+//Forms
+$form-input-color: $gray-500;
+$form-input-height: 40px;
+
+//Fonts
+$font-base: 'Roboto', sans-serif;
+//Other
+$rd-navbar-static-width: map-get($container-max-widths, xl) - 30px;
+$zindex-rd-navbar:      1080;
+$zindex-lg:             1090;
+$zindex-layout-panel:   1100;
+

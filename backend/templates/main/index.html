@@ -14,14 +14,11 @@
 
 {% block content %}
     {% if not user.is_authenticated %}
-        {% include 'blocks/landing/main_banner.html' %}
-        {% include 'blocks/landing/market_text.html' %}
-        {% include 'blocks/landing/popular_journals.html' %}
-        {% include 'blocks/landing/market_text_sec.html' %}
-        {% include 'blocks/landing/actual_articles.html' %}
-        {% include 'blocks/landing/udobstvo.html' %}
-        {% include 'blocks/landing/new_issues.html' %}
-        {% include 'blocks/landing/market_text_buttom.html' %}
+        {% include 'main/landing/main_banner.html' %}
+        {% include 'main/landing/top_carousel.html' %}
+        {% include 'main/landing/articles.html' %}
+        {% include 'main/landing/bottom_banner.html' %}
+        {% include 'main/landing/new_journals.html' %}
     {% endif %}
 
     {% if user.is_authenticated %}
