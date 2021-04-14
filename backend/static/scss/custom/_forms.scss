@@ -26,3 +26,35 @@
 	border: 1px solid #DDDDDD;
 	outline: none;
 }
+
+.mail-form{
+	.form-wrap{
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		.form-input{
+			min-height: 50px;
+			@media(min-width: 576px){
+				padding-right: 126px;
+			}
+		}
+		.form-button{
+			margin-top: 15px;
+			@media(min-width: 576px){
+				margin-top: 0;
+				position: absolute;
+				transform: translateY(-50%);
+				right: 7px;
+				top: 50%;
+			}
+			.button{
+				min-height: 36px;
+				display: inline-flex;
+				flex-direction: row;
+				span{
+					margin: 0 5px;
+				}
+			}
+		}
+	}
+}

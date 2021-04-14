@@ -14,12 +14,13 @@
 			margin-top: 30px;
 		}
 	}
-	span{
-		color: #222;
-		font-weight: 500;
-		font-size: 14px;
-	}
 	.cta-group{
+		span{
+			text-align: center;
+			color: #222;
+			font-weight: 500;
+			font-size: 14px;
+		}
 		@media(min-width: 576px){
 			align-items: flex-start;
 		}
@@ -45,25 +46,35 @@
 		margin-top: 15px;
 	}
 	.button{
+		min-height: 57px;
+		font-size: 24px;
 		@media(min-width: 992px){
 			max-width: 200px;
 			min-height: 60px;
-			font-size: 18px;
 		}
 		@media(min-width: 1200px){
 			max-width: 345px;
 			width: 100%;
 			min-height: 80px;
-			font-size: 24px;
 		}
 	}
 }
 
 .intro-cta-box{
-	position: relative;
+	margin-top: 15px;
+	@media(min-width: 768px){
+		margin-top: 0;
+		position: absolute;
+		right: 15px;
+		top: 0;
+	}
+	@media(min-width: 992px){
+		top: 30px;
+	}
 	user-select: none;
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 	@media(min-width: 768px){
 		padding-left: 14px;
 		flex-direction: column;
@@ -89,8 +100,13 @@
 		background-color: #fff;
 		padding: 15px;
 		justify-content: center;
-		max-width: 145px;
-		width: 100%;
+		flex-shrink: 0;
+		flex-grow: 1;
+		flex-basis: 0;
+		@media(min-width: 430px){
+			max-width: 145px;
+			width: 100%;
+		}
 		&-title{
 			font-size: 58px;
 			line-height: 1;

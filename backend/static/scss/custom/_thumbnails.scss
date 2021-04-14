@@ -5,6 +5,7 @@
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;
 	max-width: 252px;
+	
 	&__media{
 		display: flex;
 		a{
@@ -16,6 +17,7 @@
 			max-height: 335px;
 			object-fit: cover;
 			user-select: none;
+			width: 100%;
 		}
 	}
 	&__body{
