@@ -1,0 +1,9 @@
+.container-custom{
+	max-width: 100%;
+	@media(min-width: 1200px){
+		max-width: 1200px;
+	}
+	@media(min-width: 1370px){
+		max-width: 1370px;
+	}
+}

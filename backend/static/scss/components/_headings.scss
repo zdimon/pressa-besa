@@ -16,6 +16,7 @@
 h1,
 .h1 {
 	font-size: 24px;
+	font-weight: 500;
 	@include media-breakpoint-up(md) {
 		font-size: 30px;
 	}
@@ -42,13 +43,7 @@ h3,
 .h3 {
 	line-height: 1.2;
 	font-weight: 500;
-	font-size: 20px;
-	@media(min-width: 768px){
-		font-size: 22px;
-	}
-	@include media-breakpoint-up(xl) {
-		font-size: 24px;
-	}
+	font-size: 24px;
 }
 
 h4,

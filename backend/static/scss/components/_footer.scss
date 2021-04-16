@@ -2,7 +2,7 @@
 	background-color: #262626;
 	padding: 30px 0;
 	color: $white;
-	
+	overflow: hidden;
 	.footer-logo{
 		display: inline-flex;
 		max-width: 138px;
@@ -79,12 +79,29 @@
 	.footer-aside{
 		margin-top: 20px;
 		padding-top: 26px;
-		border-top: 1px solid #AAAAAA;
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column-reverse;
 		align-items: center;
 		text-align: center;
+		@media(min-width: 992px){
+			text-align: left;
+		}
+		position: relative;
+		//border-top: 1px solid #AAAAAA;
+		&:before{
+			content: '';
+			position: absolute;
+			left: -15px;
+			right: -15px;
+			top: 0;
+			height: 1px;
+			background-color: #AAAAAA;
+			@media(min-width: 576px){
+				right: 0;
+				left: 0;
+			}
+		}
 		@media(min-width: 992px){
 			padding-top: 15px;
 			align-items: flex-start;

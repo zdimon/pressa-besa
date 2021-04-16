@@ -1,0 +1,11 @@
+cd backend
+python3 -m venv venv
+. ./venv/bin/activate
+pip3 install -r requirements.txt
+rm db.sqlite3
+./manage.py migrate
+./manage.py load_users
+./manage.py load_journals
+./manage.py load_articles
+./manage.py load_fonts
+./manage.py proc_cover
