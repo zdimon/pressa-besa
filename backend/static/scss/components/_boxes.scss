@@ -28,6 +28,7 @@
 		}
 		@media(max-width: 600px){
 			font-size: 12px;
+			margin-top: 0;
 		}
 	}
 	.cta-group{
@@ -40,6 +41,7 @@
 		@media(min-width: 576px){
 			align-items: flex-start;
 		}
+		
 	}
 }
 
