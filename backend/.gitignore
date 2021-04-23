@@ -5,6 +5,5 @@ media
 db.sqlite3
 db.sqlite3-journal
 static/build
-static/assets
 app/local.py
 logs/*
