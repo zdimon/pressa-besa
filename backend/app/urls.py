@@ -36,12 +36,12 @@ urlpatterns = [
     path('cover', include('cover.urls')),
     path('top10/', include('announce.urls')),
     path('catalog/', include('catalog.urls')),
+    path('magazines/', include('journal.urls')),
     
     path("v1/api-token-auth/", ObtainAuthToken.as_view()),
     
     path('v1/api/', include([
         path('account/', include('accounts.urls')),
-        path('', include('journal.urls')),
         path('', include('article.urls'))
        
     ])),

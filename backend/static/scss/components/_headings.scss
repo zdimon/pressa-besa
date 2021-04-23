@@ -18,7 +18,7 @@ h1,
 	font-size: 24px;
 	font-weight: 500;
 	@include media-breakpoint-down(sm) {
-		font-size: 20px;
+		font-size: 24px;
 	}
 	@include media-breakpoint-up(md) {
 		font-size: 30px;

@@ -12,7 +12,7 @@ class Command(BaseCommand):
         Category.objects.all().delete()
         Journal.objects.all().delete()
 
-        names = ['ЖЕНСКИЕ', 'МУЖСКИЕ', 'ДЕТСКИЕ', 'ДОМ И СЕМЬЯ', 'АВТО', 'СПОРТ', 'РЕЛИГИЯ', 'ОБЩЕСТВО', 'ПОЛИТИКА', 'БИЗНЕС', 'ФИНАНСЫ', 'НАУЧНО-ПОПУЛЯРНЫЕ']
+        names = ['ЖЕНСКИЕ', 'МУЖСКИЕ', 'ДЕТСКИЕ', 'ДОМ И СЕМЬЯ']
         cntc = 0
         for name in names:
             cntc += 1
