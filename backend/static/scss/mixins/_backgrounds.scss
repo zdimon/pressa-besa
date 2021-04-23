@@ -1,9 +1,9 @@
 @mixin bg-behaviour($bg-color) {
 	background-color: $bg-color;
 	
-	&:not([style*="background-"]) + &:not([style*="background-"]) { padding-top: 0; }
+	&:not([style*="background-"]) + &:not([style*="background-"]) { padding-top: 20px; }
 }
 
 .bg-default:not([style*="background-"]) + .bg-default:not([style*="background-"]){
-	padding-top: 0;
+	padding-top: 20px;
 }
