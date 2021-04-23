@@ -271,8 +271,8 @@
 		slidesPerView: 1,
 		autoplay: {
 			delay: 4300,
-			disableOnInteraction: false,
-		},
+			disableOnInteraction: false, 
+		}, 
 		loop: false,
 		navigation: {
 			nextEl: '.slider-new-nav-next',

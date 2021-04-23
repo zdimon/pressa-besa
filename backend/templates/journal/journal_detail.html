@@ -7,12 +7,16 @@
 
 {% block content %}
     
-    <h1>Detail</h1>
-    <div>
-        <img src="{{ item.image.url }}" alt="{{ item.name }}">
+    
+    <div class="container">
+        <img src="{{ object.common_cover }}" alt="{{ object.name }}">
         <div>
-            {{ item.text }}
+            {{ object.name }}
         </div>
+        <div>
+            № {{ object.last_issue.name }}
+        </div>
+
     </div>
 
 {% endblock %}
