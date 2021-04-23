@@ -26,6 +26,9 @@
 		@media(min-width: 1200px){
 			margin-top: 30px;
 		}
+		@media(max-width: 600px){
+			font-size: 12px;
+		}
 	}
 	.cta-group{
 		span{

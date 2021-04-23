@@ -5,7 +5,13 @@
 
 .section-xs{
 	padding: 40px 0;
-}
+	@media(max-width: 600px){
+		padding: 10px 0;
+	}
+	@media(min-width: 600px){
+		padding: 75px 0;
+	}
+}   
 
 
 .section-md{
