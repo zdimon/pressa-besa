@@ -202,3 +202,25 @@
 		}
 	}
 }
+
+.journals-block {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	div {
+		margin: 5px 5px;
+	}
+}
+
+.category-block {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	div {
+		margin: 10px 10px;
+	}
+}
+
+

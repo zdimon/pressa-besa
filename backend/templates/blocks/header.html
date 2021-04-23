@@ -79,32 +79,21 @@
 					<div class="rd-navbar-main-element">
 						<div class="rd-navbar-nav-wrap">
 							<ul class="rd-navbar-nav">
-								<li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+								
+								<li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'category-detail' journal_type='magazines' category='categories' %}">Журналы</a>
 								</li>
-								<li class="rd-nav-item"><a class="rd-nav-link" href="">Журналы</a>
-									<ul class="rd-menu rd-navbar-dropdown">
-										<li class="rd-dropdown-item"><a class="rd-dropdown-link" href="">Журналы</a>
-										</li>
-									</ul>
+								<li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'category-detail' journal_type='newspapers' category='categories' %}">ГАЗЕТЫ</a>
 								</li>
-								<li class="rd-nav-item"><a class="rd-nav-link" href="">ГАЗЕТЫ</a>
-									<ul class="rd-menu rd-navbar-dropdown">
-										<li class="rd-dropdown-item"><a class="rd-dropdown-link" href="">Газеты</a>
-										</li>
-									</ul>
+								<li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'category-detail' journal_type='newspapers' category='categories' %}">КНИГИ</a>
 								</li>
-								<li class="rd-nav-item"><a class="rd-nav-link" href="">КНИГИ</a>
-									<ul class="rd-menu rd-navbar-dropdown">
-										<li class="rd-dropdown-item"><a class="rd-dropdown-link" href="">Книги</a>
-										</li>
-									</ul>
-								</li>
+								<!-- 
 								<li class="rd-nav-item"><a class="rd-nav-link" href="">СТАТЬИ</a>
 									<ul class="rd-menu rd-navbar-dropdown">
 										<li class="rd-dropdown-item"><a class="rd-dropdown-link" href="">Статьи</a>
 										</li>
 									</ul>
 								</li>
+								-->
 							</ul>
 						</div>
 					</div>
