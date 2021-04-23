@@ -2,7 +2,13 @@
     <div class="thumbnail-modern">
         <div class="thumbnail-modern__media">
             <a href="{% url 'journal-detail' name_slug=item.name_slug %}">
-                <img src="{{ item.common_cover }}" alt="{{ item.name }}">
+                <img 
+                data-jname="{{ item.name }}"
+                data-iname="{{ item.last_issue.name }}"
+                data-amount="{{ item.amount }}"
+                data-url="{% url 'journal-detail' name_slug=item.name_slug %}"
+                src="{{ item.common_cover }}" 
+                alt="{{ item.name }}">
             </a>
         </div>
         <div class="thumbnail-modern__body">

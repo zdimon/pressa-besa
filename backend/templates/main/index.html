@@ -13,6 +13,9 @@
 
 {% block content %}
     {% if not user.is_authenticated %}
+        <div id="carousel">
+
+        </div>
         {% include 'main/landing/main_banner.html' %}
         {% include 'main/landing/top_carousel.html' %}
         {% include 'main/landing/articles.html' %}
