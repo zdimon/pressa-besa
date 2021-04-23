@@ -10,9 +10,6 @@
 	height: 180px;
 }   
   
-.justify-text {
-	text-align: justify;
-}
 
 .intro-box{
 	display: flex;
@@ -31,7 +28,7 @@
 		}
 		@media(max-width: 600px){
 			font-size: 12px;
-			margin-top: 5px;
+			margin-top: 0;
 		}
 	}
 	.cta-group{
