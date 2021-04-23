@@ -53,12 +53,12 @@
 }
 
 .button-lg{
-	min-width: 100%; 
+	min-width: 265px;
 }
 
 .more-articles-btn{ 
 	min-height: 57px;
-	min-width: 289px;
+	min-width: 100%;
 	@media(min-width: 768px){
 		min-width: 154px;
 		min-height: 47px;
