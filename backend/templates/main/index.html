@@ -13,6 +13,9 @@
 
 {% block content %}
     {% if not user.is_authenticated %}
+        <div id="carousel">
+
+        </div>
         {% include 'main/landing/main_banner.html' %}
         {% include 'main/landing/top_carousel.html' %}
         {% include 'main/landing/articles.html' %}
@@ -21,11 +24,12 @@
     {% endif %}
 
     {% if user.is_authenticated %}
-       {% include 'blocks/main/new_journals.html' %}
-       {% include 'blocks/main/actual_articles.html' %}
-       {% include 'blocks/main/new_books.html' %}
-       {% include 'blocks/main/subscription.html' %}
-       
+        <div class="bg-light-gray">
+            {% include 'main/registered/new_journals.html' %}
+            {% include 'main/registered/actual_articles.html' %}
+            {% include 'main/registered/new_books.html' %}
+            {% include 'main/registered/subscription.html' %}
+        </div>
     {% endif %}
     {% include 'modal/subscription.html' %}
 {% endblock %}

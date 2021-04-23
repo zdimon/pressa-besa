@@ -1,13 +1,13 @@
 <section class="section bg-default section-xs">
     <div class="container">
         <div class="row row-20">
-            <div class="col-12 text-center text-md-left">
+            <div class="col-12">
                 <h4 class="text-uppercase">Новые <span>выпуски</span></h4>
             </div>
             <div class="col-12">
-                <div class="swiper-wrap swiper-style-1">
+                <div class="swiper-wrap swiper-style-1 swiper-creative">
                     <div class="swiper-container swiper-new-articles">
-                        <div class="swiper-wrapper">
+                        <div class="swiper-wrapper" id="popular-jounals">
                             {% for item in new %}
                                 {% include 'items/journal.html' %}
                             {% endfor %}
@@ -25,10 +25,9 @@
             </div>
         </div>
     </div>
-    <div class="container offset-top-md">
-        <div class="row justify-content-center text-center">
+    	<div class="container offset-top-md">
 			<div class="row justify-content-center text-center row-30 flex-column align-items-center">
-				<div class="col-lg-7 col-md-10 col-12">
+				<div class="col-lg-6 col-md-10 col-12">
 					<div class="h3">
 						Используя свой адрес электронной почты и пароль,
 						вы можете войти в систему на нескольких устройствах
@@ -37,10 +36,10 @@
 				<div class="col-lg-5">
 					<form action="" class="mail-form">
 						<div class="form-wrap">
-							<input type="text" class="form-input">
+							<input type="text" class="form-input" placeholder="Введите ваш e-mail">
 							<div class="form-button">
 								<button type="submit" class="button button-primary">
-									Отправить
+									Войти
 									<span class="fa fa-angle-right"></span>
 								</button>
 							</div>
@@ -48,7 +47,5 @@
 					</form>
 				</div>
 			</div>
-            
-        </div>
-    </div>
+		</div>
 </section>

@@ -12,7 +12,7 @@ class JournalView(DetailView):
 
     def get_customer(self):
         try:
-            if not self.request.user.is_anonymous():
+            if not self.request.user.is_anonymous:
                 return self.request.user.customer
             else:
                 return None

@@ -7,21 +7,24 @@
 
 {% block content %}
     
-    <h1>Detail</h1>
-    <div class="category-block">
+    
+    <div class="category-block container">
         {% for category in categories %}
             <div>
+            <a href="" class="button button-primary">
                 {{ category.name }}
+            </a>
             </div>
         {% endfor %}
     </div>
-
-    <div class="journals-block">
-        {% for item in journals %}
-            <div>
-               {% include 'items/journal.html' %}
-            </div>
-        {% endfor %}
+    <div class="container">
+        <div class="journals-block">
+            {% for item in journals %}
+                <div>
+                {% include 'items/journal.html' %}
+                </div>
+            {% endfor %}
+        </div>
     </div>
 
 {% endblock %}

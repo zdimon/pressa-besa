@@ -34,13 +34,15 @@
 		flex-direction: column;
 		.form-input{
 			min-height: 50px;
-			@media(min-width: 576px){
-				padding-right: 126px;
+			text-align: center;
+			@media(min-width: 400px){
+				text-align: left;
+				padding-right: 96px;
 			}
 		}
 		.form-button{
-			margin-top: 15px;
-			@media(min-width: 576px){
+			margin-top: 10px;
+			@media(min-width: 400px){
 				margin-top: 0;
 				position: absolute;
 				transform: translateY(-50%);
@@ -48,11 +50,23 @@
 				top: 50%;
 			}
 			.button{
-				min-height: 36px;
-				display: inline-flex;
+				min-height: 57px;
 				flex-direction: row;
+				font-size: 24px;
+				display: flex;
+				min-width: 100%;
+				@media(min-width: 400px){
+					min-width: 96px;
+					display: inline-flex;
+					min-height: 36px;
+					font-size: 14px;
+				}
 				span{
-					margin: 0 5px;
+					margin-left: 10px;
+					@media(min-width: 400px){
+						margin: 0 5px;
+						
+					}
 				}
 			}
 		}

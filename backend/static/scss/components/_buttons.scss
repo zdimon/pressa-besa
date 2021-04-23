@@ -41,12 +41,25 @@
 	background-color: $primary;
 	color: $white;
 	transition: $transition-base;
-	&:hover{
+	&:hover,&:focus{
 		box-shadow: 0px 3px 10px 0px rgba(254,0,0,0.45);
 		color: $white;
 		transition: $transition-base;
 	}
 }
+
+
+.button-secondary{
+	background-color: $white;
+	color: $red;
+	transition: $transition-base;
+	box-shadow: 0px 3px 10px 0px rgba(75, 73, 73, 0.45);
+	&:hover,&:focus{
+		box-shadow: 0px 3px 10px 0px rgba(254,0,0,0.45);
+		transition: $transition-base;
+	}
+}
+
 
 .button-sm{
 	min-width: 154px;
@@ -54,4 +67,13 @@
 
 .button-lg{
 	min-width: 265px;
+}
+
+.more-articles-btn{ 
+	min-height: 57px;
+	min-width: 100%;
+	@media(min-width: 768px){
+		min-width: 154px;
+		min-height: 47px;
+	} 
 }

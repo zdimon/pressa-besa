@@ -4,23 +4,15 @@
 	margin-left: -5px;
 	margin-top: -5px;
 	font-size: 12px;
-	justify-content: center;
-	@media(min-width: 768px){
-		justify-content: start;
-	}
+	justify-content: start;
+	
 	@media(min-width: 992px){
 		font-size: 14px;
 	}
 	li{
 		margin-left: 5px;
 		margin-top: 5px;
-		display: none;
-		&:nth-child(1),&:nth-child(2),&:nth-child(3){
-			display: flex;
-		}
-		@media(min-width: 768px){
-			display: flex;
-		}
+		display: flex;
 		.tag{
 			padding: 5px 10px;
 			border-radius: 5px;

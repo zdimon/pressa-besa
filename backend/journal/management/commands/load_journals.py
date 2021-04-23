@@ -12,7 +12,7 @@ class Command(BaseCommand):
         Category.objects.all().delete()
         Journal.objects.all().delete()
 
-        names = ['ЖЕНСКИЕ', 'МУЖСКИЕ', 'ДЕТСКИЕ', 'ДОМ И СЕМЬЯ', 'АВТО', 'СПОРТ', 'РЕЛИГИЯ', 'ОБЩЕСТВО', 'ПОЛИТИКА', 'БИЗНЕС', 'ФИНАНСЫ', 'НАУЧНО-ПОПУЛЯРНЫЕ']
+        names = ['ЖЕНСКИЕ', 'МУЖСКИЕ', 'ДЕТСКИЕ', 'ДОМ И СЕМЬЯ']
         cntc = 0
         for name in names:
             cntc += 1
@@ -21,7 +21,7 @@ class Command(BaseCommand):
             c.save()
             print('Saving %s' % name)
 
-            journal_list = ['Наука и техника', 'Здоровье', 'Моделист-конструктор', 'Лиза', 'Прибой', 'Забой', 'Внуки и правнуки', 'В мире муравья', 'Крышка стола', 'Восемь']
+            journal_list = ['Наука и техника', 'Здоровье', 'Моделист-конструктор', 'Лиза', 'Прибой', 'Забой', 'Внуки и правнуки', 'В мире муравья']
             cnt = 0
             for jname in journal_list:
                 cnt += 1
@@ -40,6 +40,7 @@ class Command(BaseCommand):
                     name = f'выпуск {ni}'
                     i = Issue()
                     i.name = name
+                    i.is_public = True
                     i.journal = j
                     i.save()
 

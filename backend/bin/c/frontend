@@ -1,6 +1,4 @@
-cd ../frontend
-#sudo rm -f -r node_modules
-#npm install
-npm run builddev
+cd ../backend/static
+gulp
 
 

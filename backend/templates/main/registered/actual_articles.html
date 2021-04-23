@@ -1,0 +1,39 @@
+<section class="section section-xs">
+    <div class="container">
+
+        <div class="row row-20">
+            <div class="col-12">
+                <h4 class="text-uppercase">Актуальные<span>статьи</span></h4>
+            </div>
+            <ul class="category-block">
+                <li><a class="button button-secondary" href="#">#ЖЕНСКИЕ</a></li>
+                <li><a class="button button-secondary" href="#">#МУЖСКИЕ</a></li>
+                <li><a class="button button-secondary" href="#">#ДЕТСКИЕ</a></li>
+                <li><a class="button button-secondary" href="#">ДОМ И СЕМЬЯ</a></li>
+                <li><a class="button button-secondary" href="#">#АВТО СПОРТ</a></li>
+                
+            </ul>
+            <div class="col-12">
+                <div class="swiper-wrap swiper-style-1">
+                    <div class="swiper-container swiper-popular-articles">
+                        <div class="swiper-wrapper">
+                            {% for item in news %}
+                                {% include 'items/news.html' %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="slider-nav-wrapper">
+                        <div class="slider-articles-nav-prev">
+                            <span class="fa fa-chevron-left"></span>
+                        </div>
+                        <div class="slider-articles-nav-next">
+                            <span class="fa fa-chevron-right"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
