@@ -7,9 +7,13 @@
 }
 
 .intro-cta-box {
-	height: 200px;
-	
+	height: 280px;
+	@media(min-width: 992px){
+		height: 200px;
+	}
 }   
+
+
  
 
 .intro-box{
