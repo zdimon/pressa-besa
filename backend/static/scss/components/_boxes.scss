@@ -8,7 +8,7 @@
 
 .intro-cta-box {
 	height: 280px;
-	@media(min-width: 992px){
+	@media(max-width: 992px){
 		height: 200px;
 	}
 }   
