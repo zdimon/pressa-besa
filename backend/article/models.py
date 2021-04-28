@@ -59,11 +59,11 @@ class Article(models.Model):
 
     @property
     def get_image(self):
-        print('getting image')
+        # print('getting image')
         try:
             return ArticleImages.objects.filter(article=self)[0]
         except Exception as e:
-            print(e)
+            # print(e)
             return None
 
     @property
@@ -175,8 +175,7 @@ class ArticleImages(models.Model):
         try:
             return get_thumbnailer(self.image).get_thumbnail({
                 'size': (170, 100),
-                'box': self.cropping,
-                'crop': True,
+                'crop': False,
                 'detail': True,
             }).url
         except Exception as e:
