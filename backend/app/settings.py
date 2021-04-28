@@ -143,7 +143,7 @@ DB_HOST = os.getenv('DB_HOST', '')
 DB_PATH = os.getenv('DB_PATH', BASE_DIR / 'db.sqlite3')
 
 
-DATABASE = os.getenv('DATABASE', 'http://localhost')
+DATABASE = os.getenv('DATABASE', 'sqlite')
 BACKEND_URL = os.getenv('BACKEND_URL', 'http://localhost')
 REDIS_HOST = os.getenv('REDIS_HOST', 'localhost')
 REDIS_PORT = os.getenv('REDIS_PORT', '6379')
