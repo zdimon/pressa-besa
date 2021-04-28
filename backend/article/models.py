@@ -45,7 +45,8 @@ class Article(models.Model):
     def cover_url(self):
         try:
             return f'{settings.BACKEND_URL}{self.cover.url}'
-        except:
+        except Exception as e:
+            print(e)
             return 'noimage.png'
 
     @property
