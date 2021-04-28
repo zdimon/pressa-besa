@@ -137,7 +137,8 @@ class ArticleCoverSetting(models.Model):
     def get_image(self):
         try:
             return ArticleImages.objects.filter(article=self)[0]
-        except:
+        except Exception as e:
+            print(e)
             return None
 
     @property
