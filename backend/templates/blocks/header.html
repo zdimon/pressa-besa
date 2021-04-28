@@ -86,14 +86,10 @@
 								</li>
 								<li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'category-detail' journal_type='newspapers' category='categories' %}">КНИГИ</a>
 								</li>
-								<!-- 
-								<li class="rd-nav-item"><a class="rd-nav-link" href="">СТАТЬИ</a>
-									<ul class="rd-menu rd-navbar-dropdown">
-										<li class="rd-dropdown-item"><a class="rd-dropdown-link" href="">Статьи</a>
-										</li>
-									</ul>
+								
+								<li class="rd-nav-item"><a class="rd-nav-link" href="{% url 'article-list' %}">СТАТЬИ</a>
 								</li>
-								-->
+							
 							</ul>
 						</div>
 					</div>
@@ -112,15 +108,12 @@
 					<div class="rd-nav-aside">
 						<form action="" class="rd-nav-aside__form">
 							<div class="form-wrap">
-								<div class="form-select">
-									<select class="select-custom">
-										<option value="hide">Новости</option>
-										<option value="EN" rel="req">Пресса 1</option>
-										<option value="EN" rel="req">Пресса 2</option>
-										<option value="FR" rel="req">Новости</option>
-									</select>
+								<div class="form-select font-primary">
+									
+									 Поиск
+								
 								</div>
-								<input type="text" class="form-input" placeholder="Поиск по книгам, сериям, авторам, жанрам, тегам, издательством">
+								<input type="text" class="form-input" placeholder="Поиск по журналам газетам статьям категориям и тегам.">
 								<div class="form-submit">
 									<button type="submit" class="button">
 										<span class="fa fa-search"></span>

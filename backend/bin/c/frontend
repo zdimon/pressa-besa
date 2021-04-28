@@ -1,4 +1,4 @@
 cd ../backend/static
-gulp
+./node_modules/gulp/bin/gulp.js
 
 

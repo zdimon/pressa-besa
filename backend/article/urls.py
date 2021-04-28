@@ -1,7 +1,7 @@
 from .viewsets.article import ArticleViewSet
 from rest_framework import routers
 from django.urls import path
-from .views import test_cover
+from .views import test_cover, article_list
 
 router = routers.DefaultRouter()
 router.register(r'article', ArticleViewSet)
@@ -9,5 +9,6 @@ router.register(r'article', ArticleViewSet)
 urlpatterns = router.urls
 
 urlpatterns = urlpatterns + [
-    path('article/test/cover/<int:id>', test_cover)
+    path('article/test/cover/<int:id>', test_cover),
+    path('article/list', article_list, name="article-list"),
 ]

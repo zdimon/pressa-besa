@@ -9,9 +9,12 @@
 
     <div id="container">
     	<div class="container position-relative">
-			{% for item in arts %}
-                {% include 'items/news.html' %}
-            {% endfor %}
+			<div class="align-items-center justify-content-center">
+            <img src="{{ item.image.url }}" alt="{{ item.name }}">
+            
+                <h1> {{item.name}} </h1>
+                {{ item.text | safe }}
+            </div>
         </div>
     </div>
 
