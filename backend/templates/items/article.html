@@ -1,0 +1,21 @@
+<div class="swiper-slide">
+    <div class="thumbnail-classic">
+        <div class="thumbnail-classic__media">
+            <a href="{{ item.get_absolute_url }}">
+                <img src="{{ item.cover_url }}" alt="{{item.title}}">
+            </a>
+            <span class="label">ежемесячные</span>
+        </div>
+        <a href="{{ item.get_absolute_url }}" class="thumbnail-classic__body">
+            {{ item.title }}
+        </a>
+        <div class="thumbnail-classic__footer">
+                <span class="thumbnail-classic__footer-title">{{ item.issue.journal.name }}</span>
+                <span class="thumbnail-classic__footer-date">Выпуск: {{ item.issue.name }} </span>
+        </div>
+    </div>
+</div>    
+    
+    
+    
+    
