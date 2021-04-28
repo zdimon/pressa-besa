@@ -174,7 +174,7 @@ class ArticleImages(models.Model):
     def thumbnailsmall_url(self):
         try:
             return get_thumbnailer(self.image).get_thumbnail({
-                'size': (170, 100),
+                'size': (370, 200),
                 'crop': False,
                 'detail': True,
             }).url
