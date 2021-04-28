@@ -58,6 +58,15 @@ class Article(models.Model):
             return 'noimage.png'
 
     @property
+    def get_image(self):
+        print('getting image')
+        try:
+            return ArticleImages.objects.filter(article=self)[0]
+        except Exception as e:
+            print(e)
+            return None
+
+    @property
     def cover_tag(self):
         return mark_safe(f'<img width="200" src="{self.cover_url()}"  />')
 
@@ -132,15 +141,6 @@ class ArticleCoverSetting(models.Model):
             return f'{settings.BACKEND_URL}{self.cover.url}'
         except:
             return 'noimage.png'
-
-    @property
-    def get_image(self):
-        print('getting image')
-        try:
-            return ArticleImages.objects.filter(article=self)[0]
-        except Exception as e:
-            print(e)
-            return None
 
     @property
     def cover_tag(self):
