@@ -12,6 +12,25 @@ import re
 import subprocess
 from easy_thumbnails.files import get_thumbnailer
 
+def remove_html_markup(s):
+    s = re.sub( r'<style .*?/style>', '', s , flags=re.DOTALL)
+    tag = False
+    quote = False
+    out = ""
+
+    for c in s:
+            if c == '<' and not quote:
+                tag = True
+            elif c == '>' and not quote:
+                tag = False
+            elif (c == '"' or c == "'") and tag:
+                quote = not quote
+            elif not tag:
+                out = out + c
+
+    return out
+    
+
 class ArticleCategory(models.Model):
     name = models.CharField(verbose_name=_(u'название'), max_length=150)
     def __unicode__(self):
@@ -49,6 +68,11 @@ class Article(models.Model):
 
     created_at = models.DateField(auto_now_add=True, blank=True, null=True)
 
+    @property
+    def short_text(self):
+        txt =  remove_html_markup(self.text)
+        arr = txt.split(' ')
+        return ' '.join(arr[0:21])+'...'
     
     def cover_url(self):
         try:
