@@ -178,7 +178,8 @@ class ArticleImages(models.Model):
                 'crop': True,
                 'detail': True,
             }).url
-        except:
+        except Exception as e:
+            print(e)
             return ''
     @property
     def thumbnail_squere_url(self):
