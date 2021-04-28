@@ -2,6 +2,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   import('./inits');
-}); 
+});  
 
    
