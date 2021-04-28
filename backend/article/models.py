@@ -150,7 +150,7 @@ def get_upload_path(instance, filename):
 
 
 class ArticleImages(models.Model):
-    article = models.ForeignKey('Article')
+    article = models.ForeignKey('Article', on_delete=models.CASCADE)
     image = models.ImageField(upload_to=get_upload_path, verbose_name=u'Изображение')
     author = models.CharField(verbose_name=_(u'автор'), max_length=250, blank=True, null=True)
     cropping = ImageRatioField('image', '170x100')
