@@ -5,6 +5,7 @@ from .utils import make_cover
 
 def article_list(request):
     arts = Article.objects.all()[0:10]
+    print(arts)
     return render(request, 'article/article_list.html', {'arts': arts})
 
 
