@@ -2,7 +2,15 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.safestring import mark_safe
 from django.conf import settings
-
+import os
+from image_cropping import ImageRatioField
+import base64
+import uuid
+import xml
+from bs4 import BeautifulSoup
+import re
+import subprocess
+from easy_thumbnails.files import get_thumbnailer
 
 class ArticleCategory(models.Model):
     name = models.CharField(verbose_name=_(u'название'), max_length=150)
@@ -126,5 +134,59 @@ class ArticleCoverSetting(models.Model):
             return 'noimage.png'
 
     @property
+    def get_image(self):
+        try:
+            return ArticleImages.objects.filter(article=self)[0]
+        except:
+            return None
+
+    @property
     def cover_tag(self):
         return mark_safe(f'<img width="200" src="{self.cover_url()}"  />')
+
+
+def get_upload_path(instance, filename):
+    return os.path.join( "articles/%d" % instance.article.id, filename)
+
+
+class ArticleImages(models.Model):
+    article = models.ForeignKey('Article')
+    image = models.ImageField(upload_to=get_upload_path, verbose_name=u'Изображение')
+    author = models.CharField(verbose_name=_(u'автор'), max_length=250, blank=True, null=True)
+    cropping = ImageRatioField('image', '170x100')
+    cropping_square = ImageRatioField('image', '100x100')
+
+    def get_image_base64(self):
+        try:
+            bashCommand = 'base64 %s' % self.image.path
+            process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+            output, error = process.communicate()
+            return output
+        except Exception as e:
+            return str(e)
+
+    def delete(self, *args, **kwargs):
+        self.image.delete()
+        super(ArticleImages, self).delete(*args, **kwargs)
+    @property
+    def thumbnailsmall_url(self):
+        try:
+            return get_thumbnailer(self.image).get_thumbnail({
+                'size': (170, 100),
+                'box': self.cropping,
+                'crop': True,
+                'detail': True,
+            }).url
+        except:
+            return ''
+    @property
+    def thumbnail_squere_url(self):
+        try:
+            return get_thumbnailer(self.image).get_thumbnail({
+                'size': (100, 100),
+                'box': self.cropping_square,
+                'crop': True,
+                'detail': True,
+            }).url
+        except:
+            return ''
