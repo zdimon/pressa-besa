@@ -6,8 +6,6 @@ import { findDOMNode } from "react-dom";
 
 export default function Carousel(props) {
   var container = document.getElementById(props.selector);
-  console.log(props.selector);
-  console.log(container);
   var matches = container.querySelectorAll("img");
   var matchesArr = Array.prototype.slice.call(matches);
   console.log(matches)

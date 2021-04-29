@@ -10,9 +10,25 @@ export default function TagSlider(props) {
     var container = document.getElementById(props.selector);
     var matches = container.querySelectorAll("a");
     var matchesArr = Array.prototype.slice.call(matches);
+    var breakpoints = {
+        320: {
+          spaceBetween: 20,
+          slidesPerView: 3,
+          centeredSlides: true,
+        },
+        500: {
+          spaceBetween: 20,
+          slidesPerView: 4,
+        },
+        800: {
+            spaceBetween: 20,
+            slidesPerView: 6,
+        }
+    }
     return (
         <Swiper
-        spaceBetween={10}
+        breakpoints={breakpoints}
+        spaceBetween={20}
         slidesPerView={3}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
