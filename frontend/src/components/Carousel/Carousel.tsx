@@ -109,7 +109,7 @@ export default function Carousel(props) {
       <div className="container">
         <div className="row row-20">
           <div className="col-12">
-              <h4 className="text-uppercase">Новые <span>выпуски</span></h4>
+              <h4 className="text-uppercase">Популярные <span>Издания</span></h4>
           </div>
             <div className="col-12">
               <div className="swiper-wrap swiper-style-1">
