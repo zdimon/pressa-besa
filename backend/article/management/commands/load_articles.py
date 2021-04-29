@@ -1,10 +1,12 @@
 from django.core.management.base import BaseCommand
 from catalog.models import Category
 from journal.models import Issue, Journal
-from article.models import Article, ArticleCoverSetting
+from article.models import Article, ArticleCoverSetting, ArticleImages
 from django.core.files import File
 from django.conf import settings
 import os
+import random
+
 
 class Command(BaseCommand):
 
@@ -33,6 +35,13 @@ class Command(BaseCommand):
                 a.author = 'Митрофан'
                 a.page = cnt
                 a.save()
+                ai = ArticleImages()
+                ai.article = a
+                ai.save()
+                img = f'{random.randint(1,6)}.jpeg'
+                path = os.path.join(settings.BASE_DIR,'init_data', 'article',img)
+                with open(path, 'rb') as doc_file:
+                    ai.image.save(img, File(doc_file), save=True)
                 print('saving %s --- %s' % (i.name,title))
 
         for j in Journal.objects.all():

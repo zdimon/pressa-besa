@@ -1,10 +1,14 @@
 from django.contrib import admin
-from article.models import Article, ArticleCoverSetting, ArticleFontSetting
+from article.models import Article, ArticleCoverSetting, ArticleFontSetting, ArticleImages
 from django.utils.safestring import mark_safe
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ['title', 'issue', 'page', 'text', 'cover_tag']
+
+@admin.register(ArticleImages)
+class ArticleImagesAdmin(admin.ModelAdmin):
+    list_display = ['article', 'thumbnailsmall_tag']
 
 
 @admin.register(ArticleCoverSetting)

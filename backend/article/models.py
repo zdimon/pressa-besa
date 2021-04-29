@@ -194,6 +194,11 @@ class ArticleImages(models.Model):
     def delete(self, *args, **kwargs):
         self.image.delete()
         super(ArticleImages, self).delete(*args, **kwargs)
+
+    @property
+    def thumbnailsmall_tag(self):
+        return mark_safe(f'<img src="{self.thumbnailsmall_url}" />')
+
     @property
     def thumbnailsmall_url(self):
         try:

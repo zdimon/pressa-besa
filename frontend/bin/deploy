@@ -1,0 +1,5 @@
+cd ..
+git add .
+git commit -m 'auto'
+git push
+ssh pressa@95.163.104.122 -t 'cd pressa-besa; git pull'
