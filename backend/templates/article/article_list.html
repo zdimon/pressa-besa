@@ -8,12 +8,14 @@
 {% block content %}
 
     <div id="container">
-    	<div class="container position-relative" id="masonryItems">
+    	<div class="container position-relative">
             <div id="masonryGrid"> </div>
+            <div style="display: none" id="masonryItems">
+                {% for item in arts %}
+                    {% include 'items/article.html' %}
+                {% endfor %}
+            </div>
 
-			{% for item in arts %}
-                {% include 'items/article.html' %}
-            {% endfor %}
         </div>
     </div>
 
