@@ -3,7 +3,7 @@ import  { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
 SwiperCore.use([Navigation]);
 import { findDOMNode } from "react-dom";
-import './TagSlider.css';
+import './TagSlider.scss';
 
 // https://swiperjs.com/react
 
