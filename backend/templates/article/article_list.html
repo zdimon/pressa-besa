@@ -8,7 +8,9 @@
 {% block content %}
 
     <div id="container">
-    	<div class="container position-relative">
+    	<div class="container position-relative" id="masonryItems">
+            <div id="masonryGrid"> </div>
+
 			{% for item in arts %}
                 {% include 'items/article.html' %}
             {% endfor %}
