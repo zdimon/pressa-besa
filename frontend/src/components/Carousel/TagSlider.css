@@ -1,0 +1,26 @@
+.swiper-container{
+    background-color: aliceblue;
+    height: 300px;
+    .swiper-wrapper{
+-webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    }
+		.swiper-slide{
+			background-color: #f0f0f0;
+			width: 80%;
+			height: 200px;
+			@media screen and (min-width: 768px){
+				width: 200px;
+			}
+			&-active{
+				background-color: #bd1701;
+				@media screen and (min-width: 768px){
+					width: 500px;
+          height: 250px;
+				}
+			}
+		}
+	}

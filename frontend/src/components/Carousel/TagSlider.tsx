@@ -3,6 +3,7 @@ import  { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
 SwiperCore.use([Navigation]);
 import { findDOMNode } from "react-dom";
+import './TagSlider.css';
 
 // https://swiperjs.com/react
 
@@ -29,7 +30,7 @@ export default function TagSlider(props) {
         <Swiper
        
         spaceBetween={20}
-        slidesPerView={8}
+        slidesPerView='auto'
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
       >
