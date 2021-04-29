@@ -1,19 +1,5 @@
-.swiper-container{
-    .swiper-wrapper{
--webkit-box-align: center;
-    -webkit-align-items: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    }
-		.swiper-slide{
-			width: auto !important;
-			@media screen and (min-width: 768px){
-				
-			}
-			&-active{
-				
+
+.auto-swipe-width{
+	width: auto !important;
+}
 	
-			}
-		}
-	}
