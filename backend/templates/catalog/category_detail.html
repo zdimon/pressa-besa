@@ -6,6 +6,16 @@
 
 
 {% block content %}
+
+
+            <div id="popJournalsSlider"></div>
+            <div id="JSpopJournalsItems" style="display: none">
+            {% for item in journals %}
+                {% include 'items/journal.html' %}
+            {% endfor %}
+            </div>
+
+    
     
     <div class="container">
         <div id="tagSlider" class="swiper-container"></div>
@@ -24,7 +34,7 @@
     <div class="container">
         <div class="journals-block">
         <div class="col-12">
-            <h4 class="text-uppercase">Популярные <span>издания</span></h4>
+            <h4 class="text-uppercase">Новые <span>выпуски</span></h4>
         </div>
             {% for item in journals %}
                 <div>
@@ -33,5 +43,8 @@
             {% endfor %}
         </div>
     </div>
+
+
+
 
 {% endblock %}

@@ -8,9 +8,10 @@ import TagSlider from './components/Carousel/TagSlider';
 
 const loginEl = document.getElementById("userMenu");
 
-const carouselEl = document.getElementById("carousel");
+const carouselEl = document.getElementById("popJournalsSlider");
+if(carouselEl) render(<Carousel selector="JSpopJournalsItems" />, carouselEl); 
 
-// if(carouselEl) render(<Carousel selector="popular-jounals" />, carouselEl); 
+
 const masonryEl = document.getElementById("masonryGrid");
 if(masonryEl) render(<MasonryGrid selector="masonryItems" />, masonryEl)
 

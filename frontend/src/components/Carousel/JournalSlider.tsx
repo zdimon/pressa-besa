@@ -4,7 +4,7 @@ import SwiperCore, { Navigation } from 'swiper';
 SwiperCore.use([Navigation]);
 import { findDOMNode } from "react-dom";
 
-export default function Carousel(props) {
+export default function JournalSlider(props) {
   var container = document.getElementById(props.selector);
   var matches = container.querySelectorAll("img");
   var matchesArr = Array.prototype.slice.call(matches);
@@ -105,7 +105,7 @@ export default function Carousel(props) {
   const navigationNextRef = React.useRef(null)
   
   return (
-    <section className="section bg-default">
+    <section className="section bg-default section-xs">
       <div className="container">
         <div className="row row-20">
           <div className="col-12">
@@ -136,7 +136,7 @@ export default function Carousel(props) {
                         <div className="thumbnail-modern">
                             <div className="thumbnail-modern__media">
                                 <a href={item.getAttribute('data-url')}>
-                                    <img src={item.getAttribute('src')} alt="" />
+                                    <img src="/media/covers/nauka-i-tehnika/2021/19/205-282/cover.png" alt="" />
                                 </a>
                             </div>
                             <div className="thumbnail-modern__body">
