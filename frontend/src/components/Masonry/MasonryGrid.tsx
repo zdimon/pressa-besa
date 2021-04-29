@@ -5,9 +5,15 @@ export default function MasonryGrid(props) {
   console.log(container);
   var matches = container.querySelectorAll("img");
   var matchesArr = Array.prototype.slice.call(matches);
+  const breakpointColumnsObj = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 1
+  };
 return (
     <Masonry
-    breakpointCols={3}
+    breakpointCols={breakpointColumnsObj}
     className="my-masonry-grid"
     columnClassName="my-masonry-grid_column">
       {matchesArr.map((item,index) =>
