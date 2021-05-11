@@ -1,0 +1,24 @@
+<div class="swiper-slide">
+    <div class="thumbnail-modern">
+        <div class="thumbnail-modern__media">
+            <a href="{% url 'journal-detail' name_slug=item.journal.name_slug %}">
+                <img 
+                data-jname="{{ item.journal.name }}"
+                data-iname="{{ item.journal.last_issue.name }}"
+                data-amount="{{ item.journal.amount }}"
+                data-url="{% url 'journal-detail' name_slug=item.journal.name_slug %}"
+                src="{{ item.item.journal.common_cover }}" 
+                alt="{{ item.item.journal.name }}">
+            </a>
+        </div>
+        <div class="thumbnail-modern__body">
+            <div class="thumbnail-modern__body-title">
+                <a href="{% url 'journal-detail' name_slug=item.journal.name_slug %}">
+                    {{ item.journal.name }}   
+                </a>
+            </div>
+            <div class="thumbnail-modern__body-caption">№ {{ item.journal.last_issue.name }}</div>
+        </div>
+        <div class="thumbnail-modern__footer">{{ item.journal.amount }}₽</div>
+    </div>
+</div>

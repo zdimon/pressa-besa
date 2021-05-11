@@ -36,9 +36,9 @@
         <div class="col-12">
             <h4 class="text-uppercase">Новые <span>выпуски</span></h4>
         </div>
-            {% for item in journals %}
+            {% for item in new_issues %}
                 <div>
-                {% include 'items/journal.html' %}
+                {% include 'items/issue.html' %}
                 </div>
             {% endfor %}
         </div>
