@@ -7,8 +7,8 @@
                 data-iname="{{ item.journal.last_issue.name }}"
                 data-amount="{{ item.journal.amount }}"
                 data-url="{% url 'journal-detail' name_slug=item.journal.name_slug %}"
-                src="{{ item.item.journal.common_cover }}" 
-                alt="{{ item.item.journal.name }}">
+                src="{{ item.common_cover }}" 
+                alt="{{ item.journal.name }}">
             </a>
         </div>
         <div class="thumbnail-modern__body">
