@@ -8,6 +8,18 @@ from .mixins.name_slug import NameSlugMixin
 
 class Journal(NameSlugMixin, models.Model):
 
+    JOURNAL_TYPE_CHOICES = (
+        ('magazine', _(u'Журнал')),
+        ('paper', _(u'Газета')),
+        ('book', _(u'Книга')),
+    )
+
+    journal_type = models.CharField(verbose_name=_(u'тип издания (журнал, газета или книга)'),
+                                    choices=JOURNAL_TYPE_CHOICES,
+                                    db_index = True,
+                                    default='magazine',
+                                    max_length=10)
+
     name = models.CharField(verbose_name=_('наименование издания'),
                             max_length=250)
     category = models.ManyToManyField('catalog.Category', verbose_name=_('Категории в Pressa.ru'))
