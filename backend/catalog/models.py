@@ -19,6 +19,9 @@ class Category(models.Model):
     sorting = models.SmallIntegerField(verbose_name=_('Сортировка'),
                                    default=0)
 
+    show_in_new_catalog = models.BooleanField(
+        verbose_name=_(u'показывать ли в новом каталоге?'), default=False)
+
 
 class Tag(models.Model):
     name = models.CharField(verbose_name=(u'Наименование тега'), max_length=255)
