@@ -4,6 +4,7 @@ from .models import Category
 
 def category_detail(request, journal_type, category):
     #new_issues = Issue.objects.filter(is_public=True).order_by('-id')[0:15]
+    print(journal_type)
     journals = Journal.objects.filter(journal_type=journal_type).order_by('-last_issue_id')[0:15]
     popular = Journal.objects.filter(is_popular=True).order_by('-id')[0:15]
     categories = Category.objects.all()
