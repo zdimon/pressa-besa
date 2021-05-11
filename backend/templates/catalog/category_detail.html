@@ -26,7 +26,7 @@
         {% for category in categories %}
             <div>
             <a href="{% url 'category-detail' journal_type=journal_type category=category.name_slug %}" class="button button-primary">
-                {{ category.name_slug }}
+                {{ category.name }} {% url 'category-detail' journal_type=journal_type category=category.name_slug %}
             </a>
             </div>
         {% endfor %}
