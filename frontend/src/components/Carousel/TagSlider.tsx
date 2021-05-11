@@ -37,7 +37,7 @@ export default function TagSlider(props) {
           {matchesArr.map((item,index) =>      
                     <div className="swiper-wrapper auto-swipe-width">
                         <SwiperSlide>
-                                <a href="" className="button button-primary">
+                                <a href={item.getAttribute('href')} className="button button-primary">
                                     {item.innerHTML}
                                 </a>
                         </SwiperSlide>
