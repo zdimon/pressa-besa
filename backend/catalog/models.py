@@ -21,6 +21,7 @@ class Category(models.Model):
 
     show_in_new_catalog = models.BooleanField(
         verbose_name=_(u'показывать ли в новом каталоге?'), default=False)
+                                   
 
 
 class Tag(models.Model):
