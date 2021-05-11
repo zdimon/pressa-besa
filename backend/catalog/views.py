@@ -9,7 +9,7 @@ def category_detail(request, journal_type, category):
 
     if category != 'categories':
         category = Category.objects.get(name_slug=category)
-        journals_query.filter(category=category)
+        journals_query = journals_query.filter(category=category)
 
     
     journals = journals_query.order_by('-last_issue_id')[0:15]
