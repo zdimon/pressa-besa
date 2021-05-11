@@ -3,8 +3,10 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from django.utils.timezone import now
 from django.utils.safestring import mark_safe
+from journal.models.mixins.name_slug import NameSlugMixin
 
-class Category(models.Model):
+
+class Category(NameSlugMixin, models.Model):
     JOURNAL_TYPE_CHOICES = (
         ('magazine', _('Журнал')),
         ('paper', _('Газета')),
