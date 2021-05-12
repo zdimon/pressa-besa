@@ -12,11 +12,74 @@ export default function Carousel(props) {
 
   var breakpoints = {
     320: {
-      spaceBetween: 20,
+      spaceBetween: -30,
       slidesPerView: 1,
       centeredSlides: true,
     },
-   
+    340: {
+      spaceBetween: -40,
+      
+    },
+    350: {
+      spaceBetween: -50,
+      
+    },
+    360: {
+      spaceBetween: -60,
+      
+    },
+    370: {
+      spaceBetween: -70,
+      
+    },
+    380: {
+      spaceBetween: -80,
+      
+    },
+    400: {
+      spaceBetween: -100,
+      
+    },
+    420: {
+      spaceBetween: -120,
+      
+    },
+    430: {
+      spaceBetween: -130,
+      
+    },
+    440: {
+      spaceBetween: -140,
+      
+    },
+    450: {
+      spaceBetween: -150,
+      
+    },
+    460: {
+      spaceBetween: -160,
+      
+    },
+    470: {
+      spaceBetween: -170,
+      
+    },
+    480: {
+      spaceBetween: -180,
+      
+    },
+    490: {
+      spaceBetween: -190,
+      
+    },
+    500: {
+      spaceBetween: -200,
+      
+    },
+    510: {
+      spaceBetween: -20,
+      
+    },
     520: {
       slidesPerView: 2,
       spaceBetween: 20,
