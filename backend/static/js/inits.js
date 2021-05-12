@@ -244,7 +244,7 @@
 				
 			},
 			510: {
-				spaceBetween: -180,
+				spaceBetween: 10,
 				
 			},
 			520: {
