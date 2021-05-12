@@ -30,18 +30,18 @@ export default function TagSlider(props) {
         <Swiper
        
         spaceBetween={20}
-        slidesPerView={7}
+        slidesPerView={'auto'} 
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
       >
           {matchesArr.map((item,index) =>      
-                    <div className="swiper-wrapper auto-swipe-width">
+                    
                         <SwiperSlide>
                                 <a href={item.getAttribute('href')} className="button button-primary">
                                     {item.innerHTML}
                                 </a>
                         </SwiperSlide>
-                    </div>
+                   
           )}
      
       </Swiper>
