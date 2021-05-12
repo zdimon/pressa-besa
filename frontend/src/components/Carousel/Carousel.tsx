@@ -12,72 +12,76 @@ export default function Carousel(props) {
 
   var breakpoints = {
     320: {
-      spaceBetween: -30,
+      spaceBetween: 0,
       slidesPerView: 1,
       centeredSlides: true,
     },
     340: {
-      spaceBetween: -40,
+      spaceBetween: -10,
       
     },
     350: {
-      spaceBetween: -50,
+      spaceBetween: -20,
       
     },
     360: {
-      spaceBetween: -60,
+      spaceBetween: -30,
       
     },
     370: {
-      spaceBetween: -70,
+      spaceBetween: -40,
       
     },
     380: {
-      spaceBetween: -80,
+      spaceBetween: -50,
       
     },
     400: {
-      spaceBetween: -100,
+      spaceBetween: -60,
+      
+    },
+    410: {
+      spaceBetween: -70,
       
     },
     420: {
-      spaceBetween: -120,
+      spaceBetween: -80,
       
     },
     430: {
-      spaceBetween: -130,
+      spaceBetween: -90,
       
     },
     440: {
-      spaceBetween: -140,
+      spaceBetween: -100,
       
     },
     450: {
-      spaceBetween: -150,
+      spaceBetween: -120,
       
     },
     460: {
-      spaceBetween: -160,
+      spaceBetween: -130,
       
     },
     470: {
-      spaceBetween: -170,
+      spaceBetween: -140,
       
     },
     480: {
-      spaceBetween: -180,
+      spaceBetween: -150,
       
     },
     490: {
-      spaceBetween: -190,
+      spaceBetween: -160,
       
     },
     500: {
-      spaceBetween: -200,
+      spaceBetween: -170,
       
     },
     510: {
-      spaceBetween: -20,
+      spaceBetween: -180,
       
     },
     520: {
@@ -86,13 +90,13 @@ export default function Carousel(props) {
       centeredSlides: false,
     },
     768: {
-      slidesPerView: 3,
+      slidesPerView: 2,
     },
     992: {
       slidesPerView: 3,
     },
     1200: {
-      slidesPerView: 5,
+      slidesPerView: 4,
       spaceBetween: 20,
     },
   };
