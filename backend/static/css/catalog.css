@@ -1,9 +1,4 @@
 
-
-.thumbnail-modern {
-	max-width: 204px;
-}
-
 @media(max-width: 1200px) {
     .thumbnail-modern {
         max-width: 265px;
