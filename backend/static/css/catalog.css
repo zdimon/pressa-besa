@@ -1,24 +1,4 @@
 
-@media(max-width: 1200px) {
-    .thumbnail-modern {
-        max-width: 265px;
-        width: 265px;
-    }
-}
-
-@media(max-width: 1000px) {
-    .thumbnail-modern {
-        max-width: 200px;
-        width: 200px;
-    }
-}
-
-@media(max-width: 775px) {
-    .thumbnail-modern {
-        max-width: 250px;
-        width: 250px;
-    }
-}
 
 .swiper-container {
     margin: 0;
