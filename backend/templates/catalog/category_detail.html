@@ -35,7 +35,13 @@
     <div class="container">
         <div class="journals-block">
         <div class="col-12">
-            <h4 class="text-uppercase">Новые <span>выпуски</span></h4>
+            <h4 class="text-uppercase">
+                {% if category %}
+                   {{ category.name }}
+                {% else %}
+                    Новые <span>выпуски</span>
+                {% endif %}
+            </h4>
         </div>
             {% for item in journals %}
                 <div>

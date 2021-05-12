@@ -30,7 +30,7 @@ export default function TagSlider(props) {
     return (
         <Swiper
        
-        spaceBetween={20}
+        spaceBetween={10}
         slidesPerView={'auto'} 
         loop={true}
         onSlideChange={() => console.log('slide change')}
