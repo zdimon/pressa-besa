@@ -26,11 +26,19 @@ export default function TagSlider(props) {
             slidesPerView: 6,
         }
     }
+    const params = {
+        direction: 'horizontal',
+        paginationClickable: true,
+        autoplay: 1000,
+        autoplayDisableOnInteraction: false,
+        loop:true
+      }
     return (
         <Swiper
        
         spaceBetween={20}
         slidesPerView={'auto'} 
+        params={params}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
       >
