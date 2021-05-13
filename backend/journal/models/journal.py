@@ -6,6 +6,7 @@ from django.utils.safestring import mark_safe
 from django.conf import settings
 from .mixins.name_slug import NameSlugMixin
 from sorl.thumbnail import get_thumbnail
+from django.urls import reverse
 
 class Journal(NameSlugMixin, models.Model):
 
@@ -82,6 +83,16 @@ class Journal(NameSlugMixin, models.Model):
             return self.default_cover
         else:
             return None
+
+    @property
+    def just_cover(self):
+        if self.last_issue:
+            if (self.last_issue.is_covers_created):
+                return self.last_issue.cover_url_mask.replace('{size}','306-433')
+            else:
+                return reverse('mts_get_cover', args=['journal','306-433',self.pk])
+        else:
+            return reverse('mts_get_cover', args=['journal','306-433',self.pk])
 
     def image_url(self):
         try:
