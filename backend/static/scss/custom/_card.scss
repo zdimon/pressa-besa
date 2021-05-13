@@ -115,6 +115,7 @@
 	max-width: 306px;
 	&__action{
 		display: flex;
+        margin-top: 10px;
 		.button{
 			width: 100%;
 		}
@@ -130,11 +131,13 @@
 .card-media--action{
 	display: flex;
 	flex-grow: 1;
-	.button{
+    
+	.button{ 
 		width: 100%;
 		text-transform: uppercase;
 		border-top-right-radius: 0;
-		border-top-left-radius: 0
+		border-top-left-radius: 0;
+        
 	}
 }
 
