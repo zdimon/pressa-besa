@@ -8,22 +8,21 @@
 {% block content %}
 
 
-
 <section class="section-xs card">
     <div class="container container-md">
         <div class="row row-20">
-            <div class="col-4">
+            <div class="col-12 col-md-4 d-flex justify-content-center">
                 <div class="card-media">
                     <img src="{{ object.just_cover }}" alt="">
-                </div>
-                <div class="card-media--action">
-                    <a href="" class="button button-primary">Читать</a>
+                    <div class="card-media__action">
+                        <a href="" class="button button-primary">Читать</a>
+                    </div>
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-12 col-md-8 d-flex flex-column justify-content-between">
                 <div class="card-info">
                     <div class="card-info__main">
-                        <h4 class="card-info__title">{{ object.name }}</h4>
+                        <h4 class="card-info__title">{{ object.last_issue.name }}</h4>
                         <div class="card-info__release-number">
                             № {{ object.last_issue.name }}
                         </div>
@@ -42,31 +41,31 @@
                             <a href="#" class="button button-primary button-sm">Купить</a>
                         </div>
                     </div>
-                    <form action="" class="card-info__subscription">
+                    <form action="" class="card-info__subscription-form">
                         <div class="card-info__subscription-header">
                             <span>ЭЛЕКТРОННАЯ ПОДПИСКА</span>
-                            <button class="button-primary button" type="submit">Подписаться</button>
+                            <button class="button-primary button button-sm" type="submit">Подписаться</button>
                         </div>
                         <div class="card-info__subscription-body">
                             <div class="form-wrap">
-                                <input type="radio" id="radio-one" name="subscription">
+                                <input class="custom-radio" type="radio" id="radio-one" name="subscription">
                                 <label for="radio-one">1 выпуск (1 месяц) за 66.00 руб.</label>
                             </div>
                             <div class="form-wrap">
-                                <input type="radio" id="radio-two" name="subscription">
+                                <input class="custom-radio" type="radio" id="radio-two" name="subscription">
                                 <label for="radio-two"> 12 выпусков (12 месяцев) за 649.00 руб. (экономия 143 руб.)</label>
                             </div>
                         </div>
                     </form>
+                </div>
+                <div class="card-info__subscription">
+                    <a href="#" class="button-primary button d-flex">Читай сколько угодно за 8.00 рублей!</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-
-
-    
     
 
 {% endblock %}
