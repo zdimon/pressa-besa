@@ -5,6 +5,7 @@ from django.utils.timezone import now
 from django.utils.safestring import mark_safe
 from django.conf import settings
 from .mixins.name_slug import NameSlugMixin
+from sorl.thumbnail import get_thumbnail
 
 class Journal(NameSlugMixin, models.Model):
 
@@ -69,6 +70,16 @@ class Journal(NameSlugMixin, models.Model):
             return self.last_issue.common_cover
         elif self.default_cover:
             return self.default_cover.url
+        else:
+            return None
+
+    @property
+    def big_cover(self):
+        if self.last_issue:
+            im = get_thumbnail(self.last_issue.cover, '306x433', crop='top')
+            return im.url
+        elif self.default_cover:
+            return self.default_cover
         else:
             return None
 

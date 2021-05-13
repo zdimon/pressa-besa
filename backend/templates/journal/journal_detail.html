@@ -6,17 +6,78 @@
 
 
 {% block content %}
-    
-    
-    <div class="container">
-        <img src="{{ object.common_cover }}" alt="{{ object.name }}">
-        <div>
-            {{ object.name }}
-        </div>
-        <div>
-            № {{ object.last_issue.name }}
-        </div>
 
+
+
+
+<section class="section-xs card">
+    <div class="container container-md">
+        <div class="row row-20">
+            <div class="col-4">
+                <div class="card-media">
+                    <img src="{{ object.big_cover }}" alt="">
+                </div>
+                <div class="card-media--action">
+                    <!-- 
+
+                        <a href="" class="button button-primary">Читать</a>
+                    -->
+                    
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="card-info">
+                    <div class="card-info__main">
+                        <h4 class="card-info__title">{{ object.name }}</h4>
+                        <div class="card-info__release-number">
+                            № {{ object.last_issue.name }}
+                        </div>
+                        <div class="card-info__publishing">
+                            <span>Издательство:</span>
+                            <a href="#">АО "Конде Наст"</a>
+                        </div>
+                        <div class="card-info__publishing-site">
+                            <a href="#">Сайт издания</a>
+                        </div>
+                    </div>
+                    <div class="card-info__price">
+                        <div class="card-info__price-inner">
+                            <div class="card-info__price-title">ЦЕНА ЗА НОМЕР:</div>
+                            <div class="card-info__price-number">66.00₽</div>
+                            <a href="#" class="button button-primary button-sm">Купить</a>
+                        </div>
+                    </div>
+
+                    <div class="card-info__price">
+                        <div class="card-info__price-inner">
+
+                            <form action="" class="card-info__subscription">
+                                <div class="card-info__subscription-header">
+                                    <span>ЭЛЕКТРОННАЯ ПОДПИСКА</span>
+                                    
+                                </div>
+                                <br/>
+                                <div class="card-info__subscription-body">
+                                    <div class="form-wrap">
+                                        <input type="radio" id="radio-one" name="subscription">
+                                        <label for="radio-one">1 выпуск (1 месяц) за 66.00 руб.</label>
+                                    </div>
+                                    <div class="form-wrap">
+                                        <input type="radio" id="radio-two" name="subscription">
+                                        <label for="radio-two"> 12 выпусков (12 месяцев) за 649.00 руб. (экономия 143 руб.)</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
+
+
+    
+    
 
 {% endblock %}
