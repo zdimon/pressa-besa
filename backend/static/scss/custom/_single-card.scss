@@ -1,0 +1,53 @@
+.single-card{
+	&__info{
+		display: flex;
+		flex-direction: column;
+		&-group{
+			display: flex;
+			align-items: flex-start;
+			margin-left: -15px;
+			margin-top: -5px;
+		}
+		&-date,&-marker{
+			margin-top: 5px;
+			margin-left: 15px;
+			flex-basis: 0;
+			flex-grow: 1;
+		}
+		&-date{
+			text-transform: uppercase;
+			color: #aaa;
+			font-size: 20px;
+		}
+		&-marker{
+			max-width: 12px;
+		}
+		&-title{
+			* + &{
+				margin-top: 15px;
+			}
+			font-size: 24px;
+			color: #222;
+			font-weight: 500;
+			@media(min-width: 768px){
+				font-size: 30px;
+			}
+			@media(min-width: 992px){
+				font-size: 38px;
+			}
+		}
+		&-caption{
+			line-height: 1.4;
+			* + &{
+				margin-top: 10px;
+				@media(min-width: 992px){
+					margin-top: 15px;
+				}
+			}
+			color: #222;
+		}
+	}
+	&__subscribe{
+		align-self: flex-start;
+	}
+}
