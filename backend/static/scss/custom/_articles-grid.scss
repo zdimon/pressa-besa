@@ -1,0 +1,123 @@
+.articles-grid{
+	display: grid;
+	grid-template-columns: 1fr;
+	@media(min-width: 768px){
+		grid-template-columns: repeat(auto-fit, minmax(320px, calc(50% - 15px)));
+	}
+	grid-template-rows: repeat(2,minmax(100px, auto));
+	column-gap: 30px;
+	.article-thumbnail{
+		&:nth-child(1){
+			border-top: 1px solid #ddd;
+		}
+		&:nth-child(1),&:nth-child(2){
+			@media(min-width: 768px){
+				border-top: 1px solid #ddd;
+			}
+		}
+	}
+}
+
+.article-thumbnail{
+	padding: 20px 0;
+	border-bottom: 1px solid #ddd;
+	&__header{
+		display: flex;
+		align-items: center;
+		margin-left: -15px;
+		&-list,&-marker{
+			flex-basis: 0;
+			flex-grow: 1;
+			margin-left: 15px;
+		}
+		&-marker{
+			max-width: 12px;
+		}
+	}
+	&__header-list{
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		color: #aaa;
+		font-size: 14px;
+		line-height: 1;
+		margin-top: -4px;
+		li{
+			margin-top: 4px;
+		}
+		li + li{
+			&:before{
+				content: '•';
+				display: inline-block;
+				color: #aaa;
+				margin: 0 5px;
+			}
+		}
+	}
+	&__body{
+		* + &{
+			margin-top: 15px;
+		}
+		display: flex;
+		align-items: start;
+		&-caption,&-media{
+			flex-basis: 0;
+			flex-grow: 1;
+		}
+		&-media{
+			margin-left: 15px;
+			@media(min-width: 576px){
+				margin-left: 40px;
+			}
+			max-width: 130px;
+			width: 100%;
+		}
+		&-caption{
+			display: flex;
+			flex-direction: column;
+			font-size: 16px;
+			line-height: 1.4;
+			a{
+				font-size: 18px;
+				font-weight: 500;
+				@include link(#222,$primary);
+			}
+		}
+	}
+}
+
+// Checkbox
+
+.custom-checkbox{
+	display: none;
+}
+.custom-checkbox-label{
+	position: relative;
+	cursor: pointer;
+	transition: $transition-base;
+	display: flex;
+	&:before{
+		content: "\f097";
+		font-family: 'FontAwesome';
+		color: #aaa;
+		font-size: 16px;
+		line-height: 1;
+		transition: $transition-base;
+	}
+	&:hover{
+		transition: $transition-base;
+		&:before{
+			content: "\f02e";
+			color: $primary;
+			transition: $transition-base;
+		}
+	}
+}
+
+.custom-checkbox:checked + .custom-checkbox-label{
+	&:before{
+		content: "\f02e";
+		color: $primary;
+		transition: $transition-base;
+	}
+}
