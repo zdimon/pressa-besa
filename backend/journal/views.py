@@ -30,6 +30,6 @@ class JournalView(DetailView):
                 self.current_issue = self.object.last_issue
         except:
             raise Http404
-
         context = super(JournalView, self).get_context_data(**kwargs)
+        context['more_issues'] = Issue.objects.filter(journal=self.object).order_by('-id')[0:10]
         return context
