@@ -74,6 +74,21 @@
     {% endfor %}
 </div>
 
+<div class="container">
+    <div id="tagSlider" class="swiper-container"></div>
+</div>
+<br />
+<div style="display: none" class="category-block container" id="tagSliderItems">
+    {% for category in categories %}
+        <div>
+        <a href="{% url 'category-detail' journal_type=object.get_journal_type_url category=category.name_slug %}" class="button button-primary">
+            {{ category.name }}
+        </a>
+        </div>
+    {% endfor %}
+</div>
+
+
 
     
 

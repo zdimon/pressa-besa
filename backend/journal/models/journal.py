@@ -7,6 +7,7 @@ from django.conf import settings
 from .mixins.name_slug import NameSlugMixin
 from sorl.thumbnail import get_thumbnail
 from django.urls import reverse
+from catalog.utils import get_journal_type
 
 class Journal(NameSlugMixin, models.Model):
 
@@ -73,6 +74,19 @@ class Journal(NameSlugMixin, models.Model):
             return self.default_cover.url
         else:
             return None
+
+    @property
+    def get_journal_type_url(self):
+        if self.journal_type == 'magazine':
+            return 'magazines'
+        elif key == 'paper':
+            return 'newspapers'
+        elif key == 'book':
+            return 'books'
+        elif key == 'abonement':
+            return 'abonement'
+        else:
+            return 'all'
 
     @property
     def big_cover(self):
