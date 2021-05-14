@@ -32,6 +32,6 @@ class JournalView(DetailView):
         except:
             raise Http404
         context = super(JournalView, self).get_context_data(**kwargs)
-        context['more_issues'] = Issue.objects.filter(journal=self.object).order_by('-id')[0:10]
+        context['more_issues'] = Issue.objects.filter(journal=self.object).exclude(pk=self.current_issue.id).order_by('-id')[0:10]
         context['categories'] = Category.objects.filter(show_in_new_catalog=True)
         return context
