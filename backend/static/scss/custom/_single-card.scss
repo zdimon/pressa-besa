@@ -8,7 +8,7 @@
 			margin-left: -15px;
 			margin-top: -5px;
 		}
-		&-date,&-journal,&-marker{
+		&-date,&-journal,&-issue,&-marker{
 			margin-top: 5px;
 			margin-left: 15px;
 			flex-basis: 0;
@@ -17,6 +17,11 @@
 		&-date{
 			text-transform: uppercase;
 			color: #aaa;
+			font-size: 20px;
+		}
+		&-journal{
+			text-transform: uppercase;
+			color: rgb(68, 68, 68);
 			font-size: 20px;
 		}
 		&-marker{
