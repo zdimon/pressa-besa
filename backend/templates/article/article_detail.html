@@ -50,7 +50,7 @@
 					</div>
 					<div class="article-thumbnail__body">
 						<div class="article-thumbnail__body-caption">
-							<a href="#">{{ a.title }}</a>
+							<a href="{{ a.get_absolute_url }}">{{ a.title }}</a>
 							<p>
 								{{ a.short_text | safe }}
 							</p>
