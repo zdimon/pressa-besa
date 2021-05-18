@@ -172,9 +172,7 @@ class ArticleCoverSetting(models.Model):
         except:
             return 'noimage.png'
 
-    @property
-    def get_short_text(self):
-        return self.text.split('.')[0]
+
 
     @property
     def cover_tag(self):
