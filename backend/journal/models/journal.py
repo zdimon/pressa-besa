@@ -17,6 +17,12 @@ class Journal(NameSlugMixin, models.Model):
         ('book', _(u'Книга')),
     )
 
+    publishing_office = models.ForeignKey('journal.PublishingOffice',
+                                          verbose_name=_(u'Издательство'),
+                                          on_delete=models.SET_NULL,
+                                          null=True,
+                                          blank=True)
+
     journal_type = models.CharField(verbose_name=_(u'тип издания (журнал, газета или книга)'),
                                     choices=JOURNAL_TYPE_CHOICES,
                                     db_index = True,

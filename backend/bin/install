@@ -9,3 +9,4 @@ rm db.sqlite3
 ./manage.py load_fonts
 ./manage.py proc_cover
 ./manage.py load_news
+./manage.py load_office

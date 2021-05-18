@@ -29,11 +29,13 @@
                         </div>
                         <div class="card-info__publishing">
                             <span>Издательство:</span>
-                            <a href="#">АО "Конде Наст"</a>
+                            <a href="#">{{object.publishing_office.name}}</a>
                         </div>
+                        {% if object.publishing_office.show_site_link %}
                         <div class="card-info__publishing-site">
-                            <a href="#">Сайт издания</a>
+                            <a href="{{ object.publishing_office.site }}">Сайт издания</a>
                         </div>
+                        {% endif %}
                     </div>
                     <div class="card-info__price">
                         <div class="card-info__price-inner">
