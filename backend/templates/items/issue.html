@@ -5,7 +5,7 @@
                 <img 
                 data-iname="{{ item.name }}"
                 data-amount="{{ item.journal.amount }}"
-                data-url="{% url 'journal-detail' name_slug=item.journal.name_slug %}"
+                data-url="{% url 'journal-issue' item.journal.name_slug item.name_slug %}"
                 src="{{ item.common_cover }}" 
                 alt="{{ item.journal.name }}">
             </a>
