@@ -173,6 +173,10 @@ class ArticleCoverSetting(models.Model):
             return 'noimage.png'
 
     @property
+    def get_short_text(self):
+        return self.text.split('.')[0]
+
+    @property
     def cover_tag(self):
         return mark_safe(f'<img width="200" src="{self.cover_url()}"  />')
 
