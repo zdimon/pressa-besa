@@ -28,7 +28,6 @@ def remove_html_markup(s):
                 quote = not quote
             elif not tag:
                 out = out + c
-
     return out
     
 
