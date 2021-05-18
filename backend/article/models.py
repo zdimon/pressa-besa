@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 import re
 import subprocess
 from easy_thumbnails.files import get_thumbnailer
+from django.urls import reverse
 
 def remove_html_markup(s):
     s = re.sub( r'<style .*?/style>', '', s , flags=re.DOTALL)
@@ -89,6 +90,11 @@ class Article(models.Model):
         except Exception as e:
             # print(e)
             return None
+
+    @property
+    def get_absolute_url(self):
+        return reverse("article-detail", kwargs={"id": self.pk})
+    
 
     @property
     def cover_tag(self):

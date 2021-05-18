@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <section class="section section-xs bg-default single-card">
+		<div class="container container-md">
+			<div class="row row-20">
+				<div class="col-12 col-md-4 d-flex justify-content-center">
+					<div class="single-card__media">
+						<img src="{{ item.cover_url }}" alt="{{ item.title }}" />
+					</div>
+				</div>
+				<div class="col-12 col-md-8 d-flex flex-column justify-content-between">
+					<div class="single-card__info">
+						
+						<div class="single-card__info-group">
+
+							<div class="single-card__info-date">
+								{{ item.issue.journal.name }} Выпуск:  {{ item.issue.name }}
+							</div>
+							<div class="single-card__info-marker">
+								<input type="checkbox" class="custom-checkbox" id="checkbox-10">
+								<label for="checkbox-10" class="custom-checkbox-label"></label>
+							</div>
+						</div>
+						<div class="single-card__info-title">{{item.title}}</div>
+						<div class="single-card__info-caption">
+							{{ item.text | safe }}
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="container container-md">
+			<div class="articles-grid">
+			{% for a in item.issue.article_set.all %}
+				<div class="article-thumbnail">
+					<div class="article-thumbnail__header">
+						<ul class="article-thumbnail__header-list">
+							<li>Popular</li>
+							<li>Article</li>
+							<li>New</li>
+							<li>Hot</li>
+						</ul>
+						<div class="article-thumbnail__header-marker">
+							<input type="checkbox" class="custom-checkbox" id="checkbox-1">
+							<label for="checkbox-1" class="custom-checkbox-label"></label>
+						</div>
+					</div>
+					<div class="article-thumbnail__body">
+						<div class="article-thumbnail__body-caption">
+							<a href="#">{{ a.title }}</a>
+							<p>
+								{{ a.text }}
+							</p>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+	</section>
+
+
+
+{% endblock %}

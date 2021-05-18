@@ -5,8 +5,12 @@ from .utils import make_cover
 
 def article_list(request):
     arts = Article.objects.all().order_by('-id')[0:30]
-    
     return render(request, 'article/article_list.html', {'arts': arts})
+
+
+def article_detail(request, id):
+    object = Article.objects.get(pk=id)
+    return render(request, 'article/article_detail.html', {'item': object})
 
 
 def test_cover(request, id):

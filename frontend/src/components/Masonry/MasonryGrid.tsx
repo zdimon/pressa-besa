@@ -19,7 +19,7 @@ return (
       {matchesArr.map((item,index) =>
         <div className="thumbnail-classic">
           <div className="thumbnail-classic__media">
-              <a href="{{ item.get_absolute_url }}">
+              <a href={item.getAttribute('data-url')}>
                   <img src={item.getAttribute('src')} alt="" />
               </a>
               <span className="label">ежемесячные</span>
