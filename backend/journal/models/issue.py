@@ -5,9 +5,9 @@ from django.utils.timezone import now
 # from django.conf import settings
 from django.urls import reverse
 from .mixins.cover import CoverMixin
+from .mixins.name_slug import NameSlugMixin
 
-
-class Issue(CoverMixin, models.Model):
+class Issue(NameSlugMixin, CoverMixin, models.Model):
     name = models.CharField(verbose_name=_(u'номер выпуска'),
                             max_length=100)
 

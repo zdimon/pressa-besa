@@ -1,7 +1,7 @@
 <div class="swiper-slide">
     <div class="thumbnail-modern">
         <div class="thumbnail-modern__media">
-            <a href="{% url 'journal-detail' name_slug=item.journal.name_slug %}">
+            <a href="{% url 'journal-issue' item.journal.name_slug item.name_slug %}">
                 <img 
                 data-iname="{{ item.name }}"
                 data-amount="{{ item.journal.amount }}"

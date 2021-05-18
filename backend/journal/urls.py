@@ -10,5 +10,8 @@ urlpatterns = router.urls
 
 
 urlpatterns = urlpatterns + [
-    path('<slug:name_slug>', JournalView.as_view(), name="journal-detail")
+    path('<slug:name_slug>/<slug:issue_name_slug>',
+        JournalView.as_view(), name="journal-issue"),
+    path('<slug:name_slug>', JournalView.as_view(), name="journal-detail"),
+
 ]
