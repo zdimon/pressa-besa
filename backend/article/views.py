@@ -10,7 +10,8 @@ def article_list(request):
 
 def article_detail(request, id):
     object = Article.objects.get(pk=id)
-    return render(request, 'article/article_detail.html', {'item': object})
+    other = Article.objects.filter(issue=object.issue).exclude(pk=object.pk)
+    return render(request, 'article/article_detail.html', {'item': object, 'other': other})
 
 
 def test_cover(request, id):
