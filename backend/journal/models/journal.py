@@ -85,11 +85,11 @@ class Journal(NameSlugMixin, models.Model):
     def get_journal_type_url(self):
         if self.journal_type == 'magazine':
             return 'magazines'
-        elif key == 'paper':
+        elif self.journal_type == 'paper':
             return 'newspapers'
-        elif key == 'book':
+        elif self.journal_type == 'book':
             return 'books'
-        elif key == 'abonement':
+        elif self.journal_type == 'abonement':
             return 'abonement'
         else:
             return 'all'
