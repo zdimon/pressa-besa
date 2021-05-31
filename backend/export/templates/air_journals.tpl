@@ -17,7 +17,7 @@
            <title>{{ j.name }}</title>
            <description></description>
            <issueNumber>{{ j.id }}</issueNumber>
-           <link>{{DOMAIN}}/export/air/articles/{{ j.id }}</link>
+           <link>{{DOMAIN}}/export/air/articles/{{ j.last_issue.id }}</link>
            <pubDate>{{j.last_issue.release_date|date:"Y-m-d"}}</pubDate>
            <guid>{{j.last_issue.id}}</guid>
            <image>
