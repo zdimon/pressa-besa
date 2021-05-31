@@ -50,6 +50,9 @@ class Journal(NameSlugMixin, models.Model):
     show_in_books = models.BooleanField(
         verbose_name=_(u'Показывать в блоке "Книги"'), default=False)
 
+    is_export_to_air = models.BooleanField(
+        verbose_name=_(u'выгружать ли в авиатранспорт?'), default=False)
+
     last_issue_id = models.IntegerField(
         default=0,
         verbose_name=_(u'ID последнего выпуска'))
