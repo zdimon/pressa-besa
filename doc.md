@@ -1,68 +1,69 @@
-Фронтенд
+Сайт-переделка pressa.ru.
 
-JS jquery - императивный
+Написан на Django 1.? + Angular 1! + CoffeScript.
 
-users = ['Dima', 'Vova'....]
+Задача полностью обновить  дизайн и добавить принципиально новые фишки.
+Например оживить ридер, место где человек читает статьи или просматривает журнал.
+Журнал может быть в виде картинок страниц или текстовых статей.
 
-<ul>
-users.lenght
-    for(i, i =< l, i++) {
-        <li></li>
-    }
+Есть 2 варианта 
 
-    <li for="i in users" >{i}</li>
-<ul>
+1. Написать новый сайт где обновить джангу, питон, ангуляр и пр и где нужно перетягивать код частями и модели базы в первую очередь.
 
-REACT Vue Angular (Typescript) - декларативные
+2. Натянуть одну верстку на существующий сайт pressa.ru и допилить фишки.
 
-Coffescript
+Я склонился к варианту 1 так как при 2 есть риск создания нестабильного продукта .
 
+Создал репозиторий.
 
+https://github.com/zdimon/pressa-besa
 
-Бекенд
+Стек.
 
-Python 
+База Postgres структура базы полностью связана с основой и в процессе разработки миграции из pressa-besa (newpressa.pressa.ru) на основе (pressa.ru) неприемлемы.
 
-Django макро
+Бекенд.
 
-routing 
+Свежая джанга с DRF.
 
-path('', func1) 
-path('/users', func2) 
+Редисом кешируем.
 
-func1(request):
-    request.POST
-    request.GET
-    return response
+Celery - задачи.
 
-templating
+Запуск всех команд из папки backend.
 
-    {% for user in users %}
-        {% if user.age > 30 %}
-            <p>{ user.name }</p>
-        {% endif %}
-    {% endfor %}
+Запуск.
 
-ORM 
+     ./bin/c/django
+     ./bin/c/celery
 
-   SELECT * FROM users WHERE name = '' 
+Фронтенд.
 
-   users = Users.objects.filter(name='dima')
-   for user in users:
-       user.name = ''
-       user.save()
-       user.delete()
+Сборка верстки (со временем влить в п 2)
 
-DRF 
+  ./bin/c/frontend
+    
 
-Flask - микрофрейворк
+2. React приложение
 
+	./bin/c/build
 
-Девопс
+Тесты бекенда тут.
 
-GIT 
+https://newpressa.pressa.ru/api
 
-Docker 
+Требуются специалисты со знанием.
+
+Python Django Django Rest Framework Celery 
+
+JS React JQuery. Angular будет приветствоваться для перетаскивания кода.
+
+Верстка HTML флексбокс респонсивность.
+
+Зарплата на этапе испытаний по факту выполнения задач и потраченного времени (5 $/h).
+
+Если проявите находчивость рассмотрим ставку.
+
 
 
 
