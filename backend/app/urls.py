@@ -33,6 +33,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('', index),
     path('preauth', preauth),
+    path('export/', include('export.urls')),
     path('cover', include('cover.urls')),
     path('top10/', include('announce.urls')),
     path('catalog/', include('catalog.urls')),

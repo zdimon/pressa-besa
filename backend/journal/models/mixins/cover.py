@@ -31,35 +31,35 @@ class CoverMixin(models.Model):
         if (self.is_covers_created):
             return self.cover_url_mask.replace('{size}', '170-220')
         else:
-            return reverse('mts_get_cover', args=['issue', '170-220', self.pk])
+            return reverse('cover_make-cover', args=['issue', '170-220', self.pk])
 
     @property
     def mobile_cover(self):
         if (self.is_covers_created):
             return self.cover_url_mask.replace('{size}', '520-680')
         else:
-            return reverse('mts_get_cover', args=['issue', '520-680', self.pk])
+            return reverse('cover_make-cover', args=['issue', '520-680', self.pk])
 
     @property
     def mobile_thumb(self):
         if (self.is_covers_created):
             return self.cover_url_mask.replace('{size}', '260-340')
         else:
-            return reverse('mts_get_cover', args=['issue', '260-340', self.pk])
+            return reverse('cover_make-cover', args=['issue', '260-340', self.pk])
 
     @property
     def just_cover(self):
         if (self.is_covers_created):
             return self.cover_url_mask.replace('{size}', '306-433')
         else:
-            return reverse('mts_get_cover', args=['issue', '306-433', self.pk])
+            return reverse('cover_make-cover', args=['issue', '306-433', self.pk])
 
     @property
     def common_cover(self):
         if (self.is_covers_created):
             return self.cover_url_mask.replace('{size}', '205-282')
         else:
-            return reverse('mts_get_cover', args=['issue', '203-280', self.pk])
+            return reverse('cover_make-cover', args=['issue', '203-280', self.pk])
 
     def set_cover_mask_url(self):
         path = '/media/covers/%s/%s/%s/{size}/cover.png' % (self.journal.name_slug, self.release_date.year, self.id)

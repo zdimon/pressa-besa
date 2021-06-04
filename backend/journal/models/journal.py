@@ -50,6 +50,9 @@ class Journal(NameSlugMixin, models.Model):
     show_in_books = models.BooleanField(
         verbose_name=_(u'Показывать в блоке "Книги"'), default=False)
 
+    is_export_to_air = models.BooleanField(
+        verbose_name=_(u'выгружать ли в авиатранспорт?'), default=False)
+
     last_issue_id = models.IntegerField(
         default=0,
         verbose_name=_(u'ID последнего выпуска'))
@@ -85,11 +88,11 @@ class Journal(NameSlugMixin, models.Model):
     def get_journal_type_url(self):
         if self.journal_type == 'magazine':
             return 'magazines'
-        elif key == 'paper':
+        elif self.journal_type == 'paper':
             return 'newspapers'
-        elif key == 'book':
+        elif self.journal_type == 'book':
             return 'books'
-        elif key == 'abonement':
+        elif self.journal_type == 'abonement':
             return 'abonement'
         else:
             return 'all'
