@@ -56,7 +56,7 @@ Celery
     REDIS_HOST=localhost
     BACKEND_URL='http://localhost:8000'
 
-
+[ссылка на требования](req.md)
 
 
 
