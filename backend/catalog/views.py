@@ -12,6 +12,8 @@ def category_detail(request, journal_type, category):
         category = Category.objects.get(name_slug=category)
         journals_query = journals_query.filter(category=category)
         is_show_popular = False
+    else:
+        category = None
     
     journals = journals_query.order_by('-last_issue_id')[0:15]
     
