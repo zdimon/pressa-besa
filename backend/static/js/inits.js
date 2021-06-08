@@ -198,26 +198,30 @@
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				resizeObserver: true			
+				resizeObserver: true,
+				slidesPerView: 1,			
 			},
 			500: {
 				spaceBetween: -200,
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				resizeObserver: true			
+				resizeObserver: true,
+				slidesPerView: 1			
 			},
 			510: {
 				spaceBetween: -210,
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				resizeObserver: true			
+				resizeObserver: true,
+				slidesPerView: 1			
 			},
 			520: {
 				slidesPerView: 2,
 				spaceBetween: 20,
 				centeredSlides: false,
+				slidesPerView: 1
 			},
 			768: {
 				slidesPerView: 3,
