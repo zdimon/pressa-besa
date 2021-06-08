@@ -15,56 +15,63 @@ export default function JournalSlider(props) {
       spaceBetween: -30,
       slidesPerView: 1,
       centeredSlides: true,
-      observeParents: true
+      observeParents: true,
+      slidesPerView: 1
     },
     340: {
       spaceBetween: -40,
-      observeParents: true
+      observeParents: true,
+      slidesPerView: 1
       
     },
     350: {
       spaceBetween: -50,
-      observeParents: true
+      observeParents: true,
+      slidesPerView: 1
     },
     360: {
       spaceBetween: -60,
-      observeParents: true
+      observeParents: true,
+      slidesPerView: 1
     },
     370: {
       spaceBetween: -70,
-      observeParents: true
+      observeParents: true,
+      slidesPerView: 1
     },
     380: {
       spaceBetween: -80,
-      observeParents: true
+      observeParents: true,
+      slidesPerView: 1
     },
     400: {
       spaceBetween: -100,
-      observeParents: true
+      observeParents: true,
+      slidesPerView: 1
     },
     410: {
       spaceBetween: -110,
-      
+      slidesPerView: 1
     },
     420: {
       spaceBetween: -120,
-      
+      slidesPerView: 1
     },
     430: {
       spaceBetween: -130,
-      
+      slidesPerView: 1
     },
     440: {
       spaceBetween: -140,
-      
+      slidesPerView: 1
     },
     450: {
       spaceBetween: -150,
-      
+      slidesPerView: 1
     },
     460: {
       spaceBetween: -160,
-      
+      slidesPerView: 1
     },
     470: {
       spaceBetween: -170,
@@ -72,24 +79,24 @@ export default function JournalSlider(props) {
     },
     480: {
       spaceBetween: -180,
-      
+      slidesPerView: 1
     },
     490: {
       spaceBetween: -190,
-      
+      slidesPerView: 1
     },
     500: {
       spaceBetween: -200,
-      
+      slidesPerView: 1
     },
     510: {
       spaceBetween: -210,
-      
+      slidesPerView: 1
     },
     520: {
       slidesPerView: 2,
       spaceBetween: 20,
-      centeredSlides: false,
+      centeredSlides: false
     },
     768: {
       slidesPerView: 3,
