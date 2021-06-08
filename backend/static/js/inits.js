@@ -58,6 +58,7 @@
 	
 	var swiper = new Swiper('.swiper-popular-news', {
 		slidesPerView: 1,
+		resizeObserver: true,
 		observeParents: true,
 		observeSlideChildren: true,
 		observer: true,
@@ -77,68 +78,79 @@
 				centeredSlides: true,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true
+				observer: true,
+				resizeObserver: true
 			},
 			340: {
 				spaceBetween: -40,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true
+				observer: true,
+				resizeObserver: true
 			},
 			350: {
 				spaceBetween: -50,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true
+				observer: true,
+				resizeObserver: true
 			},
 			360: {
 				spaceBetween: -60,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true
+				observer: true,
+				resizeObserver: true
 			},
 			370: {
 				spaceBetween: -70,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true
+				observer: true,
+				resizeObserver: true
 				
 			},
 			380: {
 				spaceBetween: -80,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true
+				observer: true,
+				resizeObserver: true
 			},
 			400: {
 				spaceBetween: -100,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true
+				observer: true,
+				resizeObserver: true
 			},
 			410: {
 				spaceBetween: -110,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true
+				observer: true,
+				resizeObserver: true
 			},
 			420: {
 				spaceBetween: -120,   
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true				
+				observer: true,
+				resizeObserver: true			
 			},
 			430: {
 				spaceBetween: -130,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true,				
+				observer: true,
+				resizeObserver: true				
 			},
 			440: {
 				spaceBetween: -140,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true,				
+				observer: true,
+				resizeObserver: true			
 			},
 			450: {
 				spaceBetween: -150,
@@ -156,31 +168,36 @@
 				spaceBetween: -170,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true,				
+				observer: true,
+				resizeObserver: true				
 			},
 			480: {
 				spaceBetween: -180,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true,				
+				observer: true,
+				resizeObserver: true			
 			},
 			490: {
 				spaceBetween: -190,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true,				
+				observer: true,
+				resizeObserver: true			
 			},
 			500: {
 				spaceBetween: -200,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true,				
+				observer: true,
+				resizeObserver: true			
 			},
 			510: {
 				spaceBetween: -210,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true,				
+				observer: true,
+				resizeObserver: true			
 			},
 			520: {
 				slidesPerView: 2,
