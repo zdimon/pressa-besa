@@ -104,7 +104,7 @@
 				observeParents: true
 			},
 			420: {
-				spaceBetween: -120,  
+				spaceBetween: -120,   
 				
 			},
 			430: {
