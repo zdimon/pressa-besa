@@ -174,7 +174,7 @@
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				slidesPerView: 1,
+				slidesPerView: 2,
 
 			},
 			470: {
@@ -183,7 +183,7 @@
 				observeSlideChildren: true,
 				observer: true,
 				resizeObserver: true,
-				slidesPerView: 1,				
+				slidesPerView: 2,				
 			},
 			480: {
 				spaceBetween: -180,
@@ -191,7 +191,7 @@
 				observeSlideChildren: true,
 				observer: true,
 				resizeObserver: true,
-				slidesPerView: 1,			
+				slidesPerView: 2,			
 			},
 			490: {
 				spaceBetween: -190,
@@ -199,7 +199,7 @@
 				observeSlideChildren: true,
 				observer: true,
 				resizeObserver: true,
-				slidesPerView: 1,			
+				slidesPerView: 2,			
 			},
 			500: {
 				spaceBetween: -200,
@@ -207,7 +207,7 @@
 				observeSlideChildren: true,
 				observer: true,
 				resizeObserver: true,
-				slidesPerView: 1			
+				slidesPerView: 2			
 			},
 			510: {
 				spaceBetween: -210,
@@ -215,13 +215,13 @@
 				observeSlideChildren: true,
 				observer: true,
 				resizeObserver: true,
-				slidesPerView: 1			
+				slidesPerView: 2			
 			},
 			520: {
 				slidesPerView: 2,
 				spaceBetween: 20,
 				centeredSlides: false,
-				slidesPerView: 1
+				slidesPerView: 2
 			},
 			768: {
 				slidesPerView: 3,
