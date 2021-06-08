@@ -130,39 +130,57 @@
 			},
 			430: {
 				spaceBetween: -130,
-				
+				observeParents: true,
+				observeSlideChildren: true,
+				observer: true,				
 			},
 			440: {
 				spaceBetween: -140,
-				
+				observeParents: true,
+				observeSlideChildren: true,
+				observer: true,				
 			},
 			450: {
 				spaceBetween: -150,
-				
+				observeParents: true,
+				observeSlideChildren: true,
+				observer: true,				
 			},
 			460: {
 				spaceBetween: -160,
-				
+				observeParents: true,
+				observeSlideChildren: true,
+				observer: true,				
 			},
 			470: {
 				spaceBetween: -170,
-				
+				observeParents: true,
+				observeSlideChildren: true,
+				observer: true,				
 			},
 			480: {
 				spaceBetween: -180,
-				
+				observeParents: true,
+				observeSlideChildren: true,
+				observer: true,				
 			},
 			490: {
 				spaceBetween: -190,
-				
+				observeParents: true,
+				observeSlideChildren: true,
+				observer: true,				
 			},
 			500: {
 				spaceBetween: -200,
-				
+				observeParents: true,
+				observeSlideChildren: true,
+				observer: true,				
 			},
 			510: {
 				spaceBetween: -210,
-				
+				observeParents: true,
+				observeSlideChildren: true,
+				observer: true,				
 			},
 			520: {
 				slidesPerView: 2,
