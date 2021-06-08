@@ -167,7 +167,7 @@
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				slidesPerView: 1,			
+				slidesPerView: 2,			
 			},
 			460: {
 				spaceBetween: -160,
