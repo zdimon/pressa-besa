@@ -2,13 +2,51 @@
 	&__info{
 		display: flex;
 		flex-direction: column;
+		text-align: center;
+		@media(min-width: 576px){
+			text-align: left;
+		}
+		&-details{
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column-reverse;
+			align-items: center;
+			flex-basis: 0;
+			flex-grow: 1;
+			text-align: center;
+			@media(min-width: 576px){
+				text-align: left;
+				align-items: flex-start;
+				flex-direction: row;
+			}
+			&-media,&-caption{
+				flex-grow: 1;
+				flex-basis: 0;
+				margin-left: 15px;
+				margin-top: 5px;
+			}
+			&-media{
+				max-width: 165px;
+			}
+			&-caption{
+				display: flex;
+				flex-direction: column;
+				text-transform: uppercase;
+				color: #aaa;
+				font-size: 18px;
+				* + *{
+					margin-top: 8px;
+				}
+			}
+		}
 		&-group{
 			display: flex;
 			align-items: flex-start;
+			justify-content: space-between;
 			margin-left: -15px;
 			margin-top: -5px;
 		}
-		&-date,&-journal,&-issue,&-marker{
+		&-date,&-marker{
 			margin-top: 5px;
 			margin-left: 15px;
 			flex-basis: 0;
@@ -17,11 +55,6 @@
 		&-date{
 			text-transform: uppercase;
 			color: #aaa;
-			font-size: 20px;
-		}
-		&-journal{
-			text-transform: uppercase;
-			color: rgb(68, 68, 68);
 			font-size: 20px;
 		}
 		&-marker{
@@ -53,6 +86,9 @@
 		}
 	}
 	&__subscribe{
-		align-self: flex-start;
+		align-self: center;
+		@media(min-width: 576px){
+			align-self: flex-start;
+		}
 	}
 }
