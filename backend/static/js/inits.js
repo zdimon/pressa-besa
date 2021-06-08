@@ -218,6 +218,7 @@
 	});
 	swiper.on('resize',function () {
 		this.update();
+		console.log('resizing swiper!!!!');
 	  })
 	
 	var swiperArticles = new Swiper('.swiper-popular-articles', {
