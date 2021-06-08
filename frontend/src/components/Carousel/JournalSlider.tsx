@@ -15,8 +15,7 @@ export default function JournalSlider(props) {
       spaceBetween: -30,
       slidesPerView: 1,
       centeredSlides: true,
-      observeParents: true,
-      slidesPerView: 1
+      observeParents: true
     },
     340: {
       spaceBetween: -40,
