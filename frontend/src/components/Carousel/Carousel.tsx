@@ -15,30 +15,31 @@ export default function Carousel(props) {
       spaceBetween: 0,
       slidesPerView: 1,
       centeredSlides: true,
+      observeParents: true
     },
     340: {
       spaceBetween: -10,
-      
+      observeParents: true
     },
     350: {
       spaceBetween: -20,
-      
+      observeParents: true
     },
     360: {
       spaceBetween: -30,
-      
+      observeParents: true
     },
     370: {
       spaceBetween: -40,
-      
+      observeParents: true
     },
     380: {
       spaceBetween: -50,
-      
+      observeParents: true
     },
     400: {
       spaceBetween: -60,
-      
+      observeParents: true
     },
     410: {
       spaceBetween: -70,

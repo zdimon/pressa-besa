@@ -72,37 +72,39 @@
 				spaceBetween: -30,
 				slidesPerView: 1,
 				centeredSlides: true,
+				observeParents: true
 			},
 			340: {
 				spaceBetween: -40,
-				
+				observeParents: true
 			},
 			350: {
 				spaceBetween: -50,
-				
+				observeParents: true
 			},
 			360: {
 				spaceBetween: -60,
-				
+				observeParents: true
 			},
 			370: {
 				spaceBetween: -70,
+				observeParents: true
 				
 			},
 			380: {
 				spaceBetween: -80,
-				
+				observeParents: true
 			},
 			400: {
 				spaceBetween: -100,
-				
+				observeParents: true
 			},
 			410: {
 				spaceBetween: -110,
-				
+				observeParents: true
 			},
 			420: {
-				spaceBetween: -120,
+				spaceBetween: -120,  
 				
 			},
 			430: {
