@@ -216,7 +216,9 @@
 			},
 		},
 	});
-	
+	swiper.on('resize',function () {
+		this.update();
+	  })
 	
 	var swiperArticles = new Swiper('.swiper-popular-articles', {
 		spaceBetween: 20,
