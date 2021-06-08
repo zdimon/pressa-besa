@@ -58,6 +58,9 @@
 	
 	var swiper = new Swiper('.swiper-popular-news', {
 		slidesPerView: 1,
+		observeParents: true,
+		observeSlideChildren: true,
+		observer: true,
 		// autoplay: {
 		// 	delay: 4700,
 		// 	disableOnInteraction: false,
@@ -121,7 +124,9 @@
 			},
 			420: {
 				spaceBetween: -120,   
-				
+				observeParents: true,
+				observeSlideChildren: true,
+				observer: true				
 			},
 			430: {
 				spaceBetween: -130,
