@@ -86,28 +86,32 @@
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				resizeObserver: true
+				resizeObserver: true,
+				slidesPerView: 1,
 			},
 			350: {
 				spaceBetween: -50,
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				resizeObserver: true
+				resizeObserver: true,
+				slidesPerView: 1,
 			},
 			360: {
 				spaceBetween: -60,
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				resizeObserver: true
+				resizeObserver: true,
+				slidesPerView: 1,
 			},
 			370: {
 				spaceBetween: -70,
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				resizeObserver: true
+				resizeObserver: true,
+				slidesPerView: 1,
 				
 			},
 			380: {
@@ -115,68 +119,79 @@
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				resizeObserver: true
+				resizeObserver: true,
+				slidesPerView: 1,
 			},
 			400: {
 				spaceBetween: -100,
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				resizeObserver: true
+				resizeObserver: true,
+				slidesPerView: 1,
 			},
 			410: {
 				spaceBetween: -110,
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				resizeObserver: true
+				resizeObserver: true,
+				slidesPerView: 1,
 			},
 			420: {
 				spaceBetween: -120,   
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				resizeObserver: true			
+				resizeObserver: true,
+				slidesPerView: 1,			
 			},
 			430: {
 				spaceBetween: -130,
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				resizeObserver: true				
+				resizeObserver: true,
+				slidesPerView: 1,				
 			},
 			440: {
 				spaceBetween: -140,
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				resizeObserver: true			
+				resizeObserver: true,
+				slidesPerView: 1,			
 			},
 			450: {
 				spaceBetween: -150,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true,				
+				observer: true,
+				slidesPerView: 1,			
 			},
 			460: {
 				spaceBetween: -160,
 				observeParents: true,
 				observeSlideChildren: true,
-				observer: true,				
+				observer: true,
+				slidesPerView: 1,
+
 			},
 			470: {
 				spaceBetween: -170,
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				resizeObserver: true				
+				resizeObserver: true,
+				slidesPerView: 1,				
 			},
 			480: {
 				spaceBetween: -180,
 				observeParents: true,
 				observeSlideChildren: true,
 				observer: true,
-				resizeObserver: true			
+				resizeObserver: true,
+				slidesPerView: 1,			
 			},
 			490: {
 				spaceBetween: -190,
