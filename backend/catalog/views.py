@@ -5,7 +5,12 @@ from .utils import get_journal_type
 
 def category_detail(request, journal_type, category):
     #new_issues = Issue.objects.filter(is_public=True).order_by('-id')[0:15]
-    journals_query = Journal.objects.filter(journal_type=get_journal_type(journal_type))
+    
+    jtype = get_journal_type(journal_type)
+    if jtype != 'all':
+        journals_query = Journal.objects.filter(journal_type=jtype)
+    else:
+        journals_query = Journal.objects.all()
     is_show_popular = True
 
     if category != 'categories':
@@ -14,6 +19,10 @@ def category_detail(request, journal_type, category):
         is_show_popular = False
     else:
         category = None
+
+
+
+        
     
     journals = journals_query.order_by('-last_issue_id')[0:15]
     
