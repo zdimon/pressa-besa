@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <div class="container">
+        <div class="journals-block">
+            <div class="col-12">
+                <h4 class="text-uppercase">
+                        Поиск <span>{{ key }}</span>
+                </h4>
+            </div>
+            {% for item in items %}
+                <div>
+                {% include 'items/journal.html' %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

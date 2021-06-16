@@ -17,3 +17,9 @@ def index(request):
             "new": new
            }
     return render(request, 'main/index.html', data)
+
+
+def search(request):
+    key = request.GET.get('key','')
+    items = Journal.objects.filter(name__icontains=key)[0:15]
+    return render(request, 'main/search.html', {"items": items,  "key": key})

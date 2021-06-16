@@ -38,6 +38,7 @@ urlpatterns = [
     path('top10/', include('announce.urls')),
     path('catalog/', include('catalog.urls')),
     path('magazines/', include('journal.urls')),
+    path('main/', include('main.urls')),
     
     path("v1/api-token-auth/", ObtainAuthToken.as_view()),
     
