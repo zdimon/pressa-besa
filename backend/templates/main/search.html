@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load i18n %} 
 
 
 {% block content %}
@@ -8,14 +8,20 @@
         <div class="journals-block">
             <div class="col-12">
                 <h4 class="text-uppercase">
-                        Поиск <span>{{ key }}</span>
+                        {% translate 'Поиск по слову' %}: <span>{{ key }}</span>
                 </h4>
             </div>
-            {% for item in items %}
+            {% if items %}
+                {% for item in items %}
+                    <div>
+                    {% include 'items/journal.html' %}
+                    </div>
+                {% endfor %}
+            {% else %}
                 <div>
-                {% include 'items/journal.html' %}
+                    {% translate 'По вашему запросу ничего не найдено' %}
                 </div>
-            {% endfor %}
+            {% endif %}
         </div>
     </div>
 {% endblock %}
