@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load i18n %} 
 {% block css %} 
     <link rel="stylesheet" href="/static/css/catalog.css">
 {% endblock %}
@@ -43,12 +43,22 @@
                 {% endif %}
             </h4>
         </div>
-            {% for item in journals %}
+            {% for item in page_obj %}
                 <div>
                 {% include 'items/journal.html' %}
                 </div>
             {% endfor %}
         </div>
+        <div class="paginator">
+            {% if page_obj.has_previous %}
+              <a class="button button-primary" href="{% url 'category-detail' journal_type=journal_type category=category %}?page={{ page_obj.previous_page_number }}"> Назад </a>
+            {% endif %}
+            {% translate 'Страница' %}: {{ page_obj.number }}
+            {% if page_obj.has_next %}
+              <a class="button button-primary" href="{% url 'category-detail' journal_type=journal_type category=category %}?page={{ page_obj.next_page_number }}"> Вперед </a>
+            {% endif %}
+        </div>
+
     </div>
 
 

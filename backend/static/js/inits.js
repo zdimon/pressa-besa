@@ -10,7 +10,7 @@
 			stickUpClone: (plugins.rdNavbar.attr("data-stick-up-clone")) ? plugins.rdNavbar.attr("data-stick-up-clone") === 'true' : false,
 		});
 	}
-	  
+	      
 	
 	$('select.select-custom').each(function(){
 		var $this = $(this), numberOfOptions = $(this).children('option').length;
