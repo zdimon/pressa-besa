@@ -6,6 +6,7 @@ import MasonryGrid from './components/Masonry/MasonryGrid';
 import TagSlider from './components/Carousel/TagSlider';
 import IssueSlider from './components/Carousel/IssueSlider';
 import SubscribeButton from './components/Subscription/SubscribeButton';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const loginEl = document.getElementById("userMenu");
 
@@ -26,6 +27,7 @@ if(issueSliderEl) render(<IssueSlider selector="JSIssueItems" />, issueSliderEl)
 
 // subscription
 const buttonEls = document.getElementsByClassName("js-subscribe-button");
+console.log(buttonEls);
 [].forEach.call(buttonEls, function (el) {
     render(<SubscribeButton />, el )
 });
