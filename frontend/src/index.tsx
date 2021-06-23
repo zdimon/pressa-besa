@@ -9,6 +9,7 @@ import SubscribeButton from './components/Subscription/SubscribeButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const loginEl = document.getElementById("userMenu");
+if(loginEl) render(<UserMenu />, loginEl);
 
 const carouselEl = document.getElementById("popJournalsSlider");
 if(carouselEl) render(<Carousel selector="JSpopJournalsItems" />, carouselEl); 
@@ -19,6 +20,7 @@ if(masonryEl) render(<MasonryGrid selector="masonryItems" />, masonryEl)
 
 /// tag slider
 const tagSliderEl = document.getElementById("tagSlider");
+console.log(tagSliderEl);
 if(tagSliderEl) render(<TagSlider selector="tagSliderItems" />, tagSliderEl)
 
 /// issue slider
@@ -36,4 +38,4 @@ console.log(buttonEls);
  
 
 
-render(<UserMenu />, loginEl);
+

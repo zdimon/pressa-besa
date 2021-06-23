@@ -62,7 +62,8 @@
                     </form>
                 </div>
                 <div class="card-info__subscription">
-                    <a href="#" class="button-primary button d-flex">Читай сколько угодно за 8.00 рублей!</a>
+                <div class="js-subscribe-button"></div>
+                <!-- TODO add d-flex class-->
                 </div>
             </div>
         </div>
@@ -76,9 +77,7 @@
     {% endfor %}
 </div>
 
-<div class="container">
-    <div id="tagSlider" class="swiper-container"></div>
-</div>
+
 <br />
 <div style="display: none" class="category-block container" id="tagSliderItems">
     {% for category in categories %}
