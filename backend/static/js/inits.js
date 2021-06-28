@@ -20,7 +20,13 @@
 		$this.after('<div class="select-styled"></div>');
 		
 		var $styledSelect = $this.next('div.select-styled');
-		$styledSelect.text($this.children('option').eq(0).text());
+		for (var i = 0; i < numberOfOptions; i++) {
+			console.log($this.children('option').eq(i).hasClass('active'));
+			if($this.children('option').eq(i).hasClass('active')) {
+				$styledSelect.text($this.children('option').eq(i).text());
+			}
+			// $styledSelect.text($this.children('option').eq(0).text());
+		}
 		
 		var $list = $('<ul />', {
 			'class': 'select-options'
@@ -29,7 +35,7 @@
 		for (var i = 0; i < numberOfOptions; i++) {
 			$('<li />', {
 				text: $this.children('option').eq(i).text(),
-				rel: $this.children('option').eq(i).val()
+				rel: $this.children('option').eq(i).val().toLowerCase()
 			}).appendTo($list);
 		}
 		
@@ -48,11 +54,13 @@
 			$styledSelect.text($(this).text()).removeClass('active');
 			$this.val($(this).attr('rel'));
 			$list.hide();
+			// document.location = `/${$(this).attr('rel')}/`;
 		});
 		
 		$(document).click(function() {
 			$styledSelect.removeClass('active');
 			$list.hide();
+			
 		});
 	});
 	
@@ -235,10 +243,7 @@
 			},
 		},
 	});
-	swiper.on('resize',function () {
-		this.update();
-		console.log('resizing swiper!!!!');
-	  })
+
 	
 	var swiperArticles = new Swiper('.swiper-popular-articles', {
 		spaceBetween: 20,
@@ -450,3 +455,7 @@
 		},
 	});
 }());
+
+$('#js-select-lang').on('change',() => {
+	console.log('ddd');
+})

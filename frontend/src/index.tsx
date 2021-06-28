@@ -7,6 +7,7 @@ import TagSlider from './components/Carousel/TagSlider';
 import IssueSlider from './components/Carousel/IssueSlider';
 import SubscribeButton from './components/Subscription/SubscribeButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import LangSwitcher from './components/i18n/LangSwitcher';
 
 const loginEl = document.getElementById("userMenu");
 if(loginEl) render(<UserMenu />, loginEl);
@@ -29,13 +30,16 @@ if(issueSliderEl) render(<IssueSlider selector="JSIssueItems" />, issueSliderEl)
 
 // subscription
 const buttonEls = document.getElementsByClassName("js-subscribe-button");
-console.log(buttonEls);
 [].forEach.call(buttonEls, function (el) {
     render(<SubscribeButton />, el )
 });
 /////////////////
 
  
-
+// lang switcher
+const sw = document.getElementById("js-lang-switcher");
+if(sw) render(<LangSwitcher selector={sw.getAttribute("data-lang")}/>, sw)
+ 
+/////////////////
 
 

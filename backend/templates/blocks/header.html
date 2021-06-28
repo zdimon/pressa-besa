@@ -1,3 +1,5 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <header class="section page-header">
 	<!--RD Navbar-->
 	<div class="rd-navbar-wrap">
@@ -99,13 +101,8 @@
 					<div class="rd-nav-options" >
 						<span id="userMenu">
 						</span>
-						<div class="rd-nav-options__lang">
-							<select class="select-custom">
-								<option value="hide">RU</option>
-								<option value="EN" rel="req">EN</option>
-								<option value="FR" rel="req">FR</option>
-								<option value="RU" rel="req">RU</option>
-							</select>
+						<div class="rd-nav-options__lang" id="js-lang-switcher" data-lang="{{LANGUAGE_CODE}}">
+							
 						</div>
 					</div>
 					<div class="rd-nav-aside">
