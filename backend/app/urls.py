@@ -33,7 +33,7 @@ schema_view = get_schema_view(
 
 
 urlpatterns = [
-    
+    path('rosetta/', include('rosetta.urls')),
     path('preauth', preauth),
     path('export/', include('export.urls')),
     path('cover', include('cover.urls')),

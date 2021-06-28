@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.flatpages',
     'django.contrib.sites',
-    
+    'rosetta',
     'flatblocks',
     'main',
     'drf_yasg',
