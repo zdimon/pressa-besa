@@ -1,9 +1,5 @@
 {% extends 'base.html' %}
 
-{% block css %} 
-    <link rel="stylesheet" href="/static/css/announce.css">
-{% endblock %}
-
 
 {% block content %}
     <section class="section section-xs bg-default single-card">
@@ -11,7 +7,7 @@
 			<div class="row row-20">
 				<div class="col-12 col-md-4 d-flex justify-content-center">
 					<div class="single-card__media">
-						<img src="{{ item.image.url }}" alt="{{ item.name }}">
+						<img src="{{ item.get_image.image.url }}" alt="{{ item.title }}" />
 					</div>
 				</div>
 				<div class="col-12 col-md-8 d-flex flex-column justify-content-between">
@@ -19,15 +15,30 @@
 						
 						<div class="single-card__info-group">
 
-							<div class="single-card__info-date">
-								{{ item.issue.journal.name }} Выпуск:  {{ item.issue.name }}
+						<div class="single-card__info-details">
+							<div class="single-card__info-details-media">
+							<a href="{% url 'journal-detail' name_slug=item.name_slug %}">
+									<img src="{{ item.issue.common_cover }}" alt="">
+							</a>
+								</div>
+								<div class="single-card__info-details-caption">
+									<div class="single-card__info-details-title">
+										{{ item.issue.journal.name }}
+									</div>
+									<div class="single-card__info-details-release">
+										Выпуск:  {{ item.issue.name }}
+									</div>
+								</div>
 							</div>
+							
+
+							
 							<div class="single-card__info-marker">
 								<input type="checkbox" class="custom-checkbox" id="checkbox-10">
 								<label for="checkbox-10" class="custom-checkbox-label"></label>
 							</div>
 						</div>
-						<div class="single-card__info-title">{{item.name}}</div>
+						<div class="single-card__info-title">{{item.title}}</div>
 						<div class="single-card__info-caption">
 							{{ item.text | safe }}
 						</div>
@@ -54,10 +65,13 @@
 					</div>
 					<div class="article-thumbnail__body">
 						<div class="article-thumbnail__body-caption">
-							<a href="#">{{ a.title }}</a>
+							<a href="{{ a.get_absolute_url }}">{{ a.title }}</a>
 							<p>
-								{{ a.text | safe }}
+								{{ a.short_text | safe }}
 							</p>
+						</div>
+						<div class="article-thumbnail__body-media">
+							<img src="{{a.get_image.thumbnailsmall_url}}" alt="">
 						</div>
 					</div>
 				</div>
@@ -69,3 +83,5 @@
 
 
 {% endblock %}
+
+
