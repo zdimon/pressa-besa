@@ -1,0 +1,8 @@
+kill $(lsof -t -i:8000)
+. ../venv/bin/activate
+python3 manage.py makemessages -l de
+python3 manage.py makemessages -l en
+python3 manage.py makemessages -l ru
+
+
+
