@@ -37,8 +37,10 @@ const buttonEls = document.getElementsByClassName("js-subscribe-button");
 
  
 // lang switcher
-const sw = document.getElementById("js-lang-switcher");
-if(sw) render(<LangSwitcher selector={sw.getAttribute("data-lang")}/>, sw)
+const swEls = document.getElementsByClassName("js-lang-switcher");
+[].forEach.call(swEls, function (el) {
+    render(<LangSwitcher selector={el.getAttribute("data-lang")}/>, el)
+}); 
  
 /////////////////
 
