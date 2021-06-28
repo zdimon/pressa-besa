@@ -45,3 +45,10 @@ class JournalBuyView(DetailView):
                     journal__name_slug=self.kwargs['name_slug'])    
             except:
                 raise Http404
+
+
+    def get_context_data(self, **kwargs):
+        kwargs['customer'] = None
+        if self.request.user.is_authenticated:
+            kwargs['customer'] = self.request.user.customer
+        return super(JournalBuyView, self).get_context_data(**kwargs)
