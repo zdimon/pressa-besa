@@ -18,7 +18,7 @@
 						<div class="single-card__info-details">
 							<div class="single-card__info-details-media">
 							<a href="{% url 'journal-detail' name_slug=item.issue.journal.name_slug %}">
-									<img src="{{ item.issue.common_cover }}" alt="">
+									<img src="{{ item.issue.common_cover }}" alt="" width="100">
 							</a>
 								</div>
 								<div class="single-card__info-details-caption">
@@ -27,6 +27,9 @@
 									</div>
 									<div class="single-card__info-details-release">
 										Выпуск:  {{ item.issue.name }}
+									</div>
+									<div>
+										<a href="#" class="button button-primary">Слушать аудио</a>
 									</div>
 								</div>
 							</div>

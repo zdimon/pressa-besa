@@ -24,10 +24,11 @@
 				flex-basis: 0;
 				margin-left: 15px;
 				margin-top: 5px;
+				width: 100%;
 			}
 			&-media{
-				max-width: 165px;
-			}
+				max-width: 100px;
+			} 
 			&-caption{
 				display: flex;
 				flex-direction: column;
