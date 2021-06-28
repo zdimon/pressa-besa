@@ -1,4 +1,7 @@
 {% load i18n %} 
+
+{% block search %}
+
 <form action="{% url 'search' %}" method="GET" class="rd-nav-aside__form">
     <div class="form-wrap">
         <div class="form-select font-primary">Поиск</div>
@@ -10,3 +13,5 @@
         </div>
     </div>
 </form>
+
+{% endblock %}

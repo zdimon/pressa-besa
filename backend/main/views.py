@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from journal.models import Journal
+from journal.models import Journal, Issue
 from announce.models import News
+from django.views.generic import DetailView
+from django.http import Http404
 
 
 def index(request):
@@ -23,3 +25,23 @@ def search(request):
     key = request.GET.get('key','')
     items = Journal.objects.filter(name__icontains=key)[0:15]
     return render(request, 'main/search.html', {"items": items,  "key": key})
+
+
+class JournalBuyView(DetailView):
+    model = Issue
+    template_name = 'billing/buy_issue.html'
+
+    def get_object(self):
+        try:
+            return Issue.objects.select_related('journal').get(
+                name_slug=self.kwargs['issue_name_slug'],
+                is_public=True,
+                journal__name_slug=self.kwargs['name_slug'])
+        except:
+            try:
+                return Issue.objects.select_related('journal').get(
+                    id=self.kwargs['issue_name_slug'],
+                    is_public=True,
+                    journal__name_slug=self.kwargs['name_slug'])    
+            except:
+                raise Http404

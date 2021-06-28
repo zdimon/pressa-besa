@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block css %} 
+    <link rel="stylesheet" href="/static/css/journal_detail.css">
+{% endblock %}
+
+{% block search %}{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+      <div class="col-12 d-md-block">
+        <h4 class="text-uppercase">КУПИТЬ 
+        
+        "{{ object.journal.name }}" {{ object.name }}
+
+        </h4>
+
+
+      </div>
+
+            <div class="col-12 d-md-block">
+                <h4 class="text-uppercase">Пополнение счета</h4>
+            </div>
+    </div>
+{% endblock %}
