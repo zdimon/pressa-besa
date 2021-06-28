@@ -10,6 +10,7 @@ from accounts.views import LoginView, RegistrationView, logout_view
 from rest_framework.authtoken.views import ObtainAuthToken
 from accounts.views import preauth
 import debug_toolbar
+from django.conf.urls.i18n import i18n_patterns
 
 schema_view = get_schema_view(
    openapi.Info(title="Pressa API",
@@ -58,6 +59,17 @@ urlpatterns = [
     path('__debug__/', include(debug_toolbar.urls)),
 ]
 
+from django.contrib.flatpages import views
+
+urlpatterns += i18n_patterns(
+    path('about/', views.flatpage, {'url': '/about/'}, name='about'),
+    path('publisher/', views.flatpage, {'url': '/publisher/'}, name='publisher'),
+    path('advertiser/', views.flatpage, {'url': '/advertiser/'}, name='advertiser'),
+    path('help/', views.flatpage, {'url': '/help/'}, name='help'),
+    path('agreement/', views.flatpage, {'url': '/agreement/'}, name='agreement'),
+    path('privacy/', views.flatpage, {'url': '/privacy/'}, name='privacy')
+
+)
 
 from django.conf import settings
 from django.conf.urls.static import static

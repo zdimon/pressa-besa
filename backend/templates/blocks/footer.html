@@ -33,15 +33,15 @@
 			<div class="col-12 col-lg-8 justify-content-center d-flex justify-content-lg-end">
 				<div class="footer-nav">
 					<ul class="nav-list">
-						<li><a href="#">О проекте</a></li>
-						<li><a href="#">Контакты</a></li>
-						<li><a href="#">Служба поддержки</a></li>
-						<li><a href="#">Правовая информация</a></li>
-						<li><a href="#">Библиотека</a></li>
+						<li><a href="{% url 'about' %}">О компании</a></li>
+						<li><a href="{% url 'publisher' %}">Издательствам</a></li>
+						<li><a href="{% url 'advertiser' %}">Рекламодателям</a></li>
+						<li><a href="{% url 'help' %}">Помощь</a></li>
+						
 					</ul>
 					<ul class="nav-list">
-						<li><a href="#">Подписка</a></li>
-						<li><a href="#">Вакансии</a></li>
+						<li><a href="{% url 'agreement' %}">Пользовательское соглашение</a></li>
+						<li><a href="{% url 'privacy' %}">Политика конфиденциальности</a></li>
 						<li><a href="#">Карта сайта</a></li>
 						<li><a href="#">Помощь</a></li>
 						<li><a href="#">Издательствам</a></li>

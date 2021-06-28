@@ -23,3 +23,5 @@ easy-thumbnails
 django-taggit
 django-debug-toolbar
 GitPython
+django-modeltranslation==0.17.2
+django-flatblocks
