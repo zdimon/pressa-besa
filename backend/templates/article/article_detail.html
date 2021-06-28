@@ -17,7 +17,7 @@
 
 							<div class="single-card__info-details">
 								<div class="single-card__info-details-media">
-									<a href="{% url 'journal-detail' name_slug=item.name_slug %}">
+									<a href="{% url 'journal-detail' name_slug=item.issue.journal.name_slug %}">
 										<img src="{{ item.issue.common_cover }}" alt="">
 									</a>
 								</div>
