@@ -406,6 +406,3 @@
 	});
 }());
 
-$('#js-select-lang').on('change',() => {
-	console.log('ddd');
-})

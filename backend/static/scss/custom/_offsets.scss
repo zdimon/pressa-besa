@@ -6,3 +6,7 @@
 .row-20{
 	@include grid-offset(20px);
 }
+
+.userMenu {
+	padding-top: 5px;
+}

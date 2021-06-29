@@ -36,11 +36,6 @@ urlpatterns = [
     path('rosetta/', include('rosetta.urls')),
     path('preauth', preauth),
     path('export/', include('export.urls')),
-    path('cover', include('cover.urls')),
-    path('top10/', include('announce.urls')),
-    path('catalog/', include('catalog.urls')),
-    path('magazines/', include('journal.urls')),
-    path('main/', include('main.urls')),
     
     path("v1/api-token-auth/", ObtainAuthToken.as_view()),
     
@@ -69,6 +64,11 @@ from django.contrib.flatpages import views
 
 urlpatterns += i18n_patterns(
     path('', index),
+    path('cover', include('cover.urls')),
+    path('top10/', include('announce.urls')),
+    path('catalog/', include('catalog.urls')),
+    path('magazines/', include('journal.urls')),
+    path('main/', include('main.urls')),
     path('about/', views.flatpage, {'url': '/about/'}, name='about'),
     path('publisher/', views.flatpage, {'url': '/publisher/'}, name='publisher'),
     path('advertiser/', views.flatpage, {'url': '/advertiser/'}, name='advertiser'),

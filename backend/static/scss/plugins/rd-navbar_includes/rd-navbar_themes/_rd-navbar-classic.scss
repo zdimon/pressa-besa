@@ -118,7 +118,7 @@
 			
 			&-title {
 				font-size: 14px;
-				display: none;
+				display: block;
 				margin-left: 8px;
 				@media(min-width: 1200px) {
 					display: block;
@@ -195,11 +195,7 @@
 					min-height: 36px;
 					font-size: 12px;
 					padding-right: 36px;
-					@media(min-width: 768px) {
-						padding-left: 116px;
-						padding-right: 54px;
-						font-size: 14px;
-					}
+					
 				}
 			}
 		}

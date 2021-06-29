@@ -4,6 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .serializers.AuthRequestSerializer import AuthRequestSerializer
 from .serializers.RegistrationRequestSerializer import RegistrationRequestSerializer
+from .serializers.IsAuthRequestSerializer import IsAuthRequestSerializer
 from drf_yasg.utils import swagger_auto_schema
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
@@ -72,3 +73,23 @@ class RegistrationView(APIView):
         if obj.is_valid(raise_exception=True):
             obj.save()
         return Response({"message": "ok"})
+
+
+class IsAuthView(APIView):
+    '''
+
+     Check authorization.
+
+    '''
+    permission_classes = (AllowAny,)
+
+    @swagger_auto_schema(
+        responses={200: IsAuthRequestSerializer}
+    )
+    def get(self, request):
+        print(request.user)
+        if request.user.is_authenticated:
+            return Response({"status": 0})
+        else:
+            return Response({"status": 1})
+        

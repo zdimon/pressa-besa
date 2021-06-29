@@ -9,8 +9,12 @@ import SubscribeButton from './components/Subscription/SubscribeButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LangSwitcher from './components/i18n/LangSwitcher';
 
-const loginEl = document.getElementById("userMenu");
-if(loginEl) render(<UserMenu />, loginEl);
+// Login forms
+const loginEls = document.getElementsByClassName("userMenu");
+[].forEach.call(loginEls, function (el) {
+    render(<UserMenu />, el )
+});
+/////////////
 
 const carouselEl = document.getElementById("popJournalsSlider");
 if(carouselEl) render(<Carousel selector="JSpopJournalsItems" />, carouselEl); 
