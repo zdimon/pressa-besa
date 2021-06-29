@@ -8,7 +8,7 @@ def social_user(backend, uid, user=None, *args, **kwargs):
         if user and social.user != user:
             logout(backend.strategy.request)
         elif not user:
-            user = social.user
+            user = social.user.customer
     return {'social': social,
             'user': user,
             'is_new': user is None,
