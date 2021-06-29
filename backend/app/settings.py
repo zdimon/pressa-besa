@@ -229,3 +229,17 @@ if DATABASE == 'pg':
     }    
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+SOCIAL_AUTH_PIPELINE = (
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'social_core.pipeline.social_auth.auth_allowed',
+    # Path to your overrided method
+    # You can set any other valid path.
+    'myproject.apps.python-social-auth-overrided.pipeline.social_auth.social_user',
+    'social_core.pipeline.user.get_username',
+    'social_core.pipeline.user.create_user',
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
+)
