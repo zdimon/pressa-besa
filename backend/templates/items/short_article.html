@@ -1,0 +1,25 @@
+<div class="article-thumbnail">
+    <div class="article-thumbnail__header">
+        <ul class="article-thumbnail__header-list">
+            <li>Popular</li>
+            <li>Article</li>
+            <li>New</li>
+            <li>Hot</li>
+        </ul>
+        <div class="article-thumbnail__header-marker">
+            <input type="checkbox" class="custom-checkbox" id="checkbox-1">
+            <label for="checkbox-1" class="custom-checkbox-label"></label>
+        </div>
+    </div>
+    <div class="article-thumbnail__body">
+        <div class="article-thumbnail__body-caption">
+            <a href="{{ a.get_absolute_url }}">{{ a.title }}</a>
+            <p>
+                {{ a.short_text | safe }}
+            </p>
+        </div>
+        <div class="article-thumbnail__body-media">
+            <img src="{{a.get_image.thumbnailsmall_url}}" alt="">
+        </div>
+    </div>
+</div>

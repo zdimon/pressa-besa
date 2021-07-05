@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import ArticleCoverSetting, Article
 from .utils import make_cover
+from journal.models import Issue
 
 
 def article_list(request):
@@ -11,7 +12,8 @@ def article_list(request):
 def article_detail(request, id):
     object = Article.objects.get(pk=id)
     other = Article.objects.filter(issue=object.issue).exclude(pk=object.pk)
-    return render(request, 'article/article_detail.html', {'item': object, 'other': other})
+    issues = Issue.objects.filter(journal=object.issue.journal).exclude(pk=object.issue.id).order_by('-id')[0:10]
+    return render(request, 'article/article_detail.html', {'item': object, 'other': other, 'issues': issues})
 
 
 def test_cover(request, id):

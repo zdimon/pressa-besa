@@ -90,7 +90,13 @@
 </div>
 
 
-
+		<div class="container container-md">
+			<div class="articles-grid">
+			{% for a in articles %}
+				{% include 'items/short_article.html' %}
+			{% endfor %}
+			</div>
+		</div>
     
 
 {% endblock %}

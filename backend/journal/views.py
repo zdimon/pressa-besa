@@ -4,6 +4,7 @@ from journal.models import Journal, Issue
 from catalog.models import Category
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
+from article.models import Article
 
 
 class JournalView(DetailView):
@@ -39,4 +40,5 @@ class JournalView(DetailView):
             context['more_issues'] = Issue.objects.filter(journal=self.object).order_by('-id')[0:10]            
         context['categories'] = Category.objects.filter(show_in_new_catalog=True)
         context['current_issue'] = self.current_issue
+        context['articles'] = Article.objects.filter(issue=self.current_issue)
         return context
