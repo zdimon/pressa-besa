@@ -127,3 +127,7 @@ class Journal(NameSlugMixin, models.Model):
     def image_tag(self):
         return mark_safe(f'<img src="{self.image_url()}"  />')
 
+    @property
+    def active_issue_set(self):
+        issues = self.issue_set.filter(is_public=True)
+        return issues

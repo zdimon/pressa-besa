@@ -29,6 +29,7 @@ class JournalView(DetailView):
                 self.current_issue = self.object.active_issue_set.get(
                     name_slug=issue_name_slug)
             else:
+
                 self.current_issue = self.object.last_issue
         except Exception as e:
             print(e)
