@@ -22,7 +22,7 @@ return (
               <a href={item.getAttribute('data-url')}>
                   <img src={item.getAttribute('src')} alt="" />
               </a>
-              <span className="label">ежемесячные</span>
+              
           </div>
           <a href="" className="thumbnail-classic__body">
               
