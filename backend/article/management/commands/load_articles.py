@@ -14,9 +14,10 @@ class Command(BaseCommand):
         print('Loading articles')
         Article.objects.all().delete()
         ArticleCoverSetting.objects.all().delete()
-        titles = ['Как прожить и не работать Как прожить и не работать',
-                  'Горе от ума и кошелька. Горе от ума и кошелька.',
-                  'Служу советскому союзу. Служу советскому союзу.']
+        ArticleImages.objects.all().delete()
+        titles = ['1Как прожить и не работать 1Как прожить и не работать',
+                  '1Горе от ума и кошелька. 1Горе от ума и кошелька.',
+                  '1Служу советскому союзу. 1Служу советскому союзу.']
 
         subtitles = ['В мире животных В мире животных',
                      'Исскуство жить В мире животных',
@@ -35,13 +36,15 @@ class Command(BaseCommand):
                 a.author = 'Митрофан'
                 a.page = cnt
                 a.save()
-                ai = ArticleImages()
-                ai.article = a
-                ai.save()
-                img = f'{random.randint(1,6)}.jpeg'
-                path = os.path.join(settings.BASE_DIR,'init_data', 'article',img)
-                with open(path, 'rb') as doc_file:
-                    ai.image.save(img, File(doc_file), save=True)
+
+                if cnt%2 == 0:
+                    ai = ArticleImages()
+                    ai.article = a
+                    ai.save()
+                    img = f'{random.randint(1,6)}.jpeg'
+                    path = os.path.join(settings.BASE_DIR,'init_data', 'article',img)
+                    with open(path, 'rb') as doc_file:
+                        ai.image.save(img, File(doc_file), save=True)
                 print('saving %s --- %s' % (i.name,title))
 
         for j in Journal.objects.all():

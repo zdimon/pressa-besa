@@ -1,11 +1,14 @@
 from django.shortcuts import render
-from .models import ArticleCoverSetting, Article
+from .models import ArticleCoverSetting, Article, ArticleImages
 from .utils import make_cover
 from journal.models import Issue
+from django.db.models import Exists, OuterRef
 
 
 def article_list(request):
-    arts = Article.objects.all().order_by('-id')[0:30]
+    arts = Article.objects.filter(
+        Exists(ArticleImages.objects.filter(article=OuterRef('pk')))
+    ).order_by('-id')[0:30]
     return render(request, 'article/article_list.html', {'arts': arts})
 
 
