@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Journal, Issue, IssuePage, PublishingOffice
+from .models import Journal, Issue, IssuePage, PublishingOffice, PurchasedIssues
 
 
 @admin.register(PublishingOffice)
@@ -22,3 +22,8 @@ class IssueAdmin(admin.ModelAdmin):
 @admin.register(IssuePage)
 class IssuePageAdmin(admin.ModelAdmin):
     list_display = ['page', 'paper', 'image_tag']
+
+
+@admin.register(PurchasedIssues)
+class PurchasedIssuesAdmin(admin.ModelAdmin):
+    list_display = ['customer', 'journal', 'issue', 'purchased_type']

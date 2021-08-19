@@ -14,6 +14,7 @@
           <h4 class="text-uppercase">{% trans 'Личный кабинет' %} <span>{{ user.username }}</span></h4>
           <div class="col-12">
             {% trans 'У вас на счету:' %} {{ user.amount }}
+            <a href="{% url 'replanish' %}" class="button button-primary">{% trans 'Пополнить счет' %}</a>
           </div>
           <h4 class="text-uppercase">{% trans 'Активные подписки' %}</h4>
             {% for subscription in  user.usersubscrition_set.all %}
