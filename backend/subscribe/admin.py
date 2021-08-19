@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Subscription, UserSubscrition
+from .models import Subscription, UserSubscrition, AbonementDiscount, Abonement
 # Register your models here.
 
 
@@ -23,3 +23,18 @@ class UserSubscritionAdmin(admin.ModelAdmin):
 
 
 admin.site.register(UserSubscrition, UserSubscritionAdmin)
+
+
+class AbonementDiscountInline(admin.TabularInline):
+    model = AbonementDiscount
+
+
+class AbonementAdmin(admin.ModelAdmin):
+    raw_id_fields = ('journals', )
+    autocomplete_lookup_fields = {
+        'm2m': ['journals'],
+    }
+    inlines = [AbonementDiscountInline, ]
+
+
+admin.site.register(Abonement, AbonementAdmin)
