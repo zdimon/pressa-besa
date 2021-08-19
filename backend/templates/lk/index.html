@@ -30,4 +30,19 @@
     </div>
 </section>
 
+
+<section class="section-xs card">
+    <div class="container container-md">
+        <div class="row row-20">
+          <h4 class="text-uppercase">{% trans 'Моя коллекция' %}</h4>
+
+          {% for item in  user.my_journals_set.all %}
+                <p>
+                    {{ item.journal.name }}
+                </p>
+          {% endfor %}
+        </div>
+    </div>
+</section>
+
 {% endblock %}

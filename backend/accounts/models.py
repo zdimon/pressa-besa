@@ -21,6 +21,12 @@ class Customer(User):
                                            blank=True, null=True)
     phone_number = models.CharField(blank=True, null=True, max_length=15)
 
+    @property
+    def my_journals(self):
+        return self.purchasedissues_set.order_by(
+            'journal').distinct(
+            'journal').select_related('journal')
+
 
 class MailTemplate(models.Model):
     title = models.CharField(blank=True, null=True, max_length=250)
