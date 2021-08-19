@@ -36,7 +36,7 @@
         <div class="row row-20">
           <h4 class="text-uppercase">{% trans 'Моя коллекция' %}</h4>
 
-          {% for item in  user.my_journals_set.all %}
+          {% for item in  user.my_journals %}
                 <p>
                     {{ item.journal.name }}
                 </p>
