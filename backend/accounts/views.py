@@ -14,6 +14,10 @@ from django.contrib.auth import logout
 from django.shortcuts import redirect
 from django.contrib.auth import login as l
 from rest_framework.authtoken.models import Token
+from django.core.mail import send_mail
+import random
+from .models import MailTemplate
+from django.utils.translation import ugettext_lazy as _
 
 
 def preauth(request):
@@ -71,8 +75,23 @@ class RegistrationView(APIView):
     def post(self, request):
         obj = RegistrationRequestSerializer(data=request.data)
         if obj.is_valid(raise_exception=True):
-            obj.save()
-        return Response({"message": "ok"})
+            user = obj.save()
+            password = str(random.randint(111, 999))
+            user.set_password(password)
+            user.save()
+            ## send email with password
+            tpl = MailTemplate.objects.get(alias='registration')
+            message =  tpl.content
+            message = message.replace('{{password}}',password)
+            send_mail(
+                tpl.title,
+                message,
+                'support@pressa.ru',
+                [user.username],
+                fail_silently=False,
+            )
+            
+        return Response({"status": 0, "message": _('Вы зарегистрированы. Проверте email с паролем.')})
 
 
 class IsAuthView(APIView):

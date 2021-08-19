@@ -20,3 +20,9 @@ class Customer(User):
                                            choices=SEX_CHOICES,
                                            blank=True, null=True)
     phone_number = models.CharField(blank=True, null=True, max_length=15)
+
+
+class MailTemplate(models.Model):
+    title = models.CharField(blank=True, null=True, max_length=250)
+    content = models.TextField(blank=True, null=True)
+    alias = models.CharField(blank=True, null=True, max_length=50)

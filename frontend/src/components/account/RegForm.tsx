@@ -10,18 +10,29 @@ export default function RegForm() {
 
   
   const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  const [password, setPassword] = React.useState(''); 
   const [error, setError] = React.useState(false);
+  const [error_message, setErrorMessage] = React.useState('');
+
+  const [success, setSuccess] = React.useState(false);
+  const [success_message, setSuccessMessage] = React.useState('');
+
 
   const req = new Request();
   const register = () => {
-    req.post('account/registration',{email,password})
+    req.post('account/registration',{email})
     .then((payload) => {
-      if(payload.status === 1) {
-        setError(true);
-      } else {
-        window.localStorage.setItem('token', payload.token);
-      }
+      setSuccess(true);
+      setSuccessMessage(payload.message);
+      // if(payload.status !== 0) {
+        
+      // } else {
+      //   window.localStorage.setItem('token', payload.token);
+      // }
+    }).catch((err) => {
+      console.log(err.response.data)
+      setError(true);
+      setErrorMessage(err.response.data.email.message);
     });
   }
 
@@ -33,21 +44,21 @@ export default function RegForm() {
               <TextField 
               error={error}
               onChange={event => setEmail(event.target.value)}
-              label="Email" 
+              label={error_message} 
               variant="outlined" />
           </ListItem>
           
-          <ListItem>
-              <TextField 
-              error={error}
-              onChange={event => setPassword(event.target.value)} 
-              label="Пароль" 
-              variant="outlined" />
+          
+
+          <ListItem
+          style={error ? {} : { display: 'none', color: 'red'  }}
+          > Ошибка входа!
           </ListItem>
 
           <ListItem
-          style={error ? {} : { display: 'none' }}
-          > Ошибка входа!
+          style={success ? {} : { display: 'none', color: 'green' }}
+          >
+            {success_message}
           </ListItem>
 
           <ListItem>

@@ -36,6 +36,7 @@ urlpatterns = [
     path('rosetta/', include('rosetta.urls')),
     path('preauth', preauth),
     path('export/', include('export.urls')),
+    path('', include('reader.urls')),
     
     path("v1/api-token-auth/", ObtainAuthToken.as_view()),
     

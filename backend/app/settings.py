@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'taggit',
     'debug_toolbar',
-    'export'
+    'export',
+    'reader'
 ]
 SITE_ID = 1
 MIDDLEWARE = [
@@ -206,7 +207,8 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_PAGINATION_CLASS': 'app.pagination.PageNumberWithPageSizePagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 10,
+    'EXCEPTION_HANDLER': 'app.custom_exception.custom_exception_handler'
 }
 
 if DATABASE == 'sqlite':

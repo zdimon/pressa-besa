@@ -10,3 +10,4 @@ rm db.sqlite3
 ./manage.py proc_cover
 ./manage.py load_news
 ./manage.py load_office
+./manage.py load_mail_template
