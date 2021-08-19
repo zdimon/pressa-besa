@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load i18n %}
 {% block css %} 
     <link rel="stylesheet" href="/static/css/lk.css">
 {% endblock %}
@@ -11,11 +11,20 @@
 <section class="section-xs card">
     <div class="container container-md">
         <div class="row row-20">
-          <h4 class="text-uppercase">Личный кабинет <span>{{ user.username }}</span></h4>
+          <h4 class="text-uppercase">{% trans 'Личный кабинет' %} <span>{{ user.username }}</span></h4>
           <div class="col-12">
-            У вас на счету: {{ user.amount }}
+            {% trans 'У вас на счету:' %}' {{ user.amount }}
           </div>
-          
+          <h4 class="text-uppercase">{% trans 'Активные подписки' %}</h4>
+            {% for subscription in  customer.usersubscrition_set.all %}
+                <div>
+                    <p>{{ subscription.subscription.journal.name }}</p>
+                    <p>{{ subscription.subscription.name }}</p>
+                    <p>
+                        {% blocktrans with subscription_count=subscription.count%}Осталось {{ subscription_count }} номеров.{% endblocktrans %}
+                    </p>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>
