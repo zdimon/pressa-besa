@@ -13,10 +13,10 @@
         <div class="row row-20">
           <h4 class="text-uppercase">{% trans 'Личный кабинет' %} <span>{{ user.username }}</span></h4>
           <div class="col-12">
-            {% trans 'У вас на счету:' %}' {{ user.amount }}
+            {% trans 'У вас на счету:' %} {{ user.amount }}
           </div>
           <h4 class="text-uppercase">{% trans 'Активные подписки' %}</h4>
-            {% for subscription in  customer.usersubscrition_set.all %}
+            {% for subscription in  user.usersubscrition_set.all %}
                 <div>
                     <p>{{ subscription.subscription.journal.name }}</p>
                     <p>{{ subscription.subscription.name }}</p>
