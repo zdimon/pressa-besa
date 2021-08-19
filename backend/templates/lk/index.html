@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block css %} 
+    <link rel="stylesheet" href="/static/css/lk.css">
+{% endblock %}
+
+
+{% block content %}
+
+
+<section class="section-xs card">
+    <div class="container container-md">
+        <div class="row row-20">
+          <h4 class="text-uppercase">Личный кабинет <span>{{ user.username }}</span></h4>
+          <div class="col-12">
+            У вас на счету: {{ user.amount }}
+          </div>
+          
+        </div>
+    </div>
+</section>
+
+{% endblock %}

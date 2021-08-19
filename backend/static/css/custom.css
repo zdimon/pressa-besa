@@ -15,3 +15,8 @@
     margin-right: auto;
     margin-left: auto
 }
+
+.userMenu {
+    display: flex;
+    padding-top: 0;
+}

@@ -53,7 +53,9 @@ INSTALLED_APPS = [
     'taggit',
     'debug_toolbar',
     'export',
-    'reader'
+    'reader',
+    'lk',
+    'subscribe'
 ]
 SITE_ID = 1
 MIDDLEWARE = [
