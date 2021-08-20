@@ -24,8 +24,8 @@ class Customer(User):
     @property
     def my_journals(self):
         return self.purchasedissues_set.order_by(
-            'journal').distinct(
-            'journal').select_related('journal')
+            'journal').distinct().select_related('journal').values('journal')
+       
 
 
 class MailTemplate(models.Model):

@@ -34,15 +34,34 @@
 <section class="section-xs card">
     <div class="container container-md">
         <div class="row row-20">
-          <h4 class="text-uppercase">{% trans 'Моя коллекция' %}</h4>
+          <div class="col-12">
+            <h4 class="text-uppercase">{% trans 'Моя коллекция' %}</h4>
+          </div>
+            <div class="col-12">
+                <div class="swiper-wrap swiper-style-1 swiper-creative">
+                    <div class="swiper-container swiper-new-articles">
+                        <div class="swiper-wrapper" id="popular-jounals">
+                            {% for item in  user.my_journals %}
+                                  {% include 'items/purchase.html' %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="slider-nav-wrapper">
+                        <div class="slider-new-nav-prev">
+                            <span class="fa fa-chevron-left"></span>
+                        </div>
+                        <div class="slider-new-nav-next">
+                            <span class="fa fa-chevron-right"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-          {% for item in  user.my_journals %}
-                <p>
-                    {{ item.journal.name }}
-                </p>
-          {% endfor %}
+
         </div>
     </div>
 </section>
+
+
 
 {% endblock %}
