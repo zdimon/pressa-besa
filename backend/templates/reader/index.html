@@ -7,5 +7,47 @@
 
 {% block content %}
 
-reader
+
+
+<section class="section bg-default section-xs bg-light-gray">
+    <div class="container">
+
+        <div class="row row-20">
+            <div class="col-12">
+                <img src="{{ issue.common_cover }}" />
+                <p>{{ issue.name }}</p>
+                <p>{{ issue.journal.name }}</p>
+            </div>            
+        </div>
+
+        <div class="row row-20">
+            <div class="col-12">
+                
+                  
+
+                <div class="swiper-wrap swiper-style-1 swiper-creative">
+                    <div class="swiper-container swiper-new-articles">
+                        <div class="swiper-wrapper" id="popular-jounals">
+                            {% for page in pages %}
+                                  {% include 'items/page.html' %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="slider-nav-wrapper">
+                        <div class="slider-new-nav-prev">
+                            <span class="fa fa-chevron-left"></span>
+                        </div>
+                        <div class="slider-new-nav-next">
+                            <span class="fa fa-chevron-right"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>            
+        </div>
+
+    </div>
+</section>
+
+
 {% endblock %}

@@ -1,0 +1,19 @@
+{% load i18n %}
+<div class="swiper-slide">
+    <div class="thumbnail-modern">
+        <div class="thumbnail-modern__media">
+            <a href="">
+                <img 
+                data-iname="{{ page.paper.name }}"
+                data-amount="0"
+                data-url="ddd"
+                src="{{ page.file_low.url }}" 
+                alt="111">
+            </a>
+        </div>
+        <div class="thumbnail-modern__body">
+            <div class="thumbnail-modern__body-caption"> {% trans 'Страница' %} {{ page.page }}  </div>
+        </div>
+       
+    </div>
+</div>
