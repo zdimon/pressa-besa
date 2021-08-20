@@ -216,7 +216,7 @@ class ArticleImages(models.Model):
             }).url
         except Exception as e:
             print(e)
-            return ''
+            return 'none!!!'
     @property
     def thumbnail_squere_url(self):
         try:
