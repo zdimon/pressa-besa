@@ -24,7 +24,7 @@ class Customer(User):
     @property
     def my_journals(self):
         return self.purchasedissues_set.order_by(
-            'journal').distinct().select_related('journal').values('journal')
+            'journal').distinct('journal').select_related('journal')
        
 
 
