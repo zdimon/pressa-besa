@@ -28,7 +28,8 @@ def preauth(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('/')
+    return render(request, 'accounts/logout.html')
+    # return redirect('/')
 
 class LoginView(APIView):
     '''
