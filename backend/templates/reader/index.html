@@ -17,7 +17,14 @@
                 <img src="{{ issue.common_cover }}" />
                 <p>{{ issue.name }}</p>
                 <p>{{ issue.journal.name }}</p>
-            </div>            
+            </div> 
+            		<div class="container container-md">
+			<div class="articles-grid">
+                {% for a in articles %}
+                    {% include 'items/short_article.html' %}	
+                {% endfor %}
+			</div>
+		</div>           
         </div>
 
         <div class="row row-20">
