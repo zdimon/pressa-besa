@@ -55,7 +55,8 @@ INSTALLED_APPS = [
     'export',
     'reader',
     'lk',
-    'subscribe'
+    'subscribe',
+    'bookmarks'
 ]
 SITE_ID = 1
 MIDDLEWARE = [

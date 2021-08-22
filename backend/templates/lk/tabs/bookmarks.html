@@ -1,0 +1,27 @@
+{% load i18n %}
+<section class="section-xs">
+    <div class="container container-md">
+        <div class="row row-20">
+         
+          <table class="table">
+            <tr>
+              <th scope="col">{% trans 'Издание' %}</th>
+              <th scope="col">{% trans 'Выпуск' %}</th>
+              <th scope="col">{% trans 'Страница' %}</th>
+            </tr>
+            {% for b in bookmarks %}
+            
+            <tr>
+              <td>{{ b.issue.journal.name }}</td>
+              <td>{{ b.issue.name }}</td>
+              <td>{{ b.page }}</td>
+            </tr>
+
+            {% endfor %}
+
+          </table>
+
+
+        </div>
+    </div>
+</section>

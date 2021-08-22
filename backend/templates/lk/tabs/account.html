@@ -1,0 +1,14 @@
+{% load i18n %}
+
+<section class="section-xs">
+    <div class="container container-md">
+        <div class="row row-20">
+
+          <div class="col-12">
+            {% trans 'У вас на счету:' %} {{ user.amount }}
+            <a href="{% url 'replanish' %}" class="button button-primary">{% trans 'Пополнить счет' %}</a>
+          </div>
+
+        </div>
+    </div>
+</section>
