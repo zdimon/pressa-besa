@@ -3,7 +3,23 @@
     <div class="container container-md">
         <div class="row row-20">
           <h4 class="text-uppercase">{% trans 'Платежи' %}</h4>
+         <table class="table">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">{% trans 'Операция' %}</th>
+              <th scope="col">{% trans 'Платежная система' %}</th>
+            </tr>
+            {% for b in transactions %}
+            
+            <tr>
+              <td>{{ b.id }}</td>
+              <td>{{ b.operation }}</td>
+              <td>{{ b.payment_system }}</td>
+            </tr>
 
+            {% endfor %}
+
+          </table>
 
         </div>
     </div>

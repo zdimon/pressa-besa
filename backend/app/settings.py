@@ -56,7 +56,8 @@ INSTALLED_APPS = [
     'reader',
     'lk',
     'subscribe',
-    'bookmarks'
+    'bookmarks',
+    'billing'
 ]
 SITE_ID = 1
 MIDDLEWARE = [
