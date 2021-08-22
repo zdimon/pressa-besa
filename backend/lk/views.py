@@ -11,7 +11,7 @@ def lk(request):
         return redirect('logout')
 
     bookmarks = Bookmarks.objects.filter(owner=request.user)
-    transactions = Transaction.objects.filter(owner=request.user)
+    transactions = Transaction.objects.filter(owner=request.user).order_by('-id')[0:10]
     cnt = {"user": user, "bookmarks": bookmarks, "transactions": transactions}
     return render(request, 'lk/index.html', cnt)
 
