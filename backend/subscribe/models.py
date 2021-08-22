@@ -61,7 +61,7 @@ class Subscription(BaseSubscription):
     months = models.PositiveIntegerField(verbose_name=_(u'число месяцев'),
                                          blank=True, null=True)
 
-    def __unicode__(self):
+    def __str__(self):
         discount = self.journal.amount * self.count - self.cost
         values = {"issues": self.count,
                   "issues_plural": ungettext(u'выпуск',
