@@ -1,14 +1,24 @@
 {% load i18n %}
-
+{% load static %}
 <section class="section-xs">
     <div class="container container-md">
         <div class="row row-20">
 
           <div class="col-12">
-            {% trans 'У вас на счету:' %} {{ user.amount }}
-            <a href="{% url 'replanish' %}" class="button button-primary">{% trans 'Пополнить счет' %}</a>
+            <h4 class="text-uppercase">{% trans 'У вас на счету:' %} {{ user.amount }}</h4>
+            
           </div>
 
         </div>
+
+        <div class="col-12">
+            <h4 class="text-uppercase">{% trans 'Пополнить счет' %}</h4>
+        </div>
+
+        <a  id="pay_visa" href="#">
+          <img src="{%  static 'main/images/pay_visa.png' %}">
+          </a>
+
+
     </div>
 </section>
