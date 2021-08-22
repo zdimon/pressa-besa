@@ -2,16 +2,29 @@
 <section class="section-xs">
     <div class="container container-md">
         <div class="row row-20">
-          <h4 class="text-uppercase">{% trans 'Активные подписки' %}</h4>
+          
+
+         <table class="table">
+            <tr>
+              <th scope="col">{% trans 'Издание' %}</th>
+              <th scope="col">{% trans 'Название' %}</th>
+              <th scope="col">{% trans 'Информация' %}</th>
+            </tr>
             {% for subscription in  user.usersubscrition_set.all %}
-                <div>
-                    <p>{{ subscription.subscription.journal.name }}</p>
-                    <p>{{ subscription.subscription.name }}</p>
-                    <p>
-                        {% blocktrans with subscription_count=subscription.count%}Осталось {{ subscription_count }} номеров.{% endblocktrans %}
-                    </p>
-                </div>
+            
+            <tr>
+              <td>{{ subscription.subscription.journal.name }}</td>
+              <td>{{ subscription.subscription.name }}</td>
+              <td>{% blocktrans with subscription_count=subscription.count%}Осталось {{ subscription_count }} номеров.{% endblocktrans %}</td>
+              
+            </tr>
+
             {% endfor %}
+
+          </table>
+
+
+
 
         </div>
     </div>
