@@ -43,6 +43,7 @@ urlpatterns = [
     
     path('v1/api/', include([
         path('account/', include('accounts.urls')),
+        path('bookmarks/', include('bookmarks.urls')),
         path('', include('article.urls'))
        
     ])),

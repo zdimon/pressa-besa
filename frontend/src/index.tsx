@@ -8,6 +8,7 @@ import IssueSlider from './components/Carousel/IssueSlider';
 import SubscribeButton from './components/Subscription/SubscribeButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LangSwitcher from './components/i18n/LangSwitcher';
+import AddBookmark from './components/bookmarks/bookmarks';
 
 // Login forms
 const loginEls = document.getElementsByClassName("userMenu");
@@ -44,6 +45,18 @@ const buttonEls = document.getElementsByClassName("js-subscribe-button");
 const swEls = document.getElementsByClassName("js-lang-switcher");
 [].forEach.call(swEls, function (el) {
     render(<LangSwitcher selector={el.getAttribute("data-lang")}/>, el)
+}); 
+ 
+/////////////////
+
+
+// bookmarks
+const bmEls = document.getElementsByClassName("js-bookmark");
+[].forEach.call(bmEls, function (el) {
+    render(<AddBookmark  
+        issueId={el.getAttribute('data-issue')} 
+        page={el.getAttribute('data-page')} 
+        />, el)
 }); 
  
 /////////////////
