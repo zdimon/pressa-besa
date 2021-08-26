@@ -24,10 +24,10 @@
     <div style="display: none" class="category-block container" id="tagSliderItems">
 
 
-        {% for category in categories %}
+        {% for cat in categories %}
             <div>
-            <a href="{% url 'category-detail' journal_type=journal_type category=category.name_slug %}" class="button button-primary">
-                {{ category.name }}
+            <a href="{% url 'category-detail' journal_type=journal_type category=cat.name_slug %}" class="button button-primary">
+                {{ cat.name }}
             </a>
             </div>
         {% endfor %}
