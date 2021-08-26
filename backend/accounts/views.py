@@ -113,3 +113,13 @@ class IsAuthView(APIView):
         else:
             return Response({"status": 1})
         
+from django.shortcuts import redirect
+
+
+def add_money(request):
+    if(request.POST['password'] == '1945'):
+        user = request.user.customer
+        user.amount = user.amount + int(request.POST['sum'])
+        user.save()
+
+    return redirect('/lk')

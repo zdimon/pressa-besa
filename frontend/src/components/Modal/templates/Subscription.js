@@ -1,20 +1,39 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { InputGroup, FormControl } from 'react-bootstrap'
 import moment from 'moment'
 
 const Subscription = (props) => {
+
+
+  // useEffect(() => {
+  //   setCountDays(30);
+  // }, []);
+
   const {
     plan,
     setPlan,
     planPeriod = {},
-    setPlanPeriod
+    setPlanPeriod,
+    setCountDays,
+    countDays
   } = props
 
   const changePlan = currentPlan => () => {
     setPlan(currentPlan)
+    
+    if(currentPlan == 'month') {
+      setCountDays(30);
+      
+    } 
+    if(currentPlan == 'week') {
+      setCountDays(7);
+      
+    }
+    console.log(currentPlan);
   }
 
   const setDays = ({ target: { value } }) => {
+    setCountDays(value);
     setPlanPeriod({
       days: +value,
       dateTo: moment(new Date()).add(+value, 'days')
@@ -22,8 +41,10 @@ const Subscription = (props) => {
   }
 
   const setEndDate = ({ target: { value } }) => {
+    console.log(value);
     const startDate = moment(new Date(), 'YYYY-MM-DD')
     const endDate = moment(value, 'YYYY-MM-DD')
+    setCountDays(endDate.diff(startDate, 'days'));
     setPlanPeriod({ days: endDate.diff(startDate, 'days') + 1, dateTo: value })
   }
 
@@ -62,7 +83,7 @@ const Subscription = (props) => {
           <InputGroup>
             <FormControl
               disabled={plan !== 'period'}
-              value={planPeriod.days || 0}
+              value={countDays}
               min='0'
               style={{ maxWidth: 100 }}
               type='number'

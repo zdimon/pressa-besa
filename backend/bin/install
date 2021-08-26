@@ -11,3 +11,4 @@ rm db.sqlite3
 ./manage.py load_news
 ./manage.py load_office
 ./manage.py load_mail_template
+./manage.py load_abonement

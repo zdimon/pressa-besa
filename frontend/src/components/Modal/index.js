@@ -4,6 +4,8 @@ import moment from 'moment'
 import { StyledModal as Modal } from './styled'
 import PropTypes from 'prop-types'
 import Subscription from './templates/Subscription'
+import { Request } from '../../Request';
+import Snackbar from '@material-ui/core/Snackbar';
 
 const templates = {
   sub: Subscription
@@ -21,13 +23,28 @@ const AppModal = (props) => {
     template
   } = props
 
+  const [message, setMessage] = React.useState('');
+  const [open, setOpenSnackbar] = React.useState(false);
+
   const [plan, setPlan] = useState('month') // month, period, week
   const [planPeriod, setPlanPeriod] = useState({ days: 0, dateTo: new Date() }) // if period was choosen
+  const [countDays, setCountDays] = useState(30);
 
   const onConfirm = () => {
     switch (template) {
       case 'sub':
-        handleConfirm({ plan, planPeriod: plan === 'period' && { ...planPeriod, dateTo: moment(planPeriod.dateTo).format('YYYY-MM-DD') } })
+        console.log(countDays);
+        // handleConfirm({ plan, planPeriod: plan === 'period' && { ...planPeriod, dateTo: moment(planPeriod.dateTo).format('YYYY-MM-DD') } })
+        //   const data = { plan, planPeriod: plan === 'period' && { ...planPeriod, dateTo: moment(planPeriod.dateTo).format('YYYY-MM-DD') } };
+        setOpenSnackbar(true);
+          const req = new Request();
+          req.post('subscribe/abonement/add',{days: countDays})
+          .then((payload) => {
+             setMessage(payload.message);
+             setTimeout(2000,()=> setOpenSnackbar(false))
+          });
+        
+
         break
       default:
         handleConfirm()
@@ -41,10 +58,13 @@ const AppModal = (props) => {
     plan,
     setPlan,
     planPeriod,
-    setPlanPeriod
+    setPlanPeriod,
+    countDays,
+    setCountDays
   }
 
   return (
+    <>
     <Modal show={visible} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>{title}</Modal.Title>
@@ -61,6 +81,12 @@ const AppModal = (props) => {
         </Button>
       </Modal.Footer>
     </Modal>
+    <Snackbar
+        open={open}
+        message={message}
+        autoHideDuration={2000}
+    />
+    </>
   )
 }
 

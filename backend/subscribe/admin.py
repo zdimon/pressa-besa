@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Subscription, UserSubscrition, AbonementDiscount, Abonement
+from .models import Subscription, UserSubscrition, AbonementDiscount, Abonement, UserAbonement
 # Register your models here.
 
 
@@ -38,3 +38,12 @@ class AbonementAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Abonement, AbonementAdmin)
+
+
+class UserAbonementAdmin(admin.ModelAdmin):
+    list_display = ('user', 'abonement',
+                    'start_date', 'stop_date' )
+   
+
+
+admin.site.register(UserAbonement, UserAbonementAdmin)

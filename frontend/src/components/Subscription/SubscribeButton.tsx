@@ -8,7 +8,6 @@ export default function SubscribeButton() {
   const [modalVisible, setModalVisible] = useState(false)
 
   var tryOpenModal = function() {
-    console.log('try open');
     if( window.localStorage.getItem('token')){
       setModalVisible(true)
     }

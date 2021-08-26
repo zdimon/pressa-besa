@@ -22,5 +22,18 @@
         <img src="{%  static 'main/images/pay_maestro.png' %}">
         </a>
 
+        <form method="POST" action="/v1/api/account/add/money">
+        {% csrf_token %}
+        Сумма 
+        <input name="sum" />
+
+        Пароль
+
+        <input  name="password" />
+
+        <input type="submit" name="Пополнить" />
+
+        </form>
+
     </div>
 </section>

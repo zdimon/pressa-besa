@@ -22,7 +22,7 @@ def category_detail(request, journal_type, category):
         journals_query = journals_query.filter(category=category)
         is_show_popular = False
     else:
-        category = 'categories'
+        category = {"name_slug": "all"}
 
 
 
