@@ -6,15 +6,10 @@
                 <h4 class="text-uppercase">Книги<span>новинки</span></h4>
             </div>
             <ul class="category-block">
-                <li><a class="button button-secondary" href="#">ЖЕНСКИЕ</a></li>
-                <li><a class="button button-secondary" href="#">МУЖСКИЕ</a></li>
-                <li><a class="button button-secondary" href="#">ДЕТСКИЕ</a></li>
-                <li><a class="button button-secondary" href="#">ДОМ И СЕМЬЯ</a></li>
-                <li><a class="button button-secondary" href="#">АВТО СПОРТ</a></li>
-                <li><a class="button button-secondary" href="#">РЕЛИГИЯ</a></li>
-                <li><a class="button button-secondary" href="#">ОБЩЕСТВО И ПОЛИТИКА</a></li>
-                <li><a class="button button-secondary" href="#">БИЗНЕС И ФИНАНСЫ</a></li>
-                <li><a class="button button-secondary" href="#">НАУЧНО-ПОПУЛЯРНЫЕ</a></li>
+                {% for c in categories %}
+                    <li><a class="button button-secondary" 
+                    href="{% url 'category-detail' category=c.name_slug journal_type='all' %}">{{ c.name }}</a></li>
+                {% endfor %}
             </ul>
             <div class="col-12">
                 <div class="swiper-wrap swiper-style-1">
