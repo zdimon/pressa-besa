@@ -46,10 +46,11 @@ export default function ImageReader(props) {
 
       const gallerySwiper = gallerySwiperRef.current.swiper;
       const thumbnailSwiper = thumbnailSwiperRef.current.swiper;
-      if (gallerySwiper.controller && thumbnailSwiper.controller
+      if (gallerySwiper.params && thumbnailSwiper.params
         ) {
-          gallerySwiper.controller.control = thumbnailSwiper;
-          thumbnailSwiper.controller.control = gallerySwiper;
+          console.log('init swiper');
+          gallerySwiper.params.control = thumbnailSwiper;
+          thumbnailSwiper.params.control = gallerySwiper;
         }
       const req = new Request();
       req.post('reader/pages',{issue_id: props.issueId})
@@ -76,13 +77,10 @@ export default function ImageReader(props) {
                     centeredSlides={true}
                     slidesPerView={1} 
                     loop={true}    
-                    onInit={(swiper) => {
-                      swiper.params.navigation.prevEl = navigationPrevRef.current;
-                      swiper.params.navigation.nextEl = navigationNextRef.current;
-                      swiper.navigation.destroy();
-                      swiper.navigation.init();
-                      swiper.navigation.update();
-                    }}   
+                    navigation={{
+                      prevEl: navigationPrevRef.current,
+                      nextEl: navigationNextRef.current,
+                    }} 
                   >
                 <div className="swiper-wrapper">
                       {pages.map((item,index) =>

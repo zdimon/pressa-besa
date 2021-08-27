@@ -117,7 +117,7 @@ export default function Carousel(props) {
                 <Swiper
                   breakpoints={breakpoints}
                   loop={true}
-                  
+
                   onInit={(swiper) => {
                     // console.log(navigationNextRef.current)
                     swiper.params.navigation.prevEl = navigationPrevRef.current;
