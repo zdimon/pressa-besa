@@ -63,12 +63,15 @@
 				img{
 					@media(min-width: 576px){
 						min-height: 400px;
+						max-height: 400px;
 					}
 					@media(min-width: 992px){
 						min-height: 500px;
+						max-height: 500px;
 					}
 					@media(min-width: 1200px){
 						min-height: 600px;
+						max-height: 600px;
 					}
 					width: 100%;
 					object-fit: cover;
