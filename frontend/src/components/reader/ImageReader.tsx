@@ -85,7 +85,7 @@ export default function ImageReader(props) {
                               <a href="assets/img/slider-img-1.jpg" className="swiper-slide-fancy" data-fancybox="images">
                               <img src={item.file_middle} alt="" />
                             </a>
-                            <p>Some Text 1</p>
+                            <p>Страница {item.page}</p>
                             </div>
                         </SwiperSlide>
                       )}                  
