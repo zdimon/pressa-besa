@@ -67,6 +67,7 @@ export default function ImageReader(props) {
                     spaceBetween={0}
                     centeredSlides={true}
                     slidesPerView={1} 
+                    loopedSlides={8}
                     loop={true}    
                     navigation={{
                       prevEl: navigationPrevRef.current,
