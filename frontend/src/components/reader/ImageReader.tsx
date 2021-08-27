@@ -44,6 +44,22 @@ export default function ImageReader(props) {
   const [firstSwiper, setFirstSwiper] = useState(null);
   const [secondSwiper, setSecondSwiper] = useState(null);
 
+  var breakpoints = {
+    576: {
+      slidesPerView: 5,
+    },
+    768: {
+      slidesPerView: 5,
+    },
+    992: {
+      slidesPerView: 6,
+    },
+    1200: {
+      slidesPerView: 7,
+    },
+  };
+
+
     useEffect(() => {
 
       const req = new Request();
@@ -110,6 +126,7 @@ export default function ImageReader(props) {
                   modules={[Controller]}
                   onSwiper={setSecondSwiper}
                   controller={{ control: firstSwiper }}
+                  breakpoints={breakpoints}
                 > 
 
                   {pages.map((item,index) =>
