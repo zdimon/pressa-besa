@@ -4,6 +4,7 @@ import  { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
 SwiperCore.use([Navigation]);
 import { Controller } from 'swiper';
+import Fancybox from './fancybox';
 
 
 /*
@@ -98,7 +99,12 @@ export default function ImageReader(props) {
                         <SwiperSlide>
                             <div className="swiper-slide">
                               <a href="assets/img/slider-img-1.jpg" className="swiper-slide-fancy" data-fancybox="images">
-                              <img src={item.file_middle} alt="" />
+                              <Fancybox options={{ infinite: false }}>
+                                <img       
+                                data-fancybox="gallery"      
+                                data-src={item.file_middle} 
+                                src={item.file_middle} alt="" />
+                              </Fancybox>
                             </a>
                             <p>Страница {item.page}</p>
                             </div>
