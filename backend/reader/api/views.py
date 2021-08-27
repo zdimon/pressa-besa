@@ -28,6 +28,6 @@ class PagesView(APIView):
             return Response({"status": 1, "message": "Issue not found"})
         print(request.data["issue_id"])
         out = []
-        for i in IssuePage.objects.filter(paper=issue).order_by('-page'):
+        for i in IssuePage.objects.filter(paper=issue).order_by('page'):
             out.append(PageSerializer(i).data)
         return Response({ "status":0, "payload": out })
