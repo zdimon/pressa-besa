@@ -49,11 +49,9 @@ export default function ImageReader(props) {
       const req = new Request();
       req.post('reader/pages',{issue_id: props.issueId})
       .then((payload) => {
-        console.log(payload);
+
         setPages(payload.payload)
-      }).catch((err) => {
-        console.log(err);
-        
+      }).catch((err) => { 
       });
     }, []);
 
@@ -104,6 +102,10 @@ export default function ImageReader(props) {
                   spaceBetween={10}
                   slidesPerView={4} 
                   loop={true}    
+                  slideToClickedSlide={true}
+                  touchRatio={0.2}
+                  loopedSlides={8}
+                  centeredSlides={true}
                   modules={[Controller]}
                   onSwiper={setSecondSwiper}
                   controller={{ control: firstSwiper }}
