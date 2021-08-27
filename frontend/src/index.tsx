@@ -11,6 +11,14 @@ import LangSwitcher from './components/i18n/LangSwitcher';
 import AddBookmark from './components/bookmarks/bookmarks';
 import ImageReader from './components/reader/ImageReader';
 
+import 'swiper/css/bundle'
+
+// swiper core styles
+import 'swiper/css'
+
+// modules styles
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 // Login forms
 const loginEls = document.getElementsByClassName("userMenu");

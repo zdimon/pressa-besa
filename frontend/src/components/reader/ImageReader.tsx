@@ -41,7 +41,8 @@ export default function ImageReader(props) {
   const navigationPrevRef = React.useRef(null)
   const navigationNextRef = React.useRef(null)
 
-  const [controlledSwiper, setControlledSwiper] = useState(null);
+  const [firstSwiper, setFirstSwiper] = useState(null);
+  const [secondSwiper, setSecondSwiper] = useState(null);
 
     useEffect(() => {
 
@@ -73,7 +74,9 @@ export default function ImageReader(props) {
                       prevEl: navigationPrevRef.current,
                       nextEl: navigationNextRef.current,
                     }} 
-
+                    modules={[Controller]}
+                    onSwiper={setFirstSwiper}
+                    controller={{ control: secondSwiper }}
                   >
                 <div className="swiper-wrapper">
                       {pages.map((item,index) =>
@@ -101,8 +104,10 @@ export default function ImageReader(props) {
                   spaceBetween={10}
                   slidesPerView={4} 
                   loop={true}    
- 
-                >
+                  modules={[Controller]}
+                  onSwiper={setSecondSwiper}
+                  controller={{ control: firstSwiper }}
+                > 
 
                   {pages.map((item,index) =>
                     <SwiperSlide>
