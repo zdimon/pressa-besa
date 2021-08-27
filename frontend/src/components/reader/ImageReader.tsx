@@ -3,6 +3,7 @@ import { Request } from '../../Request';
 import  { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
 SwiperCore.use([Navigation]);
+import { Controller } from 'swiper';
 
 
 /*
@@ -36,22 +37,14 @@ export default function ImageReader(props) {
 
   const [pages, setPages] = React.useState([]);
 
-  const gallerySwiperRef = useRef(null);
-  const thumbnailSwiperRef = useRef(null);
 
   const navigationPrevRef = React.useRef(null)
   const navigationNextRef = React.useRef(null)
 
+  const [controlledSwiper, setControlledSwiper] = useState(null);
+
     useEffect(() => {
 
-      const gallerySwiper = gallerySwiperRef.current.swiper;
-      const thumbnailSwiper = thumbnailSwiperRef.current.swiper;
-      if (gallerySwiper.params && thumbnailSwiper.params
-        ) {
-          console.log('init swiper');
-          gallerySwiper.params.control = thumbnailSwiper;
-          thumbnailSwiper.params.control = gallerySwiper;
-        }
       const req = new Request();
       req.post('reader/pages',{issue_id: props.issueId})
       .then((payload) => {
@@ -72,7 +65,6 @@ export default function ImageReader(props) {
             <div className="swiper gallery-top">
 
             <Swiper
-                    ref={gallerySwiperRef}
                     spaceBetween={0}
                     centeredSlides={true}
                     slidesPerView={1} 
@@ -81,6 +73,7 @@ export default function ImageReader(props) {
                       prevEl: navigationPrevRef.current,
                       nextEl: navigationNextRef.current,
                     }} 
+
                   >
                 <div className="swiper-wrapper">
                       {pages.map((item,index) =>
@@ -105,10 +98,10 @@ export default function ImageReader(props) {
             <div className="swiper gallery-thumbs swiper-thumbs">
               <div className="swiper-wrapper">
                 <Swiper
-                  ref={thumbnailSwiperRef}
                   spaceBetween={10}
                   slidesPerView={4} 
-                  loop={true}       
+                  loop={true}    
+ 
                 >
 
                   {pages.map((item,index) =>
