@@ -43,6 +43,7 @@ urlpatterns = [
     
     path('v1/api/', include([
         path('account/', include('accounts.urls')),
+        path('reader/', include('reader.api.urls')),
         path('bookmarks/', include('bookmarks.urls')),
         path('subscribe/', include('subscribe.urls')),
         path('', include('article.urls'))

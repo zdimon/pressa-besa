@@ -9,6 +9,8 @@ import SubscribeButton from './components/Subscription/SubscribeButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LangSwitcher from './components/i18n/LangSwitcher';
 import AddBookmark from './components/bookmarks/bookmarks';
+import ImageReader from './components/reader/ImageReader';
+
 
 // Login forms
 const loginEls = document.getElementsByClassName("userMenu");
@@ -61,4 +63,6 @@ const bmEls = document.getElementsByClassName("js-bookmark");
  
 /////////////////
 
-
+/// image reader
+const readerEl = document.getElementById("js-image-reader");
+if(readerEl) render(<ImageReader issueId={readerEl.getAttribute('data-issue-id')}/>, readerEl)

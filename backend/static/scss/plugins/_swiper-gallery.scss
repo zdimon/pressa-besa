@@ -1,0 +1,94 @@
+.multiply-slider-wrap{
+	display: block;
+	overflow: hidden;
+	
+	.gallery-top{
+		position: relative;
+		.swiper-button-next,.swiper-button-prev{
+			position: absolute;
+			margin-top: 0;
+			&:after{
+				color: $white;
+				background: rgba(#000,.5);
+				font-size: 20px;
+				padding: 15px;
+				@media(min-width: 768px){
+					font-size: 30px;
+					padding: 20px;
+				}
+			}
+			@media(min-width: 992px){
+				&:after{
+					font-size: 30px;
+				}
+			}
+			@media(min-width: 1200px){
+				background: none;
+				color: #000;
+				bottom: 75px;
+				top: auto;
+				&:after{
+					background: none;
+					font-size: 40px;
+					color: #000;
+				}
+			}
+		}
+		.swiper-button-prev{
+			left: 0;
+		}
+		.swiper-button-next{
+			right: 0;
+		}
+		
+		.swiper-slide{
+			text-align: center;
+			p{
+				margin-top: 10px;
+			}
+			a,p{
+				display: block;
+				text-align: center;
+				margin-right: auto;
+				margin-left: auto;
+				@media(min-width: 1200px){
+					max-width: 480px;
+				}
+			}
+			a{
+				display: flex;
+				justify-content: center;
+				margin-right: auto;
+				margin-left: auto;
+				img{
+					@media(min-width: 576px){
+						min-height: 400px;
+					}
+					@media(min-width: 992px){
+						min-height: 500px;
+					}
+					@media(min-width: 1200px){
+						min-height: 600px;
+					}
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+	.swiper-thumbs{
+		margin: 20px auto 0 auto;
+		img{
+			width: 100%;
+		}
+		@media(min-width: 1200px){
+			max-width: 920px;
+		}
+		width: 100%;
+		z-index: 20;
+		overflow: hidden;
+		
+	}
+}
+
+
