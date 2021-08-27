@@ -20,7 +20,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
-import "@fancyapps/ui/dist/fancybox.css";
+
 
 // Login forms
 const loginEls = document.getElementsByClassName("userMenu");
