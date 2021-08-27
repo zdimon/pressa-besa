@@ -66,8 +66,9 @@ export default function ImageReader(props) {
       const req = new Request();
       req.post('reader/pages',{issue_id: props.issueId})
       .then((payload) => {
-
-        setPages(payload.payload)
+        
+        setPages(payload.payload);
+        console.log(payload.payload);
       }).catch((err) => { 
       });
     }, []);

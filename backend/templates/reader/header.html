@@ -52,7 +52,11 @@
 					</div>
 					<div class="rd-nav-options" >
 						<ul>
-						  <li>ss</li>
+						  <li>
+						  <a href="{% url 'text-reader' issue_id=issue.id %}">
+						  	Текстовая версия
+						  </a>
+						  </li>
 						  
 						</ul>
 						<div class="rd-nav-options__lang js-lang-switcher"  data-lang="{{LANGUAGE_CODE}}">

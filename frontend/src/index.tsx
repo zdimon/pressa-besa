@@ -11,6 +11,7 @@ import LangSwitcher from './components/i18n/LangSwitcher';
 import AddBookmark from './components/bookmarks/bookmarks';
 import ImageReader from './components/reader/ImageReader';
 
+
 import 'swiper/css/bundle'
 
 // swiper core styles
@@ -19,6 +20,7 @@ import 'swiper/css'
 // modules styles
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import TextReader from './components/reader/TextReader';
 
 
 
@@ -76,3 +78,8 @@ const bmEls = document.getElementsByClassName("js-bookmark");
 /// image reader
 const readerEl = document.getElementById("js-image-reader");
 if(readerEl) render(<ImageReader issueId={readerEl.getAttribute('data-issue-id')}/>, readerEl)
+
+
+/// text reader
+const txtreaderEl = document.getElementById("js-text-reader");
+if(txtreaderEl) render(<TextReader issueId={txtreaderEl.getAttribute('data-issue-id')}/>, txtreaderEl)
