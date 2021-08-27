@@ -36,7 +36,21 @@ export default function ImageReader(props) {
 
   const [pages, setPages] = React.useState([]);
 
+  const gallerySwiperRef = useRef(null);
+  const thumbnailSwiperRef = useRef(null);
+
+  const navigationPrevRef = React.useRef(null)
+  const navigationNextRef = React.useRef(null)
+
     useEffect(() => {
+
+      const gallerySwiper = gallerySwiperRef.current.swiper;
+      const thumbnailSwiper = thumbnailSwiperRef.current.swiper;
+      if (gallerySwiper.controller && thumbnailSwiper.controller
+        ) {
+          gallerySwiper.controller.control = thumbnailSwiper;
+          thumbnailSwiper.controller.control = gallerySwiper;
+        }
       const req = new Request();
       req.post('reader/pages',{issue_id: props.issueId})
       .then((payload) => {
@@ -54,9 +68,46 @@ export default function ImageReader(props) {
       <section className="section section-xl bg-gradient-gray">
         <div className="container position-relative">
           <div className="multiply-slider-wrap">
+            <div className="swiper gallery-top">
+
+            <Swiper
+                    ref={gallerySwiperRef}
+                    spaceBetween={0}
+                    centeredSlides={true}
+                    slidesPerView={1} 
+                    loop={true}    
+                    onInit={(swiper) => {
+                      swiper.params.navigation.prevEl = navigationPrevRef.current;
+                      swiper.params.navigation.nextEl = navigationNextRef.current;
+                      swiper.navigation.destroy();
+                      swiper.navigation.init();
+                      swiper.navigation.update();
+                    }}   
+                  >
+                <div className="swiper-wrapper">
+                      {pages.map((item,index) =>
+                        <SwiperSlide>
+                            <div className="swiper-slide">
+                              <a href="assets/img/slider-img-1.jpg" className="swiper-slide-fancy" data-fancybox="images">
+                              <img src={item.file_middle} alt="" />
+                            </a>
+                            <p>Some Text 1</p>
+                            </div>
+                        </SwiperSlide>
+                      )}                  
+                  
+
+                </div>
+                <div ref={navigationPrevRef} className="swiper-button-next swiper-button-white"></div>
+                <div ref={navigationNextRef}  className="swiper-button-prev swiper-button-white"></div>
+              </Swiper>
+            </div>
+
+
             <div className="swiper gallery-thumbs swiper-thumbs">
               <div className="swiper-wrapper">
                 <Swiper
+                  ref={thumbnailSwiperRef}
                   spaceBetween={10}
                   slidesPerView={4} 
                   loop={true}       
