@@ -76,10 +76,18 @@ class Article(models.Model):
     
     def cover_url(self):
         try:
-            return f'{settings.BACKEND_URL}{self.cover.url}'
+            return f'{settings.BACKEND_URL}{self.get_image.thumbnailsmall_url}'
+        except Exception as e:
+            # print(e)
+            return 'noimage.png'
+
+    def image_url(self):
+        try:
+            return f'{settings.BACKEND_URL}{self.get_image.image.url}'
         except Exception as e:
             print(e)
-            return 'noimage.png'
+            return 'None'
+
 
     @property
     def get_image(self):
