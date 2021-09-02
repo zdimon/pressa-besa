@@ -24,3 +24,20 @@
 .page-header {
     z-index: 20;
 }
+
+.rd-navbar-logo img {
+    width: 300px;
+}
+
+.mode-link img {
+    width: 25px;
+    padding-right: 5px;
+}
+
+.mode-link {
+    padding-left: 10px;
+    color: black;
+    margin-top: 5px;
+    display: flex;
+}
+

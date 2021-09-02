@@ -1,4 +1,4 @@
-{% extends 'reader/base_image.html' %}
+{% extends 'reader/base_reader.html' %}
 
 {% block css %} 
     <link rel="stylesheet" href="/static/css/reader.css">
@@ -7,55 +7,8 @@
 
 {% block content %}
 
-<div id="js-image-reader" data-issue-id="{{ issue.pk }}"></div>
+<div id="js-base-reader" data-issue-id="{{ issue.pk }}"></div>
 
-<!-- 
-<section class="section bg-default section-xs bg-light-gray">
-    <div class="container reader_content">
 
-        <div class="row row-20">
-            <div class="col-12">
-                <img src="{{ issue.common_cover }}" />
-                <p>{{ issue.name }}</p>
-                <p>{{ issue.journal.name }}</p>
-            </div> 
-            		<div class="container container-md">
-			<div class="articles-grid">
-                {% for a in articles %}
-                    {% include 'items/short_article.html' %}	
-                {% endfor %}
-			</div>
-		</div>           
-        </div>
-
-        <div class="row row-20">
-            <div class="col-12">
-                
-                  
-
-                <div class="swiper-wrap swiper-style-1 swiper-creative">
-                    <div class="swiper-container swiper-new-articles">
-                        <div class="swiper-wrapper" id="popular-jounals">
-                            {% for page in pages %}
-                                  {% include 'items/page.html' %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <div class="slider-nav-wrapper">
-                        <div class="slider-new-nav-prev">
-                            <span class="fa fa-chevron-left"></span>
-                        </div>
-                        <div class="slider-new-nav-next">
-                            <span class="fa fa-chevron-right"></span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>            
-        </div>
-
-    </div>
-</section>
--->
 
 {% endblock %}

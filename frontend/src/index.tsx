@@ -21,6 +21,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import TextReader from './components/reader/TextReader';
+import BaseReader from './components/reader/BaseReader';
 
 
 
@@ -74,6 +75,11 @@ const bmEls = document.getElementsByClassName("js-bookmark");
 }); 
  
 /////////////////
+
+/// base reader
+const baseReaderEl = document.getElementById("js-base-reader");
+if(baseReaderEl) render(<BaseReader issueId={baseReaderEl.getAttribute('data-issue-id')}/>, baseReaderEl)
+
 
 /// image reader
 const readerEl = document.getElementById("js-image-reader");
