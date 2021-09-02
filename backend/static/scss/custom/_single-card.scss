@@ -1,6 +1,9 @@
 .single-card{
 	&__info{
 		display: flex;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: -webkit-flex; /* Safari 6.1+ */
 		flex-direction: column;
 		text-align: center;
 		@media(min-width: 576px){
@@ -8,6 +11,9 @@
 		}
 		&-details{
 			display: flex;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: -webkit-flex; /* Safari 6.1+ */
 			flex-wrap: wrap;
 			flex-direction: column-reverse;
 			align-items: center;
@@ -31,6 +37,9 @@
 			} 
 			&-caption{
 				display: flex;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: -webkit-flex; /* Safari 6.1+ */
 				flex-direction: column;
 				text-transform: uppercase;
 				color: #aaa;
@@ -42,6 +51,9 @@
 		}
 		&-group{
 			display: flex;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: -webkit-flex; /* Safari 6.1+ */
 			align-items: flex-start;
 			justify-content: space-between;
 			margin-left: -15px;
