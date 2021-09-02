@@ -52,7 +52,17 @@ class Issue(NameSlugMixin, CoverMixin, models.Model):
         else:
             return False
 
-            
+
+
+    def is_paid(self, user):
+        from journal.models import PurchasedIssues
+        if PurchasedIssues.objects.filter(customer=user, issue=self).count()>0:
+            return True
+        else:
+            return False
+
+
+
     def __str__(self):
         return self.name
 

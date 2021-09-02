@@ -5,39 +5,43 @@ import SwiperCore, { Navigation } from 'swiper';
 SwiperCore.use([Navigation]);
 import { Controller } from 'swiper';
 import Fancybox from './fancybox';
+import Modal from '@material-ui/core/Modal';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: 'absolute',
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
+
+function rand() {
+  return Math.round(Math.random() * 20) - 10;
+}
+
+function getModalStyle() {
+  const top = 50 + rand();
+  const left = 50 + rand();
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
 
 
-/*
-	var galleryThumbs = new Swiper('.gallery-thumbs', {
-		spaceBetween: 10,
-		slidesPerView: 4.5,
-		speed: 500,
-		loop: true,
-		slideToClickedSlide: true,
-		touchRatio: 0.2,
-		loopedSlides: 8,
-		centeredSlides: true,
-		breakpoints: {
-			576: {
-				slidesPerView: 5,
-			},
-			768: {
-				slidesPerView: 5,
-			},
-			992: {
-				slidesPerView: 6,
-			},
-			1200: {
-				slidesPerView: 7,
-			},
-		},
-	});
-*/
 
 export default function ImageReader(props) {
 
   const [pages, setPages] = React.useState([]);
-
+  const [open_pay_dialog, setOpenPayDialog] = React.useState(false);
+  const classes = useStyles();
+  const [modalStyle] = React.useState(getModalStyle);
 
   const navigationPrevRef = React.useRef(null)
   const navigationNextRef = React.useRef(null)
@@ -73,9 +77,13 @@ export default function ImageReader(props) {
       });
     }, []);
 
+
+    const handleClose = () => {
+      setOpenPayDialog(false);
+    };
   
     return (
-    
+      <>
       <section className="section section-xl bg-gradient-gray">
         <div className="container position-relative">
           <div className="multiply-slider-wrap">
@@ -99,14 +107,19 @@ export default function ImageReader(props) {
                       {pages.map((item,index) =>
                         <SwiperSlide>
                             <div className="swiper-slide">
-                              <a href="assets/img/slider-img-1.jpg" className="swiper-slide-fancy" data-fancybox="images">
-                              <Fancybox options={{ infinite: false }}>
-                                <img       
-                                data-fancybox="gallery"      
-                                data-src={item.file_middle} 
-                                src={item.file_middle} alt="" />
-                              </Fancybox>
-                            </a>
+                              
+                              {props.isPaid? 
+                                  <Fancybox options={{ infinite: false }}>
+                                    <img       
+                                    data-fancybox="gallery"      
+                                    data-src={item.file_middle} 
+                                    src={item.file_middle} alt="" />
+                                  </Fancybox>:
+                                <img 
+                                onClick={() => setOpenPayDialog(true)}                              
+                                src={item.file_middle} alt="" />                            
+                              }
+                            
                             <p>Страница {item.page}</p>
                             </div>
                         </SwiperSlide>
@@ -139,16 +152,40 @@ export default function ImageReader(props) {
                   {pages.map((item,index) =>
                     <SwiperSlide>
                         <div className="swiper-slide">
-                          <img src={item.file_low} alt="" />
+                         {props.isPaid? 
+                           <Fancybox options={{ infinite: false }}>
+                            <img                                            data-fancybox="gallery"      
+                                  data-src={item.file_middle}  
+                                  src={item.file_low} alt="" />
+                            </Fancybox>:
+                            <img 
+                            onClick={() => setOpenPayDialog(true)}                              
+                            src={item.file_low} alt="" />                            
+                         }
                         </div>
                     </SwiperSlide>
                   )}
 
                 </Swiper>
               </div>
+              {props.isPaid}
             </div>
           </div>
         </div>
       </section>
+            <Modal
+            open={open_pay_dialog}
+            onClose={handleClose}
+            >
+          <div  className={classes.paper} style={modalStyle}>
+          <h2 id="simple-modal-title">Вы не оплатили выпуск</h2>
+          <p id="simple-modal-description">
+            <a href="/lk">Перейдите для оплаты</a>
+          </p>
+          
+          </div>
+          </Modal>
+
+      </>
     )
 }

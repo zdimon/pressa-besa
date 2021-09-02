@@ -14,5 +14,20 @@ class PageSerializer(serializers.ModelSerializer):
         ]
 
 
+class PageDetailSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = IssuePage
+        fields = [
+            'id',
+            'page',
+            'file_high'
+        ]
+
 class PageRequestSerializer(serializers.Serializer):
     issue_id = serializers.IntegerField()
+
+
+class DetailPageRequestSerializer(serializers.Serializer):
+    issue_id = serializers.IntegerField()
+    page_id = serializers.IntegerField()
