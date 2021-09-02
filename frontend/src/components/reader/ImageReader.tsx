@@ -86,7 +86,7 @@ export default function ImageReader(props) {
                     centeredSlides={true}
                     slidesPerView={1} 
                     loopedSlides={8}
-                    loop={true}    
+                    loop={false}    
                     navigation={{
                       prevEl: navigationPrevRef.current,
                       nextEl: navigationNextRef.current,
@@ -125,7 +125,7 @@ export default function ImageReader(props) {
                 <Swiper
                   spaceBetween={10}
                   slidesPerView={4} 
-                  loop={true}    
+                  loop={false}    
                   slideToClickedSlide={true}
                   touchRatio={0.2}
                   loopedSlides={8}
