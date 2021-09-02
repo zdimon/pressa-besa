@@ -54,6 +54,7 @@ class ArticlesView(APIView):
             out.append(ArticleShortSerializer(i).data)
         return Response({ "status":0, "payload": out })
 
+
 class ArticleDetailView(APIView):
     '''
 
@@ -71,3 +72,23 @@ class ArticleDetailView(APIView):
         except ObjectDoesNotExist:
             return Response({"status": 1, "message": "Article not found"})
         return Response({ "status":0, "payload": ArticleDetailSerializer(article).data })
+
+
+class SettingsView(APIView):
+    '''
+
+     Get reader settings.
+
+    '''
+    permission_classes = (AllowAny,)
+
+    @swagger_auto_schema(
+        request_body=PageRequestSerializer,
+    )
+    def post(self, request):
+        try:
+            issue = Issue.objects.get(pk=request.data["issue_id"])
+        except ObjectDoesNotExist:
+            return Response({"status": 1, "message": "Issue not found"})
+
+        return Response({ "has_articles": issue.has_articles})

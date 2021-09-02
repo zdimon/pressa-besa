@@ -44,6 +44,15 @@ class Issue(NameSlugMixin, CoverMixin, models.Model):
         else:
             return reverse('cover_make-cover', args=['issue', '203-280', self.pk])
 
+    @property
+    def has_articles(self):
+        from article.models import Article
+        if Article.objects.filter(issue=self).count()>0:
+            return True
+        else:
+            return False
+
+            
     def __str__(self):
         return self.name
 

@@ -32,7 +32,7 @@ export default function ReaderHeader(props) {
 
                                 
                                      <a 
-                                        style={props.mode==='image'? {}: {display: "none"}}
+                                        style={props.mode==='image' && props.has_article? {}: {display: "none"}}
                                         onClick ={() => { doSwitchMode("text") }}
                                         href="#" className="mode-link">
                                           <img width="25" src="/static/images/txtver.jpg" />
