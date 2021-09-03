@@ -63,3 +63,7 @@
     display: flex;
     justify-content: space-between;
 }
+
+.rd-navbar-panel {
+    width: 100%;
+}
