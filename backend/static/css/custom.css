@@ -90,3 +90,8 @@
   .hide-block {
       display: none;
 }
+
+.swiper-thumbs {
+    position: absolute;
+    top: 200px;
+}

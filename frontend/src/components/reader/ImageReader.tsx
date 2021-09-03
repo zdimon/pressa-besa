@@ -132,41 +132,42 @@ export default function ImageReader(props) {
               </Swiper>
             </div>
 
+            <div class="swiper-thumbs">
+              <div className="swiper gallery-thumbs">
+                <div className="swiper-wrapper">
+                  <Swiper
+                    spaceBetween={10}
+                    slidesPerView={4} 
+                    loop={false}    
+                    slideToClickedSlide={true}
+                    touchRatio={0.2}
+                    loopedSlides={8}
+                    centeredSlides={true}
+                    modules={[Controller]}
+                    onSwiper={setSecondSwiper}
+                    controller={{ control: firstSwiper }}
+                    breakpoints={breakpoints}
+                  > 
 
-            <div className="swiper gallery-thumbs swiper-thumbs">
-              <div className="swiper-wrapper">
-                <Swiper
-                  spaceBetween={10}
-                  slidesPerView={4} 
-                  loop={false}    
-                  slideToClickedSlide={true}
-                  touchRatio={0.2}
-                  loopedSlides={8}
-                  centeredSlides={true}
-                  modules={[Controller]}
-                  onSwiper={setSecondSwiper}
-                  controller={{ control: firstSwiper }}
-                  breakpoints={breakpoints}
-                > 
+                    {pages.map((item,index) =>
+                      <SwiperSlide>
+                          <div className="swiper-slide">
+                          {props.isPaid? 
+                            <Fancybox options={{ infinite: false }}>
+                              <img                                            data-fancybox="gallery"      
+                                    data-src={item.file_middle}  
+                                    src={item.file_low} alt="" />
+                              </Fancybox>:
+                              <img 
+                              onClick={() => setOpenPayDialog(true)}                              
+                              src={item.file_low} alt="" />                            
+                          }
+                          </div>
+                      </SwiperSlide>
+                    )}
 
-                  {pages.map((item,index) =>
-                    <SwiperSlide>
-                        <div className="swiper-slide">
-                         {props.isPaid? 
-                           <Fancybox options={{ infinite: false }}>
-                            <img                                            data-fancybox="gallery"      
-                                  data-src={item.file_middle}  
-                                  src={item.file_low} alt="" />
-                            </Fancybox>:
-                            <img 
-                            onClick={() => setOpenPayDialog(true)}                              
-                            src={item.file_low} alt="" />                            
-                         }
-                        </div>
-                    </SwiperSlide>
-                  )}
-
-                </Swiper>
+                  </Swiper>
+                </div>
               </div>
             </div>
           </div>
