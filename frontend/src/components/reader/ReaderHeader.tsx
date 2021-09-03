@@ -29,7 +29,7 @@ export default function ReaderHeader(props) {
                             </div>
                             <div className="rd-nav-panel-main">
                                
-                                <div>
+                                <div className="right-links-wrapper">
                                     <div className="rd-navbar-logo">
                                         <a className="brand" href="/" >
                                         <img src="/static/images/brand.svg" />

@@ -67,3 +67,8 @@
 .rd-navbar-panel {
     width: 100%;
 }
+
+.right-links-wrapper {
+    display: flex;
+    align-items: center;
+}
