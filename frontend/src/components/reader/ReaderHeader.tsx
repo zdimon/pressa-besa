@@ -23,7 +23,7 @@ export default function ReaderHeader(props) {
                  data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
                 <div className="rd-navbar-main-outer">
                     <div className="rd-navbar-main">
-                        <div className="rd-navbar-panel" >
+                        <div className="rd-navbar-panel mobi-navbar-panel" >
                             <div className="rd-nav-aside">
                                 
                             </div>

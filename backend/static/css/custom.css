@@ -64,7 +64,7 @@
     justify-content: space-between;
 }
 
-.rd-navbar-panel {
+.mobi-navbar-panel {
     width: 100%;
 }
 
@@ -72,3 +72,11 @@
     display: flex;
     align-items: center;
 }
+
+@media screen and (max-width: 600px) {
+    .hide-in-mobile {
+      visibility: hidden;
+      clear: both;
+      display: none;
+    }
+  }
