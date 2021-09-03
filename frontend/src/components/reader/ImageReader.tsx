@@ -163,8 +163,8 @@ export default function ImageReader(props) {
                             <Fancybox options={{ infinite: false }}>
                               <img                                          data-fancybox="gallery"
                                 className="swiper-lazy"      
-                                data-src={item.file_middle}  
-                                data-srcset={item.file_low} alt="" />
+                                data-src={item.file_low}  
+                                 alt="" />
                                 <div className="swiper-lazy-preloader"></div>
                               </Fancybox>:
                               <img 
