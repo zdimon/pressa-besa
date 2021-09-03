@@ -4,8 +4,9 @@
 {% block content %}
     <section class="section section-xs bg-default single-card">
 		<div class="container container-md">
+		<div class="row"><h2>{{item.title}}</h2></div>
 			<div class="row row-20">
-									<div class="single-card__info-title">{{item.title}}</div>
+				
 				<div class="col-12 col-md-4 d-flex justify-content-center">
 					<div class="single-card__media">
 						<img src="{{ item.get_image.image.url }}" alt="{{ item.title }}" />
