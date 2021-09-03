@@ -10,20 +10,14 @@ import { useLocation } from 'react-router-dom';
 
 
 export default function ReaderHeader(props) {
-    const [mode, setMode] = React.useState('image');
 
-    const doSwitchMode = (mode) => {
-        props.doSwitch(mode); 
-    }
     const location = useLocation();
-
-   
 
     return (
         <header className="section page-header">
         <div className="rd-navbar-wrap">
-            <nav className="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
-                 data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
+            <nav className="rd-navbar rd-navbar-classic" data-layout="rd-navbar-static" data-sm-layout="rd-navbar-static"
+                 data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static"
                  data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static"
                  data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px"
                  data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
@@ -65,8 +59,8 @@ export default function ReaderHeader(props) {
                             </div>
                         </div>
                         <div className="rd-navbar-main-element">
-                            <div className="rd-navbar-nav-wrap">
-                              <Link to="/list-reader/{props.issueId}">
+                            <div className="rd-navbar-nav-wrap right-rider-menu">
+                              <Link to={`/list-reader/${props.issueId}`}>
                                   <img src="/static/images/list-icon.jpg" />
                               </Link>  
 

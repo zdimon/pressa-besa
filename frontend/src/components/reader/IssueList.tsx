@@ -22,8 +22,15 @@ export default function IssueList(props) {
 
     return (
       <> 
-        <p>Issue list</p>
-
+        <section className="section bg-gradient-gray">
+          <div className="container position-relative">
+            <div className="multiply-slider-wrap">
+              
+                sdfsfsfsd
+              
+            </div>
+          </div>
+        </section>
       </>
     )
 }

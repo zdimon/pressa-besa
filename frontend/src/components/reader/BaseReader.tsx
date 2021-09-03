@@ -13,7 +13,7 @@ import {
 
 
 export default function BaseReader(props) {
-  const [mode, setMode] = React.useState('image');
+
   const [has_article, setHasArticle] = React.useState(false);
   const [is_paid, setIsPaid] = React.useState(false);
   const req = new Request();
@@ -30,14 +30,11 @@ export default function BaseReader(props) {
       });
     }, []);
 
-  const switchMode = (mode) => {
-    setMode(mode);
-  }
 
     return (
       <> 
         <Router>
-        <ReaderHeader issueId={props.issueId} doSwitch={switchMode}  mode={mode} has_article={has_article}> </ReaderHeader>
+        <ReaderHeader issueId={props.issueId} has_article={has_article}> </ReaderHeader>
         
        
           <Switch>

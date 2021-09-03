@@ -84,7 +84,7 @@ export default function ImageReader(props) {
   
     return (
       <>
-      <section className="section section-xl bg-gradient-gray">
+      <section className="section bg-gradient-gray">
         <div className="container position-relative">
           <div className="multiply-slider-wrap">
             <div className="swiper gallery-top">
@@ -168,7 +168,6 @@ export default function ImageReader(props) {
 
                 </Swiper>
               </div>
-              {props.isPaid}
             </div>
           </div>
         </div>
