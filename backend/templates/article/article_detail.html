@@ -1,10 +1,41 @@
 {% extends 'base.html' %}
-
-
+{% load i18n %} 
 {% block content %}
     <section class="section section-xs bg-default single-card">
 		<div class="container container-md">
 		<div class="row" ><h2 class="article-title">{{item.title}}</h2></div>
+
+
+
+						<div class="hide-block show-in-mobile single-card__info-group">
+
+							<div class="single-card__info-details">
+								<div class="hide-in-mobile single-card__info-details-media">
+									<a href="{% url 'journal-detail' name_slug=item.issue.journal.name_slug %}">
+										<img src="{{ item.issue.common_cover }}" alt="" width="100">
+									</a>
+								</div>
+								<div class="single-card__info-details-caption">
+									<div class="single-card__info-details-title">
+										{{ item.issue.journal.name }}
+									</div>
+
+									<div class="single-card__info-details-release">
+										Выпуск:  {{ item.issue.name }}
+									</div>
+									<div>
+										<a href="#" style="min-width: 250px" class="button button-primary">Слушать аудио</a>
+									</div>
+								</div>
+							</div>
+														
+							<div class="single-card__info-marker">
+								<input type="checkbox" class="custom-checkbox" id="checkbox-10">
+								<label for="checkbox-10" class="custom-checkbox-label"></label>
+							</div>
+						</div>
+
+
 			<div class="row row-20">
 				
 				<div class="col-12 col-md-4 d-flex justify-content-center">
@@ -15,7 +46,7 @@
 				<div class="col-12 col-md-8 d-flex flex-column justify-content-between">
 					<div class="single-card__info">
 						
-						<div class="single-card__info-group">
+						<div class="single-card__info-group hide-in-mobile">
 
 							<div class="single-card__info-details">
 								<div class="hide-in-mobile single-card__info-details-media">
@@ -53,7 +84,11 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="container container-md">
+		<div class="col-12">
+                <h4 class="text-uppercase">{% trans 'Другие статьи номера' %}</h4>
+            </div>
 			<div class="articles-grid">
 			{% for a in other %}
 				{% include 'items/short_article.html' %}	

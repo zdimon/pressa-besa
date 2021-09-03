@@ -79,4 +79,14 @@
       clear: both;
       display: none;
     }
+
+    .show-in-mobile {
+        visibility: visible;
+        display: block !important;
+      }
+
   }
+
+  .hide-block {
+      display: none;
+}
