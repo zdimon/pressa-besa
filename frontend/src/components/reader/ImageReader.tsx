@@ -106,11 +106,12 @@ export default function ImageReader(props) {
                 <div className="swiper-wrapper">
                       {pages.map((item,index) =>
                         <SwiperSlide>
-                            <div className="swiper-slide">
+                            <div className="swiper-slide" data-background="static/images/preloader.gif">
                               <p className="page-number">{item.page}</p>
                               {props.isPaid? 
                                   <Fancybox options={{ infinite: false }}>
-                                    <img       
+                                    <img   
+                                    className="swiper-lazy"    
                                     data-fancybox="gallery"      
                                     data-src={item.file_middle} 
                                     src={item.file_middle} alt="" />
@@ -122,6 +123,7 @@ export default function ImageReader(props) {
                             
                             
                             </div>
+                            
                         </SwiperSlide>
                       )}                  
                   
@@ -140,6 +142,11 @@ export default function ImageReader(props) {
                     slidesPerView={4} 
                     loop={false}    
                     slideToClickedSlide={true}
+                    preloadImages={false}
+                    lazy={{
+                      loadPrevNext: true,
+                      loadPrevNextAmount: 2,
+                    }}
                     touchRatio={0.2}
                     loopedSlides={8}
                     centeredSlides={true}
@@ -151,17 +158,20 @@ export default function ImageReader(props) {
 
                     {pages.map((item,index) =>
                       <SwiperSlide>
-                          <div className="swiper-slide">
+                          <div className="swiper-slide swiper-lazy">
                           {props.isPaid? 
                             <Fancybox options={{ infinite: false }}>
-                              <img                                            data-fancybox="gallery"      
-                                    data-src={item.file_middle}  
-                                    src={item.file_low} alt="" />
+                              <img                                          data-fancybox="gallery"
+                                className="swiper-lazy"      
+                                data-src={item.file_middle}  
+                                data-srcset={item.file_low} alt="" />
+                                <div className="swiper-lazy-preloader"></div>
                               </Fancybox>:
                               <img 
                               onClick={() => setOpenPayDialog(true)}                              
                               src={item.file_low} alt="" />                            
                           }
+                          
                           </div>
                       </SwiperSlide>
                     )}
