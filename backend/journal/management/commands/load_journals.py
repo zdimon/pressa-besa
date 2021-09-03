@@ -49,7 +49,10 @@ class Command(BaseCommand):
                         p.paper = i
                         p.page = pi
                         p.save()
-                        path = os.path.join(settings.BASE_DIR,'init_data','journal',f'{pi}.jpg')
+                        if pi == 1:
+                            path = os.path.join(settings.BASE_DIR,'init_data','journal',f'{pi}.jpg')
+                        else:
+                            path = os.path.join(settings.BASE_DIR,'init_data','journal','pages',f'{pi}.jpg')                            
                         with open(path, 'rb') as doc_file:
                             p.file_low.save(f'{pi}.jpeg', File(doc_file), save=True)
                             p.file_middle.save(f'{pi}.jpeg', File(doc_file), save=True)
