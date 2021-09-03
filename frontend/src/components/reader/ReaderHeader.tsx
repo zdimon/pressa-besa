@@ -42,7 +42,9 @@ export default function ReaderHeader(props) {
                                                 pathname: `/text-reader/${props.issueId}`
                                             }}>
                                             <img width="25" height="25" src="/static/images/txtver.jpg" />
-                                            Текстовая версия
+                                            <span className="hide-in-mobile">
+                                                Текстовая версия
+                                            </span>
                                             </Link>
                                         )}
                                             
