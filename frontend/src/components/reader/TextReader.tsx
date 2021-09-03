@@ -77,7 +77,7 @@ export default function TextReader(props) {
 
     return (
       <>
-      <section className="section section-xl bg-gradient-gray">
+      <section className="section bg-gradient-gray">
         <div className="container position-relative">
 
           <div className="row row-20" style={ show_current? {} : {"display": "none"} }>
