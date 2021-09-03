@@ -55,11 +55,9 @@ export default function ReaderHeader(props) {
                                         </Link>
                                         )}
                                 </div>
-                                
-                            </div>
-                        </div>
-                        <div className="rd-navbar-main-element">
-                            <div className="rd-navbar-nav-wrap right-rider-menu">
+
+                    
+                            <div className="right-rider-menu">
                               <Link to={`/list-reader/${props.issueId}`}>
                                   <img src="/static/images/list-icon.jpg" />
                               </Link>  
@@ -67,9 +65,12 @@ export default function ReaderHeader(props) {
                               <a href="/lk">
                                   <img src="/static/images/user-icon.jpg" />
                               </a>  
+                            </div>
 
+                                
                             </div>
                         </div>
+
                         
                         
                     </div>
