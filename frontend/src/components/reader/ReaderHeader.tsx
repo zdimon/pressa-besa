@@ -3,34 +3,21 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    NavLink
   } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 
 
 export default function ReaderHeader(props) {
     const [mode, setMode] = React.useState('image');
+
     const doSwitchMode = (mode) => {
         props.doSwitch(mode); 
     }
     const location = useLocation();
-    useEffect(() => {
 
-        if(location.pathname.includes("text-reader")){
-            setMode('text');
-            console.log('text');
-        }
-
-        if(location.pathname.includes("image-reader")){
-            setMode('image');
-            console.log('image');
-        }
-
-        if(location.pathname.includes("list-reader")){
-            setMode('text');
-        }
-       
-        }, []);
+   
 
     return (
         <header className="section page-header">
@@ -54,8 +41,8 @@ export default function ReaderHeader(props) {
                                     <img src="/static/images/brand.svg" />
                                     </a>
                                 </div>
-
-                                       { mode === 'image' && (
+                                <div className="nav-riader-links" >
+                                       { location.pathname.includes("image-reader") && (
                                        <Link 
                                        to={{ 
                                             pathname: `/text-reader/${props.issueId}`
@@ -65,14 +52,15 @@ export default function ReaderHeader(props) {
                                         </Link>
                                        )}
                                         
-                                       
+                                        { location.pathname.includes("text-reader") && (
                                         <Link to={{
                                             pathname: `/image-reader/${props.issueId}`
                                             }} >
                                           <img width="25" src="/static/images/txtver.jpg" />
-                                          Постраничная версия
+                                          PDF версия
                                         </Link>
-                                
+                                        )}
+                                </div>
                                 
                             </div>
                         </div>

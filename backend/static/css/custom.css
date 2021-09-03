@@ -29,12 +29,13 @@
     width: 300px;
 }
 
-.mode-link img {
+.nav-riader-links img {
     width: 25px;
+    height: 20px;
     padding-right: 5px;
 }
 
-.mode-link {
+.nav-riader-links a {
     padding-left: 10px;
     color: black;
     margin-top: 5px;
