@@ -29,33 +29,33 @@ export default function ReaderHeader(props) {
                             </div>
                             <div className="rd-nav-panel-main">
                                
-                                
-                                <div className="rd-navbar-logo">
-                                    <a className="brand" href="/" >
-                                    <img src="/static/images/brand.svg" />
-                                    </a>
-                                </div>
-                                <div className="nav-riader-links" >
-                                       { location.pathname.includes("image-reader") && (
-                                       <Link 
-                                       to={{ 
-                                            pathname: `/text-reader/${props.issueId}`
-                                           }}>
-                                          <img width="25" height="25" src="/static/images/txtver.jpg" />
-                                          Текстовая версия
-                                        </Link>
-                                       )}
-                                        
-                                        { location.pathname.includes("text-reader") && (
-                                        <Link to={{
-                                            pathname: `/image-reader/${props.issueId}`
-                                            }} >
-                                          <img width="25" src="/static/images/txtver.jpg" />
-                                          PDF версия
-                                        </Link>
+                                <div>
+                                    <div className="rd-navbar-logo">
+                                        <a className="brand" href="/" >
+                                        <img src="/static/images/brand.svg" />
+                                        </a>
+                                    </div>
+                                    <div className="nav-riader-links" >
+                                        { location.pathname.includes("image-reader") && (
+                                        <Link 
+                                        to={{ 
+                                                pathname: `/text-reader/${props.issueId}`
+                                            }}>
+                                            <img width="25" height="25" src="/static/images/txtver.jpg" />
+                                            Текстовая версия
+                                            </Link>
                                         )}
-                                </div>
-
+                                            
+                                            { location.pathname.includes("text-reader") && (
+                                            <Link to={{
+                                                pathname: `/image-reader/${props.issueId}`
+                                                }} >
+                                            <img width="25" src="/static/images/txtver.jpg" />
+                                            PDF версия
+                                            </Link>
+                                            )}
+                                    </div>
+                                </div>                        
                     
                             <div className="right-rider-menu">
                               <Link to={`/list-reader/${props.issueId}`}>

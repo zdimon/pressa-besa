@@ -47,6 +47,19 @@
     padding-right: 10px;
 }
 
+
+.right-rider-menu {
+    display: flex;
+    justify-content: center;
+    flex-grow: inherit;
+}
+
 .right-rider-menu a {
     padding-left: 10px;
+
+}
+
+.rd-nav-panel-main {
+    display: flex;
+    justify-content: space-between;
 }
