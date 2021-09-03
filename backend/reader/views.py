@@ -6,14 +6,13 @@ from django.http import Http404
 # Create your views here.
 
 
-def image_reader_index(request, issue_id):
+def reader_index(request, issue_id):
     try:
         issue = Issue.objects.get(pk=issue_id)
     except ObjectDoesNotExist:
         raise Http404
-    pages = IssuePage.objects.filter(paper=issue)
-    cnt = {"issue": issue, "pages": pages}
-    return render(request,'reader/index_image.html', cnt)
+    cnt = {"issue": issue}
+    return render(request,'reader/index.html', cnt)
 
 
 def text_reader_index(request, issue_id):

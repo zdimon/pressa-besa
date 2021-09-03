@@ -1,11 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 
 export default function ReaderHeader(props) {
-
+    const [mode, setMode] = React.useState('image');
     const doSwitchMode = (mode) => {
         props.doSwitch(mode); 
     }
+    const location = useLocation();
+    useEffect(() => {
+
+        if(location.pathname.includes("text-reader")){
+            setMode('text');
+            console.log('text');
+        }
+
+        if(location.pathname.includes("image-reader")){
+            setMode('image');
+            console.log('image');
+        }
+
+        if(location.pathname.includes("list-reader")){
+            setMode('text');
+        }
+       
+        }, []);
 
     return (
         <header className="section page-header">
@@ -30,31 +55,37 @@ export default function ReaderHeader(props) {
                                     </a>
                                 </div>
 
-                                
-                                     <a 
-                                        style={props.mode==='image' && props.has_article? {}: {display: "none"}}
-                                        onClick ={() => { doSwitchMode("text") }}
-                                        href="#" className="mode-link">
-                                          <img width="25" src="/static/images/txtver.jpg" />
+                                       { mode === 'image' && (
+                                       <Link 
+                                       to={{ 
+                                            pathname: `/text-reader/${props.issueId}`
+                                           }}>
+                                          <img width="25" height="25" src="/static/images/txtver.jpg" />
                                           Текстовая версия
-                                        </a>
-                            
-
-                                
-                                     <a 
-                                        style={props.mode==='text'? {}: {display: "none"}}
-                                        onClick ={() => { doSwitchMode("image") }}
-                                        href="#" className="mode-link">
+                                        </Link>
+                                       )}
+                                        
+                                       
+                                        <Link to={{
+                                            pathname: `/image-reader/${props.issueId}`
+                                            }} >
                                           <img width="25" src="/static/images/txtver.jpg" />
                                           Постраничная версия
-                                        </a>
+                                        </Link>
                                 
                                 
                             </div>
                         </div>
                         <div className="rd-navbar-main-element">
                             <div className="rd-navbar-nav-wrap">
-                                
+                              <Link to="/list-reader/{props.issueId}">
+                                  <img src="/static/images/list-icon.jpg" />
+                              </Link>  
+
+                              <a href="/lk">
+                                  <img src="/static/images/user-icon.jpg" />
+                              </a>  
+
                             </div>
                         </div>
                         

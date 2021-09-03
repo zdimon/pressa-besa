@@ -3,6 +3,13 @@ import { Request } from '../../Request';
 import ReaderHeader from './ReaderHeader';
 import ImageReader from './ImageReader';
 import TextReader from './TextReader';
+import IssueList from './IssueList';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 export default function BaseReader(props) {
@@ -29,13 +36,23 @@ export default function BaseReader(props) {
 
     return (
       <> 
-        <ReaderHeader doSwitch={switchMode} mode={mode} has_article={has_article}> </ReaderHeader>
-        {
-          mode === 'image'?
-          <ImageReader isPaid={is_paid} issueId={props.issueId}></ImageReader>:
-          <TextReader isPaid={is_paid} issueId={props.issueId}></TextReader>
-        }
+        <Router>
+        <ReaderHeader issueId={props.issueId} doSwitch={switchMode}  mode={mode} has_article={has_article}> </ReaderHeader>
         
+       
+          <Switch>
+            <Route name="image" path="/image-reader/:issue_id">
+            <ImageReader isPaid={is_paid} issueId={props.issueId}></ImageReader>
+            </Route>
+            <Route name="text" path="/text-reader/:issue_id">
+            <TextReader isPaid={is_paid} issueId={props.issueId}></TextReader>
+            </Route>
+            <Route name="list" path="/list-reader/:issue_id">
+              <IssueList />
+            </Route>
+          </Switch>
+        </Router>
+
       </>
     )
 }

@@ -5,6 +5,7 @@
     <section class="section section-xs bg-default single-card">
 		<div class="container container-md">
 			<div class="row row-20">
+									<div class="single-card__info-title">{{item.title}}</div>
 				<div class="col-12 col-md-4 d-flex justify-content-center">
 					<div class="single-card__media">
 						<img src="{{ item.get_image.image.url }}" alt="{{ item.title }}" />
@@ -42,7 +43,7 @@
 								<label for="checkbox-10" class="custom-checkbox-label"></label>
 							</div>
 						</div>
-						<div class="single-card__info-title">{{item.title}}</div>
+
 						<div class="single-card__info-caption">
 							{{ item.text | safe }}
 						</div>

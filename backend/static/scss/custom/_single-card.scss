@@ -91,6 +91,7 @@
 			line-height: 1.4;
 			* + &{
 				margin-top: 10px;
+				text-align: left;
 				@media(min-width: 992px){
 					margin-top: 15px;
 				}
