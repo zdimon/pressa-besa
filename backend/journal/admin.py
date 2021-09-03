@@ -9,9 +9,10 @@ class PublishingOfficeAdmin(admin.ModelAdmin):
 
 @admin.register(Journal)
 class JournalAdmin(admin.ModelAdmin):
-    list_display = ['name', 'name_slug', 'image_tag', 'publishing_office']
+    list_display = ['name', 'name_slug', 'image_tag', 'publishing_office', 'amount']
     search_fields = ['name']
     list_filter = ['category']
+    list_editable = ['amount']
 
 
 @admin.register(Issue)

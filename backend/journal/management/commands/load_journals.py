@@ -29,6 +29,7 @@ class Command(BaseCommand):
                 j.name = jname+" "+str(cnt)+str(cntc)
                 j.is_public = True
                 j.show_in_books = True
+                j.amount = 10
                 j.is_popular = True
                 j.save()
                 j.category.add(c)
