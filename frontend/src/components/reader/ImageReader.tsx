@@ -88,7 +88,7 @@ export default function ImageReader(props) {
         <div className="container position-relative">
           <div className="multiply-slider-wrap">
             <div className="swiper gallery-top">
-
+            
             <Swiper
                     spaceBetween={0}
                     centeredSlides={true}
@@ -107,7 +107,7 @@ export default function ImageReader(props) {
                       {pages.map((item,index) =>
                         <SwiperSlide>
                             <div className="swiper-slide">
-                              
+                              <p className="page-number">{item.page}</p>
                               {props.isPaid? 
                                   <Fancybox options={{ infinite: false }}>
                                     <img       
@@ -120,7 +120,7 @@ export default function ImageReader(props) {
                                 src={item.file_middle} alt="" />                            
                               }
                             
-                            <p>Страница {item.page}</p>
+                            
                             </div>
                         </SwiperSlide>
                       )}                  
@@ -132,7 +132,7 @@ export default function ImageReader(props) {
               </Swiper>
             </div>
 
-            <div class="swiper-thumbs">
+            <div className="swiper-thumbs">
               <div className="swiper gallery-thumbs">
                 <div className="swiper-wrapper">
                   <Swiper
