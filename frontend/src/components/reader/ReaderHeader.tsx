@@ -36,7 +36,7 @@ export default function ReaderHeader(props) {
                                         </a>
                                     </div>
                                     <div className="nav-riader-links" >
-                                        { location.pathname.includes("image-reader") && (
+                                        { location.pathname.includes("image-reader") && props.has_article && (
                                         <Link 
                                         to={{ 
                                                 pathname: `/text-reader/${props.issueId}`
