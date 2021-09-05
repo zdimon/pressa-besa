@@ -126,7 +126,6 @@ export default function JournalSlider(props) {
                   loop={true}
                   
                   onInit={(swiper) => {
-                    console.log(navigationNextRef.current)
                     swiper.params.navigation.prevEl = navigationPrevRef.current;
                     swiper.params.navigation.nextEl = navigationNextRef.current;
                     swiper.navigation.destroy();

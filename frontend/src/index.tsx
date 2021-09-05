@@ -32,6 +32,9 @@ const loginEls = document.getElementsByClassName("userMenu");
 });
 /////////////
 
+
+/// journal slider
+
 const carouselEl = document.getElementById("popJournalsSlider");
 if(carouselEl) render(<Carousel selector="JSpopJournalsItems" />, carouselEl); 
 

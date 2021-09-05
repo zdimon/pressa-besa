@@ -1,3 +1,4 @@
+{% load i18n %} 
 <div class="swiper-slide">
     <div class="thumbnail-modern">
         <div class="thumbnail-modern__media">
@@ -19,6 +20,11 @@
             </div>
             <div class="thumbnail-modern__body-caption">№ {{ item.last_issue.name }}</div>
         </div>
-        <div class="thumbnail-modern__footer">{{ item.amount }}₽</div>
+       
+        
+          <div class="thumbnail-modern__footer">{{ item.amount }}₽
+           &nbsp; <a class="read-link" href="/image-reader/{{ item.pk }}" >{% trans 'Читать' %}</a>
+          </div>
+          
     </div>
 </div>

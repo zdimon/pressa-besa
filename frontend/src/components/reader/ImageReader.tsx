@@ -5,34 +5,7 @@ import SwiperCore, { Navigation } from 'swiper';
 SwiperCore.use([Navigation]);
 import { Controller } from 'swiper';
 import Fancybox from './fancybox';
-import Modal from '@material-ui/core/Modal';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    position: 'absolute',
-    width: 400,
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  },
-}));
-
-function rand() {
-  return Math.round(Math.random() * 20) - 10;
-}
-
-function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
-
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
-  };
-}
+import PaymentDialog from '../Modal/Payment/PaymentDialog';
 
 
 
@@ -40,8 +13,8 @@ export default function ImageReader(props) {
 
   const [pages, setPages] = React.useState([]);
   const [open_pay_dialog, setOpenPayDialog] = React.useState(false);
-  const classes = useStyles();
-  const [modalStyle] = React.useState(getModalStyle);
+
+  const paymentDialogref = React.useRef(null)
 
   const navigationPrevRef = React.useRef(null)
   const navigationNextRef = React.useRef(null)
@@ -70,17 +43,20 @@ export default function ImageReader(props) {
       const req = new Request();
       req.post('reader/pages',{issue_id: props.issueId})
       .then((payload) => {
-        
         setPages(payload.payload);
-        console.log(payload.payload);
       }).catch((err) => { 
       });
     }, []);
 
 
-    const handleClose = () => {
+    const openPaymentDialog = () => {
+      setOpenPayDialog(true);
+    }
+
+    const closePaymentDialog = () => {
       setOpenPayDialog(false);
-    };
+    }
+
   
     return (
       <>
@@ -117,7 +93,7 @@ export default function ImageReader(props) {
                                     src={item.file_middle} alt="" />
                                   </Fancybox>:
                                 <img 
-                                onClick={() => setOpenPayDialog(true)}                              
+                                onClick={() => openPaymentDialog()}                              
                                 src={item.file_middle} alt="" />                            
                               }
                             
@@ -129,8 +105,8 @@ export default function ImageReader(props) {
                   
 
                 </div>
-                <div ref={navigationPrevRef} className="swiper-button-next swiper-button-white"></div>
-                <div ref={navigationNextRef}  className="swiper-button-prev swiper-button-white"></div>
+                <div ref={navigationNextRef} className="swiper-button-next swiper-button-white"></div>
+                <div ref={navigationPrevRef}  className="swiper-button-prev swiper-button-white"></div>
               </Swiper>
             </div>
 
@@ -168,7 +144,7 @@ export default function ImageReader(props) {
                                 <div className="swiper-lazy-preloader"></div>
                               </Fancybox>:
                               <img 
-                              onClick={() => setOpenPayDialog(true)}                              
+                              onClick={() => openPaymentDialog()}                              
                               src={item.file_low} alt="" />                            
                           }
                           
@@ -183,19 +159,8 @@ export default function ImageReader(props) {
           </div>
         </div>
       </section>
-            <Modal
-            open={open_pay_dialog}
-            onClose={handleClose}
-            >
-          <div  className={classes.paper} style={modalStyle}>
-          <h2 id="simple-modal-title">Вы не оплатили выпуск</h2>
-          <p id="simple-modal-description">
-            <a href="/lk">Перейдите для оплаты</a>
-          </p>
-          
-          </div>
-          </Modal>
-
+      <PaymentDialog handleClose={closePaymentDialog} open={open_pay_dialog} issueId={props.issueId}></PaymentDialog>
+            
       </>
     )
 }

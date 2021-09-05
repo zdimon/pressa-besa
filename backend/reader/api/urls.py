@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import PagesView, ArticlesView, ArticleDetailView, SettingsView, PageDetailView
+from .views import PagesView, ArticlesView, ArticleDetailView, SettingsView, PageDetailView, PreorderView, MakePaymentView
 
 
 urlpatterns = [
@@ -7,5 +7,7 @@ urlpatterns = [
     path('articles', ArticlesView.as_view()),
     path('article', ArticleDetailView.as_view()),
     path('settings', SettingsView.as_view()),
-    path('page/detail', SettingsView.as_view())
+    path('page/detail', SettingsView.as_view()),
+    path('preorder', PreorderView.as_view()),
+    path('make_payment', MakePaymentView.as_view())
 ]
