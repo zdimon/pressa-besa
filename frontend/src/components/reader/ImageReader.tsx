@@ -93,7 +93,7 @@ export default function ImageReader(props) {
                                     <img   
                                     className="swiper-lazy"    
                                     data-fancybox="gallery"      
-                                    data-src={item.file_middle} 
+                                    data-src={item.file_hight} 
                                     src={item.file_middle} alt="" />
                                   </Fancybox>:
                                 <img 
