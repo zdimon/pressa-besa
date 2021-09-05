@@ -93,5 +93,13 @@
 
 .read-link {
     color: #FE0000;
-    
+
+}
+
+.color-green {
+    color: green;
+}
+
+.color-red {
+    color: red;
 }

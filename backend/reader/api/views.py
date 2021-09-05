@@ -13,6 +13,7 @@ from journal.models import Issue, IssuePage
 from article.models import Article
 from PIL import Image
 from app.settings import BACKEND_URL
+from journal.models import PurchasedIssues
 
 class PagesView(APIView):
     '''
@@ -166,6 +167,8 @@ class PreorderView(APIView):
         return Response({"account": customer.amount, "cost": issue.journal.amount})
 
 
+from billing.utils import buy_issue_transaction, buy_issue_purchase
+
 class MakePaymentView(APIView):
     '''
 
@@ -178,10 +181,18 @@ class MakePaymentView(APIView):
         request_body=ArticleRequestSerializer,
     )
     def post(self, request):
+        user = request.user.customer
         try:
             issue = Issue.objects.get(pk=request.data["issue_id"])
         except ObjectDoesNotExist:
             return Response({"status": 1, "message": "Issue not found"})
 
-        customer = request.user.customer
-        return Response({"message": "Вы оплатили издание"})
+        try:
+            purchase = PurchasedIssues.objects.get(customer=user, issue=issue)
+            return Response({"status": 1, "message": _("Вы уже оплатили этот выпуск.")})
+        except ObjectDoesNotExist:
+            buy_issue_transaction(user, issue)
+            buy_issue_purchase(user, issue)
+            user.amount = user.amount - issue.journal.amount
+            user.save()
+            return Response({"status": 0, "message": "Вы оплатили издание"})

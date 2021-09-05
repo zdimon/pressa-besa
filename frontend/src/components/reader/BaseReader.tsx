@@ -18,6 +18,10 @@ export default function BaseReader(props) {
   const [is_paid, setIsPaid] = React.useState(false);
   const req = new Request();
 
+  const markIsPaid = () => {
+    console.log('main component!!!!')
+    setIsPaid(true)
+  }
 
   useEffect(() => {
 
@@ -39,7 +43,12 @@ export default function BaseReader(props) {
        
           <Switch>
             <Route name="image" path="/image-reader/:issue_id">
-            <ImageReader isPaid={is_paid} issueId={props.issueId}></ImageReader>
+            <ImageReader 
+              handleIsPaid={markIsPaid} 
+              isPaid={is_paid} 
+              issueId={props.issueId}>
+            </ImageReader>
+
             </Route>
             <Route name="text" path="/text-reader/:issue_id">
             <TextReader isPaid={is_paid} issueId={props.issueId}></TextReader>

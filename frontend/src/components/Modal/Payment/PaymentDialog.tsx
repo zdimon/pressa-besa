@@ -36,13 +36,15 @@ export default function PaymentDialog(props) {
     const [has_money, setHasMoney] = React.useState(false);
     const [account, setAccount] = React.useState(0);
     const [cost, setCost] = React.useState(0);
+    const [message_success, setMessageSuccess] = React.useState('');
+    const [message_error, setMessageError] = React.useState('');
+
 
     useEffect(() => {
 
         const req = new Request();
         req.post('reader/preorder',{issue_id: props.issueId})
         .then((payload) => {
-          console.log(payload);
           if(payload.account >= payload.cost ) {
               setHasMoney(true);
               console.log('has money')
@@ -55,8 +57,9 @@ export default function PaymentDialog(props) {
    
     const handleClose = () => {
         props.handleClose();
-        console.log('closing');
       };
+
+
 
 
     const payment = () => {
@@ -64,8 +67,14 @@ export default function PaymentDialog(props) {
         req.post('reader/make_payment',{issue_id: props.issueId})
         .then((payload) => {
           console.log(payload);
-          
+          if(payload.status===0) {
+            setMessageSuccess(payload.message);
+            props.handleIsPaid();
+          } else {
+            setMessageError(payload.message);
+          }
         }).catch((err) => { 
+           
         });
       
     }
@@ -90,6 +99,8 @@ return (
   <p style={has_money? {display: "block"}: {display: "none"}} >
     <a href="#" onClick={payment}>Оплатить со счета</a>
   </p>
+  <p className="color-green">{message_success}</p>
+  <p className="color-red">{message_error}</p>
 
   </div>
   </Modal>

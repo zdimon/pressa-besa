@@ -3,7 +3,7 @@ from django.shortcuts import redirect
 from bookmarks.models import Bookmarks
 from billing.models import Transaction
 from subscribe.models import UserAbonement, UserSubscrition
-
+from journal.models import PurchasedIssues
 
 def lk(request):
     try:
@@ -14,7 +14,10 @@ def lk(request):
     bookmarks = Bookmarks.objects.filter(owner=request.user)
     abonements = UserAbonement.objects.filter(user=request.user.customer).order_by('-stop_date')
     transactions = Transaction.objects.filter(owner=request.user).order_by('-id')[0:10]
-    cnt = {"user": user, "bookmarks": bookmarks, "transactions": transactions, "abonements": abonements}
+
+    collection = PurchasedIssues.objects.filter(customer=request.user.customer).order_by('-id')[0:10]
+
+    cnt = {"user": user, "bookmarks": bookmarks, "transactions": transactions, "abonements": abonements, "collection": collection}
     return render(request, 'lk/index.html', cnt)
 
 

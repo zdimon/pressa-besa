@@ -22,6 +22,10 @@ export default function ImageReader(props) {
   const [firstSwiper, setFirstSwiper] = useState(null);
   const [secondSwiper, setSecondSwiper] = useState(null);
 
+  const markIsPaid = () => {
+    props.handleIsPaid();
+  }
+
   var breakpoints = {
     576: {
       slidesPerView: 5,
@@ -159,7 +163,13 @@ export default function ImageReader(props) {
           </div>
         </div>
       </section>
-      <PaymentDialog handleClose={closePaymentDialog} open={open_pay_dialog} issueId={props.issueId}></PaymentDialog>
+      <PaymentDialog 
+      handleClose={closePaymentDialog} 
+      handleIsPaid={markIsPaid}
+      open={open_pay_dialog} 
+      issueId={props.issueId}>
+
+      </PaymentDialog>
             
       </>
     )

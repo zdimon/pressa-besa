@@ -20,6 +20,8 @@
 
     <li class="nav-item"><a  class="nav-link" data-toggle="tab" href="#yellow">{% trans 'Абонемент' %}</a></li>
 
+    <li class="nav-item"><a  class="nav-link" data-toggle="tab" href="#collection">{% trans 'Коллекция' %}</a></li>
+
     <li class="nav-item"><a  class="nav-link" data-toggle="tab" href="#payments">{% trans 'Платежи' %}</a></li>
 
     <li class="nav-item"><a  class="nav-link" data-toggle="tab" href="#bookmarks">{% trans 'Закладки' %}</a></li>
@@ -33,6 +35,9 @@
     </div>
     <div class="tab-pane" id="yellow">
        {% include 'lk/tabs/abonement.html' %}
+    </div>
+    <div class="tab-pane" id="collection">
+        {% include 'lk/tabs/collection.html' %}
     </div>
     <div class="tab-pane" id="payments">
         {% include 'lk/tabs/payments.html' %}
