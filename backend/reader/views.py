@@ -36,7 +36,7 @@ def get_page(request, page_id, type, position):
     if type == 'middle':
         original = Image.open(page.file_middle.path)
     if type == 'hight':
-        original = Image.open(page.file_hight.path)
+        original = Image.open(page.file_high.path)
     response = HttpResponse(content_type="image/jpg")
     if position == 1:
         if original.size[0] < original.size[1]:
