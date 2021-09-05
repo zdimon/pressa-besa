@@ -121,13 +121,6 @@ export default function ImageReader(props) {
                     spaceBetween={10}
                     slidesPerView={4} 
                     loop={false}    
-                    slideToClickedSlide={true}
-                    preloadImages={false}
-                    lazy={{
-                      loadPrevNext: true,
-                      loadPrevNextAmount: 2,
-                    }}
-                    touchRatio={0.2}
                     loopedSlides={8}
                     centeredSlides={true}
                     modules={[Controller]}
@@ -138,14 +131,13 @@ export default function ImageReader(props) {
 
                     {pages.map((item,index) =>
                       <SwiperSlide>
-                          <div className="swiper-slide swiper-lazy">
+                          <div className="swiper-slide">
                           {props.isPaid? 
                             <Fancybox options={{ infinite: false }}>
-                              <img                                          data-fancybox="gallery"
-                                className="swiper-lazy"      
-                                data-src={item.file_low}  
-                                 alt="" />
-                                <div className="swiper-lazy-preloader"></div>
+                                    <img      
+                                    data-fancybox="gallery"      
+                                    data-src={item.file_hight} 
+                                    src={item.file_middle} alt="" />
                               </Fancybox>:
                               <img 
                               onClick={() => openPaymentDialog()}                              
