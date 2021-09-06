@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load i18n %} 
 
 {% block content %}
     <section class="section section-xs bg-default single-card">
@@ -53,6 +53,9 @@
 			</div>
 		</div>
 		<div class="container container-md">
+		      <h4 class="text-uppercase">{% trans 'Другие' %}
+				<span>{% trans 'статьи' %}</span>
+			</h4>
 			<div class="articles-grid">
 			{% for a in item.issue.article_set.all %}
 				<div class="article-thumbnail">
