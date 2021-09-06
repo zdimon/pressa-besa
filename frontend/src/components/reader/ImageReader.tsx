@@ -54,7 +54,21 @@ export default function ImageReader(props) {
 
 
     const openPaymentDialog = () => {
-      setOpenPayDialog(true);
+      if(window.localStorage.getItem('token')) {
+        setOpenPayDialog(true);
+      } else {
+        
+        var el = document.getElementById('js-login-header-link');
+        el.dispatchEvent(
+          new MouseEvent('click', {
+              view: window,
+              bubbles: true,
+              cancelable: true,
+              buttons: 1
+          })
+        )
+      }
+      
     }
 
     const closePaymentDialog = () => {

@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import LangSwitcher from './components/i18n/LangSwitcher';
 import AddBookmark from './components/bookmarks/bookmarks';
 import ImageReader from './components/reader/ImageReader';
+import BuyButton from './components/buyButton/buyButton';
 
 
 import 'swiper/css/bundle'
@@ -22,6 +23,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import TextReader from './components/reader/TextReader';
 import BaseReader from './components/reader/BaseReader';
+
 
 
 
@@ -92,3 +94,8 @@ if(readerEl) render(<ImageReader issueId={readerEl.getAttribute('data-issue-id')
 /// text reader
 const txtreaderEl = document.getElementById("js-text-reader");
 if(txtreaderEl) render(<TextReader issueId={txtreaderEl.getAttribute('data-issue-id')}/>, txtreaderEl)
+
+
+/// buy button
+const bbtnEl = document.getElementById("js-buy-button");
+if(bbtnEl) render(<BuyButton />, bbtnEl)

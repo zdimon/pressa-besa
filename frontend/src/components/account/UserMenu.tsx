@@ -45,7 +45,6 @@ export default function UserMenu() {
   } else {
     const handleChange = (event, newValue) => {
       setValue(newValue);
-      console.log(newValue);
     };
     return (
       <>

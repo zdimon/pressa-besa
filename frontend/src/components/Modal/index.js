@@ -41,7 +41,7 @@ const AppModal = (props) => {
   const onConfirm = () => {
     switch (template) {
       case 'sub':
-        console.log(countDays);
+        // console.log(countDays);
         // handleConfirm({ plan, planPeriod: plan === 'period' && { ...planPeriod, dateTo: moment(planPeriod.dateTo).format('YYYY-MM-DD') } })
         //   const data = { plan, planPeriod: plan === 'period' && { ...planPeriod, dateTo: moment(planPeriod.dateTo).format('YYYY-MM-DD') } };
         setOpenSnackbar(true);

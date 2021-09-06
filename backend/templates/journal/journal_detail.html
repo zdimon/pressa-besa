@@ -41,7 +41,7 @@
                         <div class="card-info__price-inner">
                             <div class="card-info__price-title">ЦЕНА ЗА НОМЕР:</div>
                             <div class="card-info__price-number">{{ object.amount }} ₽</div>
-                            <a href="{% url 'journal-buy' name_slug=object.name_slug issue_name_slug=object.last_issue.name_slug %}" class="button button-primary button-sm">Купить</a>
+                            <div id="js-buy-button"></div>
                         </div>
                     </div>
                     <form action="" class="card-info__subscription-form">

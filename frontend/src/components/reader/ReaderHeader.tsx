@@ -1,4 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Drawer from '@material-ui/core/Drawer';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import RegForm from '../account/RegForm';
+import LoginForm from '../account/LoginForm';
 import {
     BrowserRouter as Router,
     Switch,
@@ -12,8 +17,20 @@ import { useLocation } from 'react-router-dom';
 export default function ReaderHeader(props) {
 
     const location = useLocation();
+    const [showPanel, setShowPanel] = React.useState(false);
+    const [value, setValue] = React.useState(0);
+
+    const doLogin = (token) => {
+        setShowPanel(false);
+        window.localStorage.setItem('token',token);
+      }    
+
+      const handleChange = (event, newValue) => {
+        setValue(newValue);
+      };
 
     return (
+        <>
         <header className="section page-header">
         <div className="rd-navbar-wrap">
             <nav className="rd-navbar rd-navbar-classic" data-layout="rd-navbar-static" data-sm-layout="rd-navbar-static"
@@ -63,10 +80,25 @@ export default function ReaderHeader(props) {
                               <Link to={`/list-reader/${props.issueId}`}>
                                   <img src="/static/images/list-icon.jpg" />
                               </Link>  
+                              { window.localStorage.getItem('token') &&
+                                (<a href="/lk">
+                                    <img src="/static/images/user-icon.jpg" />
+                                </a> 
+                              ) 
+                              }
 
-                              <a href="/lk">
-                                  <img src="/static/images/user-icon.jpg" />
-                              </a>  
+                              { !window.localStorage.getItem('token') &&
+                                (<a 
+                                    id="js-login-header-link"
+                                    href="#" 
+                                    onClick={ () => {setShowPanel(true)}}  
+                                    className="rd-nav-options__login">
+                                                                                                        <img src="/static/images/user-icon.jpg" /> 
+                                          
+                                    </a>
+                              ) 
+                              }
+
                             </div>
 
                                 
@@ -80,5 +112,28 @@ export default function ReaderHeader(props) {
             </nav>
         </div>
     </header>
+
+        <Drawer anchor="right" open={showPanel} onClose={() => {
+            setShowPanel(false)
+        }}>
+
+        <Tabs 
+        value={value}
+        onChange={handleChange} 
+        >
+            <Tab label="Вход"  />
+            <Tab label="Регистрация" />
+        </Tabs>
+
+        <div hidden={value !== 1} >
+            <RegForm  />
+        </div>
+
+        <div hidden={value !== 0} >
+            <LoginForm clickCallback={doLogin} />
+        </div>
+
+        </Drawer>
+    </>
     )
 }
