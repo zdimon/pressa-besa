@@ -6,6 +6,9 @@ import PropTypes from 'prop-types'
 import Subscription from './templates/Subscription'
 import { Request } from '../../Request';
 import Snackbar from '@material-ui/core/Snackbar';
+import parse from 'html-react-parser';
+import IconButton from '@material-ui/core/IconButton';
+
 
 const templates = {
   sub: Subscription
@@ -22,6 +25,11 @@ const AppModal = (props) => {
     children,
     template
   } = props
+
+  const closeModal = () => {
+    console.log('closingggg');
+    setOpenSnackbar(false);
+  }
 
   const [message, setMessage] = React.useState('');
   const [open, setOpenSnackbar] = React.useState(false);
@@ -41,7 +49,6 @@ const AppModal = (props) => {
           req.post('subscribe/abonement/add',{days: countDays})
           .then((payload) => {
              setMessage(payload.message);
-             setTimeout(2000,()=> setOpenSnackbar(false))
           });
         
 
@@ -84,7 +91,19 @@ const AppModal = (props) => {
     <Snackbar
         open={open}
         message={message}
-        autoHideDuration={2000}
+        autoHideDuration={3000}
+        onClose={() => setOpenSnackbar(false)}
+        action={
+          <React.Fragment>
+            
+            <a className="color-red" href="/lk"> 
+              Пополнить счет
+            </a>
+            <Button color="secondary" size="small" onClick={closeModal}>
+              Закрыть
+            </Button>
+          </React.Fragment>
+        }
     />
     </>
   )

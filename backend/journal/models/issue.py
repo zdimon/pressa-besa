@@ -6,6 +6,7 @@ from django.utils.timezone import now
 from django.urls import reverse
 from .mixins.cover import CoverMixin
 from .mixins.name_slug import NameSlugMixin
+from subscribe.models import UserAbonement
 
 class Issue(NameSlugMixin, CoverMixin, models.Model):
     name = models.CharField(verbose_name=_(u'номер выпуска'),
@@ -53,13 +54,20 @@ class Issue(NameSlugMixin, CoverMixin, models.Model):
             return False
 
 
-
+    # проверка на оплаченность
     def is_paid(self, user):
         from journal.models import PurchasedIssues
+        import datetime
+        # abonement
+        if UserAbonement.objects.filter(user=user, stop_date__gt=datetime.datetime.now()).count() > 0:
+            return True
+        # тупая покупка номера
         if PurchasedIssues.objects.filter(customer=user, issue=self).count()>0:
             return True
         else:
             return False
+
+
 
 
 

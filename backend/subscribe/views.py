@@ -26,7 +26,7 @@ class AddAbonementView(APIView):
         abon = Abonement.objects.get(pk=1)
         if user.customer.amount < payload["days"]*8:
             message = _('У вас недостаточно средств на счету!')
-            return Response({"message": message})
+            return Response({"status": 1, "message": message})
         add_abonement(abon, user, payload["days"])
         message = translation.ugettext('Абонемент на %s дней активирован.' % payload["days"])
-        return Response({"message": message})
+        return Response({"status":0, "message": message})
