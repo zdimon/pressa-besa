@@ -56,7 +56,7 @@
 								</div>
 								<div class="single-card__info-details-caption">
 									<div class="single-card__info-details-title">
-										{{ item.issue.journal.name }}
+										<a href="{% url 'journal-detail' name_slug=item.issue.journal.name_slug %}">{{ item.issue.journal.name }}</a>
 									</div>
 
 									<div class="single-card__info-details-release">
