@@ -2,7 +2,11 @@
     <div class="article-thumbnail__header">
         <ul class="article-thumbnail__header-list">
              {% for t in a.taggit.all %}
-                <li>{{ t.name }}</li>
+                <li>
+                <a href="{% url 'article-search' key=t.name %}">
+                {{ t.name }}
+                </a>
+                </li>
              {% endfor %}
         </ul>
         <div class="article-thumbnail__header-marker js-bookmark" data-issue={{ a.issue.id }} data-page={{ a.page }}>

@@ -24,3 +24,9 @@ def test_cover(request, id):
     art = Article.objects.all()[0]
     make_cover(art, conf, 'test.png')
     return render(request, 'test_cover.html')
+
+
+def article_search(request,key):
+    arts = Article.objects.filter(taggit__name__in = [str(key)]).order_by('-id')[0:30]
+
+    return render(request, 'article/article_search.html', {'arts': arts, 'key': key})

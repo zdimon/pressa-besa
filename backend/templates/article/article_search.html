@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load i18n %} 
+{% block content %}
+    <section class="section section-xs bg-default single-card">
+		
+
+		<div class="container container-md">
+		<div class="col-12">
+                <h4 class="text-uppercase">{% trans 'Поиск' %}
+				<span>{{ key }}</span>
+				</h4>
+            </div>
+			<div class="articles-grid">
+			{% for a in arts %}
+				{% include 'items/short_article.html' %}	
+			{% endfor %}
+			</div>
+		</div>
+	</section>
+
+
+{% endblock %}
