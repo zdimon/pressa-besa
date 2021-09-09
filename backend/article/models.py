@@ -12,6 +12,8 @@ import re
 import subprocess
 from easy_thumbnails.files import get_thumbnailer
 from django.urls import reverse
+from taggit.managers import TaggableManager
+
 
 def remove_html_markup(s):
     s = re.sub( r'<style .*?/style>', '', s , flags=re.DOTALL)
@@ -45,6 +47,7 @@ class Article(models.Model):
     text = models.TextField(verbose_name=_(u'текст статьи'))
     tags = models.TextField(verbose_name=_(u'теги'))
     etags = models.ManyToManyField('catalog.Tag',verbose_name=_(u'Теги статьи'))
+    taggit = TaggableManager()
     author = models.CharField(verbose_name=_(u'автор'), max_length=250, blank=True, null=True)
     cover = models.ImageField(
         verbose_name=_('обложка cтатьи'),

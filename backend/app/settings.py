@@ -236,7 +236,7 @@ if DATABASE == 'pg':
     }    
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
-
+TAGGIT_CASE_INSENSITIVE = True
 
 
 from .local import *

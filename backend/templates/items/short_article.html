@@ -1,10 +1,9 @@
 <div class="article-thumbnail">
     <div class="article-thumbnail__header">
         <ul class="article-thumbnail__header-list">
-            <li>Popular</li>
-            <li>Article</li>
-            <li>New</li>
-            <li>Hot</li>
+             {% for t in a.taggit.all %}
+                <li>{{ t.name }}</li>
+             {% endfor %}
         </ul>
         <div class="article-thumbnail__header-marker js-bookmark" data-issue={{ a.issue.id }} data-page={{ a.page }}>
            
