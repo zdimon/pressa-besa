@@ -6,7 +6,7 @@ from django.http import Http404
 from rest_framework.response import Response
 from django.http import HttpResponse
 from PIL import Image
-# Create your views here.
+from django.shortcuts import redirect
 
 
 def reader_index(request, issue_id):

@@ -20,19 +20,31 @@ export default function AddBookmark(props) {
 
     const submit = function() {
         // console.log(props.issueId);
-        const req = new Request();
-          const data = {
-              "issue_id": props.issueId,
-              "page_id": props.page
-          }
-          setState({ ...state, open: true});
-          req.post('bookmarks/add',data)
-          .then((payload) => {
-              
-              //console.log(payload);
-              setMessage(payload.message);
-          }
-          );
+        if(localStorage.getItem("token")) {
+            const req = new Request();
+            const data = {
+                "issue_id": props.issueId,
+                "page_id": props.page
+            }
+            setState({ ...state, open: true});
+            req.post('bookmarks/add',data)
+            .then((payload) => {
+                
+                //console.log(payload);
+                setMessage(payload.message);
+            }
+            );
+        } else {
+            var el = document.getElementById('js-login-header-link');
+            el.dispatchEvent(
+              new MouseEvent('click', {
+                  view: window,
+                  bubbles: true,
+                  cancelable: true,
+                  buttons: 1
+              })
+            )
+        }
     }
     return (
         <>

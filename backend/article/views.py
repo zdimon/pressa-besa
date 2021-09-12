@@ -26,7 +26,7 @@ def test_cover(request, id):
     return render(request, 'test_cover.html')
 
 
-def article_search(request,key):
+def article_search(request, key):
     arts = Article.objects.filter(taggit__name__in = [str(key)]).order_by('-id')[0:30]
 
     return render(request, 'article/article_search.html', {'arts': arts, 'key': key})

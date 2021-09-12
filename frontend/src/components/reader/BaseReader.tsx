@@ -4,6 +4,9 @@ import ReaderHeader from './ReaderHeader';
 import ImageReader from './ImageReader';
 import TextReader from './TextReader';
 import IssueList from './IssueList';
+import { browserHistory } from 'react-router';
+
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,7 +22,6 @@ export default function BaseReader(props) {
   const req = new Request();
 
   const markIsPaid = () => {
-    console.log('main component!!!!')
     setIsPaid(true)
   }
 
@@ -43,15 +45,18 @@ export default function BaseReader(props) {
        
           <Switch>
             <Route name="image" path="/image-reader/:issue_id">
-            <ImageReader 
-              handleIsPaid={markIsPaid} 
-              isPaid={is_paid} 
-              issueId={props.issueId}>
-            </ImageReader>
-
+              <ImageReader 
+                handleIsPaid={markIsPaid} 
+                isPaid={is_paid} 
+                issueId={props.issueId}>
+              </ImageReader>
             </Route>
             <Route name="text" path="/text-reader/:issue_id">
-            <TextReader isPaid={is_paid} issueId={props.issueId}></TextReader>
+              <TextReader 
+              handleIsPaid={markIsPaid}
+              isPaid={is_paid} 
+              issueId={props.issueId}
+              ></TextReader>
             </Route>
             <Route name="list" path="/list-reader/:issue_id">
               <IssueList />

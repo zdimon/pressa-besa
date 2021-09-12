@@ -113,8 +113,11 @@ class SettingsView(APIView):
             issue = Issue.objects.get(pk=request.data["issue_id"])
         except ObjectDoesNotExist:
             return Response({"status": 1, "message": "Issue not found"})
-
-        return Response({ "has_articles": issue.has_articles, "is_paid": issue.is_paid(request.user.customer)})
+        if request.user.is_authenticated:
+            is_paid = issue.is_paid(request.user.customer)
+        else:
+            is_paid = False
+        return Response({ "has_articles": issue.has_articles, "is_paid": is_paid, "issue_id": request.data["issue_id"]})
 
 
 class PageDetailView(APIView):

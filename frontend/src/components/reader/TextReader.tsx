@@ -3,6 +3,9 @@ import { Request } from '../../Request';
 
 import Modal from '@material-ui/core/Modal';
 import { makeStyles } from '@material-ui/core/styles';
+import AddBookmark from '../bookmarks/bookmarks';
+import PaymentDialog from '../Modal/Payment/PaymentDialog';
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -38,6 +41,7 @@ export default function TextReader(props) {
   const [modalStyle] = React.useState(getModalStyle);
 
   const [articles, setArticles] = React.useState([]);
+
   const [current_article, setCurrentArticle] = React.useState({});
   const [show_current, setShowCurrent] = React.useState(false);
   const [show_image, setShowImage] = React.useState(false);
@@ -47,8 +51,15 @@ export default function TextReader(props) {
     setOpenPayDialog(false);
   };
 
-  const selectArticle = (article_id) => {
+  const closePaymentDialog = () => {
+    setOpenPayDialog(false);
+  }
 
+  const markIsPaid = () => {
+    props.handleIsPaid();
+  }
+
+  const selectArticle = (article_id) => {
     req.post('reader/article',{article_id: article_id})
     .then((payload) => {
       setCurrentArticle(payload.payload);
@@ -77,7 +88,7 @@ export default function TextReader(props) {
 
     return (
       <>
-      <section className="section bg-gradient-gray">
+      <section className="section">
         <div className="container position-relative">
 
           <div className="row row-20" style={ show_current? {} : {"display": "none"} }>
@@ -109,15 +120,47 @@ export default function TextReader(props) {
 
 
 
-
+          
           <div className="articles-grid">
               {articles.map((item,index) => (
                 <div className="article-thumbnail">
+                <div className="article-thumbnail__header">
+                <ul className="article-thumbnail__header-list">
+                        {item.tags.map((el) => (
+                          <li>
+                             {el}
+                          </li>
+                        ))}
+                </ul>
+                   <div className="article-thumbnail__header-marker" >
+                   <AddBookmark  
+                    issueId={item.id} 
+                    page={item.page} 
+                    />
+                </div>
+                </div>
+                
                     <div className="article-thumbnail__body">
                         <div className="article-thumbnail__body-caption">
                             {props.isPaid?
                                <a href="#" onClick={() => selectArticle(item.id)} >{item.title}</a>:
-                               <a href="#" onClick={() => setOpenPayDialog(true)} >{item.title}</a>
+                               <a href="#" onClick={() => {
+                                if(!localStorage.getItem("token"))
+                                {
+                                  var el = document.getElementById('js-login-header-link');
+                                  el.dispatchEvent(
+                                    new MouseEvent('click', {
+                                        view: window,
+                                        bubbles: true,
+                                        cancelable: true,
+                                        buttons: 1
+                                    })
+                                  )
+                                  return true;
+                                } else {
+                                  return setOpenPayDialog(true)
+                                }
+                               }} >{item.title}</a>
                             }
                             <p>
                                 {item.short_text}
@@ -133,18 +176,12 @@ export default function TextReader(props) {
         </div>
       </section>
 
-      <Modal
-      open={open_pay_dialog}
-      onClose={handleClose}
-      >
-      <div  className={classes.paper} style={modalStyle}>
-      <h2 id="simple-modal-title">Вы не оплатили выпуск</h2>
-      <p id="simple-modal-description">
-      <a href="/lk">Перейдите для оплаты</a>
-      </p>
-
-      </div>
-      </Modal>
+      <PaymentDialog 
+      handleClose={closePaymentDialog} 
+      handleIsPaid={markIsPaid}
+      open={open_pay_dialog} 
+      issueId={props.issueId}>
+      </PaymentDialog>
       </>
     )
 }

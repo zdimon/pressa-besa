@@ -133,7 +133,7 @@ export default function ImageReader(props) {
                 <div className="swiper-wrapper">
                   <Swiper
                     spaceBetween={10}
-                    slidesPerView={4} 
+                    slidesPerView={8} 
                     loop={false}    
                     loopedSlides={8}
                     centeredSlides={true}

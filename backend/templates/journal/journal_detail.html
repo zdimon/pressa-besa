@@ -16,7 +16,15 @@
                     <img src="{{ current_issue.just_cover }}" alt="">
                     
                     <div class="card-media__action">
-                        <a href="{% url 'reader' issue_id=current_issue.id %}" class="button button-primary">Читать</a>
+                        <a 
+                        {% if not current_issue.has_articles %}
+                        href="{% url 'reader' issue_id=current_issue.id %}" 
+                        {% else %}
+                            href="{% url 'text-reader' issue_id=current_issue.id %}"
+                        {% endif %}
+                        class="button button-primary">
+                        Читать
+                        </a>
                     </div>
                 </div>
             </div>

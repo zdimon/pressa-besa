@@ -26,3 +26,4 @@ GitPython
 django-modeltranslation==0.17.2
 django-flatblocks
 django-rosetta
+django-taggit-serializer
