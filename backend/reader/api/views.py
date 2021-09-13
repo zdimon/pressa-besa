@@ -78,6 +78,25 @@ class ArticlesView(APIView):
         return Response({ "status":0, "payload": out })
 
 
+class ArticlesFilterView(APIView):
+    '''
+
+     Get articles of the tag key.
+
+    '''
+    permission_classes = (AllowAny,)
+
+    @swagger_auto_schema(
+        request_body=ArticleRequestSerializer,
+    )
+    def post(self, request):
+        
+        out = []
+        for i in Article.objects.filter(taggit__name__in=[request.data["key"]])[0:30]:
+            out.append(ArticleShortSerializer(i).data)
+        return Response({"status":0, "payload": out})
+
+
 class ArticleDetailView(APIView):
     '''
 

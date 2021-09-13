@@ -43,6 +43,9 @@ export default function TextReader(props) {
   const [articles, setArticles] = React.useState([]);
 
   const [current_article, setCurrentArticle] = React.useState({});
+
+  const [current_tag, setCurrentTag] = React.useState(false);
+
   const [show_current, setShowCurrent] = React.useState(false);
   const [show_image, setShowImage] = React.useState(false);
   const req = new Request();
@@ -60,7 +63,12 @@ export default function TextReader(props) {
   }
 
   const filterArticles = (key: string) => {
-    console.log(`filter ${key}`);
+    req.post('reader/articles/filter',{key: key})
+    .then((payload) => {
+      setArticles(payload.payload);
+      setCurrentTag(key);
+    }).catch((err) => { 
+    });
   }
 
   const selectArticle = (article_id) => {
@@ -70,10 +78,8 @@ export default function TextReader(props) {
       setShowCurrent(true);
       if(payload.payload.image_url === 'None'){
         setShowImage(false);
-        console.log('f');
       } else { 
         setShowImage(true);
-        console.log('t');
       }
     }).catch((err) => { 
     });
@@ -94,6 +100,10 @@ export default function TextReader(props) {
       <>
       <section className="section">
         <div className="container position-relative">
+
+        <div className="row" >
+          <h2 className="article-title">{current_tag}</h2>
+        </div>          
 
           <div className="row row-20" style={ show_current? {} : {"display": "none"} }>
             <div 
@@ -134,8 +144,9 @@ export default function TextReader(props) {
                           <li>
                              <a 
                              href="#"
+                             className="color-red"
                              onClick={() => filterArticles(el) }>
-                               {el}
+                               #{el}
                               </a>
                           </li>
                         ))}

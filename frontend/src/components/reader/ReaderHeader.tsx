@@ -4,6 +4,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import RegForm from '../account/RegForm';
 import LoginForm from '../account/LoginForm';
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -12,6 +13,7 @@ import {
     NavLink
   } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import LangSwitcher from '../i18n/LangSwitcher';
 
 
 export default function ReaderHeader(props) {
@@ -61,7 +63,7 @@ export default function ReaderHeader(props) {
                                         to={{ 
                                                 pathname: `/text-reader/${props.issueId}`
                                             }}>
-                                            <img width="25" src="/static/images/text.svg" />
+                                            <img className="fa-icon" src="/static/images/text.svg" />
                                             <span className="hide-in-mobile">
                                                 Текстовая версия
                                             </span>
@@ -72,7 +74,7 @@ export default function ReaderHeader(props) {
                                             <Link to={{
                                                 pathname: `/image-reader/${props.issueId}`
                                                 }} >
-                                            <img width="25" src="/static/images/pdf.svg" />
+                                            <img className="fa-icon" src="/static/images/pdf.svg" />
                                             <span className="hide-in-mobile">PDF версия</span>
                                             </Link>
                                             )}
@@ -81,11 +83,11 @@ export default function ReaderHeader(props) {
                     
                             <div className="right-rider-menu">
                               <Link to={`/list-reader/${props.issueId}`}>
-                                  <img width="25" src="/static/images/list.svg" />
+                                  <img className="fa-icon" src="/static/images/list.svg" />
                               </Link>  
                               { window.localStorage.getItem('token') &&
                                 (<a href="/lk">
-                                    <img width="25" src="/static/images/user.svg" />
+                                    <img className="fa-icon" src="/static/images/user.svg" />
                                 </a> 
                               ) 
                               }
@@ -96,12 +98,12 @@ export default function ReaderHeader(props) {
                                     href="#" 
                                     onClick={ () => {setShowPanel(true)}}  
                                     className="rd-nav-options__login">
-                                                                                                        <img width="25" src="/static/images/user.svg" /> 
+                                                                                                        <img className="fa-icon" src="/static/images/user.svg" /> 
                                           
                                     </a>
                               ) 
                               }
-
+                                <LangSwitcher selector="ru"/>
                             </div>
 
                                 
