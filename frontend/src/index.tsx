@@ -74,7 +74,7 @@ const swEls = document.getElementsByClassName("js-lang-switcher");
 const bmEls = document.getElementsByClassName("js-bookmark");
 [].forEach.call(bmEls, function (el) {
     render(<AddBookmark  
-        issueId={el.getAttribute('data-issue')} 
+        articleId={el.getAttribute('data-article')} 
         page={el.getAttribute('data-page')} 
         />, el)
 }); 

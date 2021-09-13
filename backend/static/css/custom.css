@@ -105,3 +105,8 @@
 .hidden {
     display: none;
 }
+
+.fa-icon {
+    width: 20px;
+}
+

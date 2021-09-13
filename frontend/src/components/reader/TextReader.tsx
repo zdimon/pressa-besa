@@ -59,6 +59,10 @@ export default function TextReader(props) {
     props.handleIsPaid();
   }
 
+  const filterArticles = (key: string) => {
+    console.log(`filter ${key}`);
+  }
+
   const selectArticle = (article_id) => {
     req.post('reader/article',{article_id: article_id})
     .then((payload) => {
@@ -128,13 +132,17 @@ export default function TextReader(props) {
                 <ul className="article-thumbnail__header-list">
                         {item.tags.map((el) => (
                           <li>
-                             {el}
+                             <a 
+                             href="#"
+                             onClick={() => filterArticles(el) }>
+                               {el}
+                              </a>
                           </li>
                         ))}
                 </ul>
                    <div className="article-thumbnail__header-marker" >
                    <AddBookmark  
-                    issueId={item.id} 
+                    articleId={item.id} 
                     page={item.page} 
                     />
                 </div>

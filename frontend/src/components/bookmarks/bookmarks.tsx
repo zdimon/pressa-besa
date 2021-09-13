@@ -23,7 +23,7 @@ export default function AddBookmark(props) {
         if(localStorage.getItem("token")) {
             const req = new Request();
             const data = {
-                "issue_id": props.issueId,
+                "article_id": props.articleId,
                 "page_id": props.page
             }
             setState({ ...state, open: true});

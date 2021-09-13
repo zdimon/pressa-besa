@@ -28,7 +28,7 @@ export default function UserMenu() {
     return (
       <>
         <a href="/lk" className="rd-nav-options__login">
-           Кабинет
+          <img className="fa-icon" src="/static/images/user.svg" />
         </a>
         
         <a 
@@ -37,7 +37,7 @@ export default function UserMenu() {
         className="rd-nav-options__login">
 
               <span className="rd-nav-options__login-title" id="js-logout-header-link">
-                Выход
+                <img className="fa-icon" src="/static/images/logout.svg" />
               </span>
         </a>
       </>

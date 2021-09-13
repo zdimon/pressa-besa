@@ -12,5 +12,6 @@ class Bookmarks(models.Model):
                                     default='pdf',
                                     max_length=3)
     issue = models.ForeignKey('journal.Issue',verbose_name=_(u'выпуск издания'), on_delete=models.CASCADE)
+    article = models.IntegerField(verbose_name=_(u'статья'), null=True, blank=True)
     owner = models.ForeignKey('auth.User', verbose_name=_(u'пользователь'), on_delete=models.CASCADE)
     page = models.SmallIntegerField(verbose_name=_(u'Страница'),default=0, db_index=True)

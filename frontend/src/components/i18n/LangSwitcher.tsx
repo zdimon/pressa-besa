@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 20,
     marginBottom: 20,
     minWidth: 40,
+    marginTop: 10,
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -33,9 +34,9 @@ export default function LangSwitcher(props) {
       value={lang}
       onChange={handleChange}
     >
-      <MenuItem value="ru">RU</MenuItem>
-      <MenuItem value="en">EN</MenuItem>
-      <MenuItem value="de">DE</MenuItem>
+      <MenuItem value="ru"><img width="20" src="/static/images/ru.svg" /></MenuItem>
+      <MenuItem value="en"><img src="/static/images/uk.svg" /></MenuItem>
+      <MenuItem value="de"><img src="/static/images/de.svg" /></MenuItem>
     </Select>   
   
     )
