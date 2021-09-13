@@ -30,8 +30,7 @@
 }
 
 .nav-riader-links img {
-    width: 25px;
-    height: 20px;
+  
     padding-right: 5px;
 }
 
@@ -101,4 +100,8 @@
 
 .color-red {
     color: red;
+}
+
+.hidden {
+    display: none;
 }

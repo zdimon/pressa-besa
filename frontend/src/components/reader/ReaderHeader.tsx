@@ -48,8 +48,11 @@ export default function ReaderHeader(props) {
                                
                                 <div className="right-links-wrapper">
                                     <div className="rd-navbar-logo">
-                                        <a className="brand" href="/" >
+                                        <a className="brand hide-in-mobile" href="/" >
                                         <img src="/static/images/brand.svg" />
+                                        </a>
+                                        <a className="brand show-in-mobile hidden" href="/" >
+                                        <img src="/static/images/brand-short.svg" />
                                         </a>
                                     </div>
                                     <div className="nav-riader-links" >
@@ -58,7 +61,7 @@ export default function ReaderHeader(props) {
                                         to={{ 
                                                 pathname: `/text-reader/${props.issueId}`
                                             }}>
-                                            <img width="25" height="25" src="/static/images/txtver.jpg" />
+                                            <img width="25" src="/static/images/text.svg" />
                                             <span className="hide-in-mobile">
                                                 Текстовая версия
                                             </span>
@@ -69,8 +72,8 @@ export default function ReaderHeader(props) {
                                             <Link to={{
                                                 pathname: `/image-reader/${props.issueId}`
                                                 }} >
-                                            <img width="25" src="/static/images/txtver.jpg" />
-                                            PDF версия
+                                            <img width="25" src="/static/images/pdf.svg" />
+                                            <span className="hide-in-mobile">PDF версия</span>
                                             </Link>
                                             )}
                                     </div>
@@ -78,11 +81,11 @@ export default function ReaderHeader(props) {
                     
                             <div className="right-rider-menu">
                               <Link to={`/list-reader/${props.issueId}`}>
-                                  <img src="/static/images/list-icon.jpg" />
+                                  <img width="25" src="/static/images/list.svg" />
                               </Link>  
                               { window.localStorage.getItem('token') &&
                                 (<a href="/lk">
-                                    <img src="/static/images/user-icon.jpg" />
+                                    <img width="25" src="/static/images/user.svg" />
                                 </a> 
                               ) 
                               }
@@ -93,7 +96,7 @@ export default function ReaderHeader(props) {
                                     href="#" 
                                     onClick={ () => {setShowPanel(true)}}  
                                     className="rd-nav-options__login">
-                                                                                                        <img src="/static/images/user-icon.jpg" /> 
+                                                                                                        <img width="25" src="/static/images/user.svg" /> 
                                           
                                     </a>
                               ) 
