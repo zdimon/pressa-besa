@@ -66,6 +66,7 @@ urlpatterns = [
 ]
 
 from django.contrib.flatpages import views
+from translator.views import translate
 
 urlpatterns += i18n_patterns(
     path('', index),
@@ -81,7 +82,8 @@ urlpatterns += i18n_patterns(
     path('advertiser/', views.flatpage, {'url': '/advertiser/'}, name='advertiser'),
     path('help/', views.flatpage, {'url': '/help/'}, name='help'),
     path('agreement/', views.flatpage, {'url': '/agreement/'}, name='agreement'),
-    path('privacy/', views.flatpage, {'url': '/privacy/'}, name='privacy')
+    path('privacy/', views.flatpage, {'url': '/privacy/'}, name='privacy'),
+    path('translate', translate),
 
 )
 

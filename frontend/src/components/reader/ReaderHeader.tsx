@@ -4,6 +4,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import RegForm from '../account/RegForm';
 import LoginForm from '../account/LoginForm';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+
 
 import {
     BrowserRouter as Router,
@@ -21,6 +24,16 @@ export default function ReaderHeader(props) {
     const location = useLocation();
     const [showPanel, setShowPanel] = React.useState(false);
     const [value, setValue] = React.useState(0);
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+  
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
 
     const doLogin = (token) => {
         setShowPanel(false);
@@ -86,7 +99,10 @@ export default function ReaderHeader(props) {
                                   <img className="fa-icon" src="/static/images/list.svg" />
                               </Link>  
                               { window.localStorage.getItem('token') &&
-                                (<a href="/lk">
+                                (<a 
+                                   aria-controls="user-menu" aria-haspopup="true" 
+                                   onClick={handleClick} 
+                                   href="#">
                                     <img className="fa-icon" src="/static/images/user.svg" />
                                 </a> 
                               ) 
@@ -117,6 +133,19 @@ export default function ReaderHeader(props) {
             </nav>
         </div>
     </header>
+
+     <Menu
+        id="user-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose}>Закладки</MenuItem>
+        <MenuItem onClick={handleClose}>Моя коллекция</MenuItem>
+        <MenuItem onClick={handleClose}>Профиль</MenuItem>
+      </Menu>
+
 
         <Drawer anchor="right" open={showPanel} onClose={() => {
             setShowPanel(false)
