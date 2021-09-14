@@ -1,5 +1,5 @@
 wheel
-Django
+Django==2.2 
 requests
 bs4
 python-socketio
