@@ -79,7 +79,7 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(str(BASE_DIR),'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,7 +135,7 @@ USE_L10N = True
 USE_TZ = True
 
 LOCALE_PATHS = (
-        os.path.join(BASE_DIR, "locale"),
+        os.path.join(str(BASE_DIR), "locale"),
     )
 
 LANGUAGES = (
