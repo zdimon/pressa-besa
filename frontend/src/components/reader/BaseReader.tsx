@@ -17,12 +17,10 @@ export default function BaseReader(props) {
 
   const [has_article, setHasArticle] = React.useState(false);
   const [is_paid, setIsPaid] = React.useState(false);
-  const [issueId, setIssueId] = React.useState(props.issueId);
+
   const req = new Request();
 
-  const changeIssue = (issueId) => {
-    setIssueId(issueId);
-  }
+
 
   const markIsPaid = () => {
     setIsPaid(true)
@@ -58,8 +56,7 @@ export default function BaseReader(props) {
               <TextReader 
               handleIsPaid={markIsPaid}
               isPaid={is_paid} 
-              issueId={issueId}
-              changeIssue={changeIssue}
+              issueId={props.issueId}
               ></TextReader>
             </Route>
             <Route name="list" path="/list-reader/:issue_id">
