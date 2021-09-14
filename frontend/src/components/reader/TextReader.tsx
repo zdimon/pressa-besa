@@ -50,6 +50,9 @@ export default function TextReader(props) {
   const [issues, setIssues] = React.useState([]);
   const [show_current, setShowCurrent] = React.useState(false);
   const [show_image, setShowImage] = React.useState(false);
+
+  const [issueId, setIssueId] = React.useState(props.issueId);
+
   const req = new Request();
 
   const handleClose = () => {
@@ -62,6 +65,7 @@ export default function TextReader(props) {
 
   const changeIssue = (issue_id) => {
     props.changeIssue(issue_id);
+    setIssueId(issue_id);
   }
 
   const markIsPaid = () => {
@@ -98,7 +102,6 @@ export default function TextReader(props) {
       const req = new Request();
       req.post('reader/issue/list',{issue_id: props.issueId})
       .then((payload) => {
-        console.log(payload);
         setIssues(payload.payload);
       }).catch((err) => { 
       });
@@ -109,7 +112,7 @@ export default function TextReader(props) {
       setArticles(payload.payload);
     }).catch((err) => { 
     });
-  }, []);
+  }, [issueId]);
 
     return (
       <>
