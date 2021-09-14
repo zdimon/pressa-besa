@@ -6,6 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import AddBookmark from '../bookmarks/bookmarks';
 import PaymentDialog from '../Modal/Payment/PaymentDialog';
 import  { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from "react-router-dom";
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -220,7 +222,12 @@ export default function TextReader(props) {
               {issues.map((item,index) =>
                 <SwiperSlide>
                     <div className="swiper-slide">
-                      <img src={item.common_cover} alt="" />
+                      <Link to={{
+                          pathname: `/text-reader/${item.id}`
+                      }} >
+                        <img src={item.common_cover} alt="" />
+                      </Link>
+                      
                     </div>
                 </SwiperSlide>
               )}
