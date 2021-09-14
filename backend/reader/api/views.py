@@ -92,7 +92,7 @@ class ArticlesFilterView(APIView):
     def post(self, request):
         
         out = []
-        for i in Article.objects.filter(taggit__name__in=[request.data["key"]])[0:30]:
+        for i in Article.objects.filter(taggit__name__in=[request.data["key"]]).order_by('-id')[0:30]:
             out.append(ArticleShortSerializer(i).data)
         return Response({"status":0, "payload": out})
 
