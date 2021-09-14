@@ -8,7 +8,6 @@ python-dotenv
 Pillow==3.0.0
 djangorestframework
 drf-yasg
-flake8
 social-auth-app-django
 django-extensions
 django-filter==2.4.0
