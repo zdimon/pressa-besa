@@ -1,7 +1,4 @@
-python3 -m venv venv
-. ./venv/bin/activate
 pip3 install -r requirements.txt
-rm db.sqlite3
 python3 manage.py migrate
 python3 manage.py load_users
 python3 manage.py load_journals
