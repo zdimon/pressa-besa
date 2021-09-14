@@ -64,6 +64,7 @@ export default function TextReader(props) {
   }
 
   const changeIssue = (issue_id) => {
+    props.changeIssue(issue_id);
     setIssueId(issue_id);
   }
 
