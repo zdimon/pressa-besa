@@ -60,6 +60,10 @@ export default function TextReader(props) {
     setOpenPayDialog(false);
   }
 
+  const changeIssue = (issue_id) => {
+    props.changeIssue(issue_id);
+  }
+
   const markIsPaid = () => {
     props.handleIsPaid();
   }
@@ -225,7 +229,9 @@ export default function TextReader(props) {
                       <Link to={{
                           pathname: `/text-reader/${item.id}`
                       }} >
-                        <img src={item.common_cover} alt="" />
+                        <img 
+                        onClick={() => changeIssue(item.id)}
+                        src={item.common_cover} alt="" />
                       </Link>
                       
                     </div>
