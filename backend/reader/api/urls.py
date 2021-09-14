@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import PagesView, ArticlesView, ArticleDetailView, SettingsView, PageDetailView, PreorderView, MakePaymentView, ArticlesFilterView
+from .views import PagesView, ArticlesView, ArticleDetailView, SettingsView, PageDetailView, PreorderView, MakePaymentView, ArticlesFilterView, IssueListView
 
 
 urlpatterns = [
@@ -10,5 +10,6 @@ urlpatterns = [
     path('settings', SettingsView.as_view()),
     path('page/detail', SettingsView.as_view()),
     path('preorder', PreorderView.as_view()),
-    path('make_payment', MakePaymentView.as_view())
+    path('make_payment', MakePaymentView.as_view()),
+    path('issue/list', IssueListView.as_view()),
 ]

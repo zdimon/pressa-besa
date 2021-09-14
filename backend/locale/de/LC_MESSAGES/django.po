@@ -1,0 +1,960 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-14 07:53+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: accounts/models.py:7
+msgid "Женский"
+msgstr ""
+
+#: accounts/models.py:7
+msgid "Мужской"
+msgstr ""
+
+#: accounts/models.py:8
+msgid "отчество"
+msgstr ""
+
+#: accounts/models.py:11
+msgid "счёт пользователя"
+msgstr ""
+
+#: accounts/models.py:16
+msgid "фотография пользователя"
+msgstr ""
+
+#: accounts/models.py:19
+msgid "пол"
+msgstr ""
+
+#: accounts/views.py:95
+msgid "Вы зарегистрированы. Проверте email с паролем."
+msgstr ""
+
+#: announce/models.py:20 announce/models.py:33 announce/models.py:49
+#: article/models.py:45
+msgid "заголовок"
+msgstr ""
+
+#: announce/models.py:21
+msgid "текст анонса выпуска"
+msgstr ""
+
+#: announce/models.py:23 article/models.py:57 bookmarks/models.py:14
+msgid "выпуск издания"
+msgstr ""
+
+#: announce/models.py:28
+msgid "анонс выпуска"
+msgstr ""
+
+#: announce/models.py:29
+msgid "анонсы выпусков"
+msgstr ""
+
+#: announce/models.py:34
+msgid "текст анонса"
+msgstr ""
+
+#: announce/models.py:36
+msgid "страница печатного издания"
+msgstr ""
+
+#: announce/models.py:38 article/models.py:175
+msgid "обложка"
+msgstr ""
+
+#: announce/models.py:43
+msgid "избранная статья"
+msgstr ""
+
+#: announce/models.py:44
+msgid "избранные статьи"
+msgstr ""
+
+#: announce/models.py:50
+msgid "Название журнала"
+msgstr ""
+
+#: announce/models.py:51 journal/models/issue_page.py:12
+#: journal/models/purchased_issues.py:26
+msgid "печатное издание"
+msgstr ""
+
+#: announce/models.py:52
+msgid "короткое описание"
+msgstr ""
+
+#: announce/models.py:53
+msgid "начало статьи"
+msgstr ""
+
+#: announce/models.py:54
+msgid "продолжение"
+msgstr ""
+
+#: announce/models.py:55
+msgid "изображение ландшафт"
+msgstr ""
+
+#: announce/models.py:56
+msgid "изображение портрет"
+msgstr ""
+
+#: announce/models.py:61
+msgid "Опубликован?"
+msgstr ""
+
+#: announce/models.py:62
+msgid "Автор"
+msgstr ""
+
+#: announce/models.py:65 catalog/models.py:21
+msgid "Сортировка"
+msgstr ""
+
+#: announce/models.py:146
+msgid "обзор"
+msgstr ""
+
+#: announce/models.py:147
+msgid "Обзор прессы"
+msgstr ""
+
+#: announce/models.py:153
+msgid "email"
+msgstr ""
+
+#: announce/models.py:177
+msgid "ТОП 10 популярных статей"
+msgstr ""
+
+#: announce/models.py:182
+msgid "подписку"
+msgstr ""
+
+#: announce/models.py:183
+msgid "Подписки на рассылку"
+msgstr ""
+
+#: announce/models.py:187
+msgid "Кол-во подписчиков"
+msgstr ""
+
+#: announce/models.py:188
+msgid "Кол-во приходов"
+msgstr ""
+
+#: announce/models.py:190
+msgid "лог"
+msgstr ""
+
+#: announce/models.py:191
+msgid "История рассылки"
+msgstr ""
+
+#: article/models.py:37
+msgid "название"
+msgstr ""
+
+#: article/models.py:41
+msgid "категория"
+msgstr ""
+
+#: article/models.py:42
+msgid "категории"
+msgstr ""
+
+#: article/models.py:46
+msgid "подзаголовок"
+msgstr ""
+
+#: article/models.py:47
+msgid "текст статьи"
+msgstr ""
+
+#: article/models.py:48
+msgid "теги"
+msgstr ""
+
+#: article/models.py:49
+msgid "Теги статьи"
+msgstr ""
+
+#: article/models.py:51 article/models.py:199
+msgid "автор"
+msgstr ""
+
+#: article/models.py:53
+msgid "обложка cтатьи"
+msgstr ""
+
+#: article/models.py:61 journal/models/journal.py:34
+msgid "Категории в Pressa.ru"
+msgstr ""
+
+#: article/models.py:63 bookmarks/models.py:17
+#: templates/catalog/category_detail.html:56 templates/items/page.html:15
+#: templates/lk/tabs/bookmarks.html:10
+msgid "Страница"
+msgstr ""
+
+#: article/models.py:65
+msgid "Порядок"
+msgstr ""
+
+#: article/models.py:69
+msgid "опубликован?"
+msgstr ""
+
+#: article/models.py:114
+msgid "Имя шрифта"
+msgstr ""
+
+#: article/models.py:115
+msgid "Файл"
+msgstr ""
+
+#: article/models.py:124
+msgid "Белый"
+msgstr ""
+
+#: article/models.py:125
+msgid "Черный"
+msgstr ""
+
+#: article/models.py:129 journal/models/issue.py:16
+#: journal/models/purchased_issues.py:24 subscribe/models.py:59
+msgid "издание"
+msgstr ""
+
+#: article/models.py:131
+msgid "Заголовок x"
+msgstr ""
+
+#: article/models.py:133
+msgid "Заголовок y"
+msgstr ""
+
+#: article/models.py:136
+msgid "Размер заголовка"
+msgstr ""
+
+#: article/models.py:139
+msgid "Цвет заголовка"
+msgstr ""
+
+#: article/models.py:144
+msgid "Выпуск x"
+msgstr ""
+
+#: article/models.py:146
+msgid "Выпуск y"
+msgstr ""
+
+#: article/models.py:149
+msgid "Размер номера"
+msgstr ""
+
+#: article/models.py:151
+msgid "Цвет номера"
+msgstr ""
+
+#: article/models.py:156
+msgid "Категория x"
+msgstr ""
+
+#: article/models.py:158
+msgid "Категория y"
+msgstr ""
+
+#: article/models.py:161
+msgid "Размер категории"
+msgstr ""
+
+#: article/models.py:163
+msgid "Цвет категории"
+msgstr ""
+
+#: article/models.py:169
+msgid "шрифт"
+msgstr ""
+
+#: billing/models.py:43
+msgid "Покупка на сайте"
+msgstr ""
+
+#: billing/models.py:44
+msgid "Восстановление денег на счёте"
+msgstr ""
+
+#: billing/models.py:45
+msgid "Начисление на счёт"
+msgstr ""
+
+#: billing/models.py:46
+msgid "Вывод денег со счёта"
+msgstr ""
+
+#: billing/models.py:47
+msgid "Генерация подарочного кода"
+msgstr ""
+
+#: billing/models.py:48
+msgid "Получение подарка по промокоду"
+msgstr ""
+
+#: billing/models.py:49 journal/models/purchased_issues.py:17
+msgid "Покупка через iPad-приложение"
+msgstr ""
+
+#: billing/models.py:50
+msgid "Начисление на счет администратором"
+msgstr ""
+
+#: billing/models.py:51
+msgid "Снятие со счета администратором"
+msgstr ""
+
+#: billing/models.py:52
+msgid "Снятие остаточной суммы, при покупке с пополнением счета"
+msgstr ""
+
+#: billing/models.py:53
+msgid "Возврат средств за покупку"
+msgstr ""
+
+#: billing/models.py:54
+msgid "Бонус на счёт за покупку по акции"
+msgstr ""
+
+#: billing/models.py:55
+msgid "Покупка товаров \"Киоск у дома\""
+msgstr ""
+
+#: billing/models.py:75 bookmarks/models.py:16
+#: journal/models/purchased_issues.py:21 subscribe/models.py:89
+msgid "пользователь"
+msgstr ""
+
+#: billing/models.py:76
+msgid "тип финансовой операции"
+msgstr ""
+
+#: billing/models.py:78
+msgid "платёжная система"
+msgstr ""
+
+#: billing/models.py:81
+msgid "заявленная сумма операции"
+msgstr ""
+
+#: billing/models.py:82
+msgid "реально оплаченная сумма"
+msgstr ""
+
+#: billing/models.py:84
+msgid "сумма с учетом скидки"
+msgstr ""
+
+#: billing/models.py:88
+msgid "Тип скидки"
+msgstr ""
+
+#: billing/models.py:93
+msgid "транзакция подтверждена"
+msgstr ""
+
+#: billing/models.py:99
+msgid "ID транзакции из квитанции App Store"
+msgstr ""
+
+#: billing/models.py:101
+msgid "Дополнительная информация"
+msgstr ""
+
+#: bookmarks/models.py:7
+msgid "PDF ридер"
+msgstr ""
+
+#: bookmarks/models.py:8
+msgid "Текстовый ридер"
+msgstr ""
+
+#: bookmarks/models.py:10
+msgid "тип ридера"
+msgstr ""
+
+#: bookmarks/models.py:15
+msgid "статья"
+msgstr ""
+
+#: bookmarks/views.py:33
+msgid "Статья не найдена."
+msgstr ""
+
+#: bookmarks/views.py:37
+msgid "Закладка уже существует."
+msgstr ""
+
+#: bookmarks/views.py:46
+msgid "Закладка добавлена."
+msgstr ""
+
+#: bookmarks/views.py:48
+msgid "Ошибка данных."
+msgstr ""
+
+#: catalog/models.py:11 journal/models/journal.py:15
+msgid "Журнал"
+msgstr ""
+
+#: catalog/models.py:12 journal/models/journal.py:16
+msgid "Газета"
+msgstr ""
+
+#: catalog/models.py:13 journal/models/journal.py:17
+msgid "Книга"
+msgstr ""
+
+#: catalog/models.py:16
+msgid "наименование категории каталога"
+msgstr ""
+
+#: catalog/models.py:17
+msgid "тип издания"
+msgstr ""
+
+#: catalog/models.py:25
+msgid "показывать ли в новом каталоге?"
+msgstr ""
+
+#: journal/models/extra.py:11
+msgid " Скидка за наш счет."
+msgstr ""
+
+#: journal/models/extra.py:14
+msgid "Пропорциональная скидка."
+msgstr ""
+
+#: journal/models/extra.py:17
+msgid "Бонус на лицевой счет за наш счет."
+msgstr ""
+
+#: journal/models/extra.py:20
+msgid "Бонус на лицевой счет с пропорциональным разделением."
+msgstr ""
+
+#: journal/models/issue.py:12
+msgid "номер выпуска"
+msgstr ""
+
+#: journal/models/issue.py:19
+msgid "дата выхода выпуска"
+msgstr ""
+
+#: journal/models/issue.py:23 journal/models/mixins/public.py:6
+#: subscribe/models.py:24
+msgid "отображать ли на сайте?"
+msgstr ""
+
+#: journal/models/issue.py:26
+msgid "маска url обложки"
+msgstr ""
+
+#: journal/models/issue.py:31
+msgid "были ли отконвертированы обложки"
+msgstr ""
+
+#: journal/models/issue_page.py:10
+msgid "номер страницы"
+msgstr ""
+
+#: journal/models/issue_page.py:16
+msgid "файл изображения предпросмотра"
+msgstr ""
+
+#: journal/models/issue_page.py:20
+msgid "файл страницы"
+msgstr ""
+
+#: journal/models/issue_page.py:23
+msgid "файл страницы увеличенный"
+msgstr ""
+
+#: journal/models/journal.py:21
+msgid "Издательство"
+msgstr ""
+
+#: journal/models/journal.py:26
+msgid "тип издания (журнал, газета или книга)"
+msgstr ""
+
+#: journal/models/journal.py:32
+msgid "наименование издания"
+msgstr ""
+
+#: journal/models/journal.py:37
+msgid "обложка по умолчанию"
+msgstr ""
+
+#: journal/models/journal.py:42
+msgid "отображать в новом?"
+msgstr ""
+
+#: journal/models/journal.py:45
+msgid "отображать в популярном?"
+msgstr ""
+
+#: journal/models/journal.py:48
+msgid "позиция в популярном"
+msgstr ""
+
+#: journal/models/journal.py:51
+msgid "Показывать в блоке \"Книги\""
+msgstr ""
+
+#: journal/models/journal.py:54
+msgid "выгружать ли в авиатранспорт?"
+msgstr ""
+
+#: journal/models/journal.py:58
+msgid "ID последнего выпуска"
+msgstr ""
+
+#: journal/models/journal.py:60
+msgid "Размеры обложки"
+msgstr ""
+
+#: journal/models/journal.py:62
+msgid "цена"
+msgstr ""
+
+#: journal/models/mixins/address.py:8 main/models/mixins.py:37
+msgid "Улица"
+msgstr ""
+
+#: journal/models/mixins/address.py:11 main/models/mixins.py:40
+msgid "Номер дома"
+msgstr ""
+
+#: journal/models/mixins/address.py:14 main/models/mixins.py:43
+msgid "Номер,квартиры"
+msgstr ""
+
+#: journal/models/mixins/address.py:17 main/models/mixins.py:46
+msgid "Комментарий по адресу"
+msgstr ""
+
+#: journal/models/mixins/name_slug.py:11 journal/models/mixins/slug.py:23
+msgid "Название для URL"
+msgstr ""
+
+#: journal/models/mixins/seo.py:6 main/models/mixins.py:55
+msgid "Ключевые слова"
+msgstr ""
+
+#: journal/models/mixins/seo.py:8 main/models/mixins.py:57
+msgid "Описание"
+msgstr ""
+
+#: journal/models/office.py:15
+msgid "Название издательства"
+msgstr ""
+
+#: journal/models/office.py:17
+msgid "Сайт издательства"
+msgstr ""
+
+#: journal/models/office.py:19
+msgid "Номер телефона"
+msgstr ""
+
+#: journal/models/office.py:21
+msgid "Логотип издательства"
+msgstr ""
+
+#: journal/models/office.py:25
+msgid "НДС"
+msgstr ""
+
+#: journal/models/office.py:31
+msgid "Отображать ссылку на сайт?"
+msgstr ""
+
+#: journal/models/office.py:56
+msgid "издательство"
+msgstr ""
+
+#: journal/models/office.py:57
+msgid "издательства"
+msgstr ""
+
+#: journal/models/purchased_issues.py:10
+msgid "Разовая покупка c сайта-зеркала"
+msgstr ""
+
+#: journal/models/purchased_issues.py:11
+msgid "Разовая покупка c личного счета"
+msgstr ""
+
+#: journal/models/purchased_issues.py:12
+msgid "Покупка по подписке"
+msgstr ""
+
+#: journal/models/purchased_issues.py:13
+msgid "Покупка по промокоду"
+msgstr ""
+
+#: journal/models/purchased_issues.py:14
+msgid "Покупка по подарочному коду"
+msgstr ""
+
+#: journal/models/purchased_issues.py:15
+msgid "Разовая покупка с пополнением счета"
+msgstr ""
+
+#: journal/models/purchased_issues.py:16
+msgid "Добавление в коллекцию"
+msgstr ""
+
+#: journal/models/purchased_issues.py:18
+msgid "Добавление в коллекцию администрацией"
+msgstr ""
+
+#: journal/models/purchased_issues.py:27
+msgid "тип покупки"
+msgstr ""
+
+#: journal/models/purchased_issues.py:32
+#, python-format
+msgid ""
+"Пользователь %(customer)s приобрел выпуск %(issue)s издания %(journal)s как "
+"%(type)s"
+msgstr ""
+
+#: journal/models/purchased_issues.py:59
+msgid "приобретение пользователя"
+msgstr ""
+
+#: journal/models/purchased_issues.py:60
+msgid "приобретения пользователей"
+msgstr ""
+
+#: main/models/mixins.py:19
+msgid "Активно"
+msgstr ""
+
+#: reader/api/views.py:214
+msgid "Вы уже оплатили этот выпуск."
+msgstr ""
+
+#: subscribe/models.py:18
+msgid "название подписки"
+msgstr ""
+
+#: subscribe/models.py:28
+msgid "отображать ли в iPad?"
+msgstr ""
+
+#: subscribe/models.py:32
+msgid "ID tier-а подписки в App Store"
+msgstr ""
+
+#: subscribe/models.py:35
+msgid "комментарий"
+msgstr ""
+
+#: subscribe/models.py:39
+msgid "отчисления издательству, в рублях"
+msgstr ""
+
+#: subscribe/models.py:45 subscribe/models.py:70
+msgid "месяц"
+msgid_plural "месяцы"
+msgstr[0] ""
+msgstr[1] ""
+
+#: subscribe/models.py:57
+msgid "количество номеров в подписке"
+msgstr ""
+
+#: subscribe/models.py:61
+msgid "число месяцев"
+msgstr ""
+
+#: subscribe/models.py:67
+msgid "выпуск"
+msgid_plural "выпуски"
+msgstr[0] ""
+msgstr[1] ""
+
+#: subscribe/models.py:76
+#, python-format
+msgid ""
+"%(issues)d %(issues_plural)s (%(months)d %(months_plural)s) за %(cost)10.2f "
+"руб. (экономия %(discount)d руб.)"
+msgstr ""
+
+#: subscribe/models.py:78
+#, python-format
+msgid ""
+"%(issues)d %(issues_plural)s (%(months)d %(months_plural)s) за %(cost)10.2f "
+"руб."
+msgstr ""
+
+#: subscribe/models.py:82 subscribe/models.py:91
+msgid "подписка"
+msgstr ""
+
+#: subscribe/models.py:83
+msgid "подписки"
+msgstr ""
+
+#: subscribe/models.py:93
+msgid "количество оставшихся номеров по подписке"
+msgstr ""
+
+#: subscribe/models.py:96
+#, python-format
+msgid "%(id)s - %(customer)s подписан на %(subscription)s"
+msgstr ""
+
+#: subscribe/models.py:140
+msgid "подписка пользователя"
+msgstr ""
+
+#: subscribe/models.py:141
+msgid "подписки пользователей"
+msgstr ""
+
+#: subscribe/models.py:153
+msgid "Название абонемента"
+msgstr ""
+
+#: subscribe/models.py:157
+msgid "Издания доступные по абонементу"
+msgstr ""
+
+#: subscribe/models.py:254 templates/lk/index.html:21
+msgid "Абонемент"
+msgstr ""
+
+#: subscribe/models.py:255
+msgid "Абонементы"
+msgstr ""
+
+#: subscribe/models.py:260
+msgid "Cтоимость подписки"
+msgstr ""
+
+#: subscribe/models.py:262
+msgid "Действиет при покупке от"
+msgstr ""
+
+#: subscribe/models.py:263
+msgid "выпусков"
+msgstr ""
+
+#: subscribe/models.py:266
+#, python-brace-format
+msgid "Абонемент на {0} дней за {1}"
+msgstr ""
+
+#: subscribe/models.py:271
+msgid "Скидка на Абонемент"
+msgstr ""
+
+#: subscribe/models.py:272
+msgid "Скидки на Абонементы"
+msgstr ""
+
+#: subscribe/models.py:277
+msgid "Начало подписки"
+msgstr ""
+
+#: subscribe/models.py:278
+msgid "Окончание подписки"
+msgstr ""
+
+#: subscribe/models.py:280
+msgid "Cтоимость подписки с учетом скидки"
+msgstr ""
+
+#: subscribe/models.py:346
+msgid "Абонемент пользователя"
+msgstr ""
+
+#: subscribe/models.py:347
+msgid "Абонементы пользователей"
+msgstr ""
+
+#: subscribe/views.py:28
+msgid "У вас недостаточно средств на счету!"
+msgstr ""
+
+#: subscribe/views.py:31
+#, python-format
+msgid "Абонемент на %s дней активирован."
+msgstr ""
+
+#: templates/announce/detail.html:56 templates/article/article_detail.html:90
+msgid "Другие"
+msgstr ""
+
+#: templates/announce/detail.html:57 templates/article/article_detail.html:91
+msgid "статьи"
+msgstr ""
+
+#: templates/article/article_search.html:9
+msgid "Поиск"
+msgstr ""
+
+#: templates/blocks/header.html:68
+msgid "Журналы"
+msgstr ""
+
+#: templates/blocks/header.html:70
+msgid "Газеты"
+msgstr ""
+
+#: templates/blocks/header.html:72
+msgid "Книги"
+msgstr ""
+
+#: templates/blocks/header.html:75
+msgid "Статьи"
+msgstr ""
+
+#: templates/items/journal.html:26 templates/lk/tabs/collection.html:17
+msgid "Читать"
+msgstr ""
+
+#: templates/lk/index.html:13
+msgid "Личный кабинет"
+msgstr ""
+
+#: templates/lk/index.html:17
+msgid "Ваш счет"
+msgstr ""
+
+#: templates/lk/index.html:19
+msgid "Подписки"
+msgstr ""
+
+#: templates/lk/index.html:23
+msgid "Коллекция"
+msgstr ""
+
+#: templates/lk/index.html:25 templates/lk/tabs/payments.html:5
+msgid "Платежи"
+msgstr ""
+
+#: templates/lk/index.html:27
+msgid "Закладки"
+msgstr ""
+
+#: templates/lk/replanish.html:14
+msgid "Пополнение счета"
+msgstr ""
+
+#: templates/lk/tabs/abonement.html:8
+msgid "Дата начала"
+msgstr ""
+
+#: templates/lk/tabs/abonement.html:9
+msgid "Дата окончания"
+msgstr ""
+
+#: templates/lk/tabs/abonement.html:10
+msgid "Стоимость"
+msgstr ""
+
+#: templates/lk/tabs/account.html:8
+msgid "У вас на счету:"
+msgstr ""
+
+#: templates/lk/tabs/account.html:15
+msgid "Пополнить счет"
+msgstr ""
+
+#: templates/lk/tabs/bookmarks.html:8 templates/lk/tabs/collection.html:8
+#: templates/lk/tabs/subscriptions.html:9
+msgid "Издание"
+msgstr ""
+
+#: templates/lk/tabs/bookmarks.html:9 templates/lk/tabs/collection.html:9
+msgid "Выпуск"
+msgstr ""
+
+#: templates/lk/tabs/collection.html:10
+msgid "Действия"
+msgstr ""
+
+#: templates/lk/tabs/payments.html:8
+msgid "Дата"
+msgstr ""
+
+#: templates/lk/tabs/payments.html:9
+msgid "Операция"
+msgstr ""
+
+#: templates/lk/tabs/payments.html:10
+msgid "Сумма"
+msgstr ""
+
+#: templates/lk/tabs/payments.html:11 templates/lk/tabs/subscriptions.html:11
+msgid "Информация"
+msgstr ""
+
+#: templates/lk/tabs/subscriptions.html:10
+msgid "Название"
+msgstr ""
+
+#: templates/lk/tabs/subscriptions.html:18
+#, python-format
+msgid "Осталось %(subscription_count)s номеров."
+msgstr ""
+
+#: templates/main/search.html:11
+msgid "Поиск по слову"
+msgstr ""
+
+#: templates/main/search.html:22
+msgid "По вашему запросу ничего не найдено"
+msgstr ""
+
+#: translator/views.py:8
+msgid "Текстовая версия"
+msgstr ""
+
+#: translator/views.py:9
+msgid "PDF версия"
+msgstr ""
+
+#: translator/views.py:10
+msgid "Оплата выпуска"
+msgstr ""
+
+#: translator/views.py:11
+msgid "Стоимость покупки"
+msgstr ""
+
+#: translator/views.py:12
+msgid "У вас на счету"
+msgstr ""

@@ -1,3 +1,4 @@
+from posixpath import join
 from re import I
 from django.shortcuts import render
 from rest_framework.views import APIView
@@ -9,6 +10,7 @@ from drf_yasg.utils import swagger_auto_schema
 from rest_framework.response import Response
 from reader.api.serializers.pages import PageRequestSerializer, PageSerializer, PageDetailSerializer, DetailPageRequestSerializer
 from reader.api.serializers.article import ArticleShortSerializer, ArticleRequestSerializer, ArticleDetailSerializer, ArticleDetailRequestSerializer
+from reader.api.serializers.issue import IssueSerializer
 from journal.models import Issue, IssuePage
 from article.models import Article
 from PIL import Image
@@ -94,6 +96,28 @@ class ArticlesFilterView(APIView):
         out = []
         for i in Article.objects.filter(taggit__name__in=[request.data["key"]]).order_by('-id')[0:30]:
             out.append(ArticleShortSerializer(i).data)
+        return Response({"status":0, "payload": out})
+
+
+class IssueListView(APIView):
+    '''
+
+     Get articles of the tag key.
+
+    '''
+    permission_classes = (AllowAny,)
+
+    @swagger_auto_schema(
+        request_body=ArticleRequestSerializer,
+    )
+    def post(self, request):
+        try:
+            issue = Issue.objects.get(pk=request.data["issue_id"])
+        except ObjectDoesNotExist:
+            return Response({"status": 1, "message": "Issue not found"})        
+        out = []
+        for i in Issue.objects.filter(journal=issue.journal).order_by('-id')[0:30]:
+            out.append(IssueSerializer(i).data)
         return Response({"status":0, "payload": out})
 
 

@@ -5,7 +5,7 @@ import Modal from '@material-ui/core/Modal';
 import { makeStyles } from '@material-ui/core/styles';
 import AddBookmark from '../bookmarks/bookmarks';
 import PaymentDialog from '../Modal/Payment/PaymentDialog';
-
+import  { Swiper, SwiperSlide } from 'swiper/react';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -45,7 +45,7 @@ export default function TextReader(props) {
   const [current_article, setCurrentArticle] = React.useState({});
 
   const [current_tag, setCurrentTag] = React.useState(false);
-
+  const [issues, setIssues] = React.useState([]);
   const [show_current, setShowCurrent] = React.useState(false);
   const [show_image, setShowImage] = React.useState(false);
   const req = new Request();
@@ -88,10 +88,19 @@ export default function TextReader(props) {
   useEffect(() => {
 
     
+ 
+      const req = new Request();
+      req.post('reader/issue/list',{issue_id: props.issueId})
+      .then((payload) => {
+        console.log(payload);
+        setIssues(payload.payload);
+      }).catch((err) => { 
+      });
+   
+
     req.post('reader/articles',{issue_id: props.issueId})
     .then((payload) => {
       setArticles(payload.payload);
-      console.log(payload.payload);
     }).catch((err) => { 
     });
   }, []);
@@ -192,6 +201,32 @@ export default function TextReader(props) {
                 </div>
               ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container position-relative">
+          <br />
+            <div className="col-12">
+                <h4 className="text-uppercase">Еще выпуски</h4>
+            </div>
+
+          <Swiper
+              spaceBetween={10}
+              slidesPerView={8} 
+              loop={false}    
+            > 
+
+              {issues.map((item,index) =>
+                <SwiperSlide>
+                    <div className="swiper-slide">
+                      <img src={item.common_cover} alt="" />
+                    </div>
+                </SwiperSlide>
+              )}
+
+            </Swiper>
+            <br />
         </div>
       </section>
 
