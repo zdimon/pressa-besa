@@ -116,7 +116,7 @@ class IssueListView(APIView):
         except ObjectDoesNotExist:
             return Response({"status": 1, "message": "Issue not found"})        
         out = []
-        for i in Issue.objects.filter(journal=issue.journal).order_by('-id')[0:30]:
+        for i in Issue.objects.filter(journal=issue.journal).exclude(pk=issue.pk).order_by('-id')[0:30]:
             out.append(IssueSerializer(i).data)
         return Response({"status":0, "payload": out})
 
