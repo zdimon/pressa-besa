@@ -136,7 +136,6 @@ export default function ImageReader(props) {
                     slidesPerView={8} 
                     loop={false}    
                     loopedSlides={8}
-                    centeredSlides={true}
                     modules={[Controller]}
                     onSwiper={setSecondSwiper}
                     controller={{ control: firstSwiper }}

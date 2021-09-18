@@ -1,10 +1,11 @@
 .multiply-slider-wrap{
 	display: block;
 	overflow: hidden;
-	
+	@media(min-width: 1200px){ 
+		position: relative;
+	}
 	.gallery-top{
 		position: relative;
-		padding-top: 10px;
 		.swiper-button-next,.swiper-button-prev{
 			position: absolute;
 			margin-top: 0;
@@ -29,9 +30,7 @@
 				bottom: 75px;
 				top: auto;
 				&:after{
-					background: none;
 					font-size: 40px;
-					color: #000;
 				}
 			}
 		}
@@ -44,35 +43,23 @@
 		
 		.swiper-slide{
 			text-align: center;
-			p{
-				margin-top: 10px;
-			}
-			a,p{
-				display: block;
-				text-align: center;
-				margin-right: auto;
-				margin-left: auto;
-				@media(min-width: 1200px){
-					max-width: 480px;
-				}
-			}
 			a{
 				display: flex;
 				justify-content: center;
 				margin-right: auto;
 				margin-left: auto;
+				@media(min-width: 1200px){
+					max-width: 480px;
+				}
 				img{
 					@media(min-width: 576px){
 						min-height: 400px;
-						max-height: 400px;
 					}
 					@media(min-width: 992px){
 						min-height: 500px;
-						max-height: 500px;
 					}
 					@media(min-width: 1200px){
 						min-height: 600px;
-						max-height: 600px;
 					}
 					width: 100%;
 					object-fit: cover;
@@ -81,12 +68,16 @@
 		}
 	}
 	.swiper-thumbs{
-		margin: 0 auto 0 auto;
+		margin: 20px auto 0 auto;
 		img{
 			width: 100%;
 		}
 		@media(min-width: 1200px){
 			max-width: 920px;
+			position: absolute;
+			bottom: 25px;
+			left: 50%;
+			transform: translateX(-50%);
 		}
 		width: 100%;
 		z-index: 20;
