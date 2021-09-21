@@ -23,8 +23,8 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import TextReader from './components/reader/TextReader';
 import BaseReader from './components/reader/BaseReader';
-
-
+ 
+import i18n from './i18next';
 
 
 // Login forms

@@ -3,7 +3,7 @@ from .models import ArticleCoverSetting, Article, ArticleImages
 from .utils import make_cover
 from journal.models import Issue
 from django.db.models import Exists, OuterRef
-
+from django.contrib.auth.decorators import login_required
 
 def article_list(request):
     arts = Article.objects.filter(
@@ -11,7 +11,7 @@ def article_list(request):
     ).order_by('-id')[0:30]
     return render(request, 'article/article_list.html', {'arts': arts})
 
-
+@login_required
 def article_detail(request, id):
     object = Article.objects.get(pk=id)
     other = Article.objects.filter(issue=object.issue).exclude(pk=object.pk)

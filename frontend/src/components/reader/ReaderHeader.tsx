@@ -6,7 +6,7 @@ import RegForm from '../account/RegForm';
 import LoginForm from '../account/LoginForm';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-
+import { useTranslation } from 'react-i18next';
 
 import {
     BrowserRouter as Router,
@@ -19,6 +19,10 @@ import { useLocation } from 'react-router-dom';
 import LangSwitcher from '../i18n/LangSwitcher';
 
 
+
+
+
+
 export default function ReaderHeader(props) {
 
     const location = useLocation();
@@ -26,6 +30,8 @@ export default function ReaderHeader(props) {
     const [value, setValue] = React.useState(0);
 
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const { t, i18n } = useTranslation();
+   
 
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
@@ -78,7 +84,7 @@ export default function ReaderHeader(props) {
                                             }}>
                                             <img className="fa-icon" src="/static/images/text.svg" />
                                             <span className="hide-in-mobile">
-                                                Текстовая версия
+                                            {t('m_text_riader')} 
                                             </span>
                                             </Link>
                                         )}
@@ -88,7 +94,7 @@ export default function ReaderHeader(props) {
                                                 pathname: `/image-reader/${props.issueId}`
                                                 }} >
                                             <img className="fa-icon" src="/static/images/pdf.svg" />
-                                            <span className="hide-in-mobile">PDF версия</span>
+                                            <span className="hide-in-mobile">{t('m_pdf_riader')} </span>
                                             </Link>
                                             )}
                                     </div>
