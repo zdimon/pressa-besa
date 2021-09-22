@@ -72,13 +72,13 @@
 		img{
 			width: 100%;
 		}
-		@media(min-width: 1200px){
+		
 			max-width: 920px;
 			position: absolute;
 			bottom: 25px;
 			left: 50%;
 			transform: translateX(-50%);
-		}
+		
 		width: 100%;
 		z-index: 20;
 		overflow: hidden;
