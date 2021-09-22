@@ -13,12 +13,19 @@ import {
 } from "react-router-dom";
 
 
+
+import { useTranslation } from 'react-i18next';
+
+
+
+
 export default function BaseReader(props) {
 
   const [has_article, setHasArticle] = React.useState(false);
   const [is_paid, setIsPaid] = React.useState(false);
   const [issueId, setIssueId] = React.useState(props.issueId);
   const req = new Request();
+  const { t, i18n }  = useTranslation();
 
   const changeIssue = (issueId) => {
     setIssueId(issueId);

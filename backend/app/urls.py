@@ -37,7 +37,7 @@ urlpatterns = [
     path('rosetta/', include('rosetta.urls')),
     path('preauth', preauth),
     path('export/', include('export.urls')),
-    path('', include('reader.urls')),
+    
     
     path("v1/api-token-auth/", ObtainAuthToken.as_view()),
     
@@ -63,6 +63,8 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
 
     path('__debug__/', include(debug_toolbar.urls)),
+
+    path('', include('reader.urls')),
 ]
 
 from django.contrib.flatpages import views
@@ -84,7 +86,7 @@ urlpatterns += i18n_patterns(
     path('agreement/', views.flatpage, {'url': '/agreement/'}, name='agreement'),
     path('privacy/', views.flatpage, {'url': '/privacy/'}, name='privacy'),
     path('translate', translate),
-
+    
 )
 
 from django.conf import settings

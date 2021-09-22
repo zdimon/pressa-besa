@@ -18,10 +18,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function LangSwitcher(props) {
     const classes = useStyles();
-    const [lang, setLang] = React.useState(props.selector);
+    const [lang, setLang] = React.useState(localStorage.getItem('lang'));
 
     const handleChange = (event) => {
       setLang(event.target.value);
+      localStorage.setItem('lang',event.target.value);
       document.location = `/${event.target.value}/`;
     };
    
