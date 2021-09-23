@@ -126,7 +126,7 @@
 
 .list-tails img {
     max-height: 100%;
-    min-width: 100%;
+    min-width: 110px;
     object-fit: cover;
     vertical-align: bottom;
     margin: 2px;
