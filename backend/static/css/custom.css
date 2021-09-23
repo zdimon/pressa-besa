@@ -32,12 +32,20 @@
 .nav-riader-links img {
   
     padding-right: 5px;
+    display: flex;
+    align-items: center;
+    width: 25px;
 }
 
 .nav-riader-links a {
     padding-left: 10px;
     color: black;
     margin-top: 5px;
+    display: flex;
+}
+
+.right-rider-menu img {
+    width: 25px;
 }
 
 .article-title {
@@ -101,6 +109,7 @@
 .color-green {
     color: green;
 }
+
 
 .color-red {
     color: red;
