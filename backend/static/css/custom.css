@@ -29,6 +29,11 @@
     width: 300px;
 }
 
+
+.nav-riader-links {
+    display: flex;
+}
+
 .nav-riader-links img {
   
     padding-right: 5px;
