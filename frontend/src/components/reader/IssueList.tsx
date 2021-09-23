@@ -3,19 +3,18 @@ import { Request } from '../../Request';
 
 
 export default function IssueList(props) {
-  const [issues, setIssues] = React.useState([]);
+  const [pages, setPages] = React.useState([]);
   const req = new Request();
 
 
   useEffect(() => {
 
     
-    // req.post('reader/settings',{issue_id: props.issueId})
-    //   .then((payload) => {
-    //     setHasArticle(payload.has_articles);
-    //     setIsPaid(payload.is_paid)
-    //   }).catch((err) => { 
-    //   });
+    req.post('reader/pages',{issue_id: props.issueId})
+      .then((payload) => {
+        setPages(payload.payload);
+      }).catch((err) => { 
+      });
     }, []);
 
   
@@ -24,10 +23,14 @@ export default function IssueList(props) {
       <> 
         <section className="section bg-gradient-gray">
           <div className="container position-relative">
-            <div className="multiply-slider-wrap">
-              
-                sdfsfsfsd
-              
+            <div className="list-tails">
+              <ul>
+                {
+                  pages.map((el) => 
+                    <li><img src={el.file_low} /></li>
+                  )
+                }
+              </ul>
             </div>
           </div>
         </section>

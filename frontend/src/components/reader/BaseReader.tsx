@@ -70,7 +70,10 @@ export default function BaseReader(props) {
               ></TextReader>
             </Route>
             <Route name="list" path="/list-reader/:issue_id">
-              <IssueList />
+              <IssueList 
+                issueId={issueId}              
+                handleIsPaid={markIsPaid}
+                isPaid={is_paid} />
             </Route>
           </Switch>
         </Router>
