@@ -78,7 +78,7 @@ export default function ReaderHeader(props) {
                                         </a>
                                     </div>
                                     <div className="nav-riader-links" >
-                                        { location.pathname.includes("image-reader") && props.has_article && (
+                                        { (location.pathname.includes("image-reader") || location.pathname.includes("list-reader") ) && props.has_article && (
                                         <Link 
                                         to={{ 
                                                 pathname: `/text-reader/${props.issueId}`
@@ -90,7 +90,7 @@ export default function ReaderHeader(props) {
                                             </Link>
                                         )}
                                             
-                                            { location.pathname.includes("text-reader") && (
+                                            { (location.pathname.includes("text-reader") || location.pathname.includes("list-reader") ) && (
                                             <Link to={{
                                                 pathname: `/image-reader/${props.issueId}`
                                                 }} >
