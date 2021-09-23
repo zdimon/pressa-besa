@@ -8,3 +8,4 @@ static/build
 static/assets
 app/local.py
 logs/*
+media/*

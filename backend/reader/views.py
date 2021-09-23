@@ -7,6 +7,8 @@ from rest_framework.response import Response
 from django.http import HttpResponse
 from PIL import Image
 from django.shortcuts import redirect
+from sorl.thumbnail import get_thumbnail
+from .utils import make_cached_image
 
 
 def reader_index(request, issue_id):
@@ -31,6 +33,7 @@ def text_reader_index(request, issue_id):
 
 def get_page(request, page_id, type, position):
     page = IssuePage.objects.get(pk=page_id)
+    make_cached_image(page,position)
     if type == 'low':
         original = Image.open(page.file_low.path)
     if type == 'middle':
@@ -38,25 +41,18 @@ def get_page(request, page_id, type, position):
     if type == 'hight':
         original = Image.open(page.file_high.path)
     response = HttpResponse(content_type="image/jpg")
+    if original.size[0] < original.size[1]:
+        original.save(response, 'JPEG')
+        return response
     if position == 1:
-        if original.size[0] < original.size[1]:
-            cropped_example = original.crop((0, 0, original.size[0], original.size[1]))
-            cropped_example.save(response, 'JPEG')
-            return response
-        else:
-            cropped_example = original.crop((0, 0, original.size[0]/2, original.size[1]))
-            cropped_example.save(response, 'JPEG')
-            return response      
+        cropped_example = original.crop((0, 0, original.size[0]/2, original.size[1]))
+        cropped_example.save(response, 'JPEG')
+        return response      
 
     if position == 2:
-        if original.size[0] < original.size[1]:
-            cropped_example = original.crop((0, 0, original.size[0], original.size[1]))
-            cropped_example.save(response, 'JPEG')
-            return response 
-        else:
-            cropped_example = original.crop((original.size[0]/2, 0, original.size[0], original.size[1]))
-            cropped_example.save(response, 'JPEG')
-            return response 
+        cropped_example = original.crop((original.size[0]/2, 0, original.size[0], original.size[1]))
+        cropped_example.save(response, 'JPEG')
+        return response 
 
         #image_data = open(page.file_low.path, "rb").read()
 

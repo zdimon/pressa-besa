@@ -16,6 +16,8 @@ from article.models import Article
 from PIL import Image
 from app.settings import BACKEND_URL
 from journal.models import PurchasedIssues
+from reader.utils import is_cached
+
 
 class PagesView(APIView):
     '''
@@ -39,17 +41,31 @@ class PagesView(APIView):
 
             im = Image.open(i.file_low.path)
             if im.size[0] < im.size[1]:
-                file_low = f'{BACKEND_URL}/get/page/{i.pk}/low/1'
+                if not is_cached(i):
+                    file_low = f'{BACKEND_URL}/get/page/{i.pk}/low/1'
+                else:
+                    file_low = f'{BACKEND_URL}/media/cached_images/{i.paper.pk}/1/low/{i.pk}.jpg'
+
                 file_middle = f'{BACKEND_URL}/get/page/{i.pk}/middle/1'
                 file_hight = f'{BACKEND_URL}/get/page/{i.pk}/hight/1'
                 out.append({ "page": cnt, "file_low": file_low, "file_middle": file_middle, "file_hight": file_hight })
             else:
-                file_low = f'{BACKEND_URL}/get/page/{i.pk}/low/1'
-                file_middle = f'{BACKEND_URL}/get/page/{i.pk}/middle/1'
+                if not is_cached(i):
+                    file_low = f'{BACKEND_URL}/get/page/{i.pk}/low/1'
+                    file_middle = f'{BACKEND_URL}/get/page/{i.pk}/middle/1'
+                else:
+                    file_low = f'{BACKEND_URL}/media/cached_images/{i.paper.pk}/1/low/{i.pk}.jpg' 
+                    file_middle = f'{BACKEND_URL}/media/cached_images/{i.paper.pk}/1/middle/{i.pk}.jpg'                  
+                
                 file_hight = f'{BACKEND_URL}/get/page/{i.pk}/hight/1'
                 out.append({ "page": cnt, "file_low": file_low, "file_middle": file_middle, "file_hight": file_hight  })
-                file_low = f'{BACKEND_URL}/get/page/{i.pk}/low/2'
-                file_middle = f'{BACKEND_URL}/get/page/{i.pk}/middle/2'
+
+                if not is_cached(i):
+                    file_low = f'{BACKEND_URL}/get/page/{i.pk}/low/2'
+                    file_middle = f'{BACKEND_URL}/get/page/{i.pk}/middle/2'
+                else:
+                    file_low = f'{BACKEND_URL}/media/cached_images/{i.paper.pk}/2/low/{i.pk}.jpg' 
+                    file_middle = f'{BACKEND_URL}/media/cached_images/{i.paper.pk}/2/middle/{i.pk}.jpg'                    
                 file_hight = f'{BACKEND_URL}/get/page/{i.pk}/hight/2'
                 out.append({ "page": cnt+1, "file_low": file_low, "file_middle": file_middle, "file_hight": file_hight  })
                 cnt += 1

@@ -63,11 +63,11 @@ export default function IssueList(props) {
                         className="swiper-lazy"    
                         data-fancybox="gallery"      
                         data-src={item.file_hight} 
-                        src={item.file_middle} alt="" />
+                        src={item.file_low} alt="" />
                       </Fancybox>:
                     <img 
                     onClick={() => openPaymentDialog()}                              
-                    src={item.file_middle} alt="" />                            
+                    src={item.file_low} alt="" />                            
                     }
                     </li>
                   )
