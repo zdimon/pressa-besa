@@ -78,7 +78,7 @@ export default function ImageReader(props) {
   
     return (
       <>
-      <section className="section bg-gradient-gray">
+      <section className="section">
         <div className="container position-relative">
           <div className="multiply-slider-wrap">
             <div className="swiper gallery-top">
