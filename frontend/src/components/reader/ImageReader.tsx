@@ -80,8 +80,9 @@ export default function ImageReader(props) {
       <>
       <section className="section">
         <div className="container position-relative">
+         <div className="row col-xl-8">
           <div className="multiply-slider-wrap">
-            <div className="row col-xl-8">
+            
               <div className="swiper gallery-top">
               
               <Swiper
@@ -130,7 +131,7 @@ export default function ImageReader(props) {
               </Swiper>
               </div>
             </div>
-
+            </div>                       
             <div className="swiper-thumbs">
               <div className="swiper gallery-thumbs">
                 <div className="swiper-wrapper">
@@ -168,7 +169,7 @@ export default function ImageReader(props) {
                 </div>
               </div>
             </div>
-          </div>
+          
         </div>
       </section>
       <PaymentDialog 
