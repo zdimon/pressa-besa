@@ -81,7 +81,7 @@ export default function ImageReader(props) {
       <section className="section">
         <div className="container position-relative">
           <div className="justify-content-center row">
-            <div className="col-xl-5">
+            <div className="col-xl-5 lox-md-7">
               <div className="multiply-slider-wrap">
                 <div className="swiper gallery-top">
                 
