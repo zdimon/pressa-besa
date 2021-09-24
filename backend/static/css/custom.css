@@ -126,7 +126,9 @@
 
 .fa-icon {
     width: 20px;
-}
+    height: 20px;
+    max-width: none;
+}  
 
 .list-tails ul{
         display: flex;
