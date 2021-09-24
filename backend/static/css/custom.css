@@ -155,3 +155,10 @@
     bottom: 40px;
     width: 90%;
 }
+
+@media screen and (max-width: 990px) {
+    .section {
+      padding-top: 65px;
+    }
+
+}
