@@ -81,51 +81,54 @@ export default function ImageReader(props) {
       <section className="section">
         <div className="container position-relative">
           <div className="multiply-slider-wrap">
-            <div className="swiper gallery-top">
-            
-            <Swiper
-                    spaceBetween={0}
-                    centeredSlides={true}
-                    slidesPerView={1} 
-                    loopedSlides={8}
-                    loop={false}    
-                    navigation={{
-                      prevEl: navigationPrevRef.current,
-                      nextEl: navigationNextRef.current,
-                    }} 
-                    modules={[Controller]}
-                    onSwiper={setFirstSwiper}
-                    controller={{ control: secondSwiper }}
-                  >
-                <div className="swiper-wrapper">
-                      {pages.map((item,index) =>
-                        <SwiperSlide>
-                            <div className="swiper-slide" data-background="static/images/preloader.gif">
-                              <p className="page-number">{item.page}</p>
-                              {props.isPaid? 
-                                  <Fancybox options={{ infinite: false }}>
-                                    <img   
-                                    className="swiper-lazy"    
-                                    data-fancybox="gallery"      
-                                    data-src={item.file_hight} 
-                                    src={item.file_middle} alt="" />
-                                  </Fancybox>:
-                                <img 
-                                onClick={() => openPaymentDialog()}                              
-                                src={item.file_middle} alt="" />                            
-                              }
-                            
-                            
-                            </div>
-                            
-                        </SwiperSlide>
-                      )}                  
-                  
+            <div className="row col-xl-8">
+              <div className="swiper gallery-top">
+              
+              <Swiper
+                      spaceBetween={0}
+                      centeredSlides={true}
+                      slidesPerView={1} 
+                      loopedSlides={8}
+                      loop={false}    
+                      navigation={{
+                        prevEl: navigationPrevRef.current,
+                        nextEl: navigationNextRef.current,
+                      }} 
+                      modules={[Controller]}
+                      onSwiper={setFirstSwiper}
+                      controller={{ control: secondSwiper }}
+                    >
+                  <div className="swiper-wrapper">
+                        {pages.map((item,index) =>
+                          <SwiperSlide>
+                              <div className="swiper-slide" data-background="static/images/preloader.gif">
+                                <p className="page-number">{item.page}</p>
+                                {props.isPaid? 
+                                    <Fancybox options={{ infinite: false }}>
+                                      <img   
+                                      className="swiper-lazy"    
+                                      data-fancybox="gallery"      
+                                      data-src={item.file_hight} 
+                                      src={item.file_middle} alt="" />
+                                    </Fancybox>:
+                                  <img 
+                                  onClick={() => openPaymentDialog()}                              
+                                  src={item.file_middle} alt="" />                            
+                                }
+                              
+                              
+                              </div>
+                              
+                          </SwiperSlide>
+                        )}                  
+                    
 
+                  
                 </div>
                 <div ref={navigationNextRef} className="swiper-button-next swiper-button-white"></div>
                 <div ref={navigationPrevRef}  className="swiper-button-prev swiper-button-white"></div>
               </Swiper>
+              </div>
             </div>
 
             <div className="swiper-thumbs">
