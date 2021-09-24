@@ -80,8 +80,8 @@ export default function ImageReader(props) {
       <>
       <section className="section">
         <div className="container position-relative">
-          <div className="row">
-            <div className="col-xl-8">
+          <div className="justify-content-center row">
+            <div className="col-xl-5">
               <div className="multiply-slider-wrap">
                 <div className="swiper gallery-top">
                 
@@ -102,8 +102,8 @@ export default function ImageReader(props) {
                     <div className="swiper-wrapper">
                           {pages.map((item,index) =>
                             <SwiperSlide>
-                                <div className="swiper-slide" data-background="static/images/preloader.gif">
-                                  <p className="page-number">{item.page}</p>
+                                <div data-background="static/images/preloader.gif">
+                                  
                                   {props.isPaid? 
                                       <Fancybox options={{ infinite: false }}>
                                         <img   
