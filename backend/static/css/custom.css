@@ -162,3 +162,7 @@
     }
 
 }
+
+.swiper-button-next {
+    bottom: 260px !important;
+}
