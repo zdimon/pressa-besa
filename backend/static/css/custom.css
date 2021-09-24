@@ -143,3 +143,7 @@
     vertical-align: bottom;
     margin: 2px;
 }
+
+.position-relative .row {
+    justify-content: center;
+}
