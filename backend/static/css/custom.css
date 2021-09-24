@@ -150,5 +150,6 @@
 
 .swiper-thumbs {
     position: absolute  !important;
-    bottom: 30px;
+    bottom: 40px;
+    width: 90%;
 }
