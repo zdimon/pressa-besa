@@ -147,3 +147,8 @@
 .position-relative .row {
     justify-content: center;
 }
+
+.swiper-thumbs {
+    position: absolute  !important;
+    bottom: 30px;
+}
