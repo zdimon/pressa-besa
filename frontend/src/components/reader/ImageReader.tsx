@@ -144,6 +144,7 @@ export default function ImageReader(props) {
                     modules={[Controller]}
                     onSwiper={setSecondSwiper}
                     controller={{ control: firstSwiper }}
+                    centeredSlides={true}
                     breakpoints={breakpoints}
                   > 
 
