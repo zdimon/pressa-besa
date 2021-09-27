@@ -83,7 +83,7 @@ export default function ImageReader(props) {
           <div className="justify-content-center row">
             <div className="col-xl-5 lox-md-7">
               <div className="multiply-slider-wrap">
-                <div className="swiper gallery-top">
+                <div className="gallery-top">
                 
                 <Swiper
                         spaceBetween={0}
@@ -134,7 +134,7 @@ export default function ImageReader(props) {
               </div>
             </div>                       
             <div className="swiper-thumbs">
-              <div className="swiper gallery-thumbs">
+              <div className="gallery-thumbs">
                 
                   <Swiper
                     spaceBetween={10}
