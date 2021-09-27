@@ -133,8 +133,8 @@ export default function ImageReader(props) {
                 </div>
               </div>
             </div>                       
-            <div className="swiper-thumbs">
-              <div className="gallery-thumbs">
+
+              <div className="swiper gallery-thumbs swiper-thumbs">
                 
                   <Swiper
                     spaceBetween={10}
@@ -169,7 +169,7 @@ export default function ImageReader(props) {
                   </Swiper>
                 
               </div>
-            </div>
+          
           
         </div>
       </section>
