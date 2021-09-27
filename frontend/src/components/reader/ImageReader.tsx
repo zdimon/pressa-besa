@@ -135,7 +135,7 @@ export default function ImageReader(props) {
             </div>                       
             <div className="swiper-thumbs">
               <div className="swiper gallery-thumbs">
-                <div>
+                
                   <Swiper
                     spaceBetween={10}
                     slidesPerView={8} 
@@ -166,7 +166,7 @@ export default function ImageReader(props) {
                     )}
 
                   </Swiper>
-                </div>
+                
               </div>
             </div>
           
