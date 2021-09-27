@@ -149,7 +149,7 @@ export default function ImageReader(props) {
 
                     {pages.map((item,index) =>
                       <SwiperSlide>
-                          <div className="swiper-slide">
+        
                           {props.isPaid? 
                             <Fancybox options={{ infinite: false }}>
                                     <img      
@@ -161,8 +161,7 @@ export default function ImageReader(props) {
                               onClick={() => openPaymentDialog()}                              
                               src={item.file_low} alt="" />                            
                           }
-                          
-                          </div>
+
                       </SwiperSlide>
                     )}
 
