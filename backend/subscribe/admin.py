@@ -4,7 +4,7 @@ from .models import Subscription, UserSubscrition, AbonementDiscount, Abonement,
 
 
 class SubscriptionAdmin(admin.ModelAdmin):
-    list_display = ('name', 'journal', )
+    list_display = ('name', 'journal', 'count' )
     search_fields = ('name', 'journal__name_ru', )
     list_filter = ('count', 'months')
     raw_id_fields = ('journal', )

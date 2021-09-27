@@ -8,8 +8,7 @@ export default function IssueSlider(props) {
   var container = document.getElementById(props.selector);
   var matches = container.querySelectorAll("img");
   var matchesArr = Array.prototype.slice.call(matches);
-  console.log(matches)
-
+ 
   var breakpoints = {
     320: {
       spaceBetween: -30,
@@ -118,7 +117,7 @@ export default function IssueSlider(props) {
                   loop={true}
                   
                   onInit={(swiper) => {
-                    console.log(navigationNextRef.current)
+                    
                     swiper.params.navigation.prevEl = navigationPrevRef.current;
                     swiper.params.navigation.nextEl = navigationNextRef.current;
                     swiper.navigation.destroy();
@@ -127,8 +126,8 @@ export default function IssueSlider(props) {
                   }}
                   spaceBetween={20}
                   slidesPerView={1}
-                  onSlideChange={() => console.log('slide change')}
-                  onSwiper={(swiper) => console.log(swiper)}
+                  onSlideChange={() => {}}
+                  onSwiper={(swiper) => {}}
                 >
                   
                     {matchesArr.map((item,index) =>      

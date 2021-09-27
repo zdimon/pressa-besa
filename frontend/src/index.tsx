@@ -30,6 +30,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-http-backend';
 import utils from './utils';
+import SubscriptionBlock from './components/buyButton/subscriptionBlock';
 
 var lng = utils.getLanguage();
 
@@ -119,4 +120,8 @@ if(txtreaderEl) render(<TextReader issueId={txtreaderEl.getAttribute('data-issue
 
 /// buy button
 const bbtnEl = document.getElementById("js-buy-button");
-if(bbtnEl) render(<BuyButton />, bbtnEl)
+if(bbtnEl) render(<BuyButton issueId={bbtnEl.getAttribute('data-issue-id')} />, bbtnEl)
+
+/// subscription-block
+const sbEl = document.getElementById("js-subscription-block");
+if(sbEl) render(<SubscriptionBlock journalId={sbEl.getAttribute('data-journal-id')} />, sbEl)

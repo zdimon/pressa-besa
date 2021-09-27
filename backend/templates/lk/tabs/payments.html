@@ -16,7 +16,11 @@
               <td>{{ b.id }}</td>
               <td>{{ b.get_operation_display }}</td>
               <td>{{ b.operation_amount }}</td>
-              <td>{{ b.operation_object }}</td>
+              <td>
+                 <p>{{ b.operation_object.journal }}</p>
+                 {{ b.operation_object }}
+              
+              </td>
             </tr>
 
             {% endfor %}

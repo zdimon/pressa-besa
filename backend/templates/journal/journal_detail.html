@@ -49,25 +49,11 @@
                         <div class="card-info__price-inner">
                             <div class="card-info__price-title">ЦЕНА ЗА НОМЕР:</div>
                             <div class="card-info__price-number">{{ object.amount }} ₽</div>
-                            <div id="js-buy-button"></div>
+                            <div id="js-buy-button" data-issue-id="{{ object.last_issue.pk }}"></div>
                         </div>
                     </div>
-                    <form action="" class="card-info__subscription-form">
-                        <div class="card-info__subscription-header">
-                            <span>ЭЛЕКТРОННАЯ ПОДПИСКА</span>
-                            <button class="button-primary button button-sm" type="submit">Подписаться</button>
-                        </div>
-                        <div class="card-info__subscription-body">
-                            <div class="form-wrap">
-                                <input class="custom-radio" type="radio" id="radio-one" name="subscription">
-                                <label for="radio-one">1 выпуск (1 месяц) за 66.00 руб.</label>
-                            </div>
-                            <div class="form-wrap">
-                                <input class="custom-radio" type="radio" id="radio-two" name="subscription">
-                                <label for="radio-two"> 12 выпусков (12 месяцев) за 649.00 руб. (экономия 143 руб.)</label>
-                            </div>
-                        </div>
-                    </form>
+                    <div id="js-subscription-block" data-journal-id="{{ object.pk }}" class="card-info__subscription-form"></div>
+
                 </div>
                 <div class="card-info__subscription">
                 <div class="js-subscribe-button"></div>
