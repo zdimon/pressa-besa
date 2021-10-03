@@ -170,3 +170,8 @@
 .swiper-button-prev {
     top: 50% !important;
 }
+
+.big-title {
+    color: black;
+    font-size: 25px;
+}

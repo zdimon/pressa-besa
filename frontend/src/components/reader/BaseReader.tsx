@@ -24,6 +24,7 @@ export default function BaseReader(props) {
   const [has_article, setHasArticle] = React.useState(false);
   const [is_paid, setIsPaid] = React.useState(false);
   const [issueId, setIssueId] = React.useState(props.issueId);
+  const [settings, setSettings] = React.useState({});
   const req = new Request();
   const { t, i18n }  = useTranslation();
 
@@ -41,7 +42,8 @@ export default function BaseReader(props) {
     req.post('reader/settings',{issue_id: props.issueId})
       .then((payload) => {
         setHasArticle(payload.has_articles);
-        setIsPaid(payload.is_paid)
+        setIsPaid(payload.is_paid);
+        setSettings(payload);
       }).catch((err) => { 
       });
     }, []);
@@ -58,6 +60,7 @@ export default function BaseReader(props) {
               <ImageReader 
                 handleIsPaid={markIsPaid} 
                 isPaid={is_paid} 
+                settings={settings}
                 issueId={props.issueId}>
               </ImageReader>
             </Route>
@@ -66,6 +69,7 @@ export default function BaseReader(props) {
               handleIsPaid={markIsPaid}
               isPaid={is_paid} 
               issueId={issueId}
+              settings={settings}
               changeIssue={changeIssue}
               ></TextReader>
             </Route>

@@ -77,16 +77,18 @@ export default function LoginForm({clickCallback}) {
             <a style={AuthLink} href="/login/google-oauth2/">
               <img src="/static/images/enter_google.png" />
             </a>
-            <a style={AuthLink} href="/login/vk-oauth/">
-              <img src="/static/images/enter_vk.png" />
-            </a>
-            <a style={AuthLink} href="/login/vk-oauth/">
+            <a style={AuthLink} href="/login/twitter/">
               <img src="/static/images/enter_twitter.png" />
             </a>
-            <a style={AuthLink} href="/login/vk-oauth/">
+            
+            <a style={AuthLink} href="/login/vk-oauth2/">
+              <img src="/static/images/enter_vk.png" />
+            </a>
+
+            <a style={AuthLink} href="/login/mailru-oauth2/">
               <img src="/static/images/enter_mail.png" />
             </a>
-            <a style={AuthLink} href="/login/vk-oauth/">
+            <a style={AuthLink} href="/login/odnoklassniki-oauth2/">
               <img src="/static/images/enter_classmates.png" />
             </a>
             </div>

@@ -28,4 +28,12 @@ class SettingsView(APIView):
             is_paid = issue.is_paid(request.user.customer)
         else:
             is_paid = False
-        return Response({ "has_articles": issue.has_articles, "is_paid": is_paid, "issue_id": request.data["issue_id"]})
+        return Response({ 
+            "has_articles": issue.has_articles, 
+            "is_paid": is_paid, 
+            "issue_id": request.data["issue_id"],
+            "issue_name": issue.name,
+            "journal_name": issue.journal.name,
+            "released": issue.release_date,
+            "issue_cover": issue.common_cover
+            })

@@ -118,7 +118,28 @@ export default function TextReader(props) {
       <>
       <section className="section">
         <div className="container position-relative">
-
+        { !show_current?
+        <div className="single-card__info">
+						<div className="single-card__info-group">
+							<div className="single-card__info-details">
+								<div className="single-card__info-details-media">
+									<img src={props.settings.issue_cover} alt="" />
+								</div>
+								<div className="single-card__info-details-caption">
+                  <div className="single-card__info-details-title">
+                  {props.settings.released}
+									</div>
+									<div className="single-card__info-details-title big-title">
+                  {props.settings.journal_name}
+									</div>
+									<div className="single-card__info-details-release">
+									{props.settings.issue_name}
+									</div>
+								</div>
+							</div>
+            </div>
+        </div>: <div></div>
+        }
         <div className="row" >
           <h2 className="article-title">{current_tag}</h2>
         </div>          
