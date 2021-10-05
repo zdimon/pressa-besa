@@ -46,11 +46,11 @@ export default function LkMenu() {
             <a href="/lk/abonement">Абонемент</a>
         </MenuItem>
         <MenuItem>
-            <i className="fa fa-calendar" aria-hidden="true"></i>
+            <i className="fa fa-folder-open" aria-hidden="true"></i>
             <a href="/lk/collection">Моя коллекция</a>
         </MenuItem>
         <MenuItem>
-            <i className="fa fa-folder-open" aria-hidden="true"></i>
+            <i className="fa fa-shopping-cart" aria-hidden="true"></i>
             <a href="/lk/payments">Платежи</a>
         </MenuItem>
         
