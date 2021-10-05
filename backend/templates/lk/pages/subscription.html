@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block css %} 
+    <link rel="stylesheet" href="/static/css/lk.css">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="section-xs card">
+    <div class="container container-md">
+
+          <h4 class="text-uppercase">{% trans 'Мои подписки' %}</h4>
+          {% if not subscriptions %}
+            <div class="alert alert-danger" role="alert">
+                {% trans 'У вас нет купленных подписок' %}
+            </div>
+          {% else %}
+            <table class="table">
+                <tr>
+                <th scope="col">{% trans 'Издание' %}</th>
+                <th scope="col">{% trans 'Название' %}</th>
+                <th scope="col">{% trans 'Информация' %}</th>
+                </tr>
+                
+                {% for subscription in subscriptions %}
+                
+                    <tr>
+                        <td>{{ subscription.subscription.journal.name }}</td>
+                        <td>{{ subscription.subscription.name }}</td>
+                        <td>{% blocktrans with subscription_count=subscription.count%}Осталось {{ subscription_count }} номеров.{% endblocktrans %}</td>
+                    
+                    </tr>
+
+                {% endfor %}
+
+            </table>
+          {% endif %}
+    </div>
+</section>
+
+
+
+
+
+
+
+
+{% endblock %}

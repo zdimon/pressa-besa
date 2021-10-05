@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block css %} 
+    <link rel="stylesheet" href="/static/css/lk.css">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="section-xs card">
+    <div class="container container-md">
+
+          <h4 class="text-uppercase">{% trans 'Мой абонемент' %}</h4>
+          {% if not abonements %}
+            <div class="alert alert-danger" role="alert">
+                {% trans 'У вас нет купленных абонементов' %}
+            </div>
+          {% else %}
+            <table class="table">
+                <tr>
+                <th scope="col">{% trans 'Дата начала' %}</th>
+                <th scope="col">{% trans 'Дата окончания' %}</th>
+                <th scope="col">{% trans 'Стоимость' %}</th>
+                </tr>
+                {% for a in abonements %}
+                    <tr>
+                    <td>{{ a.start_date }}</td>
+                    <td>{{ a.stop_date }}</td>
+                    <td>{{ a.real_cost }}</td>
+                    </tr>
+                {% endfor %}
+
+          </table>
+          {% endif %}
+    </div>
+</section>
+
+
+
+
+
+
+
+
+{% endblock %}

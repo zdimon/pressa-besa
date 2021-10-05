@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block css %} 
+    <link rel="stylesheet" href="/static/css/lk.css">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="section-xs card">
+    <div class="container container-md">
+
+          <h4 class="text-uppercase">{% trans 'Моя коллекция' %}</h4>
+          {% if not collection %}
+            <div class="alert alert-danger" role="alert">
+                {% trans 'У вас нет купленных номеров' %}
+            </div>
+          {% else %}
+         <table class="table">
+            <tr>
+              <th scope="col">{% trans 'Издание' %}</th>
+              <th scope="col">{% trans 'Выпуск' %}</th>
+              <th scope="col">{% trans 'Действия' %}</th>
+            </tr>
+            {% for a in collection %}
+            
+            <tr>
+              <td>{{ a.journal }}</td>
+              <td>{{ a.issue.name }}</td>
+              <td><a class="color-red" href="{% url 'reader' issue_id=a.issue.pk %}" >{% trans 'Читать' %}</a></td>
+            </tr>
+
+            {% endfor %}
+
+          </table>
+          {% endif %}
+    </div>
+</section>
+
+
+
+
+
+
+
+
+{% endblock %}

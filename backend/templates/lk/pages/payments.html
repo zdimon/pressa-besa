@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block css %} 
+    <link rel="stylesheet" href="/static/css/lk.css">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="section-xs card">
+    <div class="container container-md">
+
+          <h4 class="text-uppercase">{% trans 'Мои платежи' %}</h4>
+
+          {% if not subscriptions %}
+            <div class="alert alert-danger" role="alert">
+                {% trans 'У вас нет пополнений' %}
+            </div>
+          {% else %}
+         <table class="table">
+            <tr>
+              <th scope="col">{% trans 'Дата' %}</th>
+              <th scope="col">{% trans 'Операция' %}</th>
+              <th scope="col">{% trans 'Сумма' %}</th>
+              <th scope="col">{% trans 'Информация' %}</th>
+            </tr>
+            {% for b in transactions %}
+            
+            <tr>
+              <td>{{ b.id }}</td>
+              <td>{{ b.get_operation_display }}</td>
+              <td>{{ b.operation_amount }}</td>
+              <td>
+                 <p>{{ b.operation_object.journal }}</p>
+                 {{ b.operation_object }}
+              
+              </td>
+            </tr>
+
+            {% endfor %}
+
+          </table>
+          {% endif %}          
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+{% endblock %}

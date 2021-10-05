@@ -12,7 +12,7 @@ from accounts.views import preauth
 import debug_toolbar
 from django.conf.urls.i18n import i18n_patterns
 from main.views import change_language
-from lk.views import lk, replanish
+
 
 schema_view = get_schema_view(
    openapi.Info(title="Pressa API",
@@ -72,8 +72,7 @@ from translator.views import translate
 
 urlpatterns += i18n_patterns(
     path('', index),
-    path('lk', lk),
-    path('replanish', replanish, name='replanish'),
+    path('lk/', include('lk.urls')),
     path('cover', include('cover.urls')),
     path('top10/', include('announce.urls')),
     path('catalog/', include('catalog.urls')),

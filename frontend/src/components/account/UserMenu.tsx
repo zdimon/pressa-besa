@@ -5,6 +5,8 @@ import Tab from '@material-ui/core/Tab';
 import RegForm from './RegForm';
 import LoginForm from './LoginForm';
 import { config } from '../../config';
+import LkMenu from './LkMenu';
+
 
 export default function UserMenu() {
 
@@ -27,9 +29,7 @@ export default function UserMenu() {
   if (token) {
     return (
       <>
-        <a href="/lk" className="rd-nav-options__login">
-          <img className="fa-icon" src="/static/images/user.svg" />
-        </a>
+        <LkMenu />
         
         <a 
         href="#" 
@@ -53,7 +53,7 @@ export default function UserMenu() {
         href="#" 
         onClick={ () => {setShowPanel(true)}}  
         className="rd-nav-options__login">
-              <img className="fa-icon" src="/static/images/user.svg" /> 
+              <img className="fa-icon" src="/static/images/user.svg" />
         </a>
 
         

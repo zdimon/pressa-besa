@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block css %} 
+    <link rel="stylesheet" href="/static/css/lk.css">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="section-xs card">
+    <div class="container container-md">
+
+          <h4 class="text-uppercase">{% trans 'Мои закладки' %}</h4>
+
+          {% if not bookmarks %}
+            <div class="alert alert-danger" role="alert">
+                {% trans 'У вас нет закладок' %}
+            </div>
+          {% else %}
+            <table class="table">
+                
+                {% for b in bookmarks %}
+                
+                <tr>
+                <td>{{ b.issue.journal.name }}</td>
+                <td>{{ b.issue.name }}</td>
+                <td>{{ b.page }}</td>
+                <td><a href="{% url 'text-reader' issue_id=b.issue.id %}" >{% trans "Читать" %}</a></td>
+                </tr>
+
+                {% endfor %}
+
+            </table>
+          {% endif %}
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+{% endblock %}

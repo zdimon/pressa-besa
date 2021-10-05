@@ -18,6 +18,7 @@ import {
   } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import LangSwitcher from '../i18n/LangSwitcher';
+import LkMenu from '../account/LkMenu';
 
 
 
@@ -106,13 +107,7 @@ export default function ReaderHeader(props) {
                                   <img className="fa-icon" src="/static/images/list.svg" />
                               </Link>  
                               { window.localStorage.getItem('token') &&
-                                (<a 
-                                   aria-controls="user-menu" aria-haspopup="true" 
-                                   onClick={handleClick} 
-                                   href="#">
-                                    <img className="fa-icon" src="/static/images/user.svg" />
-                                </a> 
-                              ) 
+                                ( <LkMenu /> ) 
                               }
 
                               { !window.localStorage.getItem('token') &&
@@ -148,9 +143,12 @@ export default function ReaderHeader(props) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Закладки</MenuItem>
-        <MenuItem onClick={handleClose}>Моя коллекция</MenuItem>
-        <MenuItem onClick={handleClose}>Профиль</MenuItem>
+        <MenuItem><a href="/lk/index">Пополнить счет</a></MenuItem>
+        <MenuItem><a href="/lk/subscription">Подписки</a></MenuItem>
+        <MenuItem><a href="/lk/bookmarks">Закладки</a></MenuItem>
+        <MenuItem><a href="/lk/abonement">Абонемент</a></MenuItem>
+        <MenuItem><a href="/lk/payments">Платежи</a></MenuItem>
+        
       </Menu>
 
 

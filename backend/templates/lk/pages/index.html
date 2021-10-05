@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block css %} 
+    <link rel="stylesheet" href="/static/css/lk.css">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="section-xs card">
+    <div class="container container-md">
+
+          <h4 class="text-uppercase">{% trans 'Личный кабинет' %} <span>{{ user.username }}</span></h4>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+{% endblock %}
