@@ -176,7 +176,7 @@
     font-size: 25px;
 }
 
-.MuiList-root { display: flex; align-items:center}
-.MuiList-root i {  margin-right: 10px;}
+.MuiList-root { display: flex; align-items:  flex-start; flex-direction: column}
+.MuiList-root i {  margin-right: 10px; font-style: normal}
 
 
