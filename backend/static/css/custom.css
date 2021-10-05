@@ -175,3 +175,8 @@
     color: black;
     font-size: 25px;
 }
+
+.MuiList-root { display: flex; align-items:center}
+.MuiList-root i {  margin-right: 10px;}
+
+
