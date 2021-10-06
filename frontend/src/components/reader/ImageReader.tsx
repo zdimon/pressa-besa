@@ -27,8 +27,17 @@ export default function ImageReader(props) {
   }
 
   var breakpoints = {
+    250: {
+      slidesPerView: 2,
+    },
+    300: {
+      slidesPerView: 3,
+    },
+    400: {
+      slidesPerView: 3,
+    },
     576: {
-      slidesPerView: 5,
+      slidesPerView: 4,
     },
     768: {
       slidesPerView: 5,
