@@ -15,13 +15,15 @@ def index(request):
     new = Journal.objects.filter(is_new=True)[0:10]
     categories = Category.objects.filter(show_in_new_catalog=True)
     news = News.objects.all().order_by('-id')[0:10]
+    journal_type='all'
     print(news)
     data = {
             "popular_journal": popular_journal,
             "news": news,
             "books": books,
             "new": new,
-            "categories": categories
+            "categories": categories,
+            "journal_type": journal_type
            }
     return render(request, 'main/index.html', data)
 

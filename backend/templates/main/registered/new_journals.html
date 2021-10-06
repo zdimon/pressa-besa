@@ -1,16 +1,14 @@
+{% load i18n %} 
 <section class="section bg-default section-xs bg-light-gray">
     <div class="container">
 
         <div class="row row-20">
             <div class="col-12">
-                <h4 class="text-uppercase">Новинки</h4>
+                <h4 class="text-uppercase">{% trans 'Новинки' %}</h4>
             </div>
-            <ul class="category-block">
-                {% for c in categories %}
-                <li><a class="button button-secondary" 
-                href="{% url 'category-detail' category=c.name_slug journal_type='all' %}">{{ c.name }}</a></li>
-                {% endfor %}
-            </ul>
+            {% include 'blocks/tag_slider.html' %}
+            
+
             <div class="col-12">
                 <div class="swiper-wrap swiper-style-1">
                     <div class="swiper-container swiper-popular-news ">
