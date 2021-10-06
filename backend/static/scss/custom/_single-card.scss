@@ -15,11 +15,8 @@
 			display: -ms-flexbox;
 			display: -webkit-flex; /* Safari 6.1+ */
 			flex-wrap: wrap;
-			flex-direction: column-reverse;
-			align-items: center;
 			flex-basis: 0;
 			flex-grow: 1;
-			text-align: center;
 			@media(min-width: 576px){
 				text-align: left;
 				align-items: flex-start;

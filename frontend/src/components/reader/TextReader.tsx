@@ -7,6 +7,7 @@ import AddBookmark from '../bookmarks/bookmarks';
 import PaymentDialog from '../Modal/Payment/PaymentDialog';
 import  { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from "react-router-dom";
+import SubscribeButton from '../Subscription/SubscribeButton';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -127,13 +128,13 @@ export default function TextReader(props) {
 								</div>
 								<div className="single-card__info-details-caption">
                   <div className="single-card__info-details-title">
-                  {props.settings.released}
+                  {props.settings.issue_name} {props.settings.released}
 									</div>
 									<div className="single-card__info-details-title big-title">
                   {props.settings.journal_name}
 									</div>
 									<div className="single-card__info-details-release">
-									{props.settings.issue_name}
+									  <SubscribeButton />
 									</div>
 								</div>
 							</div>
