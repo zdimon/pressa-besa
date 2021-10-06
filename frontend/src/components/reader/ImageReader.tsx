@@ -95,9 +95,7 @@ export default function ImageReader(props) {
                           prevEl: navigationPrevRef.current,
                           nextEl: navigationNextRef.current,
                         }} 
-                        modules={[Controller]}
                         onSwiper={setFirstSwiper}
-                        controller={{ control: secondSwiper }}
                       >
                     <div className="swiper-wrapper">
                           {pages.map((item,index) =>
@@ -142,8 +140,6 @@ export default function ImageReader(props) {
                     loop={false}    
                     loopedSlides={8}
                     modules={[Controller]}
-                    onSwiper={setSecondSwiper}
-                    controller={{ control: firstSwiper }}
                     centeredSlides={true}
                     breakpoints={breakpoints}
                   > 
