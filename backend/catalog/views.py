@@ -29,7 +29,7 @@ def category_detail(request, journal_type, category):
         
     
     journals = journals_query.order_by('-last_issue_id')
-    paginator = Paginator(journals, 15)
+    paginator = Paginator(journals, 16)
     page_obj = paginator.get_page(page)
 
     

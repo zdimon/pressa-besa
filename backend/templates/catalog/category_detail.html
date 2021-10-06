@@ -21,17 +21,7 @@
     <div class="container">
         <div id="tagSlider" class="swiper-container"></div>
     </div>
-    <div style="display: none" class="category-block container" id="tagSliderItems">
-
-
-        {% for cat in categories %}
-            <div>
-            <a href="{% url 'category-detail' journal_type=journal_type category=cat.name_slug %}" class="button button-primary">
-                {{ cat.name }}
-            </a>
-            </div>
-        {% endfor %}
-    </div>
+    {% include 'blocks/tag_slider.html' %}
     <div class="container">
         <div class="journals-block">
         <div class="col-12">
@@ -39,7 +29,7 @@
                 {% if category %}
                    {{ category.name }}
                 {% else %}
-                    Новые <span>выпуски</span>
+                    {% trans 'Новые' %} <span>{% trans 'выпуски' %}</span>
                 {% endif %}
             </h4>
         </div>
