@@ -122,4 +122,4 @@ def add_money(request):
         user.amount = user.amount + int(request.POST['sum'])
         user.save()
 
-    return redirect('/lk')
+    return redirect('/lk/index')

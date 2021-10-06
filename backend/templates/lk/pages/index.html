@@ -12,6 +12,28 @@
 
           <h4 class="text-uppercase">{% trans 'Личный кабинет' %} <span>{{ user.username }}</span></h4>
 
+        <div class="col-12">
+            <h4 class="text-uppercase">{% trans 'У вас на счету:' %} {{ user.amount }}</h4>
+            
+          </div>
+
+        <div class="col-12">
+            <h4 class="text-uppercase">{% trans 'Пополнить счет' %}</h4>
+        </div>
+
+        <form method="POST" action="/v1/api/account/add/money">
+        {% csrf_token %}
+        Сумма 
+        <input name="sum" />
+
+        Пароль
+
+        <input  name="password" />
+
+        <input type="submit" name="Пополнить" />
+
+        </form>
+
     </div>
 </section>
 

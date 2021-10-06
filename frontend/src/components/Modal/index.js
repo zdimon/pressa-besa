@@ -96,7 +96,7 @@ const AppModal = (props) => {
         action={
           <React.Fragment>
             
-            <a className="color-red" href="/lk"> 
+            <a className="color-red" href="/lk/index"> 
               Пополнить счет
             </a>
             <Button color="secondary" size="small" onClick={closeModal}>

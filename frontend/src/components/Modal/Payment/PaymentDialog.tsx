@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Request } from '../../../Request';
 import Modal from '@material-ui/core/Modal';
 import { makeStyles } from '@material-ui/core/styles';
+import SubscribeButton from '../../Subscription/SubscribeButton';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -98,6 +100,9 @@ return (
   </p>
   <p style={has_money? {display: "block"}: {display: "none"}} >
     <a href="#" onClick={payment}>Оплатить со счета</a>
+  </p>
+  <p>
+    <SubscribeButton />
   </p>
   <p className="color-green">{message_success}</p>
   <p className="color-red">{message_error}</p>
