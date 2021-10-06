@@ -52,7 +52,11 @@ export default function BaseReader(props) {
     return (
       <> 
         <Router>
-        <ReaderHeader issueId={props.issueId} has_article={has_article}> </ReaderHeader>
+        <ReaderHeader 
+        settings={settings} 
+        issueId={props.issueId} 
+        has_article={has_article}> 
+        </ReaderHeader>
         
        
           <Switch>

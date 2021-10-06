@@ -99,13 +99,12 @@ export default function ReaderHeader(props) {
                                             <span className="hide-in-mobile">{t('m_pdf_riader')} </span>
                                             </Link>
                                             )}
+                                            <a><span>{props.settings.journal_name}</span></a>
                                     </div>
                                 </div>                        
                     
                             <div className="right-rider-menu">
-                              <Link to={`/list-reader/${props.issueId}`}>
-                                  <img className="fa-icon" src="/static/images/list.svg" />
-                              </Link>  
+                              
                               { window.localStorage.getItem('token') &&
                                 ( <LkMenu /> ) 
                               }
