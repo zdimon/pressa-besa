@@ -32,6 +32,7 @@
 
 .nav-riader-links {
     display: flex;
+    margin-top: 11px;
 }
 
 .nav-riader-links img {
@@ -178,3 +179,6 @@
 .MuiList-root i {  margin-right: 10px; font-style: normal; flex-shrink: 0; flex-grow: 1; max-width: 20px; width: 100%}
 
 
+ul.rd-navbar-nav {
+    margin-bottom: 0;
+}
