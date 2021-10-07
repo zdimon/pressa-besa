@@ -2,13 +2,26 @@
     <div class="thumbnail-classic">
         <div class="thumbnail-classic__media">
             <a href="{{ item.get_absolute_url }}">
-                <img data-url="{{ item.get_absolute_url }}" src="{{ item.get_image.thumbnailsmall_url }}" alt="{{item.title}}">
+                <img 
+                data-journal-name="{{ item.issue.journal.name }}"
+                data-issue-name="{{ item.issue.name }}"
+                data-url="{{ item.get_absolute_url }}" 
+                src="{{ item.get_image.thumbnailsmall_url }}" 
+                alt="{{item.title}}">
             </a>
             <!-- <span class="label">ежемесячные</span> -->  
         </div>
         <a href="{{ item.get_absolute_url }}" class="thumbnail-classic__body">
             {{ item.title }}
         </a>
+        <div class="thumbnail-modern__body">
+            <div class="thumbnail-modern__body-title">
+                <a href="{% url 'journal-detail' name_slug=item.issue.journal.name_slug %}">
+                    {{ item.issue.journal.name }}   
+                </a>
+            </div>
+            <div class="thumbnail-modern__body-caption">№ {{ item.issue.name }}</div>
+        </div>
         <div class="thumbnail-classic__footer">
                 {{ item.short_text|safe }}
         </div>

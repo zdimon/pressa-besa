@@ -24,8 +24,9 @@ return (
               </a>
               
           </div>
-          <a href="" className="thumbnail-classic__body">
-              
+          <a href={item.getAttribute('data-url')} className="thumbnail-classic__body">
+            {item.getAttribute('data-journal-name')} &nbsp;
+            Выпуск {item.getAttribute('data-issue-name')}
           </a>
           <div className="thumbnail-classic__footer">
                {item.getAttribute('alt')}
