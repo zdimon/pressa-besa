@@ -24,15 +24,28 @@ return (
               </a>
               
           </div>
-          <a href={item.getAttribute('data-url')} className="thumbnail-classic__body">
-            {item.getAttribute('data-journal-name')} &nbsp;
-            Выпуск {item.getAttribute('data-issue-name')}
-          </a>
-          <div className="thumbnail-classic__footer">
-               {item.getAttribute('alt')}
+
+          <div className="thumbnail-modern__body">
+            <div className="thumbnail-modern__body-title">
+                <a href={item.getAttribute('data-url')}>
+                  {item.getAttribute('data-journal-name')}
+                </a>
+            </div>
+            <div className="thumbnail-modern__body-caption">№ {item.getAttribute('data-issue-name')}</div>
           </div>
+        
+          <a href={item.getAttribute('data-url')} className="thumbnail-classic__body">
+              {item.getAttribute('alt')}
+          </a>
+          
         </div>
 
       )}
     </Masonry>
 )}
+
+/*
+<div className="thumbnail-classic__footer">
+               
+          </div>
+*/
