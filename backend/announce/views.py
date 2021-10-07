@@ -13,4 +13,6 @@ def detail(request, slug):
         raise Http404 
 
     articles = Article.objects.filter(issue=item.issue)
+    if len(articles) == 0:
+        articles = Article.objects.all().order_by('-id')[0:10]
     return render(request, 'announce/detail.html', {"item": item, "articles": articles})
