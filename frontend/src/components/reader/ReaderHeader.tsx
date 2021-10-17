@@ -8,7 +8,6 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { useTranslation } from 'react-i18next';
 
-
 import {
     BrowserRouter as Router,
     Switch,
@@ -84,7 +83,7 @@ export default function ReaderHeader(props) {
                                         to={{ 
                                                 pathname: `/text-reader/${props.issueId}`
                                             }}>
-                                            <img className="fa-icon" src="/static/images/text.svg" />
+                                            <img className="fa-icon" src="/static/images/icons/text.svg" />
                                             <span className="hide-in-mobile">
                                             {t('m_text_riader')} 
                                             </span>
@@ -95,7 +94,7 @@ export default function ReaderHeader(props) {
                                             <Link to={{
                                                 pathname: `/image-reader/${props.issueId}`
                                                 }} >
-                                            <img className="fa-icon" src="/static/images/pdf.svg" />
+                                            <img className="fa-icon" src="/static/images/icons/original.svg" />
                                             <span className="hide-in-mobile">{t('m_pdf_riader')} </span>
                                             </Link>
                                             )}
@@ -115,7 +114,7 @@ export default function ReaderHeader(props) {
                                     href="#" 
                                     onClick={ () => {setShowPanel(true)}}  
                                     className="rd-nav-options__login">
-                                                                                                        <img className="fa-icon" src="/static/images/user.svg" /> 
+                                                                                                        <img className="fa-icon" src="/static/images/icons/user.svg" /> 
                                           
                                     </a>
                               ) 
@@ -135,20 +134,7 @@ export default function ReaderHeader(props) {
         </div>
     </header>
 
-     <Menu
-        id="user-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-      >
-        <MenuItem><a href="/lk/index">Пополнить счет</a></MenuItem>
-        <MenuItem><a href="/lk/subscription">Подписки</a></MenuItem>
-        <MenuItem><a href="/lk/bookmarks">Закладки</a></MenuItem>
-        <MenuItem><a href="/lk/abonement">Абонемент</a></MenuItem>
-        <MenuItem><a href="/lk/payments">Платежи</a></MenuItem>
-        
-      </Menu>
+     
 
 
         <Drawer anchor="right" open={showPanel} onClose={() => {

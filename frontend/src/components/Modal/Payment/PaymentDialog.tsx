@@ -96,7 +96,7 @@ return (
   </p>
 
   <p style={has_money? {display: "none"}: {display: "block"}} >
-    <a href="/lk">Перейдите для пополнения</a>
+    <a href="/lk/index">Перейдите для пополнения</a>
   </p>
   <p style={has_money? {display: "block"}: {display: "none"}} >
     <a href="#" onClick={payment}>Оплатить со счета</a>

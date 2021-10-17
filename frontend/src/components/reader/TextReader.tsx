@@ -56,6 +56,30 @@ export default function TextReader(props) {
 
   const req = new Request();
 
+  var breakpoints = {
+    250: {
+      slidesPerView: 2,
+    },
+    300: {
+      slidesPerView: 3,
+    },
+    400: {
+      slidesPerView: 3,
+    },
+    576: {
+      slidesPerView: 4,
+    },
+    768: {
+      slidesPerView: 5,
+    },
+    992: {
+      slidesPerView: 6,
+    },
+    1200: {
+      slidesPerView: 7,
+    },
+  };
+
   const handleClose = () => {
     setOpenPayDialog(false);
   };
@@ -171,8 +195,11 @@ export default function TextReader(props) {
             </div>
           </div>
 
-
-
+          <section className="section">
+          <div className="col-12">
+                <h4 className="text-uppercase">Статьи <span>выпуска</span></h4>
+          </div>
+          </section>
 
           
           <div className="articles-grid">
@@ -239,13 +266,14 @@ export default function TextReader(props) {
         <div className="container position-relative">
           <br />
             <div className="col-12">
-                <h4 className="text-uppercase">Еще выпуски</h4>
+                <h4 className="text-uppercase">Еще <span>выпуски</span></h4>
             </div>
 
           <Swiper
               spaceBetween={10}
               slidesPerView={8} 
-              loop={false}    
+              loop={false}  
+              breakpoints={breakpoints}  
             > 
 
               {issues.map((item,index) =>
