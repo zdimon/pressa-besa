@@ -34,6 +34,6 @@ class SettingsView(APIView):
             "issue_id": request.data["issue_id"],
             "issue_name": issue.name,
             "journal_name": issue.journal.name,
-            "released": issue.release_date,
+            "released": issue.release_date.strftime('%d/%m/%Y'),
             "issue_cover": issue.common_cover
             })
