@@ -168,11 +168,12 @@ export default function TextReader(props) {
         }
         <div className="row" >
           <h2 className="article-title">{current_tag}</h2>
-        </div>          
+        </div>   
+        <div className="row" >
+          <h2 className="article-title">{current_article.title}</h2>
+        </div>        
 
-          <div className="row row-20" style={ show_current? {} : {"display": "none"} }>
-            <div className="row"><h2>{current_article.title}</h2></div>
-            
+          <div className="row row-20" style={ show_current? {} : {"display": "none"} }> 
               {
                 show_image? <div className="col-12 col-md-4 d-flex justify-content-center"><div className="single-card__media">
                 <img src={current_article.image_url} alt={current_article.title} /></div></div>: <></>
