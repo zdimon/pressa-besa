@@ -82,6 +82,7 @@
     "moment": "^2.29.1",
     "nodemon": "^2.0.7",
     "react-bootstrap": "^1.6.1",
+    "react-html-parser": "^2.0.2",
     "react-i18next": "^11.12.0",
     "react-masonry-css": "^1.0.16",
     "react-router-dom": "^5.2.1",

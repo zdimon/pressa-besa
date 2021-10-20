@@ -183,3 +183,7 @@
 ul.rd-navbar-nav {
     margin-bottom: 0;
 }
+
+.font-bold {
+    font-weight: bold;
+}

@@ -98,7 +98,7 @@ export default function ReaderHeader(props) {
                                             <span className="hide-in-mobile">{t('m_pdf_riader')} </span>
                                             </Link>
                                             )}
-                                            <a><span className="color-red">{props.settings.journal_name}</span></a>
+                                            <a><span className="color-red font-bold">{props.settings.journal_name}</span></a>
                                     </div>
                                 </div>                        
                     

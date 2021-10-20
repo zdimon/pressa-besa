@@ -8,6 +8,7 @@ import PaymentDialog from '../Modal/Payment/PaymentDialog';
 import  { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from "react-router-dom";
 import SubscribeButton from '../Subscription/SubscribeButton';
+import ReactHtmlParser from 'react-html-parser'; 
 
 
 const useStyles = makeStyles((theme) => ({
@@ -170,22 +171,21 @@ export default function TextReader(props) {
         </div>          
 
           <div className="row row-20" style={ show_current? {} : {"display": "none"} }>
-            <div 
+            <h2>{current_article.title}</h2>
             
-            className="col-12 col-md-4 d-flex justify-content-center">
-              <div style={ show_image? {} : {"display": "none"} } className="single-card__media">
-                <img src={current_article.image_url} alt={current_article.title} />
-              </div>
-            </div>
+              {
+                show_image? <div className="col-12 col-md-4 d-flex justify-content-center"><div className="single-card__media">
+                <img src={current_article.image_url} alt={current_article.title} /></div></div>: <></>
+              
+              }
+             
+            
             <div className="col-12 col-md-8 d-flex flex-column justify-content-between">
               <div className="single-card__info">
                 
-
-                <div className="single-card__info-title">
-                  {current_article.title}
-                  </div>
                 <div className="single-card__info-caption">
-                  {current_article.text}
+                  
+                  { ReactHtmlParser (current_article.text) }
                 </div>
                 <div className="single-card__info-caption">
                   Автор: {current_article.author}
