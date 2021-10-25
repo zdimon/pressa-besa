@@ -185,12 +185,14 @@ export default function TextReader(props) {
               <div className="single-card__info">
                 
                 <div className="single-card__info-caption">
-                  
+                  <div className="color-red font-bold">{props.settings.journal_name}</div>
+                  <div className="color-silver font-bold">{props.settings.issue_name} {props.settings.released}</div>
+                  <div className="font-bold">
+                    Автор: {current_article.author}
+                  </div>
                   { ReactHtmlParser (current_article.text) }
                 </div>
-                <div className="single-card__info-caption">
-                  Автор: {current_article.author}
-                </div>
+
               </div>
               
             </div>
