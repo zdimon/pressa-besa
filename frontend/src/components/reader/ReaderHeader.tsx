@@ -77,7 +77,11 @@ export default function ReaderHeader(props) {
                                         <img src="/static/images/brand-short.svg" />
                                         </a>
                                     </div>
-                                    <div className="nav-riader-links" >
+
+                                </div>                        
+                    
+                            <div className="right-rider-menu">
+                            <div className="nav-riader-links" >
                                         { (location.pathname.includes("image-reader") || location.pathname.includes("list-reader") ) && props.has_article && (
                                         <Link 
                                         to={{ 
@@ -100,10 +104,6 @@ export default function ReaderHeader(props) {
                                             )}
                                             <a><span className="hide-in-mobile color-red font-bold">{props.settings.journal_name}</span></a>
                                     </div>
-                                </div>                        
-                    
-                            <div className="right-rider-menu">
-                              
                               { window.localStorage.getItem('token') &&
                                 ( <LkMenu /> ) 
                               }
