@@ -121,6 +121,10 @@ export default function TextReader(props) {
     });
   }
 
+  const goBack = () => {
+    setShowCurrent(false);
+  }
+
   useEffect(() => {
 
     
@@ -185,7 +189,10 @@ export default function TextReader(props) {
               <div className="single-card__info">
                 
                 <div className="single-card__info-caption">
-                  <div className="color-red font-bold">{props.settings.journal_name}</div>
+                  <div  className="color-red font-bold">
+                    <a href="#" onClick={goBack}>
+                    {props.settings.journal_name}
+                    </a></div>
                   <div className="color-silver font-bold">{props.settings.issue_name} {props.settings.released}</div>
                   <div className="font-bold">
                     Автор: {current_article.author}
