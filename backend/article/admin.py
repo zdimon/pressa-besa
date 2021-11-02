@@ -4,7 +4,7 @@ from django.utils.safestring import mark_safe
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = ['title', 'issue', 'page', 'text', 'taggit_list', 'cover_tag']
+    list_display = ['title', 'issue', 'page', 'text', 'taggit_list', 'cover_tag', 'audio_converted']
     def taggit_list(self, obj):
         return u", ".join(o.name for o in obj.taggit.all())
 
