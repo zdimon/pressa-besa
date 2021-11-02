@@ -69,6 +69,10 @@ class Article(models.Model):
         verbose_name=_(u'опубликован?'),
         default=False, db_index=True)
 
+    audio_converted = models.BooleanField(
+        verbose_name=_(u'аудио?'),
+        default=False)
+
     created_at = models.DateField(auto_now_add=True, blank=True, null=True)
 
     @property

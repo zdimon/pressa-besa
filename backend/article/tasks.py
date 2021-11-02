@@ -26,3 +26,13 @@ def make_article_cover_task(article_id):
     with open('tmp.jpg', 'rb') as doc_file:
        article.cover.save(f'cover.jpg', File(doc_file), save=True)
     print('Making cover for %s' % article.title)
+
+
+from .aconverter import make_audio
+from article.models import Article
+
+
+def convert_atricles_to_ogg():
+    print('Converting....')
+    for a in Article.objects.filter(audio_converted=False).order_by('-id')[0:10]:
+        make_audio(a)
