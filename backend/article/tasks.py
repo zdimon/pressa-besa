@@ -32,6 +32,7 @@ from .aconverter import make_audio
 from article.models import Article
 
 
+@task()
 def convert_atricles_to_ogg():
     print('Converting....')
     for a in Article.objects.filter(audio_converted=False).order_by('-id')[0:10]:
