@@ -64,9 +64,9 @@ text=u'''Исла к бою. Акватория острова Кайман. С�
 
 from django.conf import settings
 
-def make_audio(article):
+def make_audio_article(article):
     print(f'Process {article.title}')
-    path = f'{settings.AUDIO_PATH}/{article.pk}.ogg'
+    path = f'{settings.AUDIO_PATH}/article-{article.pk}.ogg'
     print(f'{path}')
     with open(path, "wb") as f:
         for text in split_text(cleantext(article.text)):
@@ -75,3 +75,16 @@ def make_audio(article):
     
     article.audio_converted = True
     article.save()
+
+
+def make_audio_news(news):
+    print(f'Process {news.id}')
+    path = f'{settings.AUDIO_PATH}/news-{news.pk}.ogg'
+    print(f'{path}')
+    with open(path, "wb") as f:
+        for text in split_text(cleantext(news.text)):
+            for audio_content in synthesize(ya_auth(), text):
+                f.write(audio_content)
+    
+    news.audio_converted = True
+    news.save()

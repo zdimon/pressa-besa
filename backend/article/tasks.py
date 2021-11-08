@@ -1,6 +1,7 @@
 from celery.decorators import task 
 from django.conf import settings
 from .models import Article, ArticleCoverSetting
+from announce.models import News
 from django.core.files import File
 import random
 
@@ -28,7 +29,7 @@ def make_article_cover_task(article_id):
     print('Making cover for %s' % article.title)
 
 
-from .aconverter import make_audio
+from .aconverter import make_audio_article, make_audio_news
 from article.models import Article
 
 
@@ -36,4 +37,7 @@ from article.models import Article
 def convert_atricles_to_ogg():
     print('Converting....')
     for a in Article.objects.filter(audio_converted=False).order_by('-id')[0:10]:
-        make_audio(a)
+        make_audio_article(a)
+
+    for n in News.objects.filter(audio_converted=False).order_by('-id')[0:10]:
+        make_audio_news(n)

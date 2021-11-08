@@ -19,10 +19,14 @@ from django.core.mail import EmailMultiAlternatives
 class Announce(models.Model):
     title = models.CharField(verbose_name=_(u'заголовок'), max_length=150)
     text = models.TextField(verbose_name=_(u'текст анонса выпуска'))
+
     issue = models.ForeignKey('journal.Issue',
                               verbose_name=_(u'выпуск издания'),
                               on_delete=models.CASCADE)
     create = models.DateTimeField(verbose_name=u'дата создания')
+    audio_converted = models.BooleanField(
+        verbose_name=_(u'аудио?'),
+        default=False)
 
     class Meta:
         verbose_name = _(u'анонс выпуска')
@@ -45,6 +49,9 @@ class Featured(models.Model):
 
 
 class News(NameSlugMixin,  SEOTagsMixin, models.Model):
+    audio_converted = models.BooleanField(
+        verbose_name=_(u'аудио?'),
+        default=False)
     create = models.DateField(verbose_name=u'дата создания',auto_now_add=True)
     name = models.CharField(verbose_name=_(u'заголовок'), max_length=150)
     publication = models.CharField(verbose_name=_(u'Название журнала'), max_length=150, default = False)
