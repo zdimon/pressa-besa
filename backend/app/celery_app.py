@@ -15,7 +15,7 @@ app.conf.beat_schedule = {
     # Executes every Monday morning at 7:30 a.m.
     'convert-articles-audio': {
         'task': 'article.tasks.convert_atricles_to_ogg',
-        'schedule': crontab(minute='*/10')
+        'schedule': crontab(minute='*/15')
     },
 }
 
