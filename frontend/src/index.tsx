@@ -31,6 +31,7 @@ import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-http-backend';
 import utils from './utils';
 import SubscriptionBlock from './components/buyButton/subscriptionBlock';
+import AudioButton from './components/audioButton/audioButton';
 
 var lng = utils.getLanguage();
 
@@ -125,3 +126,11 @@ if(bbtnEl) render(<BuyButton issueId={bbtnEl.getAttribute('data-issue-id')} />, 
 /// subscription-block
 const sbEl = document.getElementById("js-subscription-block");
 if(sbEl) render(<SubscriptionBlock journalId={sbEl.getAttribute('data-journal-id')} />, sbEl)
+
+/// audio button
+const anbEl = document.getElementById("js-audio-button-news");
+if(anbEl) render(<AudioButton type="announce" id={anbEl.getAttribute('data-id')} />, anbEl)
+
+const aabEl = document.getElementById("js-audio-button-article");
+if(aabEl) render(<AudioButton type="article" id={aabEl.getAttribute('data-id')} />, aabEl)
+

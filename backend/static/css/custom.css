@@ -191,3 +191,7 @@ ul.rd-navbar-nav {
 .color-silver {
     color: silver;
 }
+
+.audio-button {
+    width: 250px;
+}

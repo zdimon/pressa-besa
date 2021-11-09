@@ -79,7 +79,7 @@ def make_audio_article(article):
 
 def make_audio_news(news):
     print(f'Process {news.id}')
-    path = f'{settings.AUDIO_PATH}/news-{news.pk}.ogg'
+    path = f'{settings.AUDIO_PATH}/announce-{news.pk}.ogg'
     print(f'{path}')
     with open(path, "wb") as f:
         for text in split_text(cleantext(news.text)):

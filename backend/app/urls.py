@@ -42,6 +42,8 @@ urlpatterns = [
     path("v1/api-token-auth/", ObtainAuthToken.as_view()),
     
     path('v1/api/', include([
+        path('announce/', include('announce.api.urls')),
+        path('article/', include('article.api.urls')),
         path('account/', include('accounts.urls')),
         path('reader/', include('reader.api.urls')),
         path('bookmarks/', include('bookmarks.urls')),
