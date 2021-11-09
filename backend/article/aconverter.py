@@ -68,23 +68,29 @@ def make_audio_article(article):
     print(f'Process {article.title}')
     path = f'{settings.AUDIO_PATH}/article-{article.pk}.ogg'
     print(f'{path}')
-    with open(path, "wb") as f:
-        for text in split_text(cleantext(article.text)):
-            for audio_content in synthesize(ya_auth(), text):
-                f.write(audio_content)
-    
-    article.audio_converted = True
-    article.save()
+    try:
+        with open(path, "wb") as f:
+            for text in split_text(cleantext(article.text)):
+                for audio_content in synthesize(ya_auth(), text):
+                    f.write(audio_content)
+        
+        article.audio_converted = True
+        article.save()
+    except:
+        print('Errorrrrrr')
 
 
 def make_audio_news(news):
     print(f'Process {news.id}')
     path = f'{settings.AUDIO_PATH}/announce-{news.pk}.ogg'
     print(f'{path}')
-    with open(path, "wb") as f:
-        for text in split_text(cleantext(news.text)):
-            for audio_content in synthesize(ya_auth(), text):
-                f.write(audio_content)
-    
-    news.audio_converted = True
-    news.save()
+    try:
+        with open(path, "wb") as f:
+            for text in split_text(cleantext(news.text)):
+                for audio_content in synthesize(ya_auth(), text):
+                    f.write(audio_content)
+        
+        news.audio_converted = True
+        news.save()
+    except:
+        print('Errorrrrrr')
