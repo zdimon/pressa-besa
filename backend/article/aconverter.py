@@ -48,7 +48,7 @@ def synthesize(iam_token, text):
         'text': text,
         'lang': 'ru-RU',
         'folderId': folder_id,
-        'voice': 'filipp'
+        'voice': 'alena'
     }
 
     with requests.post(url, headers=headers, data=data, stream=True) as resp:
