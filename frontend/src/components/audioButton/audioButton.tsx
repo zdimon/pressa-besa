@@ -13,6 +13,7 @@ export default function AudioButton(props) {
     const listen = () => {
         console.log(props.id);
         setIsListen(true);
+        setIsAudio(false);
     }
 
     useEffect(() => {
