@@ -5,6 +5,10 @@ class AnnounceInfoRequestSerializer(serializers.Serializer):
     id = serializers.IntegerField()
 
 
+class AnnounceSubscribeRequestSerializer(serializers.Serializer):
+    email = serializers.CharField()
+
+
 class NewsSerializer(serializers.ModelSerializer):
  
     class Meta:

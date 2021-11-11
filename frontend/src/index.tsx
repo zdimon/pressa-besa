@@ -32,6 +32,7 @@ import Backend from 'i18next-http-backend';
 import utils from './utils';
 import SubscriptionBlock from './components/buyButton/subscriptionBlock';
 import AudioButton from './components/audioButton/audioButton';
+import NewsSubscriptionForm from './components/newsSubscription/NewsSubscription';
 
 var lng = utils.getLanguage();
 
@@ -134,3 +135,6 @@ if(anbEl) render(<AudioButton type="announce" id={anbEl.getAttribute('data-id')}
 const aabEl = document.getElementById("js-audio-button-article");
 if(aabEl) render(<AudioButton type="article" id={aabEl.getAttribute('data-id')} />, aabEl)
 
+/// subscription form
+const sfEl = document.getElementById("js-sub-form");
+if(sfEl) render(<NewsSubscriptionForm  />, sfEl)

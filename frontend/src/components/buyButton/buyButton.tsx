@@ -22,7 +22,6 @@ export default function BuyButton(props) {
         const req = new Request();
         req.post('reader/make_payment',{issue_id: props.issueId})
         .then((payload) => {
-          console.log(payload);
           setMessage(payload.message);
           setState({ ...state, open: true});
           
