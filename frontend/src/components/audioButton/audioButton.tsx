@@ -40,7 +40,7 @@ export default function AudioButton(props) {
     {is_listen? 
         <video 
           controls
-          autoplay 
+          autoPlay={true} 
           name="media">
               <source 
               src={`/static/audio/${props.type}-${props.id}.ogg`}  type="audio/ogg" />
