@@ -93,3 +93,7 @@ def change_language(request):
         return response
     else:
         return HttpResponse(status=400)
+
+
+def signin(request):
+    return render(request, 'accounts/signin.html')
