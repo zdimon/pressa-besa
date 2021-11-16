@@ -61,6 +61,8 @@ class Journal(NameSlugMixin, models.Model):
 
     amount = models.DecimalField(_("цена"), max_digits=10, decimal_places=2, default=0.00)
 
+    is_public = models.BooleanField(verbose_name=_(u'отображать на сайте?'), default=True)
+
     def __str__(self):
         return self.name
 

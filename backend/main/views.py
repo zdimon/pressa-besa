@@ -10,7 +10,7 @@ from django.utils import translation
 from catalog.models import Category
 
 def index(request):
-    popular_journal = Journal.objects.filter(is_popular=True).order_by('position_popular')
+    popular_journal = Journal.objects.filter(is_popular=True, is_public=True).order_by('position_popular')
     books = Journal.objects.filter(show_in_books=True)[0:10]
     new = Journal.objects.filter(is_new=True)[0:10]
     categories = Category.objects.filter(show_in_new_catalog=True)
