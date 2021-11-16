@@ -52,6 +52,7 @@ export default function UserMenu() {
         <a 
         href="#" 
         onClick={ () => {setShowPanel(true)}}  
+        id="js-login-header-link"
         className="rd-nav-options__login">
               <img className="fa-icon" src="/static/images/icons/user.svg" />
         </a>
