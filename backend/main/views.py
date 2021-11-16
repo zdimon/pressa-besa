@@ -30,7 +30,8 @@ def index(request):
 
 def search(request):
     key = request.GET.get('key','')
-    items = Journal.objects.filter(name__icontains=key)[0:15]
+    #items = Journal.objects.filter(name__icontains=key)[0:15]
+    items = Journal.objects.filter(is_public=True, name__icontains=key)[0:15]
     return render(request, 'main/search.html', {"items": items,  "key": key})
 
 
