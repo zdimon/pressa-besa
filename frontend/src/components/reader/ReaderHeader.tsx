@@ -102,7 +102,7 @@ export default function ReaderHeader(props) {
                                             <span className="hide-in-mobile">{t('m_pdf_riader')} </span>
                                             </Link>
                                             )}
-                                            <a><span className="hide-in-mobile color-red font-bold">{props.settings.journal_name}</span></a>
+                                            <a href={`/magazines/${props.settings.name_slug}`}><span className="hide-in-mobile color-red font-bold">{props.settings.journal_name}</span></a>
                                     </div>
                               { window.localStorage.getItem('token') &&
                                 ( <LkMenu /> ) 
