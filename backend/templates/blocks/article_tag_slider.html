@@ -1,0 +1,8 @@
+<div class="col-12 d-none d-md-block" >
+    <div id="js-article-tag-slider" class="swiper-container"></div>
+    <ul style="display: none" class="tag-list" id="data-article-tag-slider">
+        {% for cat in categories %}
+        <li><a href="{% url 'category-detail' journal_type="magazines" category=cat.name_slug %}" class="tag">#{{ cat.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

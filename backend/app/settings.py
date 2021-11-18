@@ -246,6 +246,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 TAGGIT_CASE_INSENSITIVE = True
 SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
 LOGIN_URL = 'signin'
-LOGIN_REDIRECT_URL = 'signin'
+
 
 from .local import *

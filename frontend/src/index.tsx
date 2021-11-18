@@ -33,6 +33,8 @@ import utils from './utils';
 import SubscriptionBlock from './components/buyButton/subscriptionBlock';
 import AudioButton from './components/audioButton/audioButton';
 import NewsSubscriptionForm from './components/newsSubscription/NewsSubscription';
+import ArticleTagSlider from './components/Carousel/ArticleTagSlider';
+
 
 var lng = utils.getLanguage();
 
@@ -70,8 +72,13 @@ if(masonryEl) render(<MasonryGrid selector="masonryItems" />, masonryEl)
 
 /// tag slider
 const tagSliderEl = document.getElementById("tagSlider");
-console.log(tagSliderEl);
 if(tagSliderEl) render(<TagSlider selector="tagSliderItems" />, tagSliderEl)
+
+/// article tag slider
+const atagSliderEl = document.getElementById("js-article-tag-slider");
+console.log(atagSliderEl);
+if(atagSliderEl) render(<ArticleTagSlider selector="data-article-tag-slider" />, atagSliderEl)
+
 
 /// issue slider
 const issueSliderEl = document.getElementById("issueSlider");

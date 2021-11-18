@@ -5,12 +5,7 @@
             <div class="col-12">
                 <h4 class="text-uppercase">Книги<span>новинки</span></h4>
             </div>
-            <ul class="category-block">
-                {% for c in categories %}
-                    <li><a class="button button-secondary" 
-                    href="{% url 'category-detail' category=c.name_slug journal_type='all' %}">{{ c.name }}</a></li>
-                {% endfor %}
-            </ul>
+           
             <div class="col-12">
                 <div class="swiper-wrap swiper-style-1">
                     <div class="swiper-container swiper-popular-news ">
