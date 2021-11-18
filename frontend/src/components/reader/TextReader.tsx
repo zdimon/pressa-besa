@@ -55,6 +55,8 @@ export default function TextReader(props) {
 
   const [issueId, setIssueId] = React.useState(props.issueId);
 
+  const [current_issue, setCurrentIssue] = React.useState({});
+
   const req = new Request();
 
   var breakpoints = {
@@ -142,6 +144,14 @@ export default function TextReader(props) {
       setArticles(payload.payload);
     }).catch((err) => { 
     });
+
+    req.post('reader/settings',{issue_id: props.issueId})
+    .then((payload) => {
+      setCurrentIssue(payload);
+     }).catch((err) => { 
+    });
+
+
   }, [issueId]);
 
     return (
@@ -153,14 +163,14 @@ export default function TextReader(props) {
 						<div className="single-card__info-group">
 							<div className="single-card__info-details">
 								<div className="single-card__info-details-media">
-									<img src={props.settings.issue_cover} alt="" />
+									<img src={current_issue.issue_cover} alt="" />
 								</div>
 								<div className="single-card__info-details-caption">
                   <div className="single-card__info-details-title">
-                  {props.settings.issue_name} {props.settings.released}
+                  {current_issue.issue_name} {current_issue.released}
 									</div>
 									<div className="single-card__info-details-title big-title">
-                  {props.settings.journal_name}
+                  {current_issue.journal_name}
 									</div>
 									<div className="single-card__info-details-release">
 									  <SubscribeButton />
