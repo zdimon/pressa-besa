@@ -36,8 +36,8 @@ export default function LangSwitcher(props) {
       onChange={handleChange}
     >
       <MenuItem value="ru"><img width="20" src="/static/images/ru.svg" /></MenuItem>
-      <MenuItem value="en"><img src="/static/images/uk.svg" /></MenuItem>
-      <MenuItem value="de"><img src="/static/images/de.svg" /></MenuItem>
+      <MenuItem value="en"><img width="20" src="/static/images/uk.svg" /></MenuItem>
+      <MenuItem value="de"><img width="20" src="/static/images/de.svg" /></MenuItem>
     </Select>   
   
     )
