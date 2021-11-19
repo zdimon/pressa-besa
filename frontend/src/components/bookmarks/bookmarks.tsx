@@ -22,15 +22,19 @@ export default function AddBookmark(props) {
         // console.log(props.issueId);
         if(localStorage.getItem("token")) {
             const req = new Request();
+
             const data = {
+                "issue_id": props.issueId,
                 "article_id": props.articleId,
-                "page_id": props.page
+                "page_id": props.page,
+                "type": props.type
             }
+
             setState({ ...state, open: true});
             req.post('bookmarks/add',data)
             .then((payload) => {
                 
-                //console.log(payload);
+                console.log(payload);
                 setMessage(payload.message);
             }
             );
@@ -48,7 +52,7 @@ export default function AddBookmark(props) {
     }
     return (
         <>
-        <input type="checkbox" className="custom-checkbox" id="checkbox-1" />
+       
         <label onClick={submit} className="custom-checkbox-label"></label>
 
         <Snackbar

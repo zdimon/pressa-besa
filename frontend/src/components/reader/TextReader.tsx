@@ -167,7 +167,11 @@ export default function TextReader(props) {
 								</div>
 								<div className="single-card__info-details-caption">
                   <div className="single-card__info-details-title">
-                  {current_issue.issue_name} {current_issue.released}
+                  {current_issue.issue_name} {current_issue.released} &nbsp;
+                  <AddBookmark  
+                    issueId={current_issue.issue_id} 
+                    type="issue" 
+                    />
 									</div>
 									<div className="single-card__info-details-title big-title">
                   {current_issue.journal_name}
@@ -241,7 +245,8 @@ export default function TextReader(props) {
                    <div className="article-thumbnail__header-marker" >
                    <AddBookmark  
                     articleId={item.id} 
-                    page={item.page} 
+                    page={item.page}
+                    type="article" 
                     />
                 </div>
                 </div>

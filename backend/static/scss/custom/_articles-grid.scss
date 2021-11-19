@@ -95,7 +95,6 @@
 	position: relative;
 	cursor: pointer;
 	transition: $transition-base;
-	display: flex;
 	&:before{
 		content: "\f097";
 		font-family: 'FontAwesome';

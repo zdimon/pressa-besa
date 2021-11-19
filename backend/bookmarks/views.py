@@ -26,23 +26,43 @@ class AddBookmarkView(APIView):
         user = request.user
         obj = RequestBookmarksSerializer(data=request.data)
         if obj.is_valid():
-            print(obj.data["article_id"])
-            try:
-                article = Article.objects.get(pk=obj.data["article_id"])
-            except ObjectDoesNotExist:
-                return Response({"status": 1, "message": _('Статья не найдена.')})
-                
-            try:
-                b = Bookmarks.objects.get(owner=user, article=obj.data["article_id"])
-                return Response({"status": 1, "message": _('Закладка уже существует.')})
-            except ObjectDoesNotExist:
+            if obj.data["type"] == 'article':
+                try:
+                    article = Article.objects.get(pk=obj.data["article_id"])
+                except ObjectDoesNotExist:
+                    return Response({"status": 1, "message": _('Статья не найдена.')})
+                    
+                try:
+                    b = Bookmarks.objects.get(owner=user, article=obj.data["article_id"],type="article")
+                    return Response({"status": 1, "message": _('Закладка уже существует.')})
+                except ObjectDoesNotExist:
 
-                b = Bookmarks()
-                b.issue = article.issue
-                b.owner = user
-                b.article = obj.data["article_id"]
-                b.page = obj.data["page_id"]
-                b.save()
-                return Response({"status": 0, "message": _('Закладка добавлена.')})
+                    b = Bookmarks()
+                    b.issue = article.issue
+                    b.owner = user
+                    b.article = obj.data["article_id"]
+                    b.page = obj.data["page_id"]
+                    b.type = "art"
+                    b.save()
+                    return Response({"status": 0, "message": _('Закладка добавлена.')})
+
+            if obj.data["type"] == 'issue':
+                try:
+                    issue = Issue.objects.get(pk=obj.data["issue_id"])
+                except ObjectDoesNotExist:
+                    return Response({"status": 1, "message": _('Выпуск не найден.')})
+                    
+                try:
+                    b = Bookmarks.objects.get(owner=user, issue=issue,type="pdf")
+                    return Response({"status": 1, "message": _('Закладка уже существует.')})
+                except ObjectDoesNotExist:
+
+                    b = Bookmarks()
+                    b.issue = issue
+                    b.owner = user
+                    b.type = "pdf"
+                    b.save()
+                    return Response({"status": 0, "message": _('Закладка добавлена.')})
+                
         else:
             return Response({"status": 1, "message": _('Ошибка данных.')})
