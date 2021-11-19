@@ -24,8 +24,22 @@
                 <tr>
                 <td>{{ b.issue.journal.name }}</td>
                 <td>{{ b.issue.name }}</td>
-                <td>{{ b.page }}</td>
-                <td><a href="{% url 'text-reader' issue_id=b.issue.id %}" >{% trans "Читать" %}</a></td>
+                <td>
+                  {% if b.type == 'pdf' %}
+                      {% trans 'статья' %}
+                  {% else %}
+                      {% trans 'выпуск' %}
+                  {% endif %}
+                </td>
+                <td>
+                  {% if b.type == 'pdf' %}
+                       <a class="button button-primary" href="{% url 'text-reader' issue_id=b.issue.id %}" >{% trans "Читать" %}</a>
+                  {% else %}
+                       <a class="button button-primary" href="{% url 'reader' issue_id=b.issue.id %}" >{% trans "Читать" %}</a>
+                  {% endif %}
+               
+                
+                </td>
                 </tr>
 
                 {% endfor %}
