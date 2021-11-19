@@ -33,9 +33,9 @@
                 </td>
                 <td>
                   {% if b.type == 'pdf' %}
-                       <a class="button button-primary" href="{% url 'text-reader' issue_id=b.issue.id %}" >{% trans "Читать" %}</a>
-                  {% else %}
                        <a class="button button-primary" href="{% url 'reader' issue_id=b.issue.id %}" >{% trans "Читать" %}</a>
+                  {% else %}
+                       <a class="button button-primary" href="{% url 'text-reader' issue_id=b.issue.id %}" >{% trans "Читать" %}</a>
                   {% endif %}
                
                 
