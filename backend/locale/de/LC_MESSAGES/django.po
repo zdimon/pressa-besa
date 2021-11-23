@@ -9,55 +9,56 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-14 07:53+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2021-11-23 08:47+0000\n"
+"Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.6\n"
 
 #: accounts/models.py:7
 msgid "Женский"
-msgstr ""
+msgstr "Weiblich"
 
 #: accounts/models.py:7
 msgid "Мужской"
-msgstr ""
+msgstr "Männlich"
 
 #: accounts/models.py:8
 msgid "отчество"
-msgstr ""
+msgstr "Vatersname"
 
 #: accounts/models.py:11
 msgid "счёт пользователя"
-msgstr ""
+msgstr "Benutzerkonto"
 
 #: accounts/models.py:16
 msgid "фотография пользователя"
-msgstr ""
+msgstr "Benutzerfoto"
 
 #: accounts/models.py:19
 msgid "пол"
-msgstr ""
+msgstr "Boden"
 
 #: accounts/views.py:95
 msgid "Вы зарегистрированы. Проверте email с паролем."
-msgstr ""
+msgstr "Sind Sie registriert. Bestätigen Sie Ihre E-Mail mit einem Passwort."
 
 #: announce/models.py:20 announce/models.py:33 announce/models.py:49
 #: article/models.py:45
 msgid "заголовок"
-msgstr ""
+msgstr "Üerschrift"
 
 #: announce/models.py:21
 msgid "текст анонса выпуска"
-msgstr ""
+msgstr "Ankündigungstext veröffentlichen"
 
 #: announce/models.py:23 article/models.py:57 bookmarks/models.py:14
 msgid "выпуск издания"
-msgstr ""
+msgstr "Ausgabe"
 
 #: announce/models.py:28
 msgid "анонс выпуска"
