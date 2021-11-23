@@ -1,12 +1,13 @@
 {% load i18n %} 
-<form style="padding-top: 10px">
+<form method="POST" style="padding-top: 10px" action="{% url "signin" %}">
+  {% csrf_token %}
   <div class="form-group">
     <label for="exampleInputEmail1">{% trans 'Email' %}</label>
-    <input type="email" class="form-control" />
+    <input type="email" class="form-control" name="username" />
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">{% trans 'Password' %}</label>
-    <input type="password" class="form-control" />
+    <input type="password" class="form-control" name="password" />
   </div>
  
   <button type="submit" class="btn btn-primary">{% trans 'Вход' %}</button>

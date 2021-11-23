@@ -1,8 +1,9 @@
 {% load i18n %} 
-<form style="padding-top: 10px">
+<form method="POST" style="padding-top: 10px" action="{% url 'register' %}">
+{% csrf_token %}
   <div class="form-group">
     <label for="exampleInputEmail1">{% trans 'Email' %}</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
     
   </div>
   

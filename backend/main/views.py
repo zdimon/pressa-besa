@@ -8,6 +8,15 @@ from django.conf import settings
 from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import translation
 from catalog.models import Category
+from accounts.models import Customer
+import random
+from accounts.models import MailTemplate
+from django.utils.translation import ugettext_lazy as _
+from django.core.mail import send_mail
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
+from django.shortcuts import redirect
+
 
 def index(request):
     popular_journal = Journal.objects.filter(is_popular=True, is_public=True).order_by('position_popular')
@@ -97,4 +106,38 @@ def change_language(request):
 
 
 def signin(request):
+    if request.method == "POST":
+        user = authenticate(username=request.POST.get('username'), password=request.POST.get('password'))
+        if user is None:
+            messages.warning(request, _('Login or password is wrong!'))
+            print('111111111111')
+            return redirect('signin')
+        else:
+            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+            print('22222222222')
+            return HttpResponseRedirect('/preauth')
+
     return render(request, 'accounts/signin.html')
+
+
+def register(request):
+    user = Customer()
+    user.username = request.POST.get('email')
+    password = str(random.randint(111, 999))
+    user.set_password(password)
+    user.is_active = True
+    user.save()
+    ## send email with password
+    tpl = MailTemplate.objects.get(alias='registration')
+    message =  tpl.content
+    message = message.replace('{{password}}',password)
+    send_mail(
+        tpl.title,
+        message,
+        'support@pressa.ru',
+        [user.username],
+        fail_silently=False,
+    )
+    login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+    return HttpResponseRedirect('/preauth')
+

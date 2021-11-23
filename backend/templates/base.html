@@ -26,6 +26,11 @@
 
 <div class="page">
 	{% include 'blocks/header.html' %}
+	{% for message in messages %}
+			<div class="container alert alert-{{ message.tags }} alert-dismissible" role="alert">
+				{{ message }}
+			</div>
+	{% endfor %}
 	{% block content %}{% endblock %}
 	{% include 'blocks/footer.html' %}
 </div>
