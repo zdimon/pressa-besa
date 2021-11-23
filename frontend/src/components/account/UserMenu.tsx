@@ -6,13 +6,15 @@ import RegForm from './RegForm';
 import LoginForm from './LoginForm';
 import { config } from '../../config';
 import LkMenu from './LkMenu';
-
+import { useTranslation } from 'react-i18next';
 
 export default function UserMenu() {
 
   const [token, setToken] = React.useState(window.localStorage.getItem('token'));
   const [value, setValue] = React.useState(0);
   const [showPanel, setShowPanel] = React.useState(false);
+  const { t, i18n } = useTranslation();
+  
 
   const logout = () => {
     window.localStorage.removeItem('token');
@@ -67,8 +69,8 @@ export default function UserMenu() {
           value={value}
           onChange={handleChange} 
           >
-            <Tab label="Вход"  />
-            <Tab label="Регистрация" />
+            <Tab label={t('m_signin')}  />
+            <Tab label={t('m_register')} />
           </Tabs>
 
           <div hidden={value !== 1} >

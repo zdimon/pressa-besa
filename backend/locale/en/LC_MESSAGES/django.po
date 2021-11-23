@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-14 07:53+0000\n"
+"POT-Creation-Date: 2021-11-23 11:21+0000\n"
 "PO-Revision-Date: 2021-09-14 11:07+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,7 +47,21 @@ msgstr "gender"
 msgid "Вы зарегистрированы. Проверте email с паролем."
 msgstr "You was registered. Check your email, please."
 
-#: announce/models.py:20 announce/models.py:33 announce/models.py:49
+#: announce/api/views.py:39
+msgid "You are allready subscribed"
+msgstr ""
+
+#: announce/api/views.py:42
+#, fuzzy
+#| msgid "email"
+msgid "wrong email"
+msgstr "email"
+
+#: announce/api/views.py:44
+msgid "You have been subscribed"
+msgstr ""
+
+#: announce/models.py:20 announce/models.py:37 announce/models.py:56
 #: article/models.py:45
 msgid "заголовок"
 msgstr "title"
@@ -56,116 +70,120 @@ msgstr "title"
 msgid "текст анонса выпуска"
 msgstr "Announce"
 
-#: announce/models.py:23 article/models.py:57 bookmarks/models.py:14
+#: announce/models.py:24 article/models.py:57 bookmarks/models.py:14
 msgid "выпуск издания"
 msgstr "issue"
 
-#: announce/models.py:28
+#: announce/models.py:28 announce/models.py:53 article/models.py:73
+msgid "аудио?"
+msgstr ""
+
+#: announce/models.py:32
 msgid "анонс выпуска"
 msgstr "announce"
 
-#: announce/models.py:29
+#: announce/models.py:33
 msgid "анонсы выпусков"
 msgstr "announses"
 
-#: announce/models.py:34
+#: announce/models.py:38
 msgid "текст анонса"
 msgstr "announce text"
 
-#: announce/models.py:36
+#: announce/models.py:40
 msgid "страница печатного издания"
 msgstr "journal page"
 
-#: announce/models.py:38 article/models.py:175
+#: announce/models.py:42 article/models.py:179
 msgid "обложка"
 msgstr "cover"
 
-#: announce/models.py:43
+#: announce/models.py:47
 msgid "избранная статья"
 msgstr "main article"
 
-#: announce/models.py:44
+#: announce/models.py:48
 msgid "избранные статьи"
 msgstr "main articles"
 
-#: announce/models.py:50
+#: announce/models.py:57
 msgid "Название журнала"
 msgstr "Journal`s name"
 
-#: announce/models.py:51 journal/models/issue_page.py:12
+#: announce/models.py:58 journal/models/issue_page.py:12
 #: journal/models/purchased_issues.py:26
 msgid "печатное издание"
 msgstr "Journal"
 
-#: announce/models.py:52
+#: announce/models.py:59
 msgid "короткое описание"
 msgstr "Short description"
 
-#: announce/models.py:53
+#: announce/models.py:60
 msgid "начало статьи"
 msgstr "Start article"
 
-#: announce/models.py:54
+#: announce/models.py:61
 msgid "продолжение"
 msgstr "continue"
 
-#: announce/models.py:55
+#: announce/models.py:62
 msgid "изображение ландшафт"
 msgstr "image landscape"
 
-#: announce/models.py:56
+#: announce/models.py:63
 msgid "изображение портрет"
 msgstr "image portrait"
 
-#: announce/models.py:61
+#: announce/models.py:68
 msgid "Опубликован?"
 msgstr "Published?"
 
-#: announce/models.py:62
+#: announce/models.py:69
 msgid "Автор"
 msgstr "Author"
 
-#: announce/models.py:65 catalog/models.py:21
+#: announce/models.py:72 catalog/models.py:21
 msgid "Сортировка"
 msgstr "Sort"
 
-#: announce/models.py:146
+#: announce/models.py:153
 msgid "обзор"
 msgstr "overview"
 
-#: announce/models.py:147
+#: announce/models.py:154
 msgid "Обзор прессы"
 msgstr "Pressa overview"
 
-#: announce/models.py:153
+#: announce/models.py:160
 msgid "email"
 msgstr "email"
 
-#: announce/models.py:177
+#: announce/models.py:184
 msgid "ТОП 10 популярных статей"
 msgstr "TOP 10 popular articles"
 
-#: announce/models.py:182
+#: announce/models.py:189
 msgid "подписку"
 msgstr "subscription"
 
-#: announce/models.py:183
+#: announce/models.py:190
 msgid "Подписки на рассылку"
 msgstr "Subscriptions of the newsletters"
 
-#: announce/models.py:187
+#: announce/models.py:194
 msgid "Кол-во подписчиков"
 msgstr "Amount of the subscribers"
 
-#: announce/models.py:188
+#: announce/models.py:195
 msgid "Кол-во приходов"
 msgstr "Ammount income"
 
-#: announce/models.py:190
+#: announce/models.py:197
 msgid "лог"
 msgstr "log"
 
-#: announce/models.py:191
+#: announce/models.py:198
 msgid "История рассылки"
 msgstr "Newsletter history"
 
@@ -197,7 +215,7 @@ msgstr "tags"
 msgid "Теги статьи"
 msgstr "Article tags"
 
-#: article/models.py:51 article/models.py:199
+#: article/models.py:51 article/models.py:203
 msgid "автор"
 msgstr "author"
 
@@ -210,7 +228,7 @@ msgid "Категории в Pressa.ru"
 msgstr "Categories"
 
 #: article/models.py:63 bookmarks/models.py:17
-#: templates/catalog/category_detail.html:56 templates/items/page.html:15
+#: templates/catalog/category_detail.html:40 templates/items/page.html:15
 #: templates/lk/tabs/bookmarks.html:10
 msgid "Страница"
 msgstr "Page"
@@ -223,76 +241,76 @@ msgstr "Order"
 msgid "опубликован?"
 msgstr "published"
 
-#: article/models.py:114
+#: article/models.py:118
 msgid "Имя шрифта"
 msgstr "Font name"
 
-#: article/models.py:115
+#: article/models.py:119
 msgid "Файл"
 msgstr "File"
 
-#: article/models.py:124
+#: article/models.py:128
 msgid "Белый"
 msgstr "White"
 
-#: article/models.py:125
+#: article/models.py:129
 msgid "Черный"
 msgstr "Black"
 
-#: article/models.py:129 journal/models/issue.py:16
+#: article/models.py:133 journal/models/issue.py:16
 #: journal/models/purchased_issues.py:24 subscribe/models.py:59
 msgid "издание"
 msgstr "Journal"
 
-#: article/models.py:131
+#: article/models.py:135
 msgid "Заголовок x"
 msgstr "title x"
 
-#: article/models.py:133
+#: article/models.py:137
 msgid "Заголовок y"
 msgstr "title y"
 
-#: article/models.py:136
+#: article/models.py:140
 msgid "Размер заголовка"
 msgstr "Title size"
 
-#: article/models.py:139
+#: article/models.py:143
 msgid "Цвет заголовка"
 msgstr "Title color"
 
-#: article/models.py:144
+#: article/models.py:148
 msgid "Выпуск x"
 msgstr "Issue x"
 
-#: article/models.py:146
+#: article/models.py:150
 msgid "Выпуск y"
 msgstr "Issue y"
 
-#: article/models.py:149
+#: article/models.py:153
 msgid "Размер номера"
 msgstr "Issue size"
 
-#: article/models.py:151
+#: article/models.py:155
 msgid "Цвет номера"
 msgstr "Issue color"
 
-#: article/models.py:156
+#: article/models.py:160
 msgid "Категория x"
 msgstr "Category X"
 
-#: article/models.py:158
+#: article/models.py:162
 msgid "Категория y"
 msgstr "Category Y"
 
-#: article/models.py:161
+#: article/models.py:165
 msgid "Размер категории"
 msgstr "Category size"
 
-#: article/models.py:163
+#: article/models.py:167
 msgid "Цвет категории"
 msgstr "Category color"
 
-#: article/models.py:169
+#: article/models.py:173
 msgid "шрифт"
 msgstr "Font"
 
@@ -349,7 +367,7 @@ msgid "Покупка товаров \"Киоск у дома\""
 msgstr "kiosk"
 
 #: billing/models.py:75 bookmarks/models.py:16
-#: journal/models/purchased_issues.py:21 subscribe/models.py:89
+#: journal/models/purchased_issues.py:21 subscribe/models.py:91
 msgid "пользователь"
 msgstr "user"
 
@@ -401,7 +419,7 @@ msgstr "Text reader"
 msgid "тип ридера"
 msgstr "reader type"
 
-#: bookmarks/models.py:15
+#: bookmarks/models.py:15 templates/lk/pages/bookmarks.html:29
 msgid "статья"
 msgstr "article"
 
@@ -409,15 +427,21 @@ msgstr "article"
 msgid "Статья не найдена."
 msgstr "Article not found"
 
-#: bookmarks/views.py:37
+#: bookmarks/views.py:37 bookmarks/views.py:57
 msgid "Закладка уже существует."
 msgstr "Bookmark already exists"
 
-#: bookmarks/views.py:46
+#: bookmarks/views.py:47 bookmarks/views.py:65
 msgid "Закладка добавлена."
 msgstr "Bookmark was added"
 
-#: bookmarks/views.py:48
+#: bookmarks/views.py:53
+#, fuzzy
+#| msgid "Статья не найдена."
+msgid "Выпуск не найден."
+msgstr "Article not found"
+
+#: bookmarks/views.py:68
 msgid "Ошибка данных."
 msgstr "Data error"
 
@@ -546,6 +570,12 @@ msgstr "Cover size"
 msgid "цена"
 msgstr "cost"
 
+#: journal/models/journal.py:64
+#, fuzzy
+#| msgid "отображать ли на сайте?"
+msgid "отображать на сайте?"
+msgstr "published?"
+
 #: journal/models/mixins/address.py:8 main/models/mixins.py:37
 msgid "Улица"
 msgstr "Street"
@@ -661,8 +691,24 @@ msgstr "purchases"
 msgid "Активно"
 msgstr "Active"
 
-#: reader/api/views.py:214
+#: main/views.py:112
+msgid "Login or password is wrong!"
+msgstr ""
+
+#: reader/api/__views.py:254 reader/api/views/make_payment.py:36
 msgid "Вы уже оплатили этот выпуск."
+msgstr "You already bought this issue"
+
+#: reader/api/views/buy_subscription.py:31 reader/api/views/make_payment.py:32
+#, fuzzy
+#| msgid "У вас недостаточно средств на счету!"
+msgid "У вас недостаточно средств на счету. Пополните счет."
+msgstr "You have not enough money!"
+
+#: reader/api/views/buy_subscription.py:51
+#, fuzzy
+#| msgid "Вы уже оплатили этот выпуск."
+msgid "Вы успешно оплатили подписку."
 msgstr "You already bought this issue"
 
 #: subscribe/models.py:18
@@ -685,7 +731,7 @@ msgstr "comment"
 msgid "отчисления издательству, в рублях"
 msgstr "payment to publisher"
 
-#: subscribe/models.py:45 subscribe/models.py:70
+#: subscribe/models.py:45 subscribe/models.py:72
 msgid "месяц"
 msgid_plural "месяцы"
 msgstr[0] "month"
@@ -699,13 +745,16 @@ msgstr "amount issues in the subscription"
 msgid "число месяцев"
 msgstr "ammont moths"
 
-#: subscribe/models.py:67
+#: subscribe/models.py:69 templates/lk/pages/bookmarks.html:31
+#, fuzzy
+#| msgid "выпуск"
+#| msgid_plural "выпуски"
 msgid "выпуск"
-msgid_plural "выпуски"
+msgid_plural "выпусков"
 msgstr[0] "issue"
 msgstr[1] "issues"
 
-#: subscribe/models.py:76
+#: subscribe/models.py:78
 #, python-format
 msgid ""
 "%(issues)d %(issues_plural)s (%(months)d %(months_plural)s) за %(cost)10.2f "
@@ -714,98 +763,98 @@ msgstr ""
 "%(issues)d %(issues_plural)s (%(months)d %(months_plural)s) fo %(cost)10.2f "
 "руб. (save %(discount)d rub.)"
 
-#: subscribe/models.py:78
+#: subscribe/models.py:80
 #, python-format
 msgid ""
 "%(issues)d %(issues_plural)s (%(months)d %(months_plural)s) за %(cost)10.2f "
 "руб."
 msgstr ""
-"%(issues)d %(issues_plural)s (%(months)d %(months_plural)s) for %(cost)10.2f"
-" rub."
+"%(issues)d %(issues_plural)s (%(months)d %(months_plural)s) for %(cost)10.2f "
+"rub."
 
-#: subscribe/models.py:82 subscribe/models.py:91
+#: subscribe/models.py:84 subscribe/models.py:93
 msgid "подписка"
 msgstr "subscription"
 
-#: subscribe/models.py:83
+#: subscribe/models.py:85
 msgid "подписки"
 msgstr "subscriptions"
 
-#: subscribe/models.py:93
+#: subscribe/models.py:95
 msgid "количество оставшихся номеров по подписке"
 msgstr "ammount issues less for subscription"
 
-#: subscribe/models.py:96
+#: subscribe/models.py:98
 #, python-format
 msgid "%(id)s - %(customer)s подписан на %(subscription)s"
 msgstr "%(id)s - %(customer)s subscribed on %(subscription)s"
 
-#: subscribe/models.py:140
+#: subscribe/models.py:142
 msgid "подписка пользователя"
 msgstr "user`s subscription"
 
-#: subscribe/models.py:141
+#: subscribe/models.py:143
 msgid "подписки пользователей"
 msgstr "user`s subscriptions"
 
-#: subscribe/models.py:153
+#: subscribe/models.py:155
 msgid "Название абонемента"
 msgstr "Abonement`s name"
 
-#: subscribe/models.py:157
+#: subscribe/models.py:159
 msgid "Издания доступные по абонементу"
 msgstr "Abonement`s journals"
 
-#: subscribe/models.py:254 templates/lk/index.html:21
+#: subscribe/models.py:256 templates/lk/index.html:21
 msgid "Абонемент"
 msgstr "Abonement"
 
-#: subscribe/models.py:255
+#: subscribe/models.py:257
 msgid "Абонементы"
 msgstr "abonements"
 
-#: subscribe/models.py:260
+#: subscribe/models.py:262
 msgid "Cтоимость подписки"
 msgstr "Subscription`s cost"
 
-#: subscribe/models.py:262
+#: subscribe/models.py:264
 msgid "Действиет при покупке от"
 msgstr "Longivity"
 
-#: subscribe/models.py:263
+#: subscribe/models.py:265
 msgid "выпусков"
 msgstr "issues"
 
-#: subscribe/models.py:266
+#: subscribe/models.py:268
 #, python-brace-format
 msgid "Абонемент на {0} дней за {1}"
 msgstr "Abonement for {0} days for {1}"
 
-#: subscribe/models.py:271
+#: subscribe/models.py:273
 msgid "Скидка на Абонемент"
 msgstr "Abonement`s discount"
 
-#: subscribe/models.py:272
+#: subscribe/models.py:274
 msgid "Скидки на Абонементы"
 msgstr "Abonement`s discount"
 
-#: subscribe/models.py:277
+#: subscribe/models.py:279
 msgid "Начало подписки"
 msgstr "Subscription start"
 
-#: subscribe/models.py:278
+#: subscribe/models.py:280
 msgid "Окончание подписки"
 msgstr "Subscription end"
 
-#: subscribe/models.py:280
+#: subscribe/models.py:282
 msgid "Cтоимость подписки с учетом скидки"
 msgstr "Subscription cost"
 
-#: subscribe/models.py:346
+#: subscribe/models.py:348
 msgid "Абонемент пользователя"
 msgstr "User`s abonemrnt"
 
-#: subscribe/models.py:347
+#: subscribe/models.py:349
 msgid "Абонементы пользователей"
 msgstr "User`s abonements"
 
@@ -818,15 +867,47 @@ msgstr "You have not enough money!"
 msgid "Абонемент на %s дней активирован."
 msgstr "Abonement for %s days was activated.."
 
-#: templates/announce/detail.html:56 templates/article/article_detail.html:90
+#: templates/accounts/login_form.html:5 templates/accounts/reg_form.html:5
+#, fuzzy
+#| msgid "email"
+msgid "Email"
+msgstr "email"
+
+#: templates/accounts/login_form.html:9
+msgid "Password"
+msgstr ""
+
+#: templates/accounts/login_form.html:13 templates/accounts/signin.html:15
+msgid "Вход"
+msgstr ""
+
+#: templates/accounts/reg_form.html:11
+msgid "Зарегистрироваться"
+msgstr ""
+
+#: templates/accounts/signin.html:8
+#, fuzzy
+#| msgid "Информация"
+msgid "Авторизация"
+msgstr "Information"
+
+#: templates/accounts/signin.html:16
+#, fuzzy
+#| msgid "Операция"
+msgid "Регистрация"
+msgstr "Operation"
+
+#: templates/announce/detail.html:57 templates/article/article_detail.html:90
+#: templates/journal/journal_detail.html:88
 msgid "Другие"
 msgstr "Others"
 
-#: templates/announce/detail.html:57 templates/article/article_detail.html:91
+#: templates/announce/detail.html:58 templates/article/article_detail.html:91
+#: templates/journal/journal_detail.html:88
 msgid "статьи"
 msgstr "articles"
 
-#: templates/article/article_search.html:9
+#: templates/article/article_search.html:9 templates/blocks/search.html:7
 msgid "Поиск"
 msgstr "Search"
 
@@ -846,11 +927,28 @@ msgstr "Books"
 msgid "Статьи"
 msgstr "Articles"
 
-#: templates/items/journal.html:26 templates/lk/tabs/collection.html:17
+#: templates/blocks/search.html:8
+msgid "Поиск по журналам газетам статьям категориям и тегам."
+msgstr ""
+
+#: templates/catalog/category_detail.html:26
+msgid "Новые"
+msgstr ""
+
+#: templates/catalog/category_detail.html:26
+#, fuzzy
+#| msgid "выпуск"
+#| msgid_plural "выпуски"
+msgid "выпуски"
+msgstr "issue"
+
+#: templates/items/journal.html:26 templates/lk/pages/bookmarks.html:36
+#: templates/lk/pages/bookmarks.html:38 templates/lk/pages/collection.html:30
+#: templates/lk/tabs/collection.html:17
 msgid "Читать"
 msgstr "Read"
 
-#: templates/lk/index.html:13
+#: templates/lk/index.html:13 templates/lk/pages/index.html:13
 msgid "Личный кабинет"
 msgstr "Dashboard"
 
@@ -874,67 +972,132 @@ msgstr "Payments"
 msgid "Закладки"
 msgstr "Bookmarks"
 
-#: templates/lk/replanish.html:14
-msgid "Пополнение счета"
-msgstr "Replanish account"
+#: templates/lk/pages/abonement.html:13
+#, fuzzy
+#| msgid "Абонемент"
+msgid "Мой абонемент"
+msgstr "Abonement"
 
-#: templates/lk/tabs/abonement.html:8
+#: templates/lk/pages/abonement.html:16
+#, fuzzy
+#| msgid "Издания доступные по абонементу"
+msgid "У вас нет купленных абонементов"
+msgstr "Abonement`s journals"
+
+#: templates/lk/pages/abonement.html:21 templates/lk/tabs/abonement.html:8
 msgid "Дата начала"
 msgstr "Start date"
 
-#: templates/lk/tabs/abonement.html:9
+#: templates/lk/pages/abonement.html:22 templates/lk/tabs/abonement.html:9
 msgid "Дата окончания"
 msgstr "End date"
 
-#: templates/lk/tabs/abonement.html:10
+#: templates/lk/pages/abonement.html:23 templates/lk/tabs/abonement.html:10
 msgid "Стоимость"
 msgstr "Cost"
 
-#: templates/lk/tabs/account.html:8
-msgid "У вас на счету:"
-msgstr "On your account"
+#: templates/lk/pages/bookmarks.html:13
+#, fuzzy
+#| msgid "Закладки"
+msgid "Мои закладки"
+msgstr "Bookmarks"
 
-#: templates/lk/tabs/account.html:15
-msgid "Пополнить счет"
-msgstr "Replanish account"
+#: templates/lk/pages/bookmarks.html:17
+#, fuzzy
+#| msgid "Цвет заголовка"
+msgid "У вас нет закладок"
+msgstr "Title color"
 
-#: templates/lk/tabs/bookmarks.html:8 templates/lk/tabs/collection.html:8
-#: templates/lk/tabs/subscriptions.html:9
+#: templates/lk/pages/collection.html:13
+#, fuzzy
+#| msgid "Коллекция"
+msgid "Моя коллекция"
+msgstr "Collection"
+
+#: templates/lk/pages/collection.html:16
+msgid "У вас нет купленных номеров"
+msgstr ""
+
+#: templates/lk/pages/collection.html:21
+#: templates/lk/pages/subscription.html:21 templates/lk/tabs/bookmarks.html:8
+#: templates/lk/tabs/collection.html:8 templates/lk/tabs/subscriptions.html:9
 msgid "Издание"
 msgstr "Publication"
 
-#: templates/lk/tabs/bookmarks.html:9 templates/lk/tabs/collection.html:9
+#: templates/lk/pages/collection.html:22 templates/lk/tabs/bookmarks.html:9
+#: templates/lk/tabs/collection.html:9
 msgid "Выпуск"
 msgstr "Issue"
 
-#: templates/lk/tabs/collection.html:10
+#: templates/lk/pages/collection.html:23 templates/lk/tabs/collection.html:10
 msgid "Действия"
 msgstr "Actions"
 
-#: templates/lk/tabs/payments.html:8
+#: templates/lk/pages/index.html:16 templates/lk/tabs/account.html:8
+msgid "У вас на счету:"
+msgstr "On your account"
+
+#: templates/lk/pages/index.html:21 templates/lk/tabs/account.html:15
+msgid "Пополнить счет"
+msgstr "Replanish account"
+
+#: templates/lk/pages/payments.html:13
+#, fuzzy
+#| msgid "Платежи"
+msgid "Мои платежи"
+msgstr "Payments"
+
+#: templates/lk/pages/payments.html:17
+msgid "У вас нет пополнений"
+msgstr ""
+
+#: templates/lk/pages/payments.html:22 templates/lk/tabs/payments.html:8
 msgid "Дата"
 msgstr "Date"
 
-#: templates/lk/tabs/payments.html:9
+#: templates/lk/pages/payments.html:23 templates/lk/tabs/payments.html:9
 msgid "Операция"
 msgstr "Operation"
 
-#: templates/lk/tabs/payments.html:10
+#: templates/lk/pages/payments.html:24 templates/lk/tabs/payments.html:10
 msgid "Сумма"
 msgstr "Sum"
 
+#: templates/lk/pages/payments.html:25 templates/lk/pages/subscription.html:23
 #: templates/lk/tabs/payments.html:11 templates/lk/tabs/subscriptions.html:11
 msgid "Информация"
 msgstr "Information"
 
+#: templates/lk/pages/subscription.html:13
+#, fuzzy
+#| msgid "подписки"
+msgid "Мои подписки"
+msgstr "subscriptions"
+
+#: templates/lk/pages/subscription.html:16
+#, fuzzy
+#| msgid "Покупка по подписке"
+msgid "У вас нет купленных подписок"
+msgstr "Subscription payment"
+
+#: templates/lk/pages/subscription.html:22
 #: templates/lk/tabs/subscriptions.html:10
 msgid "Название"
 msgstr "Name"
 
+#: templates/lk/pages/subscription.html:31
 #: templates/lk/tabs/subscriptions.html:18
 #, python-format
 msgid "Осталось %(subscription_count)s номеров."
 msgstr "%(subscription_count)s issues left."
+
+#: templates/lk/replanish.html:14
+msgid "Пополнение счета"
+msgstr "Replanish account"
+
+#: templates/main/registered/new_journals.html:7
+msgid "Новинки"
+msgstr ""
 
 #: templates/main/search.html:11
 msgid "Поиск по слову"
@@ -944,22 +1107,17 @@ msgstr "Search by word"
 msgid "По вашему запросу ничего не найдено"
 msgstr "No result"
 
-#: translator/views.py:8
-msgid "Текстовая версия"
-msgstr "Text version"
+#~ msgid "Текстовая версия"
+#~ msgstr "Text version"
 
-#: translator/views.py:9
-msgid "PDF версия"
-msgstr "PDF version"
+#~ msgid "PDF версия"
+#~ msgstr "PDF version"
 
-#: translator/views.py:10
-msgid "Оплата выпуска"
-msgstr "Issue payment"
+#~ msgid "Оплата выпуска"
+#~ msgstr "Issue payment"
 
-#: translator/views.py:11
-msgid "Стоимость покупки"
-msgstr "Cost"
+#~ msgid "Стоимость покупки"
+#~ msgstr "Cost"
 
-#: translator/views.py:12
-msgid "У вас на счету"
-msgstr "On your account"
+#~ msgid "У вас на счету"
+#~ msgstr "On your account"

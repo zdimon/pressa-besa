@@ -52,7 +52,7 @@ export default function ReaderHeader(props) {
       };
 
     return (
-        <>
+        <React.Suspense fallback="loading...">
         <header className="section page-header">
         <div className="rd-navbar-wrap">
             <nav className="rd-navbar rd-navbar-classic" data-layout="rd-navbar-static" data-sm-layout="rd-navbar-static"
@@ -145,8 +145,8 @@ export default function ReaderHeader(props) {
         value={value}
         onChange={handleChange} 
         >
-            <Tab label="Вход"  />
-            <Tab label="Регистрация" />
+            <Tab label={t('m_signin')}  />
+            <Tab label={t('m_register')} />
         </Tabs>
 
         <div hidden={value !== 1} >
@@ -158,6 +158,6 @@ export default function ReaderHeader(props) {
         </div>
 
         </Drawer>
-    </>
+    </React.Suspense>
     )
 }

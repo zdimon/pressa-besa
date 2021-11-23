@@ -1,10 +1,12 @@
 import * as React from 'react';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import { useTranslation } from 'react-i18next';
+
 
 export default function LkMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
-
+    const { t, i18n } = useTranslation();
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -31,27 +33,27 @@ export default function LkMenu() {
             >
         <MenuItem>
             <i className="fa fa-credit-card color-red" aria-hidden="true"></i>
-            <a href="/lk/index">Пополнить счет</a>
+            <a href="/lk/index">{t('m_replanish')}</a>
         </MenuItem>
         <MenuItem>
             <i className="fa fa-handshake-o color-red" aria-hidden="true"></i>
-            <a href="/lk/subscription">Подписки</a>
+            <a href="/lk/subscription">{t('m_subscription')}</a>
         </MenuItem>
         <MenuItem>
             <i className="fa fa-bookmark color-red" aria-hidden="true"></i>
-            <a href="/lk/bookmarks">Закладки</a>
+            <a href="/lk/bookmarks">{t('m_bookmarks')}</a>
         </MenuItem>
         <MenuItem>
             <i className="fa fa-calendar color-red" aria-hidden="true"></i>
-            <a href="/lk/abonement">Абонемент</a>
+            <a href="/lk/abonement">{t('m_abonement')}</a>
         </MenuItem>
         <MenuItem>
             <i className="fa fa-folder-open color-red" aria-hidden="true"></i>
-            <a href="/lk/collection">Моя коллекция</a>
+            <a href="/lk/collection">{t('m_collection')}</a>
         </MenuItem>
         <MenuItem>
             <i className="fa fa-shopping-cart color-red" aria-hidden="true"></i>
-            <a href="/lk/payments">Платежи</a>
+            <a href="/lk/payments">{t('m_payments')}</a>
         </MenuItem>
         
       </Menu>

@@ -5,7 +5,18 @@
                 "m_pdf_riader": "{% trans 'PDF версия' %}",
                 "t_payment": "{% trans 'Оплата выпуска' %}",
                 "m_cost": "{% trans 'Стоимость покупки' %}",
-                "m_on_account": "{% trans 'У вас на счету' %}"
+                "m_on_account": "{% trans 'У вас на счету' %}",
+                "m_replanish": "{% trans 'Пополнить счет' %}",
+                "m_subscription": "{% trans 'Подписки' %}",
+                "m_bookmarks": "{% trans 'Закладки' %}",
+                "btn_subscription": "{% trans 'Подписка 8 руб/сутки' %}",
+                "m_abonement": "{% trans 'Абонемент' %}",
+                "m_collection": "{% trans 'Моя коллекция' %}",
+                "m_payments": "{% trans 'Платежи' %}",
+                "m_signin": "{% trans 'Вход' %}",
+                "m_register": "{% trans 'Регистрация' %}"
+
+                
            
 
 }

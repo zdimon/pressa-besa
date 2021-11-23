@@ -43,8 +43,7 @@ i18n
   .use(initReactI18next)
   .init({
     react: {
-        useSuspense: false,
-        wait: false,
+        useSuspense: false
       },
     fallbackLng: 'ru',
     debug: true,
@@ -114,17 +113,10 @@ const bmEls = document.getElementsByClassName("js-bookmark");
 
 /// base reader
 const baseReaderEl = document.getElementById("js-base-reader");
-if(baseReaderEl) render(<BaseReader issueId={baseReaderEl.getAttribute('data-issue-id')}/>, baseReaderEl)
+if(baseReaderEl) render(
+<BaseReader issueId={baseReaderEl.getAttribute('data-issue-id')}/>
+, baseReaderEl)
 
-
-/// image reader
-const readerEl = document.getElementById("js-image-reader");
-if(readerEl) render(<ImageReader issueId={readerEl.getAttribute('data-issue-id')}/>, readerEl)
-
-
-/// text reader
-const txtreaderEl = document.getElementById("js-text-reader");
-if(txtreaderEl) render(<TextReader issueId={txtreaderEl.getAttribute('data-issue-id')}/>, txtreaderEl)
 
 
 /// buy button
