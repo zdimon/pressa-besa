@@ -4,8 +4,8 @@
 
 <form action="{% url 'search' %}" method="GET" class="rd-nav-aside__form">
     <div class="form-wrap">
-        <div class="form-select font-primary">Поиск</div>
-        <input type="text" name="key" class="form-input" placeholder="Поиск по журналам газетам статьям категориям и тегам." value="{{ key }}">
+        <div class="form-select font-primary">{% trans 'Поиск' %}</div>
+        <input type="text" name="key" class="form-input" placeholder="{% trans 'Поиск по журналам газетам статьям категориям и тегам.'%}" value="{{ key }}">
         <div class="form-submit">
             <button type="submit" class="button">
                 <span class="fa fa-search"></span>

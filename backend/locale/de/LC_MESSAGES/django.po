@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-14 07:53+0000\n"
-"PO-Revision-Date: 2021-11-23 08:47+0000\n"
+"PO-Revision-Date: 2021-11-23 09:14+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -62,44 +62,44 @@ msgstr "Ausgabe"
 
 #: announce/models.py:28
 msgid "анонс выпуска"
-msgstr ""
+msgstr "Release-Ankündigung"
 
 #: announce/models.py:29
 msgid "анонсы выпусков"
-msgstr ""
+msgstr "Release-Ankündigungen"
 
 #: announce/models.py:34
 msgid "текст анонса"
-msgstr ""
+msgstr "Ankündigungstext"
 
 #: announce/models.py:36
 msgid "страница печатного издания"
-msgstr ""
+msgstr "Seite drucken"
 
 #: announce/models.py:38 article/models.py:175
 msgid "обложка"
-msgstr ""
+msgstr "Startseite"
 
 #: announce/models.py:43
 msgid "избранная статья"
-msgstr ""
+msgstr "gesponserter Artikel"
 
 #: announce/models.py:44
 msgid "избранные статьи"
-msgstr ""
+msgstr "ausgewählte Artikel"
 
 #: announce/models.py:50
 msgid "Название журнала"
-msgstr ""
+msgstr "Zeitschriftentitel"
 
 #: announce/models.py:51 journal/models/issue_page.py:12
 #: journal/models/purchased_issues.py:26
 msgid "печатное издание"
-msgstr ""
+msgstr "Druckausgabe"
 
 #: announce/models.py:52
 msgid "короткое описание"
-msgstr ""
+msgstr "Kurzbeschreibung"
 
 #: announce/models.py:53
 msgid "начало статьи"
@@ -725,7 +725,7 @@ msgstr ""
 
 #: subscribe/models.py:83
 msgid "подписки"
-msgstr ""
+msgstr "Abonnements"
 
 #: subscribe/models.py:93
 msgid "количество оставшихся номеров по подписке"
@@ -742,7 +742,7 @@ msgstr ""
 
 #: subscribe/models.py:141
 msgid "подписки пользователей"
-msgstr ""
+msgstr "Abonnements"
 
 #: subscribe/models.py:153
 msgid "Название абонемента"
@@ -754,11 +754,11 @@ msgstr ""
 
 #: subscribe/models.py:254 templates/lk/index.html:21
 msgid "Абонемент"
-msgstr ""
+msgstr "Abonnement"
 
 #: subscribe/models.py:255
 msgid "Абонементы"
-msgstr ""
+msgstr "Abonnement"
 
 #: subscribe/models.py:260
 msgid "Cтоимость подписки"
@@ -820,27 +820,27 @@ msgstr ""
 
 #: templates/announce/detail.html:57 templates/article/article_detail.html:91
 msgid "статьи"
-msgstr ""
+msgstr "Artikel"
 
 #: templates/article/article_search.html:9
 msgid "Поиск"
-msgstr ""
+msgstr "Suche"
 
 #: templates/blocks/header.html:68
 msgid "Журналы"
-msgstr ""
+msgstr "Zeitschriften"
 
 #: templates/blocks/header.html:70
 msgid "Газеты"
-msgstr ""
+msgstr "Zeitungen"
 
 #: templates/blocks/header.html:72
 msgid "Книги"
-msgstr ""
+msgstr "Bücher"
 
 #: templates/blocks/header.html:75
 msgid "Статьи"
-msgstr ""
+msgstr "Artikel"
 
 #: templates/items/journal.html:26 templates/lk/tabs/collection.html:17
 msgid "Читать"
@@ -856,7 +856,7 @@ msgstr ""
 
 #: templates/lk/index.html:19
 msgid "Подписки"
-msgstr ""
+msgstr "Abonnements"
 
 #: templates/lk/index.html:23
 msgid "Коллекция"
@@ -864,11 +864,11 @@ msgstr ""
 
 #: templates/lk/index.html:25 templates/lk/tabs/payments.html:5
 msgid "Платежи"
-msgstr ""
+msgstr "Zahlungen"
 
 #: templates/lk/index.html:27
 msgid "Закладки"
-msgstr ""
+msgstr "Lesezeichen"
 
 #: templates/lk/replanish.html:14
 msgid "Пополнение счета"
@@ -892,7 +892,7 @@ msgstr ""
 
 #: templates/lk/tabs/account.html:15
 msgid "Пополнить счет"
-msgstr ""
+msgstr "Konto aufladen"
 
 #: templates/lk/tabs/bookmarks.html:8 templates/lk/tabs/collection.html:8
 #: templates/lk/tabs/subscriptions.html:9
@@ -934,7 +934,7 @@ msgstr ""
 
 #: templates/main/search.html:11
 msgid "Поиск по слову"
-msgstr ""
+msgstr "Suche nach Wort"
 
 #: templates/main/search.html:22
 msgid "По вашему запросу ничего не найдено"
