@@ -9,7 +9,7 @@ import  { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from "react-router-dom";
 import SubscribeButton from '../Subscription/SubscribeButton';
 import ReactHtmlParser from 'react-html-parser'; 
-
+import AudioButton from '../audioButton/audioButton';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -156,68 +156,66 @@ export default function TextReader(props) {
 
     return (
       <>
-      <section className="section">
-        <div className="container position-relative">
-        { !show_current?
-        <div className="single-card__info">
-						<div className="single-card__info-group">
-							<div className="single-card__info-details">
-								<div className="single-card__info-details-media">
-									<img src={current_issue.issue_cover} alt="" />
-								</div>
-								<div className="single-card__info-details-caption">
-                  <div className="single-card__info-details-title">
-                  {current_issue.issue_name} {current_issue.released} &nbsp;
-                  <AddBookmark  
+      <section className="section section-xs bg-default single-card">
+		    <div className="container container-md">
+			    <div className="row row-20">
+            { show_image?
+              <div className="col-12 col-md-4 d-flex justify-content-center">
+                <div className="single-card__media">
+                  <img src={current_article.image_url} alt="" />
+                </div>
+              </div>
+             : <></>}
+				    <div className="col-12 col-md-8 d-flex flex-column justify-content-between">
+					    <div className="single-card__info">
+              { show_current?
+						    <div className="single-card__info-group">
+							    <div className="single-card__info-details">
+								    <div className="single-card__info-details-media">
+									    <a href="{% url 'journal-detail' name_slug=item.issue.journal.name_slug %}">
+									    <img src={current_issue.issue_cover} alt="" width="100" />
+									    </a>
+								    </div>
+								    <div className="single-card__info-details-caption">
+									    <div className="single-card__info-details-title">
+                         {current_issue.journal_name}
+									    </div>
+									    <div className="single-card__info-details-release">
+										    Выпуск:  {current_issue.issue_name} {current_issue.released}
+									    </div>
+									     <SubscribeButton />
+                       <AudioButton type="article" id={current_issue.id} />
+								    </div>
+							    </div>
+							    <div className="single-card__info-marker">
+                    <AddBookmark  
                     issueId={current_issue.issue_id} 
                     type="issue" 
                     />
-									</div>
-									<div className="single-card__info-details-title big-title">
-                  {current_issue.journal_name}
-									</div>
-									<div className="single-card__info-details-release">
-									  <SubscribeButton />
-									</div>
-								</div>
-							</div>
-            </div>
-        </div>: <div></div>
-        }
-        <div className="row" >
-          <h2 className="article-title">{current_tag}</h2>
-        </div>   
-        <div className="row" >
-          <h2 className="article-title">{current_article.title}</h2>
-        </div>        
+							    </div>
+						    </div>
+                : <div></div>
+                }
+						    <div className="single-card__info-title">
+                  <h2 className="article-title">
+                    {current_article.title}
+                  </h2>
+                </div>
+						    <div className="single-card__info-caption">
+                  { ReactHtmlParser (current_article.text) }
 
-          <div className="row row-20" style={ show_current? {} : {"display": "none"} }> 
-              {
-                show_image? <div className="col-12 col-md-4 d-flex justify-content-center"><div className="single-card__media">
-                <img src={current_article.image_url} alt={current_article.title} /></div></div>: <></>
-              
-              }
-             
-            
-            <div className="col-12 col-md-8 d-flex flex-column justify-content-between">
-              <div className="single-card__info">
-                
-                <div className="single-card__info-caption">
-                  <div  className="color-red font-bold">
-                    <a href="#" onClick={goBack}>
-                    {props.settings.journal_name}
-                    </a></div>
-                  <div className="color-silver font-bold">{props.settings.issue_name} {props.settings.released}</div>
                   <div className="font-bold">
                     Автор: {current_article.author}
                   </div>
-                  { ReactHtmlParser (current_article.text) }
-                </div>
 
-              </div>
-              
-            </div>
-          </div>
+						    </div>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+
+
+        <div className="container position-relative">
 
           <section className="section">
           <div className="col-12">
