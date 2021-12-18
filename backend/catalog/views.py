@@ -32,7 +32,9 @@ def category_detail(request, journal_type, category):
     paginator = Paginator(journals, 16)
     page_obj = paginator.get_page(page)
 
-    
-    popular = Journal.objects.filter(is_popular=True).order_by('-id')[0:15]
+    if journal_type == 'newspapers':
+        popular = Journal.objects.filter(is_public=True,journal_type=jtype).order_by('-id')[0:15]
+    else:
+        popular = Journal.objects.filter(is_popular=True).order_by('-id')[0:15]
     categories = Category.objects.filter(show_in_new_catalog=True)
     return render(request, 'catalog/category_detail.html', {"journals": journals, "categories": categories, "popular": popular, 'journal_type': journal_type, "is_show_popular": is_show_popular, "category": category, "page_obj": page_obj, "jtype": jtype, 'news': news})
