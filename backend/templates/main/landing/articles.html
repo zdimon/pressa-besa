@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row row-20">
             <div class="col-12 d-md-block">
-                <h4 class="text-uppercase">Актуальные <span>статьи</span></h4>
+                <h4 class="text-uppercase">{% translate 'Актуальные' %} <span>статьи</span></h4>
             </div>
             {% include 'blocks/article_tag_slider.html' %}
             <div class="col-12">
@@ -31,10 +31,10 @@
         <div class="row justify-content-center text-center">
             <div class="col-lg-9 col-md-10 col-12">
                 <div class="h3">
-                    Читайте или слушайте актуальные статьи из популярных изданий
+                    {% translate 'Читайте или слушайте актуальные статьи из популярных изданий' %}
                 </div>
-                <p>Удобный поиск поможет вам найти статью по нужной вам теме</p>
-                <a href="#" class="button button-primary button-sm  more-articles-btn">Больше статей</a>
+                <p>{% translate 'Удобный поиск поможет вам найти статью по нужной вам теме' %}</p>
+                <a href="{% url 'article-list' %}" class="button button-primary button-sm  more-articles-btn">{% translate 'Больше статей' %}</a>
             </div>
         </div>
     </div>

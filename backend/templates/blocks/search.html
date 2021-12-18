@@ -2,9 +2,11 @@
 
 {% block search %}
 
-<form action="{% url 'search' %}" method="GET" class="rd-nav-aside__form">
+<form id="js-search-form" action="{% url 'search' %}" method="GET" class="rd-nav-aside__form">
     <div class="form-wrap">
-        <div class="form-select font-primary">{% trans 'Поиск' %}</div>
+        <div class="pointer form-select font-primary"
+        onclick="document.getElementById('js-search-form').submit();"
+        >{% trans 'Поиск' %}</div>
         <input type="text" name="key" class="form-input" placeholder="{% trans 'Поиск по журналам газетам статьям категориям и тегам.'%}" value="{{ key }}">
         <div class="form-submit">
             <button type="submit" class="button">

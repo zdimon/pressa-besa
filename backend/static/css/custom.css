@@ -195,3 +195,7 @@ ul.rd-navbar-nav {
 .audio-button {
     width: 250px;
 }
+
+.pointer {
+    cursor: pointer;
+}

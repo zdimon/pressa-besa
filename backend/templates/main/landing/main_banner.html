@@ -1,33 +1,39 @@
-	<section class="section bg-yellow section-xs">
+{% load i18n %}
+<section class="section bg-yellow section-xs">
 		<div class="container position-relative">
 			<div class="row row-20 align-items-center justify-content-center">
 				<div class="col-lg-5 col-md-8 order-1 position-static">
 					<div class="intro-box">
-						<h1>Пресса.ру — ваша библиотека электронных версий популярных газет и журналов</h1>
+						<h1>{% translate 'Пресса.ру — ваша библиотека электронных версий популярных газет и журналов' %}</h1>
 						<p>
-							Здесь вы можете читать и даже слушать любимые журналы и газеты в электронном виде на вашем смартфоне, планшете или компьютере из любой точки мира.
+							{% translate 'Здесь вы можете читать и даже слушать любимые журналы и газеты в электронном виде на вашем смартфоне, планшете или компьютере из любой точки мира.' %}'
 						</p>
 						<div class="intro-cta-box">
 							<div class="intro-cta-box__caption">
-								<span class="intro-cta-box__caption-text">Более</span>
+								<span class="intro-cta-box__caption-text">{% translate 'Более' %}</span>
 								<span class="intro-cta-box__caption-title">200</span>
-								<span class="intro-cta-box__caption-text">журналов и газет</span>
+								<span class="intro-cta-box__caption-text">{% translate 'журналов и газет' %}</span>
 							</div>
 							<div class="intro-cta-box__price">
 								<div class="intro-cta-box__price-body">
-									<span>за</span>
+									<span>{% translate 'за' %}</span>
 									<span>8</span>
 									<span>₽</span>
 								</div>
 								<div class="intro-cta-box__price-footer">
-									в день
+									{% translate 'в день' %}
 								</div>
 							</div>
 						</div>
+						{% if not user.is_authenticated %}
 						<div class="cta-group">
-							<span>Зарегистрируйся и читай 7 дней бесплатно!</span>
-							<a href="#" class="button button-primary">Читать бесплатно</a>
+							<span>{% translate 'Зарегистрируйся и читай 7 дней бесплатно!' %}</span>
+							<a href="{% url 'signin' %}" class="button button-primary">
+								{% translate 'Читать бесплатно' %}
+							</a>
+							
 						</div>
+						{% endif %}
 					</div>
 				</div>
 				<div class="col-lg-5 col-sm-6 text-center order-3 order-lg-2">
