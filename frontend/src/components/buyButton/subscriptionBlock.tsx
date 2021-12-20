@@ -43,9 +43,11 @@ export default function SubscriptionBlock(props) {
         const req = new Request();
         req.post('reader/buy/subscription',{subscription_id: subId})
         .then((payload) => {
-          console.log(payload);
           setMessage(payload.message);
           setState({ ...state, open: true});
+          if(payload.status === 2){
+            setTimeout(()=>{window.location.href = "/lk/index";}, 1000) 
+          }          
           if(payload.status === 2) {
             setshowLkButton(true);
           }

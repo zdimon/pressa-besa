@@ -24,6 +24,9 @@ export default function BuyButton(props) {
         .then((payload) => {
           setMessage(payload.message);
           setState({ ...state, open: true});
+          if(payload.status === 2){
+            setTimeout(()=>{window.location.href = "/lk/index";}, 1000) 
+          }
           
         }).catch((err) => { 
         });
