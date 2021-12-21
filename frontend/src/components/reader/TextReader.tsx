@@ -59,6 +59,8 @@ export default function TextReader(props) {
 
   const [current_issue, setCurrentIssue] = React.useState({});
 
+  const [reader_url, setReaderUrl] = React.useState('image-reader');
+
   const req = new Request();
 
   var breakpoints = {
@@ -155,14 +157,14 @@ export default function TextReader(props) {
   }
 
   useEffect(() => {
-    console.log(props.type);
+   
     if(props.type === 'article'){
       getArticle(article_id);
     }
     if(props.type === 'announce'){
       getAnnounce(article_id);
     }
-    console.log(article_id);
+    
   },[])
 
   useEffect(() => {
@@ -180,6 +182,12 @@ export default function TextReader(props) {
     req.post('reader/articles',{issue_id: props.issueId})
     .then((payload) => {
       setArticles(payload.payload);
+      console.log(payload.payload.length);
+      if(payload.payload.length===0){
+        setReaderUrl('text-reader')
+      } else {
+        setReaderUrl('image-reader');
+      }
     }).catch((err) => { 
     });
 
@@ -341,7 +349,7 @@ export default function TextReader(props) {
                 <SwiperSlide>
                     <div className="swiper-slide">
                       <Link to={{
-                          pathname: `/text-reader/${item.id}`
+                          pathname: `/${reader_url}/${item.id}`
                       }} >
                         <img 
                         onClick={() => changeIssue(item.id)}
