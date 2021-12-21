@@ -77,8 +77,8 @@ class News(NameSlugMixin,  SEOTagsMixin, models.Model):
         #return self.issue.journal+' '+_('выпуск')+' '+self.issue
         return self.issue.journal.name_ru+u' № '+self.issue.name
     def get_absolute_url(self):
-        #return '/top10/detail/%s-%s' % (self.name_slug,self.id)
-        return reverse("text-reader-announce", kwargs={"issue_id": self.issue.pk, "article_id": self.pk})
+        return '/top10/detail/%s-%s' % (self.name_slug,self.id)
+        #return reverse("text-reader-announce", kwargs={"issue_id": self.issue.pk, "article_id": self.pk})
 
     def __unicode__(self):
         return self.name
