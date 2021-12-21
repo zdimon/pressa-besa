@@ -68,6 +68,29 @@ export default function BaseReader(props) {
                 issueId={props.issueId}>
               </ImageReader>
             </Route>
+
+            <Route name="text" path="/text-reader/:issue_id/article/:article_id">
+              <TextReader 
+              handleIsPaid={markIsPaid}
+              isPaid={is_paid} 
+              issueId={issueId}
+              settings={settings}
+              changeIssue={changeIssue}
+              type="article"
+              ></TextReader>
+            </Route>
+
+            <Route name="text" path="/text-reader/:issue_id/announce/:article_id">
+              <TextReader 
+              handleIsPaid={markIsPaid}
+              isPaid={is_paid} 
+              issueId={issueId}
+              settings={settings}
+              changeIssue={changeIssue}
+              type="announce"
+              ></TextReader>
+            </Route>            
+
             <Route name="text" path="/text-reader/:issue_id">
               <TextReader 
               handleIsPaid={markIsPaid}
@@ -77,6 +100,11 @@ export default function BaseReader(props) {
               changeIssue={changeIssue}
               ></TextReader>
             </Route>
+
+
+
+
+
             <Route name="list" path="/list-reader/:issue_id">
               <IssueList 
                 issueId={issueId}              

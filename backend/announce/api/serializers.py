@@ -15,5 +15,8 @@ class NewsSerializer(serializers.ModelSerializer):
         model = News
         fields = [
             'id',
-            'audio_converted'
+            'audio_converted',
+            'text',
+            'name',
+            'image_url'
         ]

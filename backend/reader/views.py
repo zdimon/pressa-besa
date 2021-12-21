@@ -11,7 +11,7 @@ from sorl.thumbnail import get_thumbnail
 from .utils import make_cached_image
 
 
-def reader_index(request, issue_id):
+def reader_index(request, issue_id, article_id=0):
     try:
         issue = Issue.objects.get(pk=issue_id)
     except ObjectDoesNotExist:

@@ -15,6 +15,8 @@ from django.db.models.signals import post_save
 import datetime
 # from announce.tasks import send_top as st
 from django.core.mail import EmailMultiAlternatives
+from django.urls import reverse
+from django.conf import settings
 
 class Announce(models.Model):
     title = models.CharField(verbose_name=_(u'заголовок'), max_length=150)
@@ -75,9 +77,19 @@ class News(NameSlugMixin,  SEOTagsMixin, models.Model):
         #return self.issue.journal+' '+_('выпуск')+' '+self.issue
         return self.issue.journal.name_ru+u' № '+self.issue.name
     def get_absolute_url(self):
-        return '/top10/detail/%s-%s' % (self.name_slug,self.id)
+        #return '/top10/detail/%s-%s' % (self.name_slug,self.id)
+        return reverse("text-reader-announce", kwargs={"issue_id": self.issue.pk, "article_id": self.pk})
+
     def __unicode__(self):
         return self.name
+
+    @property
+    def image_url(self):
+        try:
+            return f'{settings.BACKEND_URL}{self.image.url}'
+        except Exception as e:
+            print(e)
+            return 'None'
 
     @property
     def thumbnailsmall_url_square(self):

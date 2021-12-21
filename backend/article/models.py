@@ -107,7 +107,8 @@ class Article(models.Model):
 
     @property
     def get_absolute_url(self):
-        return reverse("article-detail", kwargs={"id": self.pk})
+        #return reverse("article-detail", kwargs={"id": self.pk})
+        return reverse("text-reader-article", kwargs={"issue_id": self.issue.pk, "article_id": self.pk})
     
 
     @property

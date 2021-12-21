@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import SubscribeButton from '../Subscription/SubscribeButton';
 import ReactHtmlParser from 'react-html-parser'; 
 import AudioButton from '../audioButton/audioButton';
+import { useParams } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -40,6 +41,7 @@ function getModalStyle() {
 
 export default function TextReader(props) {
 
+  const { article_id } = useParams();
   const [open_pay_dialog, setOpenPayDialog] = React.useState(false);
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);
@@ -109,7 +111,7 @@ export default function TextReader(props) {
     });
   }
 
-  const selectArticle = (article_id) => {
+  const getArticle = (article_id) => {
     req.post('reader/article',{article_id: article_id})
     .then((payload) => {
       setCurrentArticle(payload.payload);
@@ -120,12 +122,48 @@ export default function TextReader(props) {
         setShowImage(true);
       }
     }).catch((err) => { 
-    });
+    });    
+  }
+
+
+  const getAnnounce = (announce_id) => {
+    req.post('announce/info',{id: announce_id})
+    .then((payload) => {
+      let data = {
+        "title": payload.name,
+        "text": payload.text,
+        "image_url": payload.image_url
+      }
+      setCurrentArticle(data);
+      setShowCurrent(true);
+      if(payload.image_url === 'None'){
+        setShowImage(false);
+      } else { 
+        setShowImage(true);
+      }
+    }).catch((err) => { 
+    });    
+  }
+
+
+  const selectArticle = (article_id) => {
+    getArticle(article_id);
   }
 
   const goBack = () => {
     setShowCurrent(false);
   }
+
+  useEffect(() => {
+    console.log(props.type);
+    if(props.type === 'article'){
+      getArticle(article_id);
+    }
+    if(props.type === 'announce'){
+      getAnnounce(article_id);
+    }
+    console.log(article_id);
+  },[])
 
   useEffect(() => {
 
@@ -205,7 +243,7 @@ export default function TextReader(props) {
                   { ReactHtmlParser (current_article.text) }
 
                   <div className="font-bold">
-                    Автор: {current_article.author}
+                    {current_article.author}
                   </div>
 
 						    </div>
