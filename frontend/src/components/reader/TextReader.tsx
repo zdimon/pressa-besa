@@ -260,6 +260,7 @@ export default function TextReader(props) {
 			    </div>
 		    </div>
 
+{ articles.length > 0?  
 
         <div className="container position-relative">
 
@@ -329,6 +330,8 @@ export default function TextReader(props) {
               ))}
           </div>
         </div>
+: <></>}
+
       </section>
 
       <section className="section">
