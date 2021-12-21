@@ -9,5 +9,7 @@ class ArticleSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'title',
-            'cover_url'
+            'cover_url',
+            'short_text',
+            'issue_number'
         ]

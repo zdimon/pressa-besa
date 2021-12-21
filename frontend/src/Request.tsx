@@ -17,7 +17,7 @@ export class Request {
     
 
     async get(url: string) {
-        let response = await axios.get(`${config.serverURL}${url}`)
+        let response = await axios.get(`${config.serverURL}${url}`, this.config)
         return response.data;
     }
 

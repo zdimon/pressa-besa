@@ -75,6 +75,11 @@ class Article(models.Model):
 
     created_at = models.DateField(auto_now_add=True, blank=True, null=True)
 
+
+    @property
+    def issue_number(self):
+        return self.issue.name
+
     @property
     def short_text(self):
         txt =  remove_html_markup(self.text)
