@@ -184,9 +184,9 @@ export default function TextReader(props) {
       setArticles(payload.payload);
       console.log(payload.payload.length);
       if(payload.payload.length===0){
-        setReaderUrl('text-reader')
+        setReaderUrl('image-reader')
       } else {
-        setReaderUrl('image-reader');
+        setReaderUrl('text-reader');
       }
     }).catch((err) => { 
     });
