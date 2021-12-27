@@ -147,6 +147,11 @@ export default function IssueSlider(props) {
                             {item.getAttribute("data-amount")}
                             ₽</div>: <></>
                             }
+                            { item.getAttribute("data-release")?
+                            <div className="thumbnail-modern__footer"> 
+                            {item.getAttribute("data-release")}
+                            </div>: <></>
+                            }
                         </div>
                         </SwiperSlide>
                   )}
