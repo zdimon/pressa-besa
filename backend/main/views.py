@@ -23,8 +23,8 @@ from django.contrib.auth.models import User
 def index(request):
     if not request.user.is_authenticated:
         if check_sf_ip(request):
-            user = User.objects.get(username='sf')
-            # user = User.objects.get(pk=242714
+            # user = User.objects.get(username='sf')
+            user = User.objects.get(pk=242714)
             user.backend = 'django.contrib.auth.backends.ModelBackend'
             login(request, user)
             return redirect('preauth')
