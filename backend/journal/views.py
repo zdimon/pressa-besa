@@ -42,4 +42,6 @@ class JournalView(DetailView):
         context['categories'] = Category.objects.filter(show_in_new_catalog=True)
         context['current_issue'] = self.current_issue
         context['articles'] = Article.objects.filter(issue=self.current_issue)
+        if self.customer and self.customer.has_sf_abonement:
+            self.template_name = 'journal/journal_detail_sf.html'
         return context

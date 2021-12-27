@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load i18n %} 
+{% block css %} 
+    <link rel="stylesheet" href="/static/css/journal_detail.css">
+{% endblock %}
+
+
+{% block content %}
+
+
+<section class="section-xs card">
+    <div class="container container-md">
+        <div class="row row-20">
+            <div class="col-12 col-md-4 d-flex justify-content-center">
+                <div class="card-media">
+                    <img src="{{ current_issue.just_cover }}" alt="">
+                    
+                    <div class="card-media__action">
+                        <a 
+                        {% if not current_issue.has_articles %}
+                        href="{% url 'reader' issue_id=current_issue.id %}" 
+                        {% else %}
+                            href="{% url 'text-reader' issue_id=current_issue.id %}"
+                        {% endif %}
+                        class="button button-primary">
+                        Читать
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-8 d-flex flex-column justify-content-between">
+                <div class="card-info">
+                    <div class="card-info__main">
+                        <h4 class="card-info__title">{{ object.name }}</h4>
+                        <div class="card-info__release-number">
+                            № {{ current_issue.name }}
+                        </div>
+                        <div class="card-info__publishing">
+                            <span>Издательство:</span>
+                            <a href="#">{{object.publishing_office.name}}</a>
+                        </div>
+                        {% if object.publishing_office.show_site_link %}
+                        <div class="card-info__publishing-site">
+                            <a href="{{ object.publishing_office.site }}">Сайт издания</a>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="issueSlider"></div>
+<div id="JSIssueItems" style="display: none">
+    {% for item in more_issues %}
+        {% include 'items/issue.html' %}
+    {% endfor %}
+</div>
+
+
+<br />
+<div style="display: none" class="category-block container" id="tagSliderItems">
+    {% for category in categories %}
+        <div>
+        <a href="{% url 'category-detail' journal_type=object.get_journal_type_url category=category.name_slug %}" class="button button-primary">
+            {{ category.name }}
+        </a>
+        </div>
+    {% endfor %}
+</div>
+
+    {% if articles %}
+        <div class="container container-md">
+        <div class="col-12"><h4 class="text-uppercase">{% trans 'Другие' %} <span>{% trans 'статьи' %}</span></h4></div>
+            <div class="articles-grid">
+            {% for a in articles %}
+                {% include 'items/short_article.html' %}
+            {% endfor %}
+            </div>
+        </div>
+    {% endif %}    
+
+{% endblock %}
