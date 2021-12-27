@@ -27,7 +27,7 @@ def index(request):
             user = User.objects.get(pk=242714) 
             user.backend = 'django.contrib.auth.backends.ModelBackend'
             login(request, user)
-            return redirect('preauth')
+            return redirect('preauth') 
     elif request.user.customer.has_sf_abonement:
         return redirect('sf')
     popular_journal = Journal.objects.filter(is_popular=True, is_public=True).order_by('position_popular')
