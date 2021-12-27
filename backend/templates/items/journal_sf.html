@@ -1,10 +1,15 @@
 {% load i18n %} 
 <div class="swiper-slide">
     <div class="thumbnail-modern">
-        <div class="thumbnail-modern__media">
+        <div class="thumbnail-modern__media"
+        style="text-align: center"
+        >
             <a href="{% url 'journal-detail' name_slug=item.name_slug %}">
                 <img 
-                height="215"
+                style="height: auto; 
+                width: auto; 
+                max-width: 215px; 
+                max-height: 300px;"
                 src="{{ item.common_cover }}" 
                 alt="{{ item.name }}">
             </a>
