@@ -8,10 +8,6 @@
 
 {% block content %}
 <div class="container">
-    <h4 class="text-uppercase">
-        {% trans 'Совет' %} <span>{% trans 'федерации' %}</span>
-    </h4>
-</div>
     <div class="journals-block">
         {% for item in popular %}
         <div>
@@ -19,5 +15,7 @@
         </div>
         {% endfor %}
     </div>
+</div>
+
 {% endblock %}
 
