@@ -4,10 +4,7 @@
         <div class="thumbnail-modern__media">
             <a href="{% url 'journal-detail' name_slug=item.name_slug %}">
                 <img 
-                data-jname="{{ item.name }}"
-                data-iname="{{ item.last_issue.name }}"
-                data-amount="{{ item.amount }}"
-                data-url="{% url 'journal-detail' name_slug=item.name_slug %}"
+                height="215"
                 src="{{ item.common_cover }}" 
                 alt="{{ item.name }}">
             </a>
