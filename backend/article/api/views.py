@@ -28,5 +28,16 @@ class ArticleInfoView(APIView):
 ))
 class ArticleListView(mixins.ListModelMixin, generics.GenericAPIView,):
     permission_classes = (AllowAny,)
+    http_method_names = ['get', 'head']
     #pagination_class = api_settings.DEFAULT_PAGINATION_CLASS
     serializer_class = ArticleSerializer
+
+class CourseListView(generics.ListAPIView):
+    permission_classes = [AllowAny, ]
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+
+    def list(self, request, format=None):
+      queryset = Article.objects.all()
+      serializer = ArticleSerializer(queryset, many=True)
+      return Response(serializer.data)
