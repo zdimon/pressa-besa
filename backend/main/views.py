@@ -150,10 +150,8 @@ def register(request):
     return HttpResponseRedirect('/preauth')
 
 def sf(request):
-    if not request.user.is_authenticated:
-        print('sssssssssss')
     abonement = Abonement.objects.get(pk=2)
-    popular = Journal.objects.filter(is_public=True, abonement=abonement)
+    popular = Journal.objects.filter(is_public=True, abonement=abonement).order_by('-last_issue_id')
     data = {
         "popular": popular
     }
