@@ -3,6 +3,8 @@
         <div class="thumbnail-modern__media">
             <a href="{% url 'journal-issue' item.journal.name_slug item.name_slug %}">
                 <img 
+                data-iname="{{ item.name }}"
+                data-url="{% url 'journal-issue' item.journal.name_slug item.name_slug %}"
                 src="{{ item.common_cover }}" 
                 alt="{{ item.journal.name }}">
             </a>
@@ -11,6 +13,6 @@
             
             <div class="thumbnail-modern__body-caption">№ {{ item.name }}</div>
         </div>
-        
+        <div class="thumbnail-modern__footer">{{ item.journal.amount }}₽</div>
     </div>
 </div>
