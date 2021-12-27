@@ -11,5 +11,6 @@ class ArticleSerializer(serializers.ModelSerializer):
             'title',
             'cover_url',
             'short_text',
-            'issue_number'
+            'issue_number',
+            'get_absolute_url'
         ]

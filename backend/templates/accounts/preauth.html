@@ -13,7 +13,7 @@
     {% if user.is_authenticated %}
       <script>
             window.localStorage.setItem('token','{{ token }}');
-            document.location.href = '/'
+            document.location.href = '{{ redirect }}'
       </script>
     {% endif %}
 

@@ -1,12 +1,11 @@
 from django.urls import path
-from .views import search, JournalBuyView, signin, register, signin
+from .views import search, JournalBuyView, signin, register, signin, sf
 
 
 urlpatterns = [
     path('signin', signin, name="signin"),
     path('<slug:name_slug>/<slug:issue_name_slug>/buy', JournalBuyView.as_view(), name="journal-buy"),
     path('search', search, name="search"),
-    
     path('register', register, name="register"),
     path('signin', signin, name="signin"),
 

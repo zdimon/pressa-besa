@@ -18,11 +18,15 @@ from django.core.mail import send_mail
 import random
 from .models import MailTemplate
 from django.utils.translation import ugettext_lazy as _
-
+from django.urls import reverse
 
 def preauth(request):
+    if request.user.customer.has_sf_abonement:
+        url = reverse('sf')
+    else:
+        url = reverse('/')
     token, created = Token.objects.get_or_create(user=request.user)
-    return render(request, 'accounts/preauth.html', {'token': token})
+    return render(request, 'accounts/preauth.html', {'token': token, 'redirect': url})
     #return redirect('/')
 
 

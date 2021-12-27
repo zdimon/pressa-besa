@@ -59,7 +59,7 @@ return (
       {articles.map((item,index) =>
         <div className="thumbnail-classic">
           <div className="thumbnail-classic__media">
-              <a href="#">
+              <a href={item.get_absolute_url}>
                   <img src={item.cover_url} alt="" />
               </a>
               
@@ -67,7 +67,7 @@ return (
 
           <div className="thumbnail-modern__body">
             <div className="thumbnail-modern__body-title">
-                <a href="">
+                <a href={item.get_absolute_url}>
                   {item.title}
                 </a>
             </div>
@@ -76,7 +76,7 @@ return (
             </div>
           </div>
         
-          <a href="" className="thumbnail-classic__body">
+          <a href={item.get_absolute_url} className="thumbnail-classic__body">
               { item.short_text }
           </a>
           

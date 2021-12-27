@@ -16,16 +16,26 @@ from django.core.mail import send_mail
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.shortcuts import redirect
-
+from subscribe.models import Abonement
+from main.utils import get_client_ip, check_sf_ip
+from django.contrib.auth.models import User
 
 def index(request):
+    if not request.user.is_authenticated:
+        if check_sf_ip(request):
+            user = User.objects.get(username='sf')
+            # user = User.objects.get(pk=242714
+            user.backend = 'django.contrib.auth.backends.ModelBackend'
+            login(request, user)
+            return redirect('preauth')
+    elif request.user.customer.has_sf_abonement:
+        return redirect('sf')
     popular_journal = Journal.objects.filter(is_popular=True, is_public=True).order_by('position_popular')
     books = Journal.objects.filter(show_in_books=True)[0:10]
     new = Journal.objects.filter(is_new=True)[0:10]
     categories = Category.objects.filter(show_in_new_catalog=True)
     news = News.objects.all().order_by('-id')[0:10]
     journal_type='all'
-    print(news)
     data = {
             "popular_journal": popular_journal,
             "news": news,
@@ -110,11 +120,9 @@ def signin(request):
         user = authenticate(username=request.POST.get('username'), password=request.POST.get('password'))
         if user is None:
             messages.warning(request, _('Login or password is wrong!'))
-            print('111111111111')
             return redirect('signin')
         else:
             login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-            print('22222222222')
             return HttpResponseRedirect('/preauth')
 
     return render(request, 'accounts/signin.html')
@@ -141,3 +149,12 @@ def register(request):
     login(request, user, backend='django.contrib.auth.backends.ModelBackend')
     return HttpResponseRedirect('/preauth')
 
+def sf(request):
+    if not request.user.is_authenticated:
+        print('sssssssssss')
+    abonement = Abonement.objects.get(pk=2)
+    popular = Journal.objects.filter(is_public=True, abonement=abonement)
+    data = {
+        "popular": popular
+    }
+    return render(request, 'main/sf.html', data)

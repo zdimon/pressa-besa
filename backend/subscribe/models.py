@@ -169,6 +169,9 @@ class Abonement(models.Model):
             out.append(j.id)
         return out    
 
+    def __str__(self):
+        return self.title
+
     @property
     def amount(self):
         return self.cost

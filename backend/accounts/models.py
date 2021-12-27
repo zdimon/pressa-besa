@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
-
+from subscribe.models import UserAbonement, Abonement
 
 class Customer(User):
     SEX_CHOICES = ((0, _(u'Женский')), (1, _(u'Мужской')), )
@@ -25,6 +25,17 @@ class Customer(User):
     def my_journals(self):
         return self.purchasedissues_set.order_by(
             'journal').select_related('journal')
+
+    @property
+    def has_sf_abonement(self):
+        abonement = Abonement.objects.get(pk=2)
+        try:
+            UserAbonement.objects.get(user=self, abonement=abonement)
+            return True
+        except Exception as e:
+            print(e)
+            return False
+        return UserAbonement.has_abonement(self)
        
 
 

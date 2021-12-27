@@ -58,6 +58,9 @@ class Issue(NameSlugMixin, CoverMixin, models.Model):
     def is_paid(self, user):
         from journal.models import PurchasedIssues
         import datetime
+        # abonement SF
+        if user.has_sf_abonement:
+            return True
         # abonement
         if UserAbonement.objects.filter(user=user, stop_date__gt=datetime.datetime.now()).count() > 0:
             return True

@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 from django.urls import path, include
-from main.views import index, signin
+from main.views import index, signin, sf
 
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -74,6 +74,7 @@ from translator.views import translate
 
 urlpatterns += i18n_patterns(
     path('', index),
+    path('sf', sf, name="sf"),
     path('signin', signin, name="signin"),
     path('lk/', include('lk.urls')),
     path('cover', include('cover.urls')),
