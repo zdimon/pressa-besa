@@ -137,6 +137,7 @@ export default function TextReader(props) {
       } else {
         setReaderUrl('text-reader');
       }
+      setShowCurrent(true);
     }).catch((err) => { 
     });    
   }
