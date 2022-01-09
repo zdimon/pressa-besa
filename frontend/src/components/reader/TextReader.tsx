@@ -11,7 +11,7 @@ import SubscribeButton from '../Subscription/SubscribeButton';
 import ReactHtmlParser from 'react-html-parser'; 
 import AudioButton from '../audioButton/audioButton';
 import { useParams } from "react-router-dom";
-
+const req = new Request();
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
@@ -98,6 +98,7 @@ export default function TextReader(props) {
   const changeIssue = (issue_id) => {
     props.changeIssue(issue_id);
     setIssueId(issue_id);
+    selectArticles(issue_id);
   }
 
   const markIsPaid = () => {
@@ -122,6 +123,19 @@ export default function TextReader(props) {
         setShowImage(false);
       } else { 
         setShowImage(true);
+      }
+    }).catch((err) => { 
+    });    
+  }
+
+  const selectArticles = (issue_id) => {
+    req.post('reader/articles',{issue_id: issue_id})
+    .then((payload) => {
+      setArticles(payload.payload);
+      if(payload.payload.length===0){
+        setReaderUrl('image-reader')
+      } else {
+        setReaderUrl('text-reader');
       }
     }).catch((err) => { 
     });    
@@ -170,8 +184,8 @@ export default function TextReader(props) {
   useEffect(() => {
 
     
- 
-      const req = new Request();
+      selectArticles(props.issueId);
+      
       req.post('reader/issue/list',{issue_id: props.issueId})
       .then((payload) => {
         setIssues(payload.payload);
@@ -179,17 +193,7 @@ export default function TextReader(props) {
       });
    
 
-    req.post('reader/articles',{issue_id: props.issueId})
-    .then((payload) => {
-      setArticles(payload.payload);
-      console.log(payload.payload.length);
-      if(payload.payload.length===0){
-        setReaderUrl('image-reader')
-      } else {
-        setReaderUrl('text-reader');
-      }
-    }).catch((err) => { 
-    });
+
 
     req.post('reader/settings',{issue_id: props.issueId})
     .then((payload) => {
