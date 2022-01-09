@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load i18n %} 
+
+
+{% block content %}
+
+
+<section class="section-xs card">
+    <div class="container container-md">
+        <div class="col-12">
+            <h4 class="text-uppercase">
+                   {% trans 'Все выпуски' %} 
+            </h4>
+        </div>
+    </div>
+    <div class="journals-block">
+        {% for item in issues %}
+            <div>
+                {% include 'items/issue.html' %}
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+ 
+
+{% endblock %}

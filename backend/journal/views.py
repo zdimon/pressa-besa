@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
-from journal.models import Journal, Issue
+from journal.models import Journal, Issue, journal
 from catalog.models import Category
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
@@ -45,3 +45,10 @@ class JournalView(DetailView):
         if self.customer and self.customer.has_sf_abonement:
             self.template_name = 'journal/journal_detail_sf.html'
         return context
+
+
+def all_issues(request, journal_id):
+    journal = Journal.objects.get(pk=journal_id)
+    issues = Issue.objects.filter(is_public=True, journal=journal)
+    data = {"issues": issues}
+    return render(request, 'journal/all_issues.html', data)

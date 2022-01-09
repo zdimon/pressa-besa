@@ -70,9 +70,10 @@
         {% include 'items/issue.html' %}
     {% endfor %}
 </div>
-
-
-<br />
+<div class="container container-md">
+  <a class="color-red" href="{% url 'all-issues' journal_id=object.pk %}">
+    {% trans 'Все выпуски издания' %}</a>
+</div>
 <div style="display: none" class="category-block container" id="tagSliderItems">
     {% for category in categories %}
         <div>
