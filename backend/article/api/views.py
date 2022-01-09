@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from .serializers import ArticleInfoRequestSerializer, ArticleSerializer
 from article.models import Article
 from rest_framework import mixins, generics
-from article.serializers.article import ArticleSerializer
+from article.api.serializers import ArticleSerializer
 
 
 class ArticleInfoView(APIView):

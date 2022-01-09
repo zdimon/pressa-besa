@@ -235,7 +235,7 @@ export default function TextReader(props) {
 										    Выпуск:  {current_issue.issue_name} {current_issue.released}
 									    </div>
 									     <SubscribeButton />
-                       <AudioButton type="article" id={current_issue.id} />
+                       
 								    </div>
 							    </div>
 							    <div className="single-card__info-marker">
@@ -249,8 +249,9 @@ export default function TextReader(props) {
                 }
 						    <div className="single-card__info-title">
                   <h2 className="article-title">
-                    {current_article.title}
+                    {current_article.title} {current_article.id}--
                   </h2>
+                  <AudioButton type="article" id={current_article.id} />
                 </div>
 						    <div className="single-card__info-caption">
                   { ReactHtmlParser (current_article.text) }

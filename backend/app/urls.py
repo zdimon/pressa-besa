@@ -73,7 +73,7 @@ from django.contrib.flatpages import views
 from translator.views import translate
 
 urlpatterns += i18n_patterns(
-    path('', index),
+    path('', index, name="index"),
     path('sf', sf, name="sf"),
     path('signin', signin, name="signin"),
     path('lk/', include('lk.urls')),

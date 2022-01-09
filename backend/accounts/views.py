@@ -24,7 +24,7 @@ def preauth(request):
     if request.user.customer.has_sf_abonement:
         url = reverse('sf')
     else:
-        url = reverse('/')
+        url = reverse('index')
     token, created = Token.objects.get_or_create(user=request.user)
     return render(request, 'accounts/preauth.html', {'token': token, 'redirect': url})
     #return redirect('/')

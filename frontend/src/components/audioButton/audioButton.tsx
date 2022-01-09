@@ -22,7 +22,7 @@ export default function AudioButton(props) {
             setIsAudio(payload.audio_converted);
           }).catch((err) => { 
           });
-        }, []);
+        }, [props.id]);
   
   return (
       <>
