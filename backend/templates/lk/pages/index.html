@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load static %}
 {% block css %} 
     <link rel="stylesheet" href="/static/css/lk.css">
 {% endblock %}
@@ -7,10 +8,34 @@
 
 {% block content %}
 
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+    
+        $('#pay_visa').click(() => {
+            let sum = $("#sum").val();
+            let user_id = $("#user_id").val();
+            console.log(sum);
+            window.location.href = `/billing/payonline/${user_id}/${sum}`;
+        })
+    
+    })
+
+</script>
+
+
+
+<!-- 
+<div class="container">
+    <iframe src="http://pressa.ru/ru/billing/payment/132077/login" width="800" height="600" align="center">
+      Ваш браузер не поддерживает плавающие фреймы!
+   </iframe>
+  </div>
+-->
+
 <section class="section-xs card">
     <div class="container container-md">
 
-          <h4 class="text-uppercase">{% trans 'Личный кабинет' %}</h4>
+          <h4 class="text-uppercase">{% trans 'Пополнение счета' %}</h4>
 
         <div class="col-12">
             <h4 class="text-uppercase">{% trans 'У вас на счету:' %} {{ user.amount }}</h4>
@@ -18,21 +43,14 @@
           </div>
 
         <div class="col-12">
-            <h4 class="text-uppercase">{% trans 'Пополнить счет' %}</h4>
+            {% trans 'Сумма:' %}<input name="sum" id="sum" />
+            <input name="user" type="hidden" id="user_id" value="{{ user.pk }}" />
+            <a class="pay_link auto_change_url" id="pay_visa" href="#">
+                <img src="{%  static 'main/images/pay_visa.png' %}">
+            </a>
         </div>
 
-        <form method="POST" action="/v1/api/account/add/money">
-        {% csrf_token %}
-        Сумма 
-        <input name="sum" />
-
-        Пароль
-
-        <input  name="password" />
-
-        <input type="submit" name="Пополнить" />
-
-        </form>
+      
 
     </div>
 </section>

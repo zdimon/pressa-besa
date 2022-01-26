@@ -77,6 +77,7 @@ urlpatterns += i18n_patterns(
     path('sf', sf, name="sf"),
     path('signin', signin, name="signin"),
     path('lk/', include('lk.urls')),
+    path('billing/', include('billing.urls')),
     path('cover', include('cover.urls')),
     path('top10/', include('announce.urls')),
     path('catalog/', include('catalog.urls')),

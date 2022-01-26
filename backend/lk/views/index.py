@@ -11,4 +11,4 @@ def index(request):
     except: 
         return redirect('logout')
 
-    return render(request, 'lk/pages/index.html')
+    return render(request, 'lk/pages/index.html', {"customer": user})
