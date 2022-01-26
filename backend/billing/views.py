@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from billing.models import Payment, Transaction
+from billing.models import Transaction
+from payonline.models import Payment
 from accounts.models import Customer
 from app.settings import PAYONLINE_MERCHANT_ID, PAYONLINE_PRIVATE_SECURITY_KEY, PAYONLINE_SUCCESS_URL, PAYONLINE_FAIL_URL
 from hashlib import md5
