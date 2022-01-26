@@ -8,3 +8,4 @@ backend/static/build
 node_modules
 sandbox/provider
 backend/celerybeat-schedule
+backend/static/audio

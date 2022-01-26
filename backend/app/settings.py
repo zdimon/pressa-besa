@@ -59,7 +59,9 @@ INSTALLED_APPS = [
     'bookmarks',
     'billing',
     'translator',
-    'payonline'
+    'payonline',
+    'corsheaders',
+
 ]
 SITE_ID = 1
 MIDDLEWARE = [
@@ -71,7 +73,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-    'django.middleware.locale.LocaleMiddleware', 
+    'django.middleware.locale.LocaleMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
@@ -252,6 +255,7 @@ ROSETTA_ENABLE_TRANSLATION_SUGGESTIONS = True
 YANDEX_TRANSLATE_KEY = 'trnsl.1.1.20140521T130035Z.1014ae2799c685e3.97b1345108ab3a8520d96f730016a9dac947049b'
 ROSETTA_MESSAGES_SOURCE_LANGUAGE_CODE = 'en'
 ROSETTA_MESSAGES_SOURCE_LANGUAGE_NAME = 'English'
-
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 from .local import *
