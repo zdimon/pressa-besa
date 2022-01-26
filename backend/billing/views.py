@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from billing.models import Payment, Transaction
 from accounts.models import Customer
-from app.settings import MERCHANT_ID, PRIVATE_SECURITY_KEY, SUCCESS_URL, FAIL_URL
+from app.settings import PAYONLINE_MERCHANT_ID, PAYONLINE_PRIVATE_SECURITY_KEY, PAYONLINE_SUCCESS_URL, PAYONLINE_FAIL_URL
 from hashlib import md5
 from urllib.parse import quote, urlencode
 from django.shortcuts import redirect
@@ -108,17 +108,17 @@ def payment_payonline(request, customer_id, sum):
         description='payonline payment'
     )
     hash_str = 'MerchantId=%s&OrderId=%s&Amount=%s&Currency=RUB' % \
-               (MERCHANT_ID, str(transaction.pk), '%.2f' % sum)
-    hash_str += '&PrivateSecurityKey=%s' % PRIVATE_SECURITY_KEY
+               (PAYONLINE_MERCHANT_ID, str(transaction.pk), '%.2f' % sum)
+    hash_str += '&PrivateSecurityKey=%s' % PAYONLINE_PRIVATE_SECURITY_KEY
     security_key = md5(hash_str.encode('utf-8')).hexdigest()
     data = {
-        'MerchantId': MERCHANT_ID,
+        'MerchantId': PAYONLINE_MERCHANT_ID,
         'OrderID': str(transaction.pk),
         'Amount': '%.2f' % sum,
         'Currency': 'RUB',
         'SecurityKey': security_key,
-        'ReturnUrl': quote(SUCCESS_URL),
-        'FailUrl': quote(FAIL_URL),
+        'ReturnUrl': quote(PAYONLINE_SUCCESS_URL),
+        'FailUrl': quote(PAYONLINE_FAIL_URL),
         'PaymentId': str(payment.pk),
         'Email': user.email
     }
