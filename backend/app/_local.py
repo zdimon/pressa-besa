@@ -53,3 +53,7 @@ SOCIAL_AUTH_TWITTER_SECRET = '...'
 
 AUDIO_PATH = '/home/zdimon/Desktop/work/pressa-besa/tmp'
 
+PAYONLINE_SUCCESS_URL = 'http://pressa.ru/payment-success'
+PAYONLINE_FAIL_URL = 'http://pressa.ru/payment-fail'
+PAYONLINE_MERCHANT_ID = '1593'
+PAYONLINE_PRIVATE_SECURITY_KEY = '3e170623-65e8-41c6-85e5-62ad1ec7bce2'
