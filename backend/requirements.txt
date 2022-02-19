@@ -28,3 +28,4 @@ django-flatblocks
 django-rosetta
 django-taggit-serializer
 lxml
+django-cors-headers
