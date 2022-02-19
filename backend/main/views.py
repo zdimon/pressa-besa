@@ -31,8 +31,8 @@ def index(request):
     elif request.user.customer.has_sf_abonement:
         return redirect('sf')
     popular_journal = Journal.objects.filter(is_popular=True, is_public=True, last_issue_id__gt=0).order_by('position_popular')
-    books = Journal.objects.filter(show_in_books=True)[0:10]
-    new = Journal.objects.filter(is_new=True)[0:10]
+    books = Journal.objects.filter(show_in_books=True, last_issue_id__gt=0)[0:10]
+    new = Journal.objects.filter(is_new=True, last_issue_id__gt=0)[0:10]
     categories = Category.objects.filter(show_in_new_catalog=True)
     news = News.objects.all().order_by('-id')[0:10]
     journal_type='all'
