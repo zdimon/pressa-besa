@@ -49,6 +49,7 @@ export default function LoginForm({clickCallback}) {
           
           <ListItem>
               <TextField 
+              type="password"
               error={error}
               onChange={event => setPassword(event.target.value)} 
               label="Пароль" 
