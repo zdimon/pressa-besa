@@ -61,7 +61,7 @@ INSTALLED_APPS = [
     'translator',
     'payonline',
     'corsheaders',
-
+    'help'
 ]
 SITE_ID = 1
 MIDDLEWARE = [

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load i18n %} 
 {% block css %} 
    
 {% endblock %}
@@ -16,10 +16,13 @@
             
             
         </div>
-        <div class="row col-12">
-               {{ flatpage.content }}
+        <div class="row">
+            <div class="col-12 help-text">
+                {{ flatpage.content }}
+            </div>
         </div>
     </div>
+
 </div>
 
 
