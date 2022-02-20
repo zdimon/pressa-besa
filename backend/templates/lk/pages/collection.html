@@ -25,7 +25,7 @@
             {% for a in collection %}
             
             <tr>
-              <td>{{ a.journal }}</td>
+              <td><a href="{% url 'journal-detail' name_slug=a.journal.name_slug %}">{{ a.journal }}</a></td>
               <td>{{ a.issue.name }}</td>
               <td><a class="color-red" href="{% url 'reader' issue_id=a.issue.pk %}" >{% trans 'Читать' %}</a></td>
             </tr>
