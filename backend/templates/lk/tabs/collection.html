@@ -14,7 +14,13 @@
             <tr>
               <td>{{ a.journal }}</td>
               <td>{{ a.issue.name }}</td>
-              <td><a class="color-red" href="{% url 'reader' issue_id=a.issue.pk %}" >{% trans 'Читать' %}</a></td>
+              <td><a class="color-red" href="{% url 'reader' issue_id=a.issue.pk %}" >{% trans 'Читать' %}</a>
+                <a 
+                class="button button-primary" 
+                href="{{ a.issue.file.url }}">
+                {% trans 'скачать PDF' %}
+               </a>
+            </td>
             </tr>
 
             {% endfor %}

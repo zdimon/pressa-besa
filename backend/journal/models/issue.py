@@ -31,6 +31,11 @@ class Issue(NameSlugMixin, CoverMixin, models.Model):
         verbose_name=_(u'были ли отконвертированы обложки'),
         default=False)
 
+    file = models.FileField(verbose_name=_(u'исходный файл'),
+                            upload_to='raw_issue',
+                            blank=True,
+                            null=True)
+
     @property
     def cover(self):
         if self.page_set.count() == 0:

@@ -5,7 +5,7 @@ from catalog.models import Category
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 from article.models import Article
-
+from django.http import FileResponse
 
 class JournalView(DetailView):
     model = Journal
@@ -52,3 +52,9 @@ def all_issues(request, journal_id):
     issues = Issue.objects.filter(is_public=True, journal=journal)
     data = {"issues": issues}
     return render(request, 'journal/all_issues.html', data)
+
+
+def download_pdf(request, issue_id):
+    issue = Issue.objects.get(pk=issue_id)
+    if issue.is_paid(request.user):
+       return FileResponse(open(issue.file.path, 'rb'), content_type='application/pdf')
