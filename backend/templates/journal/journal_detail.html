@@ -37,11 +37,11 @@
                         </div>
                         <div class="card-info__publishing">
                             <span>Издательство:</span>
-                            <a href="#">{{object.publishing_office.name}}</a>
+                            <a href="{% url 'publisher' name_slug=object.publishing_office.name_slug %}">{{object.publishing_office.name}}</a>
                         </div>
                         {% if object.publishing_office.show_site_link %}
                         <div class="card-info__publishing-site">
-                            <a href="{{ object.publishing_office.site }}">Сайт издания</a>
+                            <a href="{% url 'publisher' name_slug=object.publishing_office.name_slug %}">Сайт издания</a>
                         </div>
                         {% endif %}
                     </div>
