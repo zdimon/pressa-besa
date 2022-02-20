@@ -12,14 +12,14 @@ def category_detail(request, journal_type, category):
 
     jtype = get_journal_type(journal_type)
     if jtype != 'all':
-        journals_query = Journal.objects.filter(is_public=True, journal_type=jtype)
+        journals_query = Journal.objects.filter(is_public=True, journal_type=jtype, last_issue_id__gt=0)
     else:
-        journals_query = Journal.objects.filter(is_public=True)
+        journals_query = Journal.objects.filter(is_public=True, last_issue_id__gt=0)
     is_show_popular = True
 
     if category != 'categories':
         category = Category.objects.get(name_slug=category)
-        journals_query = journals_query.filter(is_public=True, category=category)
+        journals_query = journals_query.filter(is_public=True, category=category, last_issue_id__gt=0)
         is_show_popular = False
     else:
         category = {"name_slug": "all"}
