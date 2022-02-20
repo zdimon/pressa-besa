@@ -17,7 +17,7 @@ def category_detail(request, journal_type, category):
         journals_query = Journal.objects.filter(is_public=True)
     is_show_popular = True
 
-    if category != 'categories':
+    if category != 'all':
         category = Category.objects.get(name_slug=category)
         journals_query = journals_query.filter(is_public=True, category=category)
         is_show_popular = False
