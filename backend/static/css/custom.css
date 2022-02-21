@@ -244,3 +244,7 @@ ul.rd-navbar-nav {
     display: block;
     font-size: 15px;
 }
+
+.padding-little-top {
+    padding-top: 10px;
+}
