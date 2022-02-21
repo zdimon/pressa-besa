@@ -7,6 +7,7 @@ import LoginForm from '../account/LoginForm';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { useTranslation } from 'react-i18next';
+ 
 
 import {
     BrowserRouter as Router,
@@ -18,6 +19,7 @@ import {
 import { useLocation } from 'react-router-dom';
 import LangSwitcher from '../i18n/LangSwitcher';
 import LkMenu from '../account/LkMenu';
+import PdfBookmark from '../bookmarks/pdfBookmark';
 
 
 
@@ -83,6 +85,8 @@ export default function ReaderHeader(props) {
                             <div className="right-rider-menu">
                             <div className="nav-riader-links" >
                                         { (location.pathname.includes("image-reader") || location.pathname.includes("list-reader") ) && props.has_article && (
+                                            <>
+                                            <PdfBookmark issueId={props.issueId}></PdfBookmark>
                                         <Link 
                                         to={{ 
                                                 pathname: `/text-reader/${props.issueId}`
@@ -92,15 +96,19 @@ export default function ReaderHeader(props) {
                                             {t('m_text_riader')} 
                                             </span>
                                             </Link>
+                                            </>
                                         )}
                                             
                                             { (location.pathname.includes("text-reader") || location.pathname.includes("list-reader") ) && (
+                                            <>
+                                            
                                             <Link to={{
                                                 pathname: `/image-reader/${props.issueId}`
                                                 }} >
                                             <img className="fa-icon" src="/static/images/icons/original.svg" />
-                                            <span className="hide-in-mobile">{t('m_pdf_riader')} </span>
+                                            <span className="hide-in-mobile">{t('m_pdf_riader')}</span>
                                             </Link>
+                                            </>
                                             )}
                                             <a href={`/magazines/${props.settings.name_slug}`}><span className="hide-in-mobile color-red font-bold">{props.settings.journal_name}</span></a>
                                     </div>
