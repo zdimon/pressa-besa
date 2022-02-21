@@ -25,6 +25,7 @@
                         class="button button-primary">
                         Читать
                         </a>
+
                     </div>
                 </div>
             </div>
@@ -53,6 +54,15 @@
                         </div>
                     </div>
                     <div id="js-subscription-block" data-journal-id="{{ object.pk }}" class="card-info__subscription-form"></div>
+                    {% if journal.is_pdf_available %}
+                    <div class="card-info__subscription-form">
+                    <a 
+                        class="button button-primary" 
+                        href="{{ current_issue.file.url }}">
+                        {% trans 'скачать PDF' %}
+                    </a>
+                    </div>
+                    {% endif %}
 
                 </div>
                 <div class="card-info__subscription">

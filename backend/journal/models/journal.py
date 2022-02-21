@@ -63,6 +63,10 @@ class Journal(NameSlugMixin, models.Model):
 
     is_public = models.BooleanField(verbose_name=_(u'отображать на сайте?'), default=True)
 
+    is_pdf_available = models.BooleanField(
+        verbose_name=_(u'доступен ли PDF для загрузки?'),
+        default=False)
+
     def __str__(self):
         return self.name
 
