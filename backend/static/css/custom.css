@@ -199,3 +199,48 @@ ul.rd-navbar-nav {
 .pointer {
     cursor: pointer;
 }
+
+.help-text h3 {
+    display: block;
+}
+
+.step .number {
+    background: #fcfcfc;
+    background: -moz-linear-gradient(top, #fcfcfc 0%, #dad8d8 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fcfcfc), color-stop(100%, #dad8d8));
+    background: -webkit-linear-gradient(top, #fcfcfc 0%, #dad8d8 100%);
+    background: -o-linear-gradient(top, #fcfcfc 0%, #dad8d8 100%);
+    background: -ms-linear-gradient(top, #fcfcfc 0%, #dad8d8 100%);
+    background: linear-gradient(to bottom, #fcfcfc 0%, #dad8d8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#dad8d8', GradientType=0);
+    display: inline-block;
+    border: 2px solid #981B1E;
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    color: #981B1E;
+    border-radius: 29px;
+    margin-right: 7px;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.step_descr span:first-child {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    color: #981B1E;
+}
+
+.step_descr {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: calc(100% - 55px);
+}
+
+.step_descr span {
+    display: block;
+    font-size: 15px;
+}

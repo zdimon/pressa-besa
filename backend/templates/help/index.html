@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load i18n %} 
+{% block css %} 
+   
+{% endblock %}
+
+
+{% block content %}
+
+
+<section class="section-xs card">
+    <div class="container container-md">
+        {% if message %}
+            <h4 class="text-uppercase">{{ message }}</h4>
+        {% else %}
+            <div class="row col-12">
+                
+                <h4 class="text-uppercase">{{ page.title | safe }}</h4>
+                
+                
+            </div>
+            <div class="row">
+                <div class="col-12 help-text">
+                    {{ page.content | safe }}
+                </div>
+            </div>
+
+            <div class="text-center">
+                <h3>{% trans 'Задать вопрос' %}</h3>
+                <form method="POST">
+                    {% csrf_token %}
+                    <label for="">Email</label>
+                    {{ form.email }}
+                    {{ form.email.errors }}
+                    <div class="clear"></div>
+                    {{ form.question }}
+                    {{ form.question.errors }}
+                    <p>
+                        <input class="button button-primary" type="submit" value="{% trans 'ОТПРАВИТЬ' %}">
+                    </p>
+                </form>
+            </div>
+        {% endif %}
+    </div>
+
+
+
+
+
+</section>
+
+
+
+    
+
+{% endblock %}

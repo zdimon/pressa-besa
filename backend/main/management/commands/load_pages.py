@@ -50,9 +50,27 @@ class Command(BaseCommand):
         f = FlatPage()
         f.url = '/help/'
         f.title = 'help page ru'
-        f.content = 'help advertiser'
+        content = '''
+        <h3>КАК ЭТО РАБОТАЕТ?</h3>
+        <div class="step"><span class="number">1</span>&nbsp;
+        <div class="step_descr"><span>ВЫБЕРИТЕ КАТЕГОРИЮ</span>Журналы, газеты или книги - всё представлено на нашем сайте!<span><br /></span></div>
+        </div>
+        <div class="step"><span class="number">2</span>&nbsp;
+        <div class="step_descr"><span>ВЫБЕРИТЕ ИЗДАНИЕ</span><span>Выберите из каталога издание, который вы хотели бы читать<br />- или воспользуйтесь строкой поиска в заголовке сайта.<br /></span></div>
+        </div>
+        <div class="step"><span class="number">3</span>&nbsp;
+        <div class="step_descr"><span>НАЖМИТЕ "ЧИТАТЬ"</span><span>...и вы получите возможность пролистать издание, и для большинства изданий - начать чтение бесплатно! (Увы, для некоторых изданий предварительный просмотр недоступен, в этом случае вместо кнопки "Читать" будет кнопка "Купить".)<br /></span></div>
+        </div>
+        <div class="step"><span class="number">4</span>&nbsp;
+        <div class="step_descr"><span>ОПЛАТА</span>После того, как вы прочитаете бесплатные страницы выпуска издания, вам будет предложено купить право на чтение остального (у нас на сайте принимаются все основные системы оплаты).<span>Перед покупкой, вам потребуется зарегистрироваться на сайте с использованием своего email, либо вы можете авторизоваться с помощью вашей любимой социальной сети.<br /></span></div>
+        </div>
+        <div class="step"><span class="number">5</span>&nbsp;
+        <div class="step_descr"><span>ДОСТУП К ПОКУПКАМ</span>&nbsp;После оплаты выпуски издания будут храниться в вашей коллекции в личном кабинете. Для чтения оплаченных выпусков необходимо авторизоваться на сайте под своим логином. На электронную почту файлы не рассылаются&nbsp;</div>
+        </div>
+        '''
         f.title_ru = 'help page ru'
-        f.content_ru = 'Content help'
+        f.content_ru = content
+        f.content = content
         f.title_en = 'help page en'
         f.content_en = 'Content en help'
         f.title_de = 'help page de'
