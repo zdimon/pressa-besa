@@ -3,6 +3,7 @@ import  { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
 SwiperCore.use([Navigation]);
 import { findDOMNode } from "react-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function IssueSlider(props) {
   var container = document.getElementById(props.selector);
@@ -102,6 +103,7 @@ export default function IssueSlider(props) {
 
   const navigationPrevRef = React.useRef(null)
   const navigationNextRef = React.useRef(null)
+  const { t, i18n } = useTranslation();
   
   return (
     <section className="section bg-default section-xs">
@@ -148,11 +150,11 @@ export default function IssueSlider(props) {
                                 }
                                 </div>
                             </div>
-                            { item.getAttribute("data-amount")?
+                            
                             <div className="thumbnail-modern__footer"> 
-                            {item.getAttribute("data-amount")}
-                            ₽</div>: <></>
-                            }
+                            { item.getAttribute("data-amount") !== '0,00'?  <>{item.getAttribute("data-amount")} ₽</>:
+                            <>{t('m_free')}</>}</div>
+                            
                             
                         </div>
                         </SwiperSlide>
