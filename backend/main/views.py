@@ -19,6 +19,7 @@ from django.shortcuts import redirect
 from subscribe.models import Abonement
 from main.utils import get_client_ip, check_sf_ip
 from django.contrib.auth.models import User
+from journal.models import PublishingOffice
 
 def index(request):
     if not request.user.is_authenticated:
@@ -156,3 +157,15 @@ def sf(request):
         "popular": popular
     }
     return render(request, 'main/sf.html', data)
+
+
+def publisher(request, name_slug):
+    publisher = PublishingOffice.objects.get(name_slug=name_slug)
+    journals = Journal.objects.filter(publishing_office=publisher)
+    count = Journal.objects.filter(publishing_office=publisher).count()
+    data = {
+        "publisher": publisher,
+        "journals": journals,
+        "count": count
+    }
+    return render(request, 'main/office.html', data)
