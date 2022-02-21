@@ -140,18 +140,20 @@ export default function IssueSlider(props) {
                             </div>
                             <div className="thumbnail-modern__body">
                                
-                                <div className="thumbnail-modern__body-caption">№ {item.getAttribute("data-iname")}</div>
+                                <div className="thumbnail-modern__body-caption">№ {item.getAttribute("data-iname")}
+                                <br />
+                                { item.getAttribute("data-release")?
+                                  <>{item.getAttribute("data-release")}</>
+                                  : <></>
+                                }
+                                </div>
                             </div>
                             { item.getAttribute("data-amount")?
                             <div className="thumbnail-modern__footer"> 
                             {item.getAttribute("data-amount")}
                             ₽</div>: <></>
                             }
-                            { item.getAttribute("data-release")?
-                            <div className="thumbnail-modern__footer"> 
-                            {item.getAttribute("data-release")}
-                            </div>: <></>
-                            }
+                            
                         </div>
                         </SwiperSlide>
                   )}
