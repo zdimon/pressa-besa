@@ -3,12 +3,13 @@ import  { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
 SwiperCore.use([Navigation]);
 import { findDOMNode } from "react-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function Carousel(props) {
   var container = document.getElementById(props.selector);
   var matches = container.querySelectorAll("img");
   var matchesArr = Array.prototype.slice.call(matches);
-  console.log(matches)
+  const { t, i18n } = useTranslation();
 
   var breakpoints = {
     320: {
@@ -149,8 +150,9 @@ export default function Carousel(props) {
                                 <div className="thumbnail-modern__body-caption">№ {item.getAttribute("data-iname")}</div>
                             </div>
                             <div className="thumbnail-modern__footer"> 
-                            {item.getAttribute("data-amount")}
-                            ₽</div>
+                            { item.getAttribute("data-amount") !== '0,00'?  <>{item.getAttribute("data-amount")} ₽</>:
+                            <>{t('m_free')}</>}
+                            </div>
                         </div>
                         </SwiperSlide>
                   )}

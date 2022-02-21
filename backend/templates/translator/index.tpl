@@ -14,7 +14,8 @@
                 "m_collection": "{% trans 'Моя коллекция' %}",
                 "m_payments": "{% trans 'Платежи' %}",
                 "m_signin": "{% trans 'Вход' %}",
-                "m_register": "{% trans 'Регистрация' %}"
+                "m_register": "{% trans 'Регистрация' %}",
+                "m_free": "{% trans 'БЕСПЛАТНО' %}"
 
                 
            
