@@ -24,7 +24,7 @@
   "homepage": "https://github.com/vikpe/react-webpack-typescript-starter",
   "scripts": {
     "build": "yarn run clean-dist && webpack --config=configs/webpack/prod.js",
-    "builddev": "yarn run clean-dist && webpack --config=configs/webpack/dev.js",
+    "builddev": "webpack --config=configs/webpack/dev.js",
     "clean-dist": "rimraf dist/*",
     "lint": "eslint './src/**/*.{js,ts,tsx}' --quiet",
     "start": "yarn run start-dev",
