@@ -19,6 +19,7 @@ import random
 from .models import MailTemplate
 from django.utils.translation import ugettext_lazy as _
 from django.urls import reverse
+from django.http import HttpResponse, Http404
 
 def preauth(request):
     if request.user.customer.has_sf_abonement:
@@ -127,3 +128,14 @@ def add_money(request):
         user.save()
 
     return redirect('/lk/index')
+
+
+def getgift(request):
+    if request.method != 'POST':
+        return HttpResponse('error')
+    customer = request.user.customer
+    code = request.body.replace('-', '').replace(' ', '')
+    redirect_url = customer_use_giftcode(customer, code)
+    if redirect_url is None:
+        raise Http404
+    return HttpResponse(redirect_url)
