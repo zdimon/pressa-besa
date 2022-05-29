@@ -23,7 +23,7 @@
                             href="{% url 'text-reader' issue_id=current_issue.id %}"
                         {% endif %}
                         class="button button-primary">
-                        Читать
+                        {% translate 'Читать' %}
                         </a>
 
                     </div>
@@ -37,18 +37,18 @@
                             № {{ current_issue.name }} ({{current_issue.release_date|date:"d/m/Y" }})
                         </div>
                         <div class="card-info__publishing">
-                            <span>Издательство:</span>
+                            <span>{% translate 'Издательство' %}:</span>
                             <a href="{% url 'publisher' name_slug=object.publishing_office.name_slug %}">{{object.publishing_office.name}}</a>
                         </div>
                         {% if object.publishing_office.show_site_link %}
                         <div class="card-info__publishing-site">
-                            <a href="{% url 'publisher' name_slug=object.publishing_office.name_slug %}">Сайт издания</a>
+                            <a href="{% url 'publisher' name_slug=object.publishing_office.name_slug %}">{% translate 'Сайт издания' %}</a>
                         </div>
                         {% endif %}
                     </div>
                     <div class="card-info__price">
                         <div class="card-info__price-inner">
-                            <div class="card-info__price-title">ЦЕНА ЗА НОМЕР:</div>
+                            <div class="card-info__price-title">{% translate 'ЦЕНА ЗА НОМЕР' %}:</div>
                             <div class="card-info__price-number">{{ object.amount }} ₽</div>
                             <div id="js-buy-button" data-issue-id="{{ object.last_issue.pk }}"></div>
                         </div>

@@ -14,17 +14,17 @@
 
 <div class="container">
       <div class="col-12 d-md-block">
-        <h4 class="text-uppercase">КУПИТЬ 
+        <h4 class="text-uppercase">{% translate 'КУПИТЬ ' %}
         
         "{{ object.journal.name }}" {{ object.name }}
 
         </h4>
 
-        У вас на счету: {{ customer.amount }} руб.
+        {% translate 'У вас на счету' %}: {{ customer.amount }} {% translate 'руб' %}.
       </div>
 
             <div class="col-12 d-md-block">
-                <h4 class="text-uppercase">Пополнение счета</h4>
+                <h4 class="text-uppercase">{% translate 'Пополнение счета' %}</h4>
             </div>
     </div>
 {% endblock %}

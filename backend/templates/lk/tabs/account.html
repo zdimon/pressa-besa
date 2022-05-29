@@ -24,14 +24,14 @@
 
         <form method="POST" action="/v1/api/account/add/money">
         {% csrf_token %}
-        Сумма 
+        {% translate 'Сумма ' %} 
         <input name="sum" />
 
-        Пароль
+        {% translate 'Пароль' %}
 
         <input  name="password" />
 
-        <input type="submit" name="Пополнить" />
+        <input type="submit" name="{% translate 'Пополнить' %}" />
 
         </form>
 

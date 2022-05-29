@@ -1,3 +1,4 @@
+{% load i18n %} 
 <div class="swiper-slide">
     <div class="thumbnail-classic">
         <div class="thumbnail-classic__media">
@@ -11,7 +12,7 @@
         </a>
         <div class="thumbnail-classic__footer">
                 <span class="thumbnail-classic__footer-title">{{ item.issue.journal.name }}</span>
-                <span class="thumbnail-classic__footer-date">Выпуск: {{ item.issue.name }} </span>
+                <span class="thumbnail-classic__footer-date">{% translate 'Выпуск' %}: {{ item.issue.name }} </span>
         </div>
     </div>
 </div>    

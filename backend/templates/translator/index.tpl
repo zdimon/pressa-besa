@@ -15,9 +15,9 @@
                 "m_payments": "{% trans 'Платежи' %}",
                 "m_signin": "{% trans 'Вход' %}",
                 "m_register": "{% trans 'Регистрация' %}",
-                "m_free": "{% trans 'БЕСПЛАТНО' %}"
-
-                
+                "m_free": "{% trans 'БЕСПЛАТНО' %}",
+                "m_popular": "{% trans 'Популярные' %}",
+                "m_publications": "{% trans 'издания' %}"
            
 
 }

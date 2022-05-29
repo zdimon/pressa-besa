@@ -35,11 +35,11 @@
         </div>
         <div class="paginator">
             {% if page_obj.has_previous %}
-              <a class="button button-primary" href="{% url 'category-detail' journal_type=journal_type category=category.name_slug %}?page={{ page_obj.previous_page_number }}"> Назад </a>
+              <a class="button button-primary" href="{% url 'category-detail' journal_type=journal_type category=category.name_slug %}?page={{ page_obj.previous_page_number }}"> {% translate 'Назад' %} </a>
             {% endif %}
             {% translate 'Страница' %}: {{ page_obj.number }}
             {% if page_obj.has_next %}
-              <a class="button button-primary" href="{% url 'category-detail' journal_type=journal_type category=category.name_slug %}?page={{ page_obj.next_page_number }}"> Вперед </a>
+              <a class="button button-primary" href="{% url 'category-detail' journal_type=journal_type category=category.name_slug %}?page={{ page_obj.next_page_number }}"> {% translate 'Вперед' %} </a>
             {% endif %}
         </div>
 

@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load i18n %} 
 
 {% block content %}
     <div class="row">
         <div class="col-md-10">
-            <h2 class="title-twice">ВХОД НА САЙТ</h2>
+            <h2 class="title-twice">{% translate 'ВХОД НА САЙТ' %}</h2>
         </div>
     </div>
     {% if not user.is_authenticated %}

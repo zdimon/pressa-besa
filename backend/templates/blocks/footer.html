@@ -33,15 +33,15 @@
 			<div class="col-12 col-lg-8 justify-content-center d-flex justify-content-lg-end">
 				<div class="footer-nav">
 					<ul class="nav-list">
-						<li><a href="{% url 'about' %}">О компании</a></li>
-						<li><a href="{% url 'publisher' %}">Издательствам</a></li>
-						<li><a href="{% url 'advertiser' %}">Рекламодателям</a></li>
-						<li><a href="{% url 'help' %}">Помощь</a></li>
+						<li><a href="{% url 'about' %}">{% translate 'О компании'%}</a></li>
+						<li><a href="{% url 'publisher' %}">{% translate "Издательствам"%} </a></li>
+						<li><a href="{% url 'advertiser' %}">{% translate 'Рекламодателям'%} </a></li>
+						<li><a href="{% url 'help' %}">{% translate 'Помощь'%}</a></li>
 						
 					</ul>
 					<ul class="nav-list">
-						<li><a href="{% url 'agreement' %}">Пользовательское соглашение</a></li>
-						<li><a href="{% url 'privacy' %}">Политика конфиденциальности</a></li>
+						<li><a href="{% url 'agreement' %}">{% translate 'Пользовательское соглашение'%}</a></li>
+						<li><a href="{% url 'privacy' %}">{% translate 'Политика конфиденциальности'%}</a></li>
 					</ul>
 					
 				</div>
@@ -51,11 +51,8 @@
 	<div class="container">
 		<div class="footer-aside">
 			<div class="footer-aside__copy">
-				<p>© Все права защищены</p>
-				<p>
-					Частичное или полное использование материалов
-					интернет-издания "ПРЕССА" разрешается только при условии
-					соблюдения "Правил использования материалов"
+				<p>©{% translate 'Все права защищены'%} </p>
+				<p>{% translate 'Частичное или полное использование материалов интернет-издания "ПРЕССА" разрешается только при условии соблюдения "Правил использования материалов"'%}
 				</p>
 			</div>
 			<div class="js-subscribe-button footer-aside__btn">

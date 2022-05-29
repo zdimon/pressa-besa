@@ -23,7 +23,7 @@
                             href="{% url 'text-reader' issue_id=current_issue.id %}"
                         {% endif %}
                         class="button button-primary">
-                        Читать
+                        {% translate 'Читать' %}
                         </a>
                     </div>
                 </div>
@@ -36,12 +36,12 @@
                             № {{ current_issue.name }}
                         </div>
                         <div class="card-info__publishing">
-                            <span>Издательство:</span>
+                            <span>{% translate 'Издательство' %}:</span>
                             <a href="#">{{object.publishing_office.name}}</a>
                         </div>
                         {% if object.publishing_office.show_site_link %}
                         <div class="card-info__publishing-site">
-                            <a href="{{ object.publishing_office.site }}">Сайт издания</a>
+                            <a href="{{ object.publishing_office.site }}">{% translate 'Сайт издания' %}</a>
                         </div>
                         {% endif %}
                     </div>

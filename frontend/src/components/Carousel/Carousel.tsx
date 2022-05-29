@@ -5,6 +5,7 @@ SwiperCore.use([Navigation]);
 import { findDOMNode } from "react-dom";
 import { useTranslation } from 'react-i18next';
 
+
 export default function Carousel(props) {
   var container = document.getElementById(props.selector);
   var matches = container.querySelectorAll("img");
@@ -111,7 +112,7 @@ export default function Carousel(props) {
       <div className="container">
         <div className="row row-20">
           <div className="col-12">
-              <h4 className="text-uppercase">Популярные <span>Издания</span></h4>
+              <h4 className="text-uppercase">{t('m_popular')}<span>{t('m_publications')}</span></h4>
           </div>
             <div className="col-12">
               <div className="swiper-wrap swiper-style-1">

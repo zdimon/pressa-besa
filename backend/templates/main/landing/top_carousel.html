@@ -1,12 +1,13 @@
+{% load i18n %} 
 <section class="section bg-default section-xs">
     <div class="container text-center">
-            <h3>Более 100 000  выпусков журналов и газет</h3>
-            <p>Новые выпуски раньше чем в киоске. Архивы изданий за 10 лет.</p>
+            <h3>{% translate 'Более 100 000  выпусков журналов и газет' %}</h3>
+            <p>{% translate 'Новые выпуски раньше чем в киоске. Архивы изданий за 10 лет.' %}</p>
     </div>
     <div class="container">
         <div class="row row-20">
             <div class="col-12">
-                <h4 class="text-uppercase">Популярные <span>издания</span></h4>
+                <h4 class="text-uppercase">{% translate 'Популярные' %} <span>{% translate 'издания' %}</span></h4>
             </div>
             <div class="col-12">
                 <div class="swiper-wrap swiper-style-1">
@@ -35,10 +36,10 @@
         <div class="row justify-content-center text-center">
             <div class="col-lg-9 col-md-10 col-12">
                 <div class="h3">
-                    В электронной библиотеке вы найдете более 500 популярных журналов и газет
+                    {% translate 'В электронной библиотеке вы найдете более 500 популярных журналов и газет' %}
                 </div>
-                <p>Вы можете купить один номер или оформить подписку на удобный вам срок</p>
-                               <a href="{% url 'category-detail' journal_type='all' category='categories' %}?page=1" class="button button-primary more-articles-btn">Найдите ваше любимое издание</a>
+                <p>{% translate 'Вы можете купить один номер или оформить подписку на удобный вам срок' %}</p>
+                               <a href="{% url 'category-detail' journal_type='all' category='categories' %}?page=1" class="button button-primary more-articles-btn">{% translate 'Найдите ваше любимое издание' %}</a>
             </div>
         </div>
     </div>

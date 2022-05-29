@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "webpack-merge": "^5.8.0"
+  }
+}
