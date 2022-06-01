@@ -17,7 +17,11 @@
                 "m_register": "{% trans 'Регистрация' %}",
                 "m_free": "{% trans 'БЕСПЛАТНО' %}",
                 "m_popular": "{% trans 'Популярные' %}",
-                "m_publications": "{% trans 'издания' %}"
+                "m_publications": "{% trans 'издания' %}",
+                "m_password": "{% trans 'Пароль' %}",
+                "m_enter": "{% trans 'Войти' %}",
+                "m_registr": "{% trans 'Зарегистрироваться' %}",
+                "m_Loginerror": "{% trans 'Ошибка входа!' %}"
            
 
 }

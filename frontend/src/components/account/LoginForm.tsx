@@ -6,6 +6,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Drawer from '@material-ui/core/Drawer';
 import TextField from '@material-ui/core/TextField';
+import { useTranslation } from 'react-i18next';
 
 const AuthLink = {
   paddingLeft: "10px",
@@ -15,10 +16,11 @@ const AuthLink = {
 
 export default function LoginForm({clickCallback}) {
 
-  
+  const { t, i18n } = useTranslation();
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [error, setError] = React.useState(false);
+  
 
   const req = new Request();
   const login = () => {
@@ -52,7 +54,7 @@ export default function LoginForm({clickCallback}) {
               type="password"
               error={error}
               onChange={event => setPassword(event.target.value)} 
-              label="Пароль" 
+              label={t('m_password')}  
               variant="outlined" />
           </ListItem>
 
@@ -62,7 +64,7 @@ export default function LoginForm({clickCallback}) {
             <TextField
               error
               id="filled-error"
-              label="Ошибка входа!"
+              label={t('m_Loginerror')}
               variant="filled"
             />
           </ListItem>
@@ -72,7 +74,7 @@ export default function LoginForm({clickCallback}) {
               onClick={ () => login() }
               variant="contained" 
               color="secondary">
-                Войти
+                {t('m_enter')}
             </Button>
             <div>
             <a style={AuthLink} href="/login/google-oauth2/">

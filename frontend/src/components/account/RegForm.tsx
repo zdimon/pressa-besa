@@ -4,11 +4,11 @@ import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import TextField from '@material-ui/core/TextField';
-
+import { useTranslation } from 'react-i18next'
 
 export default function RegForm() {
 
-  
+ 
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState(''); 
   const [error, setError] = React.useState(false);
@@ -16,6 +16,7 @@ export default function RegForm() {
 
   const [success, setSuccess] = React.useState(false);
   const [success_message, setSuccessMessage] = React.useState('');
+  const { t, i18n } = useTranslation();
 
 
   const req = new Request();
@@ -52,7 +53,7 @@ export default function RegForm() {
 
           <ListItem
           style={error ? {} : { display: 'none', color: 'red'  }}
-          > Ошибка входа!
+          > {t('m_Loginerror')}
           </ListItem>
 
           <ListItem
@@ -66,7 +67,7 @@ export default function RegForm() {
               onClick={ () => register() }
               variant="contained" 
               color="secondary">
-                Зарегистрироваться
+                {t('m_registr')}
             </Button>
           </ListItem>
         </List>

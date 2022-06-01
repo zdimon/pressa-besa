@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-29 11:33+0000\n"
-"PO-Revision-Date: 2022-05-29 11:43+0000\n"
+"POT-Creation-Date: 2022-05-31 16:04+0000\n"
+"PO-Revision-Date: 2022-06-01 16:39+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -49,7 +49,7 @@ msgstr "You was registered. Check your email, please."
 
 #: announce/api/views.py:39
 msgid "You are allready subscribed"
-msgstr ""
+msgstr "You are already subscribed"
 
 #: announce/api/views.py:42
 msgid "wrong email"
@@ -57,7 +57,7 @@ msgstr "wrong email"
 
 #: announce/api/views.py:44
 msgid "You have been subscribed"
-msgstr ""
+msgstr "You have been subscribed"
 
 #: announce/models.py:22 announce/models.py:39 announce/models.py:58
 #: article/models.py:45
@@ -721,7 +721,7 @@ msgstr "Active"
 
 #: main/views.py:123
 msgid "Login or password is wrong!"
-msgstr ""
+msgstr "Login or password is wrong!"
 
 #: payonline/models.py:16
 msgid "Создан"
@@ -926,7 +926,7 @@ msgstr "email"
 
 #: templates/accounts/login_form.html:9
 msgid "Password"
-msgstr ""
+msgstr "Password"
 
 #: templates/accounts/login_form.html:13 templates/accounts/signin.html:15
 msgid "Вход"
@@ -1240,8 +1240,6 @@ msgid "Пополнить счет"
 msgstr "Replanish account"
 
 #: templates/lk/tabs/account.html:27
-#, fuzzy
-#| msgid "Сумма"
 msgid "Сумма "
 msgstr "Sum"
 
@@ -1250,8 +1248,6 @@ msgid "Пароль"
 msgstr "Password"
 
 #: templates/lk/tabs/account.html:34
-#, fuzzy
-#| msgid "Пополнить счет"
 msgid "Пополнить"
 msgstr "Replanish account"
 
@@ -1430,6 +1426,15 @@ msgstr "Text version"
 #: templates/reader/header_text.html:57
 msgid "Постраничная версия"
 msgstr "page version"
+
+msgid "Подписка 8 руб/сутки"
+msgstr "subscription 8 rub a day"
+
+msgid "Войти"
+msgstr "enter"
+
+msgid "Ошибка входа!"
+msgstr "Error enter!"
 
 #~ msgid "PDF версия"
 #~ msgstr "PDF version"

@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import SubscribeDialog from './SubscribeDialog';
 import { render } from "react-dom";
 import Modal from "../Modal";
+import { useTranslation } from 'react-i18next';
 
 export default function SubscribeButton() {
 
   const [modalVisible, setModalVisible] = useState(false)
+  const { t, i18n } = useTranslation();
 
   var tryOpenModal = function() {
     if( window.localStorage.getItem('token')){
@@ -48,7 +50,7 @@ export default function SubscribeButton() {
       <div className="rd-nav-aside__btn">
         <a href="#" data-toggle="modal"
           onClick={() => tryOpenModal()}
-          data-target="#subscribeModal" className="button button-primary">Подписка 8 руб/сутки</a>
+          data-target="#subscribeModal" className="button button-primary">{t('btn_subscription')}</a>
         <Modal
           title='Оформление абонемента'
           template='sub'

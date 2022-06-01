@@ -5,6 +5,7 @@ from django.core.files import File
 from django.conf import settings
 import os
 
+
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
