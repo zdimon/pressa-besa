@@ -1,15 +1,16 @@
 from django.contrib import admin
 from .models import Journal, Issue, IssuePage, PublishingOffice, PurchasedIssues
+from modeltranslation.admin import TranslationAdmin
 
 
 @admin.register(PublishingOffice)
-class PublishingOfficeAdmin(admin.ModelAdmin):
-    list_display = ['name']
+class PublishingOfficeAdmin(TranslationAdmin):
+    list_display = ['name_ru']
 
 
 @admin.register(Journal)
-class JournalAdmin(admin.ModelAdmin):
-    list_display = ['name', 'name_slug', 'image_tag', 'publishing_office', 'amount']
+class JournalAdmin(TranslationAdmin):
+    list_display = ['name_ru', 'name_slug', 'image_tag', 'publishing_office', 'amount']
     search_fields = ['name']
     list_filter = ['category']
     list_editable = ['amount']

@@ -67,6 +67,9 @@ class Journal(NameSlugMixin, models.Model):
         verbose_name=_(u'доступен ли PDF для загрузки?'),
         default=False)
 
+    about = models.TextField(verbose_name=_(u'об издании'),
+                             blank=True, null=True)
+
     def __str__(self):
         return self.name
 
