@@ -24,5 +24,7 @@
                 "m_Loginerror": "{% trans 'Ошибка входа!' %}",
                 "m_buy": "{% trans 'купить' %}",
                 "m_subscribe": "{% trans 'Подписаться' %}",
-                "m_electronicsub": "{% trans 'Электронная подписка' %}"
+                "m_electronicsub": "{% trans 'Электронная подписка' %}",
+                "m_more": "{% trans 'еще' %}",
+                "m_issues": "{% trans 'выпуски' %}"
 }
