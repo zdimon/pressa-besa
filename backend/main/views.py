@@ -164,7 +164,7 @@ def sf(request):
 
 def publisher(request, name_slug):
     publisher = PublishingOffice.objects.get(name_slug=name_slug)
-    journals = Journal.objects.filter(publishing_office=publisher)
+    journals = Journal.objects.filter(publishing_office=publisher, is_public=True)
     count = Journal.objects.filter(publishing_office=publisher).count()
     data = {
         "publisher": publisher,
