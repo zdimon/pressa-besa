@@ -1,5 +1,6 @@
 <div class="masonry-item">
     <div class="thumbnail-classic">
+        {% if item.image %}
         <div class="thumbnail-classic__media">
             <a href="{{ item.get_absolute_url }}">
                 <img 
@@ -11,6 +12,7 @@
             </a>
             <!-- <span class="label">ежемесячные</span> -->  
         </div>
+        {% endif %}
         <a href="{{ item.get_absolute_url }}" class="thumbnail-classic__body">
             {{ item.title }}
         </a>
