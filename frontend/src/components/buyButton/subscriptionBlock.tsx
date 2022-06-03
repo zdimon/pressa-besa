@@ -79,7 +79,7 @@ export default function SubscriptionBlock(props) {
     <>
      
         <div className="card-info__subscription-header">
-            <span>ЭЛЕКТРОННАЯ ПОДПИСКА</span>
+            <span>{t('m_electronicsub')}</span>
             <button 
             onClick={doBuy}
             className="button-primary button button-sm" >{t('m_subscribe')}</button>
