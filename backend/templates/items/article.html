@@ -1,6 +1,6 @@
 <div class="masonry-item">
     <div class="thumbnail-classic">
-        {% if item.image %}
+        {% if item.get_image %}
         <div class="thumbnail-classic__media">
             <a href="{{ item.get_absolute_url }}">
                 <img 
