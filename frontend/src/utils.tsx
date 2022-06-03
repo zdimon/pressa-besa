@@ -9,14 +9,12 @@ var utils = {
      } else {
       localStorage.setItem('lang','ru')
      }
+     return localStorage.getItem('lang')
    //   console.log(window.location.href)
    //   console.log(urlarr[3])
    //   if (!localStorage.getItem('lang')) {
    //      localStorage.setItem('lang','ru')
    //   } 
-   //     return localStorage.getItem('lang')
-         
-      
    }
 }
 
