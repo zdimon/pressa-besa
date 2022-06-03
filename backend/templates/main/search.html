@@ -42,6 +42,19 @@
                 </div>
             {% endif %}
 
+            {% if categories %}
+                <div class="col-12">
+                    <h4 class="text-uppercase">{% translate 'Найденные категории' %}</h4>
+                
+                {% for item in categories %}
+                   
+                        <a href="{% url 'category-detail' journal_type='magazines' category=item.name_slug%}" class="button button-primary">
+                            {{ item.name }}
+                        </a>
+                </div>
+                {% endfor %}
+            {% endif %}
+
 
 
         </div>

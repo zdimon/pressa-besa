@@ -54,8 +54,8 @@ def search(request):
     #items = Journal.objects.filter(name__icontains=key)[0:15]
     items = Journal.objects.filter(is_public=True, name__icontains=key)[0:15]
     articles = Article.objects.filter(title__icontains=key)[0:15]
-    print(articles)
-    return render(request, 'main/search.html', {"items": items,  "key": key, "articles": articles})
+    categories = Category.objects.filter(name__icontains=key)[0:15]
+    return render(request, 'main/search.html', {"items": items,  "key": key, "articles": articles, "categories": categories})
 
 
 class JournalBuyView(DetailView):
