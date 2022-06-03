@@ -21,7 +21,7 @@
                 "m_password": "{% trans 'Пароль' %}",
                 "m_enter": "{% trans 'Войти' %}",
                 "m_registr": "{% trans 'Зарегистрироваться' %}",
-                "m_Loginerror": "{% trans 'Ошибка входа!' %}"
-           
+                "m_Loginerror": "{% trans 'Ошибка входа!' %}",
+                "m_buy": "{% trans 'купить' %}"
 
 }
