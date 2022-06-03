@@ -22,6 +22,6 @@
                 "m_enter": "{% trans 'Войти' %}",
                 "m_registr": "{% trans 'Зарегистрироваться' %}",
                 "m_Loginerror": "{% trans 'Ошибка входа!' %}",
-                "m_buy": "{% trans 'купить' %}"
-
+                "m_buy": "{% trans 'купить' %}",
+                "m_subscribe": "{% trans 'Подписаться' %}"
 }

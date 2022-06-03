@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Request } from '../../Request';
 import Snackbar from '@material-ui/core/Snackbar';
-
+import { useTranslation } from 'react-i18next';
 
 export default function SubscriptionBlock(props) {
 
+    const { t, i18n } = useTranslation();
     const [message, setMessage] = React.useState('');
     const [term, setTerm] = React.useState(1);
     const [subId, setSubId] = React.useState(0);
@@ -81,7 +82,7 @@ export default function SubscriptionBlock(props) {
             <span>ЭЛЕКТРОННАЯ ПОДПИСКА</span>
             <button 
             onClick={doBuy}
-            className="button-primary button button-sm" >Подписаться</button>
+            className="button-primary button button-sm" >{t('m_subscribe')}</button>
             
 
         </div>
