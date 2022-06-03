@@ -9,6 +9,9 @@
                         {% translate 'Поиск по слову' %}: <span>{{ key }}</span>
                 </h4>
             </div>
+            <div class="col-12">
+                <h4 class="text-uppercase">{% translate 'Найденные издания' %}</h4>
+            </div>
             {% if items %}
                 {% for item in items %}
                     <div>
@@ -17,9 +20,28 @@
                 {% endfor %}
             {% else %}
                 <div>
-                    {% translate 'По вашему запросу ничего не найдено' %}
+                    {% translate 'По вашему запросу изданий не найдено' %}
                 </div>
             {% endif %}
+
+
+            <div class="col-12">
+                <h4 class="text-uppercase">{% translate 'Найденные статьи' %}</h4>
+            </div>
+            {% if items %}
+                {% for item in articles %}
+                    <div>
+                    {% include 'items/article.html' %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div>
+                    {% translate 'По вашему запросу статей не найдено' %}
+                </div>
+            {% endif %}
+
+
+
         </div>
     </div>
 {% endblock %}

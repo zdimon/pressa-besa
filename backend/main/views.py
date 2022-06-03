@@ -20,6 +20,7 @@ from subscribe.models import Abonement
 from main.utils import get_client_ip, check_sf_ip
 from django.contrib.auth.models import User
 from journal.models import PublishingOffice
+from article.models import Article
 
 def index(request):
     if not request.user.is_authenticated:
@@ -52,7 +53,8 @@ def search(request):
     key = request.GET.get('key','')
     #items = Journal.objects.filter(name__icontains=key)[0:15]
     items = Journal.objects.filter(is_public=True, name__icontains=key)[0:15]
-    return render(request, 'main/search.html', {"items": items,  "key": key})
+    articles = Article.objects.filter(title__icontains=key)[0:15]
+    return render(request, 'main/search.html', {"items": items,  "key": key, "articles": articles})
 
 
 class JournalBuyView(DetailView):
