@@ -30,6 +30,7 @@
                 "m_listentoaudio": "{% trans 'Слушать аудио' %}",
                 "m_issue": "{% trans 'Выпуск' %}",
                 "m_articles": "{% trans 'Статьи' %}",
-                "m_issuea": "{% trans 'Выпуска' %}"
+                "m_issuea": "{% trans 'Выпуска' %}",
+                "m_entermail": "{% trans 'Введите ваш e-mail' %}"
 
 }

@@ -42,7 +42,7 @@ export default function NewsSubscriptionForm() {
             onChange={handleChange}
             type="text" 
             className="form-input" 
-            placeholder="Введите ваш e-mail" />
+            placeholder={t('m_entermail')} />
             <div className="form-button">
                 <button 
                 onClick={doSubscribe}

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 16:04+0000\n"
-"PO-Revision-Date: 2022-06-04 10:35+0000\n"
+"PO-Revision-Date: 2022-06-04 10:58+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1447,6 +1447,9 @@ msgstr "more"
 
 msgid "Выпуска"
 msgstr "issue"
+
+msgid "Введите ваш e-mail"
+msgstr "Enter your e-mail"
 
 #~ msgid "PDF версия"
 #~ msgstr "PDF version"
