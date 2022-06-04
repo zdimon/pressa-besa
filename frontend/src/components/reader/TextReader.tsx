@@ -274,7 +274,7 @@ export default function TextReader(props) {
 
           <section className="section">
           <div className="col-12">
-                <h4 className="text-uppercase">{t('m_issueа')} <span>{t('m_articles')}</span></h4>
+                <h4 className="text-uppercase">{t('m_issuea')} <span>{t('m_articles')}</span></h4>
           </div>
           </section>
 
@@ -346,7 +346,7 @@ export default function TextReader(props) {
         <div className="container position-relative">
           <br />
             <div className="col-12">
-                <h4 className="text-uppercase">Еще <span>выпуски</span></h4>
+                <h4 className="text-uppercase">{t('m_more')} <span>{t('m_issues')}</span></h4>
             </div>
 
           <Swiper
