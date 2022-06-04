@@ -28,6 +28,9 @@ class Command(BaseCommand):
                 cnt += 1
                 j = Journal()
                 j.name = jname+" "+str(cnt)+str(cntc)
+                j.name_ru = jname+" ru "+str(cnt)+str(cntc)
+                j.name_en = jname+" en "+str(cnt)+str(cntc)
+                j.name_de = jname+" de "+str(cnt)+str(cntc)
                 j.is_public = True
                 j.show_in_books = True
                 j.amount = 10

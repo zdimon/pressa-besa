@@ -14,3 +14,5 @@ python3 manage.py load_news
 python3 manage.py load_office
 python3 manage.py load_mail_template
 python3 manage.py load_abonement
+python3 manage.py load_abonement
+python3 manage.py update_last_id

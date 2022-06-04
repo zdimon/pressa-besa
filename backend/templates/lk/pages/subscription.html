@@ -11,6 +11,12 @@
     <div class="container container-md">
 
           <h4 class="text-uppercase">{% trans 'Мои подписки' %}</h4>
+          {% for form in formids %}
+            <div style="display: none" id="longate-{{ form }}">
+                <div id="js-subscription-block" data-journal-id="{{ form }}" class="card-info__subscription-form"></div>
+            </div>
+          {% endfor %}
+
           {% if not subscriptions %}
             <div class="alert alert-danger" role="alert">
                 {% trans 'У вас нет купленных подписок' %}
@@ -21,15 +27,27 @@
                 <th scope="col">{% trans 'Издание' %}</th>
                 <th scope="col">{% trans 'Название' %}</th>
                 <th scope="col">{% trans 'Информация' %}</th>
+                <th scope="col"></th>
                 </tr>
                 
                 {% for subscription in subscriptions %}
                 
                     <tr>
-                        <td>{{ subscription.subscription.journal.name }}</td>
+                        <td>
+                            <a href="{% url 'journal-detail' name_slug=subscription.subscription.journal.name_slug %}">
+                                <img width="100" src="{{ subscription.subscription.journal.common_cover }}" />
+                              </a>
+                            {{ subscription.subscription.journal.name }}
+                        </td>
                         <td>{{ subscription.subscription.name }}</td>
                         <td>{% blocktrans with subscription_count=subscription.count%}Осталось {{ subscription_count }} номеров.{% endblocktrans %}</td>
-                    
+                        <td>
+                            <a href="" data-id="{{ subscription.subscription.journal.pk }}" class="hideshow"
+                            style="float: right"
+                            >
+                                {% trans 'Продлить подписку' %}
+                            </a>
+                        </td>
                     </tr>
 
                 {% endfor %}
@@ -39,11 +57,26 @@
     </div>
 </section>
 
+{% endblock %}
 
+{% block js%}
+<script>
 
-
-
-
-
-
+    $('.hideshow').each(function(i, obj) {
+        console.log(obj)
+        $(obj).click(function(event) {
+            event.preventDefault();
+            var id = $(event.target).attr('data-id');
+            console.log(id);
+            if ( $(`#longate-${id}`).is(":visible") ) { 
+                    $(`#longate-${id}`).hide(); 
+                } else  { 
+                    $(`#longate-${id}`).show(); 
+                }
+                $("html, body").animate({
+                    scrollTop: 0
+                }, 500);
+        })
+    });
+</script>
 {% endblock %}
