@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { render } from "react-dom";
 import { Request } from '../../Request';
 import Snackbar from '@material-ui/core/Snackbar';
+import { useTranslation } from 'react-i18next';
 
 export default function BuyButton(props) {
 
+  const { t, i18n } = useTranslation();
   const [state, setState] = React.useState({
     open: false,
     vertical: 'top',
@@ -50,7 +52,7 @@ export default function BuyButton(props) {
         <a 
         href="#" 
         onClick={doBuy}
-        className="button button-primary button-sm">Купить</a>
+        className="button button-primary button-sm">{t('m_buy')}</a>
         <Snackbar
             open={open}
             onClose={handleClose}

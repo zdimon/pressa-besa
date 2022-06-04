@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 16:04+0000\n"
-"PO-Revision-Date: 2022-06-01 16:39+0000\n"
+"PO-Revision-Date: 2022-06-03 08:53+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1435,6 +1435,15 @@ msgstr "enter"
 
 msgid "Ошибка входа!"
 msgstr "Error enter!"
+
+msgid "купить"
+msgstr "buy"
+
+msgid "Электронная подписка"
+msgstr "electronic subscription"
+
+msgid "еще"
+msgstr "more"
 
 #~ msgid "PDF версия"
 #~ msgstr "PDF version"

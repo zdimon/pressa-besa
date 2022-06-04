@@ -21,7 +21,12 @@
                 "m_password": "{% trans 'Пароль' %}",
                 "m_enter": "{% trans 'Войти' %}",
                 "m_registr": "{% trans 'Зарегистрироваться' %}",
-                "m_Loginerror": "{% trans 'Ошибка входа!' %}"
-           
+                "m_Loginerror": "{% trans 'Ошибка входа!' %}",
+                "m_buy": "{% trans 'купить' %}",
+                "m_subscribe": "{% trans 'Подписаться' %}",
+                "m_electronicsub": "{% trans 'Электронная подписка' %}",
+                "m_more": "{% trans 'еще' %}",
+                "m_issues": "{% trans 'выпуски' %}",
+                "m_listentoaudio": "{% trans 'Слушать аудио' %}"
 
 }
