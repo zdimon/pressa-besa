@@ -52,7 +52,7 @@ export default function SubscribeButton() {
           onClick={() => tryOpenModal()}
           data-target="#subscribeModal" className="button button-primary">{t('btn_subscription')}</a>
         <Modal
-          title='Оформление абонемента'
+          title={t('m_registration_abonement')}
           template='sub'
           visible={modalVisible}
           handleClose={() => setModalVisible(false)}

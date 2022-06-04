@@ -31,6 +31,7 @@
                 "m_issue": "{% trans 'Выпуск' %}",
                 "m_articles": "{% trans 'Статьи' %}",
                 "m_issuea": "{% trans 'Выпуска' %}",
-                "m_entermail": "{% trans 'Введите ваш e-mail' %}"
+                "m_entermail": "{% trans 'Введите ваш e-mail' %}",
+                "m_registration_abonement": "{% trans 'Оформление абонемента' %}"
 
 }
