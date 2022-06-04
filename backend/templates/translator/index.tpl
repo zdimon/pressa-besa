@@ -37,6 +37,10 @@
                 "m_week": "{% trans 'Неделя' %}",
                 "m_period": "{% trans 'Период' %}",
                 "m_days": "{% trans 'дней' %}",
-                "m_close": "{% trans 'Закрыть' %}"
+                "m_close": "{% trans 'Закрыть' %}",
+                "m_rub": "{% trans 'руб' %}",
+                "m_proceed": "{% trans 'Перейдите для пополнения' %}",
+                "m_pay_from_account": "{% trans 'Оплатить со счета' %}"
+                
 
 }
