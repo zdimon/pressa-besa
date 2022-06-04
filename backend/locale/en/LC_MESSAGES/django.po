@@ -1445,6 +1445,9 @@ msgstr "electronic subscription"
 msgid "еще"
 msgstr "more"
 
+#~ msgid "выпуск"
+#~ msgstr "issue"
+
 #~ msgid "PDF версия"
 #~ msgstr "PDF version"
 

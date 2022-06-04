@@ -11,6 +11,7 @@ import SubscribeButton from '../Subscription/SubscribeButton';
 import ReactHtmlParser from 'react-html-parser'; 
 import AudioButton from '../audioButton/audioButton';
 import { useParams } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 const req = new Request();
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -41,6 +42,7 @@ function getModalStyle() {
 
 export default function TextReader(props) {
 
+  const { t, i18n } = useTranslation();
   const { article_id } = useParams();
   const [open_pay_dialog, setOpenPayDialog] = React.useState(false);
   const classes = useStyles();
@@ -232,7 +234,7 @@ export default function TextReader(props) {
                          {current_issue.journal_name}
 									    </div>
 									    <div className="single-card__info-details-release">
-										    Выпуск:  {current_issue.issue_name} {current_issue.released}
+                      {t('m_issue')}:  {current_issue.issue_name} {current_issue.released}
 									    </div>
 									     <SubscribeButton />
                        
