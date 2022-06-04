@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { InputGroup, FormControl } from 'react-bootstrap'
 import moment from 'moment'
+import { useTranslation } from 'react-i18next';
 
 const Subscription = (props) => {
 
@@ -40,6 +41,8 @@ const Subscription = (props) => {
     })
   }
 
+  const { t, i18n } = useTranslation();
+
   const setEndDate = ({ target: { value } }) => {
     console.log(value);
     const startDate = moment(new Date(), 'YYYY-MM-DD')
@@ -58,7 +61,7 @@ const Subscription = (props) => {
           onClick={changePlan('month')}
         />
         <label className='form-check-label'>
-          Месяц
+        {t('m_month')}
         </label>
       </div>
       <div className='form-check'>
@@ -69,7 +72,7 @@ const Subscription = (props) => {
           onClick={changePlan('week')}
         />
         <label className='form-check-label'>
-          Неделя
+        {t('m_week')}
         </label>
       </div>
       <div className='form-check'>
@@ -88,7 +91,7 @@ const Subscription = (props) => {
               style={{ maxWidth: 100 }}
               type='number'
               onChange={setDays} />
-            <InputGroup.Text>дней</InputGroup.Text>
+            <InputGroup.Text>{t('m_days')}</InputGroup.Text>
           </InputGroup>
           <InputGroup>
             <FormControl
