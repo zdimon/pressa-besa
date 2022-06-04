@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { Request } from '../../Request';
 import Snackbar from '@material-ui/core/Snackbar';
+import { useTranslation } from 'react-i18next';
 
 export default function NewsSubscriptionForm() {
 
+    const { t, i18n } = useTranslation();
     const [message, setMessage] = React.useState('');
     const [email, setEmail] = React.useState('');
 
@@ -45,7 +47,7 @@ export default function NewsSubscriptionForm() {
                 <button 
                 onClick={doSubscribe}
                 className="button button-primary">
-                    Подписаться
+                    {t('m_subscribe')}
                     <span className="fa fa-angle-right"></span>
                 </button>
             </div>
