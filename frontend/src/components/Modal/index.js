@@ -128,7 +128,7 @@ AppModal.defaultProps = {
   handleClose: () => { },
   handleConfirm: () => { },
   confirmBtnText: 'ОК',
-  cancelBtnText: 'Закрыть'
+  cancelBtnText: {t('m_close')}
 }
 
 export default AppModal
