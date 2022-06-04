@@ -8,7 +8,7 @@ import { Request } from '../../Request';
 import Snackbar from '@material-ui/core/Snackbar';
 import parse from 'html-react-parser';
 import IconButton from '@material-ui/core/IconButton';
-
+import { useTranslation } from 'react-i18next';
 
 const templates = {
   sub: Subscription
@@ -31,6 +31,7 @@ const AppModal = (props) => {
     setOpenSnackbar(false);
   }
 
+  const { t, i18n } = useTranslation();
   const [message, setMessage] = React.useState('');
   const [open, setOpenSnackbar] = React.useState(false);
 
@@ -70,6 +71,8 @@ const AppModal = (props) => {
     setCountDays
   }
 
+ 
+
   return (
     <>
     <Modal show={visible} onHide={handleClose}>
@@ -97,10 +100,10 @@ const AppModal = (props) => {
           <React.Fragment>
             
             <a className="color-red" href="/lk/index"> 
-              Пополнить счет
+            {t('m_replanish')}
             </a>
             <Button color="secondary" size="small" onClick={closeModal}>
-              Закрыть
+            {t('m_close')}
             </Button>
           </React.Fragment>
         }

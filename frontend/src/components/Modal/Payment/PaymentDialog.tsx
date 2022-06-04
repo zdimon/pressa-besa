@@ -3,7 +3,7 @@ import { Request } from '../../../Request';
 import Modal from '@material-ui/core/Modal';
 import { makeStyles } from '@material-ui/core/styles';
 import SubscribeButton from '../../Subscription/SubscribeButton';
-
+import { useTranslation } from 'react-i18next';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -40,7 +40,7 @@ export default function PaymentDialog(props) {
     const [cost, setCost] = React.useState(0);
     const [message_success, setMessageSuccess] = React.useState('');
     const [message_error, setMessageError] = React.useState('');
-
+    const { t, i18n } = useTranslation();
 
     useEffect(() => {
 
