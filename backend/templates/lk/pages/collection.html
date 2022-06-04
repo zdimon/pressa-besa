@@ -20,12 +20,20 @@
             <tr>
               <th scope="col">{% trans 'Издание' %}</th>
               <th scope="col">{% trans 'Выпуск' %}</th>
-              <th scope="col">{% trans 'Действия' %}</th>
+              <th scope="col"></th>
             </tr>
             {% for a in collection %}
             
             <tr>
-              <td><a href="{% url 'journal-detail' name_slug=a.journal.name_slug %}">{{ a.journal }}</a></td>
+              <td>
+                <a href="{% url 'journal-detail' name_slug=a.journal.name_slug %}">
+                  <img width="100" src="{{ a.journal.common_cover }}" />
+                </a>
+                <a href="{% url 'journal-detail' name_slug=a.journal.name_slug %}">
+                  {{ a.journal }}
+                </a>
+              
+              </td>
               <td>{{ a.issue.name }}</td>
               <td><a class="color-red" href="{% url 'reader' issue_id=a.issue.pk %}" >{% trans 'Читать' %}</a>
               
