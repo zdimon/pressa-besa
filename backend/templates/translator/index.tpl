@@ -28,6 +28,8 @@
                 "m_more": "{% trans 'еще' %}",
                 "m_issues": "{% trans 'выпуски' %}",
                 "m_listentoaudio": "{% trans 'Слушать аудио' %}",
-                "m_issue": "{% trans 'Выпуск' %}"
+                "m_issue": "{% trans 'Выпуск' %}",
+                "m_articles": "{% trans 'Статьи' %}",
+                "m_issuea": "{% trans 'Выпуска' %}"
 
 }

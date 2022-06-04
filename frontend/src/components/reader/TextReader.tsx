@@ -274,7 +274,7 @@ export default function TextReader(props) {
 
           <section className="section">
           <div className="col-12">
-                <h4 className="text-uppercase">Статьи <span>выпуска</span></h4>
+                <h4 className="text-uppercase">{t('m_issueа')} <span>{t('m_articles')}</span></h4>
           </div>
           </section>
 
