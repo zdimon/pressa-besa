@@ -27,6 +27,7 @@
                 "m_electronicsub": "{% trans 'Электронная подписка' %}",
                 "m_more": "{% trans 'еще' %}",
                 "m_issues": "{% trans 'выпуски' %}",
-                "m_listentoaudio": "{% trans 'Слушать аудио' %}"
+                "m_listentoaudio": "{% trans 'Слушать аудио' %}",
+                "m_promocode": "{% trans 'Промокод' %}"
 
 }

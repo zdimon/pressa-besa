@@ -55,6 +55,10 @@ export default function LkMenu() {
             <i className="fa fa-shopping-cart color-red" aria-hidden="true"></i>
             <a href="/lk/payments">{t('m_payments')}</a>
         </MenuItem>
+        <MenuItem>
+            <i className="fa fa-bolt color-red" aria-hidden="true"></i>
+            <a href="/lk/promocode">{t('m_promocode')}</a>
+        </MenuItem>
         
       </Menu>
         </>

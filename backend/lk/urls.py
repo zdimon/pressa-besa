@@ -1,5 +1,5 @@
 from django.urls import path
-from lk.views import index, subscription, bookmarks, abonement, payments, collection
+from lk.views import index, subscription, bookmarks, abonement, payments, collection, promocode
 
 urlpatterns = [
     path('index', index),
@@ -7,5 +7,6 @@ urlpatterns = [
     path('bookmarks', bookmarks),
     path('abonement', abonement),
     path('collection', collection),
-    path('payments', payments)
+    path('payments', payments),
+    path('promocode', promocode)
 ]

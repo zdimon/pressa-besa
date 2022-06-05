@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block css %} 
+    <link rel="stylesheet" href="/static/css/lk.css">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="section-xs card">
+    <div class="container container-md">
+
+          <h4 class="text-uppercase">{% trans 'Ввести промокод' %}</h4>
+
+          <form method="POST" style="padding-top: 10px" action="">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="exampleInputEmail1">{% trans 'Промокод' %}</label>
+              <input type="text" class="form-control" name="promocode" />
+            </div>
+            <button type="submit" class="btn btn-primary">{% trans 'Получить подарок' %}</button>
+          </form>         
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+{% endblock %}
