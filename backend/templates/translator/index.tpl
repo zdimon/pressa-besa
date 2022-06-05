@@ -29,5 +29,18 @@
                 "m_issues": "{% trans 'выпуски' %}",
                 "m_listentoaudio": "{% trans 'Слушать аудио' %}",
                 "m_promocode": "{% trans 'Промокод' %}"
+                "m_issue": "{% trans 'Выпуск' %}",
+                "m_articles": "{% trans 'Статьи' %}",
+                "m_issuea": "{% trans 'Выпуска' %}",
+                "m_entermail": "{% trans 'Введите ваш e-mail' %}",
+                "m_registration_abonement": "{% trans 'Оформление абонемента' %}",
+                "m_month": "{% trans 'Месяц' %}",
+                "m_week": "{% trans 'Неделя' %}",
+                "m_period": "{% trans 'Период' %}",
+                "m_days": "{% trans 'дней' %}",
+                "m_close": "{% trans 'Закрыть' %}",
+                "m_rub": "{% trans 'руб' %}",
+                "m_proceed": "{% trans 'Перейдите для пополнения' %}",
+                "m_pay_from_account": "{% trans 'Оплатить со счета' %}"
 
 }

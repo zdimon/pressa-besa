@@ -3,7 +3,7 @@ import { Request } from '../../../Request';
 import Modal from '@material-ui/core/Modal';
 import { makeStyles } from '@material-ui/core/styles';
 import SubscribeButton from '../../Subscription/SubscribeButton';
-
+import { useTranslation } from 'react-i18next';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -40,7 +40,7 @@ export default function PaymentDialog(props) {
     const [cost, setCost] = React.useState(0);
     const [message_success, setMessageSuccess] = React.useState('');
     const [message_error, setMessageError] = React.useState('');
-
+    const { t, i18n } = useTranslation();
 
     useEffect(() => {
 
@@ -87,19 +87,19 @@ return (
         onClose={handleClose}
     >
   <div  className={classes.paper} style={modalStyle}>
-  <h2 id="simple-modal-title">Оплата выпуска</h2>
+  <h2 id="simple-modal-title">{t('t_payment')}</h2>
   <p >
-      Стоимость покупки {cost} руб.
+      {t('m_cost')} {cost} {t('m_rub')}.
   </p>
   <p>
-      У вас на счету {account} руб.
+      {t('m_on_account')} {account} {t('m_rub')}.
   </p>
 
   <p style={has_money? {display: "none"}: {display: "block"}} >
-    <a href="/lk/index">Перейдите для пополнения</a>
+    <a href="/lk/index">{t('m_proceed')}</a>
   </p>
   <p style={has_money? {display: "block"}: {display: "none"}} >
-    <a href="#" onClick={payment}>Оплатить со счета</a>
+    <a href="#" onClick={payment}>{t('m_pay_from_account')}</a>
   </p>
   <p>
     <SubscribeButton />
