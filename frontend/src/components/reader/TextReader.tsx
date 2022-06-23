@@ -251,7 +251,7 @@ export default function TextReader(props) {
                 }
 						    <div className="single-card__info-title">
                   <h2 className="article-title">
-                    {current_article.title} {current_article.id}--
+                    {current_article.title}
                   </h2>
                   <AudioButton type="article" id={current_article.id} />
                 </div>
