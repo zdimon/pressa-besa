@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next';
 const templates = {
   sub: Subscription
 }
-
+const { t, i18n } = useTranslation();
 const AppModal = (props) => {
   const {
     handleClose,
@@ -31,7 +31,7 @@ const AppModal = (props) => {
     setOpenSnackbar(false);
   }
 
-  const { t, i18n } = useTranslation();
+  
   const [message, setMessage] = React.useState('');
   const [open, setOpenSnackbar] = React.useState(false);
 
