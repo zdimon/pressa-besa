@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-31 16:04+0000\n"
-"PO-Revision-Date: 2022-06-04 17:45+0000\n"
-"Last-Translator:   <>\n"
+"PO-Revision-Date: 2022-07-11 13:28+0000\n"
+"Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Translated-Using: django-rosetta 0.9.8\n"
+"X-Translated-Using: django-rosetta 0.9.6\n"
 
 #: accounts/models.py:7
 msgid "Женский"
@@ -1034,7 +1034,7 @@ msgstr ""
 
 #: templates/blocks/header.html:68 templates/blocks/mobile_menu.html:15
 msgid "Журналы"
-msgstr "Journals"
+msgstr "Magazines"
 
 #: templates/blocks/header.html:70 templates/blocks/mobile_menu.html:23
 msgid "Газеты"

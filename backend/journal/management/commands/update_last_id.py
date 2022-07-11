@@ -11,6 +11,7 @@ class Command(BaseCommand):
         for j in Journal.objects.all():
             issue = Issue.objects.filter(journal=j).order_by('-id').first()
             j.last_issue_id = issue.id
+            j.is_new = True
             j.save()
             print(f"Process...{issue.id}")
 
